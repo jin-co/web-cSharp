@@ -1,0 +1,34 @@
+﻿@model BmiModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bmi Calculator</h1>
+<form asp-action="Index" method="post">
+    <div class="row mb-2">
+        <label class="col">
+            Height:
+        </label>
+        <input asp-for="Height" class="col" type="text" />
+    </div>
+
+    <div class="row mb-2">
+        <label class="col">
+            Weight:
+        </label>
+        <input asp-for="Weight"  class="col" type="text" />
+    </div>
+
+
+    <div class="row mb-2">
+        <label class="col">
+            BMI:
+        </label>
+        <p asp-for="Weight"  class="col">@ViewBag.bmi</p>
+    </div>
+    <div class="row mb-2">
+        <button class="col mx-1" type="submit">Calculate</button>
+        <button class="col mx-1"><a href="Index">Clear</a></button>
+    </div>
+</form>
+

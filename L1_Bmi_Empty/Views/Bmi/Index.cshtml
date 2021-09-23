@@ -1,0 +1,52 @@
+﻿@model BmiModel
+@{
+    ViewData["Title"] = "Bmi Calculator";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<!-- The HTML form below will submit a POST request back to the BmiController whick will be actioned back
+    to the Index method found within the BmiController. The POST form will send a completed BMI model object
+    containing the "Weight" and "Height" as specified by the user below back to the controller, and will then
+    calculate the BMI as expected. This will then prompt a callback to the view and will return the calculated
+    BMI value in the ViewBag.Bmi variable below. The ""asp-" tags below are razor tags used to target certain
+    variables or enhance the user experience. We will go in more details in the coming weeks about it. -->
+<form asp-controller="Bmi" asp-action="Index" method="post">
+    
+</form>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Future Value</title>
+    <link rel="stylesheet" href="~/css/custom.css" />
+</head>
+<body>
+    <h1>Bmi Value Calculator</h1>
+    <form asp-action="Index" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Weight">Weight (in kg):</label>
+            <input asp-for="Weight" />
+        </div>
+        <div>
+            <label asp-for="Height">Height (in m):</label>
+            <input asp-for="Height" />
+        </div>
+        <div>
+            <label>Bmi:</label>
+            <input value="@ViewBag.Bmi.ToString("0.00")" readonly="readonly">
+        </div>
+        <button type="submit">Calculate</button>
+        <a asp-controller="Bmi" asp-action="Index">Clear</a>
+    </form>
+
+    <p>BMI : @ViewBag.Bmi.ToString("0.00")</p>
+</body>
+</html>

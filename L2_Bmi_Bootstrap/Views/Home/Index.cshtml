@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Example 1: Container Fixed vs Container Fluid</h2>
+</div>
+
+<div class="container" style="background-color:red;">
+    <h2>This is a fixed container</h2>
+</div>
+
+<div class="container-fluid" style="background-color:blue; color:#fff;">
+    <h2>This is a fluid container</h2>
+</div>
+
+<div class="jumbotron">
+    <h2>Example 2: Column Grid  2 columns</h2>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" style="background-color:aqua">
+            <h3>column 1</h3>
+        </div>
+        <div class="col" style="background-color:peru">
+            <h3>column 2</h3>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h2>Example 3: Column Grid 3 columns</h2>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- lg, md, sm, xs -> max-width(values are set) -->
+        <div class="col-md-4" style="background-color:aqua">
+            <h3>column 1</h3>
+        </div>
+        <div class="col-md-4" style="background-color:peru">
+            <h3>column 2</h3>
+        </div>
+        <div class="col-md-4" style="background-color:gainsboro">
+            <h3>column 2</h3>
+        </div>
+    </div>
+</div>
