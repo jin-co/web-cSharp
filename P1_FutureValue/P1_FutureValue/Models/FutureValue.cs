@@ -7,5 +7,6 @@ namespace P1_FutureValue.Models
 {
     public class FutureValue
     {
+        public double MyProperty { get; set; }
     }
 }
