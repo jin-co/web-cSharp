@@ -8,25 +8,25 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lilij\\.nuget\\packages\\": {},
+    "C:\\Users\\jin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lilij\\OneDrive\\Documents\\GitHub\\web-cSharp\\A1_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
+      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A1_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
       "projectName": "A1_TransactionRecord",
-      "projectPath": "C:\\Users\\lilij\\OneDrive\\Documents\\GitHub\\web-cSharp\\A1_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
-      "packagesPath": "C:\\Users\\lilij\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lilij\\OneDrive\\Documents\\GitHub\\web-cSharp\\A1_TransactionRecord\\A1_TransactionRecord\\obj\\",
+      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A1_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
+      "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A1_TransactionRecord\\A1_TransactionRecord\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lilij\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
