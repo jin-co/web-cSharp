@@ -12,6 +12,7 @@ namespace A1_TransactionRecord.Models
             DbContextOptions<TransactionContext> options) : base(options)
         {}
 
+        // generates database table
         public DbSet<TransactionRecord> Transactions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
