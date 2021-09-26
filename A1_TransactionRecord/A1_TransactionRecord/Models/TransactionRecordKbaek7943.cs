@@ -9,13 +9,17 @@ namespace A1_TransactionRecord.Models
     // class that is going to be used to create a table
     public class TransactionRecordKbaek7943
     {
-        public int TransactionId { get; set; }
+        public int TransactionRecordKbaek7943Id { get; set; }
+        
         [Required(ErrorMessage="")]
         public string TicketSymbol { get; set; }
+        
         [Required(ErrorMessage="")]
         public string CompanyName { get; set; }
+        
         [Required(ErrorMessage="")]
         public int Quantity { get; set; }
+        
         [Required(ErrorMessage="")]
         public double SharePrice { get; set; }
         //public int CommissionFee { get; set; }
