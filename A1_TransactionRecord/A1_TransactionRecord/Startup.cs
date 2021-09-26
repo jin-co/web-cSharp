@@ -1,6 +1,8 @@
+using A1_TransactionRecord.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,12 @@ namespace A1_TransactionRecord
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<TransactionContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
+            // Add-Migration Initial
+            // Update-Database
+            // Add-Migration TransactionType (for second migration)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
