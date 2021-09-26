@@ -21,7 +21,7 @@ namespace A1_TransactionRecord.Controllers
         public IActionResult Index()
         {
             var transactions = context.TransactionRecordKbaek7943s.OrderBy(t => t.CompanyName).ToList();
-            return View();
+            return View(transactions);
         }
     }
 }
