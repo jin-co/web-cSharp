@@ -13,5 +13,28 @@ namespace A1_TransactionRecord.Models
         {}
 
         public DbSet<TransactionRecord> Transactions { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TransactionRecord>().HasData(
+                new TransactionRecord
+                {
+                    TicketSymbol = "MSFT",
+                    CompanyName = "Microsoft",
+                    Quantity = 100,
+                    SharePrice = 123.45
+                },
+                
+                new TransactionRecord
+                {
+                    TicketSymbol = "GOOG",
+                    CompanyName = "Google",
+                    Quantity = 100,
+                    SharePrice = 2701.76
+                }
+
+            );
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
