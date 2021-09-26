@@ -13,21 +13,24 @@ namespace A1_TransactionRecord.Models
         {}
 
         // generates database table
-        public DbSet<TransactionRecord> Transactions { get; set; }
+        public DbSet<TransactionRecordKbaek7943> Transactions { get; set; }
 
+        // seeds the initial data to the database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TransactionRecord>().HasData(
-                new TransactionRecord
+            modelBuilder.Entity<TransactionRecordKbaek7943>().HasData(
+                new TransactionRecordKbaek7943
                 {
+                    TransactionId = 1,
                     TicketSymbol = "MSFT",
                     CompanyName = "Microsoft",
                     Quantity = 100,
                     SharePrice = 123.45
                 },
                 
-                new TransactionRecord
+                new TransactionRecordKbaek7943
                 {
+                    TransactionId = 2,
                     TicketSymbol = "GOOG",
                     CompanyName = "Google",
                     Quantity = 100,
