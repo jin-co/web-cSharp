@@ -28,7 +28,7 @@ namespace A1_TransactionRecord
             services.AddControllersWithViews();
 
             services.AddDbContext<TransactionContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("TransactionRecordKbaek7943")));
+                options.UseSqlServer(Configuration.GetConnectionString("TransactionContext")));
             // Add-Migration Initial
             // Update-Database
             // Add-Migration TransactionType (for second migration)
