@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace A1_TransactionRecord.Models
 {
-    public class TransactionRecord
+    // class that is going to be used to create a table
+    public class TransactionRecordKbaek7943
     {
         public int TransactionId { get; set; }
         [Required(ErrorMessage="")]
