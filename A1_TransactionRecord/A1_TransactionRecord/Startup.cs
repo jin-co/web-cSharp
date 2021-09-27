@@ -32,6 +32,7 @@ namespace A1_TransactionRecord
             // Add-Migration Initial
             // Update-Database
             // Add-Migration TransactionType (for second migration)
+            // Remove-Migration
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

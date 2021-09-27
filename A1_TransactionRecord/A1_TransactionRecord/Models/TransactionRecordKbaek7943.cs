@@ -23,8 +23,8 @@ namespace A1_TransactionRecord.Models
         //[Required(ErrorMessage="")]
         public double SharePrice { get; set; }
 
-        //public string TransactionTypeId { get; set; }
+        public string TransactionTypeId { get; set; }
 
-        //public TransactionType TransactionType { get; set; }
+        public TransactionType TransactionType { get; set; }
     }
 }

@@ -43,7 +43,7 @@ namespace A1_TransactionRecord.Models
                     CompanyName = "Microsoft",
                     Quantity = 100,
                     SharePrice = 123.45,
-                    //TransactionTypeId = "Sell"
+                    TransactionTypeId = "Sell"
                 },
                 
                 new TransactionRecordKbaek7943
@@ -53,7 +53,7 @@ namespace A1_TransactionRecord.Models
                     CompanyName = "Google",
                     Quantity = 100,
                     SharePrice = 2701.76,
-                    //TransactionTypeId = "Buy"
+                    TransactionTypeId = "Buy"
                 }
 
             );
