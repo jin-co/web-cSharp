@@ -11,16 +11,16 @@ namespace A1_TransactionRecord.Models
     {
         public int TransactionRecordKbaek7943Id { get; set; }
         
-        [Required(ErrorMessage="")]
+        //[Required(ErrorMessage="")]
         public string TicketSymbol { get; set; }
         
-        [Required(ErrorMessage="")]
+        //[Required(ErrorMessage="")]
         public string CompanyName { get; set; }
         
-        [Required(ErrorMessage="")]
+        //[Required(ErrorMessage="")]
         public int Quantity { get; set; }
         
-        [Required(ErrorMessage="")]
+        //[Required(ErrorMessage="")]
         public double SharePrice { get; set; }
         //public int CommissionFee { get; set; }
         //public int GrossValue { get; set; }
