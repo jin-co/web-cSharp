@@ -55,7 +55,9 @@ namespace A1_TransactionRecord.Models
                     SharePrice = 2701.76,
                     TransactionTypeId = "Buy"
                 }
+
             );
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
