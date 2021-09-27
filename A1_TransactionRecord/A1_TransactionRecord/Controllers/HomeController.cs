@@ -1,5 +1,6 @@
 ﻿using A1_TransactionRecord.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,10 @@ namespace A1_TransactionRecord.Controllers
 
         public IActionResult Index()
         {
-            var transactions = context.TransactionRecordKbaek7943s.OrderBy(t => t.CompanyName).ToList();
+            var transactions = context.TransactionRecordKbaek7943s
+                .Include(t => t.TrasactionType)
+                .OrderBy(t => t.CompanyName)
+                .ToList();
             return View(transactions);
         }
     }

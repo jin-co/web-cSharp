@@ -22,9 +22,10 @@ namespace A1_TransactionRecord.Models
         
         [Required(ErrorMessage="")]
         public double SharePrice { get; set; }
-        //public int CommissionFee { get; set; }
-        //public int GrossValue { get; set; }
-        //public int NetValue { get; set; }
 
+        public string TransactionTypeId { get; set; }
+
+        [Required]
+        public TransactionType TrasactionType { get; set; }
     }
 }
