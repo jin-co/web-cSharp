@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace A1_TransactionRecord.Controllers
 {
-    public class TransactionController1 : Controller
+    public class TransactionController : Controller
     {
-        public TransactionController1(TransactionContext context)
+        public TransactionController(TransactionContext context)
         {
             this.context = context;
         }
@@ -47,14 +47,26 @@ namespace A1_TransactionRecord.Controllers
                 context.SaveChanges(); // commit
                 return RedirectToAction("Index", "Home");
             }
-            
-            return View(transaction);
+            else
+            {
+                ViewBag.Action = (transaction.TransactionRecordKbaek7943Id == 0) ? "Add" : "Edit";
+                return View(transaction);
+            }
         }
 
-        [HttpPost]
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Delete(int id)
         {
-            return View();
+            var transaction = context.TransactionRecordKbaek7943s.Find(id);
+            return View(transaction);
+        }
+        
+        [HttpPost]
+        public IActionResult Delete(TransactionRecordKbaek7943 transaction)
+        {
+            context.TransactionRecordKbaek7943s.Remove(transaction);
+            context.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
