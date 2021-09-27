@@ -29,8 +29,8 @@
                 <td>@i.Quantity</td>
                 <td>@i.SharePrice</td>
                 <td>@i.TrasactionType.Commission</td>
-                <td>Gross Value</td>
-                <td>Net Value</td>
+                <td>@i.CalculateGrossValue()</td>
+                <td>@i.CalculateNetValue()</td>
                 <td>
                     <a asp-controller="Transaction" 
                        asp-action="Edit"

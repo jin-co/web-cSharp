@@ -27,5 +27,33 @@ namespace A1_TransactionRecord.Models
 
         //[Required]
         public TransactionType TrasactionType { get; set; }
+
+        public string CalculateGrossValue()
+        {
+            if (TransactionTypeId.Equals("Buy"))
+            {
+                double calculatedValue = Quantity * SharePrice;
+                return "(" + calculatedValue.ToString("c") + ")";
+            }
+            else
+            {
+                double calculatedValue = Quantity * SharePrice;
+                return calculatedValue.ToString("c");
+            }            
+        }
+
+        public string CalculateNetValue()
+        {
+            if (TransactionTypeId.Equals("Buy"))
+            {
+                double calculatedValue = (Quantity * SharePrice) + TrasactionType.Commission;
+                return "(" + calculatedValue.ToString("c") + ")";
+            }
+            else
+            {
+                double calculatedValue = (Quantity * SharePrice) - TrasactionType.Commission;
+                return calculatedValue.ToString("c");
+            }
+        }
     }
 }
