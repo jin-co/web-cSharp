@@ -4,7 +4,7 @@
 }
 
 <h2>My Transactions</h2>
-<a asp-controller="TransactionRecordKbaek7943" asp-action="Add">Add New Transaction</a>
+<a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -24,10 +24,11 @@
                 <td>@i.Quantity</td>
                 <td>@i.SharePrice</td>
                 <td>
-                    <a asp-controller="TransactionRecordKbaek7943" 
+                    <a asp-controller="Transaction" 
                        asp-action="Edit"
                        asp-route-id="@i.TransactionRecordKbaek7943Id">Edit</a>
-                    <a asp-controller="TransactionRecordKbaek7943" 
+                    |
+                    <a asp-controller="Transaction" 
                        asp-action="Delete"
                        asp-route-id="@i.TransactionRecordKbaek7943Id">Delete</a>
                 </td>
