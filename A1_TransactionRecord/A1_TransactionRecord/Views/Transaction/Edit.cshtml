@@ -43,17 +43,6 @@
         </select>
     </div>
 
-    @*<div class="form-group">
-            <label asp-for="TransactionTypeId">Transaction Type</label>
-            <select asp-for="TransactionTypeId" class="form-control">
-                <option value="">select a transaction type</option>
-                @foreach (TransactionType t in ViewBag.TransactionTypes)
-                {
-                    <option value="@t.TransactionTypeId">@t.Name</option>
-                }
-            </select>
-        </div>*@
-
     <input type="hidden" asp-for="TransactionRecordKbaek7943Id" />
 
     <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
