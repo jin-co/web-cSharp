@@ -8,6 +8,7 @@
 <h2>@title</h2>
 
 <form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="TicketSymbol">Ticket Symbol</label>
         <input asp-for="TicketSymbol" type="text" class="form-control">
@@ -34,8 +35,8 @@
     </div>
 
     <div class="form-group">
-        <label >Transaction Type</label>
-        <select class="form-control">
+        <label asp-for="TransactionTypeId">Transaction Type</label>
+        <select asp-for="TransactionTypeId" class="form-control">
             @foreach (TransactionType t in ViewBag.TransactionTypes)
             {
                 <option value="@t.TransactionTypeId">@t.Name</option>
