@@ -9,7 +9,7 @@
 
 <form asp-action="Edit" method="post">
     <div class="form-group">
-        <label asp-for="TicketSymbol">TicketSymbol</label>
+        <label asp-for="TicketSymbol">Ticket Symbol</label>
         <input asp-for="TicketSymbol" type="text" class="form-control">
     </div>
 
@@ -19,7 +19,7 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="CompanyName">CompanyName</label>
+        <label asp-for="CompanyName">Company Name</label>
         <input asp-for="CompanyName" class="form-control">
     </div>
 
@@ -29,17 +29,27 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="SharePrice">SharePrice</label>
+        <label asp-for="SharePrice">Share Price</label>
         <input asp-for="SharePrice" class="form-control">
     </div>
 
+    <div class="form-group">
+        <label >Transaction Type</label>
+        <select class="form-control">
+            @foreach (TransactionType t in ViewBag.TransactionTypes)
+            {
+                <option value="@t.TransactionTypeId">@t.Name</option>
+            }
+        </select>
+    </div>
+
     @*<div class="form-group">
-            <label asp-for="CompanyName">Genre</label>
-            <select asp-for="GenreId" class="form-control">
-                <option value="">select a genre</option>
-                @foreach (Genre g in ViewBag.Genres)
+            <label asp-for="TransactionTypeId">Transaction Type</label>
+            <select asp-for="TransactionTypeId" class="form-control">
+                <option value="">select a transaction type</option>
+                @foreach (TransactionType t in ViewBag.TransactionTypes)
                 {
-                    <option value="@g.GenreId">@g.Name</option>
+                    <option value="@t.TransactionTypeId">@t.Name</option>
                 }
             </select>
         </div>*@

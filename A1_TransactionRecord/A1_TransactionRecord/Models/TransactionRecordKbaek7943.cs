@@ -25,7 +25,6 @@ namespace A1_TransactionRecord.Models
 
         public string TransactionTypeId { get; set; }
 
-        //[Required]
         public TransactionType TrasactionType { get; set; }
 
         public string CalculateGrossValue()

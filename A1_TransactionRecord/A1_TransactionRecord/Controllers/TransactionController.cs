@@ -20,6 +20,7 @@ namespace A1_TransactionRecord.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
+            ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
             return View("Edit", new TransactionRecordKbaek7943());
         }
 
@@ -27,6 +28,7 @@ namespace A1_TransactionRecord.Controllers
         public IActionResult Edit(int transactionId)
         {
             ViewBag.Action = "Edit";
+            ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
             var transaction = context.TransactionRecordKbaek7943s.Find(transactionId);
             return View(transaction);
         }
@@ -50,6 +52,7 @@ namespace A1_TransactionRecord.Controllers
             else
             {
                 ViewBag.Action = (transaction.TransactionRecordKbaek7943Id == 0) ? "Add" : "Edit";
+                ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
                 return View(transaction);
             }
         }
