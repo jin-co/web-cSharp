@@ -11,16 +11,16 @@ namespace A1_TransactionRecord.Models
     {
         public int TransactionRecordKbaek7943Id { get; set; }
 
-        [Required(ErrorMessage = "")]
+        [Required(ErrorMessage = "Please enter a ticket symbol.")]
         public string TicketSymbol { get; set; }
 
-        [Required(ErrorMessage = "")]
+        [Required(ErrorMessage = "Please enter a company name")]
         public string CompanyName { get; set; }
 
-        [Required(ErrorMessage = "")]
+        [Required(ErrorMessage = "Please enter a quantity")]
         public int Quantity { get; set; }
 
-        [Required(ErrorMessage = "")]
+        [Required(ErrorMessage = "Please enter a share price")]
         public double SharePrice { get; set; }
 
         public string TransactionTypeId { get; set; }
