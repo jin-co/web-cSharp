@@ -27,10 +27,10 @@
                 <td>@i.TrasactionType.Name</td>
                 <td>@i.CompanyName</td>
                 <td>@i.Quantity</td>
-                <td>@i.SharePrice</td>
-                <td>@i.TrasactionType.Commission</td>
-                <td>@i.CalculateGrossValue()</td>
-                <td>@i.CalculateNetValue()</td>
+                <td>$@i.SharePrice</td>
+                <td>$@i.TrasactionType.Commission</td>
+                <td>$@i.CalculateGrossValue()</td>
+                <td>$@i.CalculateNetValue()</td>
                 <td>
                     <a asp-controller="Transaction" 
                        asp-action="Edit"

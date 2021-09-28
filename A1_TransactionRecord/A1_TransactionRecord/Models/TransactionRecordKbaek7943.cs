@@ -18,10 +18,10 @@ namespace A1_TransactionRecord.Models
         public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Please enter a quantity")]
-        public int Quantity { get; set; }
+        public int? Quantity { get; set; }
 
         [Required(ErrorMessage = "Please enter a share price")]
-        public double SharePrice { get; set; }
+        public double? SharePrice { get; set; }
 
         public string TransactionTypeId { get; set; }
 
@@ -31,13 +31,13 @@ namespace A1_TransactionRecord.Models
         {
             if (TransactionTypeId.Equals("Buy"))
             {
-                double calculatedValue = Quantity * SharePrice;
-                return "(" + calculatedValue.ToString("c") + ")";
+                double? calculatedValue = Quantity * SharePrice;
+                return "(" + calculatedValue.ToString() + ")";
             }
             else
             {
-                double calculatedValue = Quantity * SharePrice;
-                return calculatedValue.ToString("c");
+                double? calculatedValue = Quantity * SharePrice;
+                return calculatedValue.ToString();
             }            
         }
 
@@ -45,13 +45,13 @@ namespace A1_TransactionRecord.Models
         {
             if (TransactionTypeId.Equals("Buy"))
             {
-                double calculatedValue = (Quantity * SharePrice) + TrasactionType.Commission;
-                return "(" + calculatedValue.ToString("c") + ")";
+                double? calculatedValue = (Quantity * SharePrice) + TrasactionType.Commission;
+                return "(" + calculatedValue.ToString() + ")";
             }
             else
             {
-                double calculatedValue = (Quantity * SharePrice) - TrasactionType.Commission;
-                return calculatedValue.ToString("c");
+                double? calculatedValue = (Quantity * SharePrice) - TrasactionType.Commission;
+                return calculatedValue.ToString();
             }
         }
     }
