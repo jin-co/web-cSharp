@@ -11,9 +11,10 @@
     share price: $@Model.SharePrice
 </h3>
 
+<!-- form start -->
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="TransactionRecordKbaek7943Id" />
 
     <button type="submit" class="btn btn-primary">Delete</button>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
-</form>
+</form><!-- /end form -->

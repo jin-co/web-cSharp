@@ -29,9 +29,6 @@ namespace A1_TransactionRecord
 
             services.AddDbContext<TransactionContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TransactionContext")));
-            // Add-Migration Initial
-            // Update-Database
-            // Add-Migration TransactionType (for second migration)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

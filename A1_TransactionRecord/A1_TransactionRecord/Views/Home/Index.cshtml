@@ -5,6 +5,8 @@
 <h1 class="jumbotron">@ViewData["Title"]</h1>
 <h2>My Transactions</h2>
 <a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
+
+<!-- table start -->
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -20,6 +22,7 @@
         </tr>
     </thead>
     <tbody>
+        <!-- shows all the data in the transaction record database -->
         @foreach (var i in Model)
         {
             <tr>
@@ -32,15 +35,15 @@
                 <td>$@i.CalculateGrossValue()</td>
                 <td>$@i.CalculateNetValue()</td>
                 <td>
-                    <a asp-controller="Transaction" 
+                    <a asp-controller="Transaction"
                        asp-action="Edit"
                        asp-route-id="@i.TransactionRecordKbaek7943Id">Edit</a>
                     |
-                    <a asp-controller="Transaction" 
+                    <a asp-controller="Transaction"
                        asp-action="Delete"
                        asp-route-id="@i.TransactionRecordKbaek7943Id">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
-</table>
+</table><!-- /end table -->

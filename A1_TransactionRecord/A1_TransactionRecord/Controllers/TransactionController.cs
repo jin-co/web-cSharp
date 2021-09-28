@@ -7,15 +7,22 @@ using System.Threading.Tasks;
 
 namespace A1_TransactionRecord.Controllers
 {
+    // Controller that handles request related to transaction records
     public class TransactionController : Controller
     {
+        #region Constructors
         public TransactionController(TransactionContext context)
         {
             this.context = context;
         }
+        #endregion
 
+        #region Properties
         private TransactionContext context { get; set; }
+        #endregion
 
+        #region Methods
+        // shows add page with a form to fill in
         [HttpGet]
         public IActionResult Add()
         {
@@ -24,6 +31,7 @@ namespace A1_TransactionRecord.Controllers
             return View("Edit", new TransactionRecordKbaek7943());
         }
 
+        // shows edit page with a form to fill in
         [HttpGet]
         public IActionResult Edit(int transactionId)
         {
@@ -33,6 +41,8 @@ namespace A1_TransactionRecord.Controllers
             return View(transaction);
         }
         
+        // handles post request from the add or edit page
+        // based on whether there is an ID attached
         [HttpPost]
         public IActionResult Edit(TransactionRecordKbaek7943 transaction)
         {
@@ -57,6 +67,7 @@ namespace A1_TransactionRecord.Controllers
             }
         }
 
+        // shows delete page with a confirm message
         [HttpGet]
         public IActionResult Delete(int id)
         {
@@ -64,6 +75,8 @@ namespace A1_TransactionRecord.Controllers
             return View(transaction);
         }
         
+        // deletes the data selected and show the main page with 
+        // chosen data deleted
         [HttpPost]
         public IActionResult Delete(TransactionRecordKbaek7943 transaction)
         {
@@ -71,5 +84,6 @@ namespace A1_TransactionRecord.Controllers
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+        #endregion
     }
 }
