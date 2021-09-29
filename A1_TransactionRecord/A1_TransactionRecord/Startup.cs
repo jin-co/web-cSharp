@@ -13,6 +13,12 @@ using System.Threading.Tasks;
 
 namespace A1_TransactionRecord
 {
+    /*
+     * Author: Kwangjin Baek
+     * Date: 2021. Sep. 29.
+     * Description: Transaction application that shows transaction history
+     * with the functions to add, edit, or delete
+     */
     public class Startup
     {
         public Startup(IConfiguration configuration)
