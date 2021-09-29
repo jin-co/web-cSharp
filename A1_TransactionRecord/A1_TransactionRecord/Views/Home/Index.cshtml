@@ -6,9 +6,8 @@
 <h2>My Transactions</h2>
 <a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
 
-<div>
 <!-- table start -->
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-responsive">
     <thead>
         <tr>
             <th>Ticker Symbol</th>
@@ -35,7 +34,7 @@
                 <td>$@i.TrasactionType.Commission</td>
                 <td>$@i.CalculateGrossValue()</td>
                 <td>$@i.CalculateNetValue()</td>
-                <td>
+                <td class="text-nowrap">
                     <a asp-controller="Transaction"
                        asp-action="Edit"
                        asp-route-id="@i.TransactionRecordKbaek7943Id">Edit</a>
