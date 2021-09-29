@@ -16,9 +16,16 @@
     </div>
 
     <div class="form-group">
-        <label>Transaction Type</label>
-        <input class="form-control">
+        <label asp-for="TransactionTypeId">Transaction Type</label>
+        <select asp-for="TransactionTypeId" class="form-control">
+            <option>Select</option>
+            @foreach (TransactionType t in ViewBag.TransactionTypes)
+            {
+                <option value="@t.TransactionTypeId">@t.Name</option>
+            }
+        </select>
     </div>
+
     <div class="form-group">
         <label asp-for="CompanyName">Company Name</label>
         <input asp-for="CompanyName" class="form-control">
@@ -32,16 +39,6 @@
     <div class="form-group">
         <label asp-for="SharePrice">Share Price</label>
         <input asp-for="SharePrice" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label asp-for="TransactionTypeId">Transaction Type</label>
-        <select asp-for="TransactionTypeId" class="form-control">
-            @foreach (TransactionType t in ViewBag.TransactionTypes)
-            {
-                <option value="@t.TransactionTypeId">@t.Name</option>
-            }
-        </select>
     </div>
 
     <input type="hidden" asp-for="TransactionRecordKbaek7943Id" />

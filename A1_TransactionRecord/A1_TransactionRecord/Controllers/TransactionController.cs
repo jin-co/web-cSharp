@@ -33,11 +33,11 @@ namespace A1_TransactionRecord.Controllers
 
         // shows edit page with a form to fill in
         [HttpGet]
-        public IActionResult Edit(int transactionId)
+        public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
             ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
-            var transaction = context.TransactionRecordKbaek7943s.Find(transactionId);
+            var transaction = context.TransactionRecordKbaek7943s.Find(id);
             return View(transaction);
         }
         
