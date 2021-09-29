@@ -43,7 +43,7 @@ namespace A1_TransactionRecord.Controllers
         
         // handles post request from the add or edit page
         // based on whether there is an ID attached
-        [HttpPost]
+        [HttpPost]  
         public IActionResult Edit(TransactionRecordKbaek7943 transaction)
         {
             if (ModelState.IsValid)

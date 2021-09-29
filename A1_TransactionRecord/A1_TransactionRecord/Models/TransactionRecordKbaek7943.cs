@@ -20,7 +20,7 @@ namespace A1_TransactionRecord.Models
         public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Please enter a quantity")]
-        [RegularExpression("^(?=.*[1-9])[0-9]$",
+        [RegularExpression("^(?=.*[1-9])[0-9]*[.,]?[0-9]{1,2}$",
             ErrorMessage = "Quantity must be greater than 0")]
         public int? Quantity { get; set; }
 
