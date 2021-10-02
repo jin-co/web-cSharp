@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Routing.Controllers
 {
+    //[Route("Retail/[Controller] /[Action] /{id ?}")]
     public class ProductController : Controller
     {
         //public IActionResult List(string id = "All")
