@@ -1,0 +1,18 @@
+﻿@{
+    string message = "Welcome";
+    if (ViewBag.CustomerName != null)
+    {
+        message = "Welcome back!";
+    }
+}
+<p>
+    @message
+</p>
+
+<p>
+    customer name: @ViewBag.CustomerName
+</p>
+
+<p>
+    2 + 2 = @(2 + 2)
+</p>
