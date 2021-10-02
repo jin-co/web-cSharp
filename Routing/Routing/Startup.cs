@@ -26,6 +26,10 @@ namespace Routing
 
             app.UseEndpoints(endpoints =>
             {
+                // attribute routing(upper one takes priority)
+                endpoints.MapControllers();
+
+                // controller routing
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
