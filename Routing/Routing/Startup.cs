@@ -38,6 +38,12 @@ namespace Routing
                  * throw an error
                  */
                 );
+
+                endpoints.MapControllerRoute(
+                    name: "category_and_num",
+                    //pattern: "{controller}/{action}/{cat}/{num}"
+                    pattern: "{controller}/{action}/{cat}/Page{num}"
+                );
             });
         }
     }

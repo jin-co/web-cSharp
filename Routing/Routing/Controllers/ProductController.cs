@@ -8,9 +8,15 @@ namespace Routing.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult List(string id = "All")
+        //public IActionResult List(string id = "All")
+        //{
+        //    return Content("Product controller, List action, id: " + id);
+        //}
+
+        public IActionResult List(string cat, int num)
         {
-            return Content("Product controller, List action, id: " + id);
+            return Content("Product controller, List action, category: " + cat +
+                ", num: " + num);
         }
 
         // unlike normal method numbers are set to 0 by default when no parameter is passed
