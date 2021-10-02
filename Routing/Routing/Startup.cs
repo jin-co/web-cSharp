@@ -42,7 +42,12 @@ namespace Routing
                 endpoints.MapControllerRoute(
                     name: "category_and_num",
                     //pattern: "{controller}/{action}/{cat}/{num}"
-                    pattern: "{controller}/{action}/{cat}/Page{num}"
+                    pattern: "{controller}/{action}/{cat}/Page{num}" // with static segment'Page'
+                );
+
+                endpoints.MapControllerRoute(
+                    name: "paging_and_sorting",
+                    pattern: "{controller}/{action}/{id}/Page{page}/sort-by-{sortby}" // with static segment'Page'
                 );
             });
         }
