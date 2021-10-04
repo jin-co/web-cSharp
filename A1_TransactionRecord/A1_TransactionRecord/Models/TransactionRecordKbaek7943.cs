@@ -22,11 +22,13 @@ namespace A1_TransactionRecord.Models
         [Required(ErrorMessage = "Please enter a quantity")]
         [RegularExpression("^(?=.*[1-9])[0-9]*[.,]?[0-9]{1,2}$",
             ErrorMessage = "Quantity must be greater than 0")]
+        //[Range(0, int.MaxValue)]
         public int? Quantity { get; set; }
 
         [Required(ErrorMessage = "Please enter a share price")]
         [RegularExpression("^(?=.*[1-9])[0-9]*[.,]?[0-9]{1,2}$", 
             ErrorMessage ="Share price must be greater than 0")]
+        //[Range(0, double.MaxValue)]
         public double? SharePrice { get; set; }
 
         [Required(ErrorMessage = "Please select a transaction type")]
