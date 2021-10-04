@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Ch07GuitarShop"
+    "\\Ch07GuitarShop",
+    "\\Ch07GuitarShop\\GuitarShop",
+    "\\Ch07GuitarShop\\GuitarShop\\Areas",
+    "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin",
+    "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Views",
+    "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Views\\Home"
   ],
-  "SelectedNode": "\\Ch07GuitarShop\\GuitarShop.sln",
+  "SelectedNode": "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
