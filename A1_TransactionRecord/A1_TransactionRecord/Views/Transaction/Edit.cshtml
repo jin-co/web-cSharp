@@ -24,6 +24,13 @@
                 <option value="@t.TransactionTypeId">@t.Name</option>
             }
         </select>
+
+        @*simplified foreach*@
+        <select asp-for="TransactionTypeId" class="form-control"
+                asp-items="@(new SelectList(ViewBag.TransactionTypes, "TransactionTypeId", "Name"))">
+
+        </select>
+    
     </div>
 
     <div class="form-group">

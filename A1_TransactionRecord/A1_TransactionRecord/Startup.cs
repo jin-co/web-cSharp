@@ -19,6 +19,7 @@ namespace A1_TransactionRecord
      * Description: Transaction application that shows transaction history
      * with the functions to add, edit, or delete
      */
+    
     public class Startup
     {
         public Startup(IConfiguration configuration)
