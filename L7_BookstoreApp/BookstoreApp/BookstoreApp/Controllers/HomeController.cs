@@ -20,7 +20,7 @@ namespace BookstoreApp.Controllers
 
         public ViewResult Index(string activeGenre = "all", string activeAuthor = "all", string activePublisher = "all")
         {
-            BookList bookList = new BookList()
+            BookListViewModel bookList = new BookListViewModel()
             {
                 ActiveGenre = activeGenre,
                 ActiveAuthor = activeAuthor,

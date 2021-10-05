@@ -9,7 +9,7 @@ namespace BookstoreApp.Models
      * refactoring view models so that i don't have to go back and 
      * forth to get and return the data
      */
-    public class BookList
+    public class BookListViewModel
     {
         public List<Book> Books { get; set; }
         public string ActiveGenre { get; set; }

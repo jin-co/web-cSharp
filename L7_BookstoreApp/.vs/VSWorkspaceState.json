@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BookstoreApp",
+    "\\BookstoreApp\\BookstoreApp",
+    "\\BookstoreApp\\BookstoreApp\\Views",
+    "\\BookstoreApp\\BookstoreApp\\Views\\Home"
+  ],
+  "SelectedNode": "\\BookstoreApp\\BookstoreApp\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}
