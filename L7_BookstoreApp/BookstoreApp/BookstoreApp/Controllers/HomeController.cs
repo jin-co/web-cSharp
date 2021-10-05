@@ -20,6 +20,16 @@ namespace BookstoreApp.Controllers
 
         public ViewResult Index(string activeGenre = "all", string activeAuthor = "all", string activePublisher = "all")
         {
+            BookList bookList = new BookList()
+            {
+                ActiveGenre = activeGenre,
+                ActiveAuthor = activeAuthor,
+                ActivePublisher = activePublisher,
+                Genres = context.Genres.ToList(),
+                Authors = context.Authors.ToList(),
+                Publishers = context.Publishers.ToList()
+            };
+            /* moved to BookList
             // store the selected genre, author, and publisher IDs in view bag properties
             ViewBag.ActiveGenre = activeGenre;
             ViewBag.ActiveAuthor = activeAuthor;
@@ -39,6 +49,7 @@ namespace BookstoreApp.Controllers
             ViewBag.Genres = genres;
             ViewBag.Authors = authors;
             ViewBag.Publishers = publishers;
+            */
 
             // Get list of books - filtered by genre, author, and publisher
             IQueryable<Book> query = context.Books;

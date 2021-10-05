@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace BookstoreApp.Models
 {
+    /*
+     * refactoring view models so that i don't have to go back and 
+     * forth to get and return the data
+     */
     public class BookList
     {
         public List<Book> Books { get; set; }
@@ -33,7 +37,7 @@ namespace BookstoreApp.Models
                 authors.Insert(0, new Author { AuthorID = "all", FullName = "All" });
             }
         }
-        public List<Publisher> publishers { get; set; }
+        private List<Publisher> publishers { get; set; }
 
         public List<Publisher> Publishers
         {
@@ -44,5 +48,15 @@ namespace BookstoreApp.Models
                 publishers.Insert(0, new Publisher { PublisherID = "all", Name = "All" });
             }
         }
+
+        public string CheckActiveGenre(string genre) 
+            => genre.ToLower() == ActiveGenre.ToLower() ? "active" : "";
+
+        public string CheckActiveAuthor(string author) 
+            => author.ToLower() == ActiveAuthor.ToLower() ? "active" : "";
+        
+        public string CheckActivePublisher(string publisher) 
+            => publisher.ToLower() == ActivePublisher.ToLower() ? "active" : "";
+        
     }
 }
