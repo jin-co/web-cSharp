@@ -29,6 +29,7 @@ namespace BookstoreApp.Controllers
                 Authors = context.Authors.ToList(),
                 Publishers = context.Publishers.ToList()
             };
+
             /* moved to BookList
             // store the selected genre, author, and publisher IDs in view bag properties
             ViewBag.ActiveGenre = activeGenre;
@@ -67,8 +68,12 @@ namespace BookstoreApp.Controllers
             }
 
             // return the book list to view as a model
+            /*
             var books = query.ToList();
             return View(books);
+            */
+            bookList.Books = query.ToList();
+            return View(bookList);
         }
     }
 }
