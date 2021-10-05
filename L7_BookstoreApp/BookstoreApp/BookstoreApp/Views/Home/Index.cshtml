@@ -1,0 +1,92 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "Bookstore";
+
+    string Active(string filter, string selected)
+    {
+        return (filter.ToLower() == selected.ToLower()) ? "active" : "";
+    }
+
+    string BookGenreLabelColour(string genre)
+    {
+        switch (genre)
+        {
+            case "Horror":
+                return "bg-danger";
+            case "Adventure":
+                return "bg-warning";
+            default:
+                return "bg-info";
+        }
+    }
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs">
+            @foreach (Genre genre in ViewBag.Genres)
+            {
+                <li class="nav-item">
+                    <a class="nav-link @Active(genre.GenreID, ViewBag.ActiveGenre)"
+                       aria-current="page"
+                       asp-route-activeGenre="@genre.GenreID"
+                       asp-route-activeAuthor="@ViewBag.ActiveAuthor"
+                       asp-route-activePublisher="@ViewBag.ActivePublisher">@genre.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <h5 class="mt-3">Author</h5>
+        <div class="list-group">
+            @foreach (Author author in ViewBag.Authors)
+        {
+                <a asp-action="Index"
+                   asp-route-activeGenre="@ViewBag.ActiveGenre"
+                   asp-route-activeAuthor="@author.AuthorID"
+                   asp-route-activePublisher="@ViewBag.ActivePublisher"
+                   class="list-group-item @Active(author.AuthorID,
+                                           ViewBag.ActiveAuthor)">
+                    @author.FullName
+                </a>
+    }
+        </div>
+        <h5 class="mt-3">Publisher</h5>
+        <div class="list-group mb-3">
+            @foreach (Publisher publisher in ViewBag.Publishers)
+            {
+                <a asp-action="Index"
+                   asp-route-activeGenre="@ViewBag.ActiveGenre"
+                   asp-route-activeAuthor="@ViewBag.ActiveAuthor"
+                   asp-route-activePublisher="@publisher.PublisherID"
+                   class="list-group-item @Active(publisher.PublisherID,
+                                           ViewBag.ActivePublisher)">
+                    @publisher.Name
+                </a>
+            }
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="row">
+            @foreach (Book book in Model)
+            {
+                <div class="col-sm-6 col-md-4 mt-2 text-center">
+                    <div><h6>@book.Title - @book.Price.ToString("C")</h6></div>
+                    <div>
+                        <img class="img-thumbnail" src="~/images/@book.LogoImageSource" alt="@book.Title" width="150" height="200"
+                             title="@book.Title | @book.Author.FullName, @book.Genre.Name (@book.Publisher.Name)" />
+                    </div>
+                    <div>
+                        <span class="badge bg-primary text-light">@book.Author.FullName</span>
+                        <span class="badge @(BookGenreLabelColour(book.Genre.Name)) text-light">@book.Genre.Name</span>
+                        <span class="badge bg-secondary text-light">@book.Publisher.Name</span>
+                    </div>
+                </div>
+            }
+        </div>
+        </div>
+</div>
