@@ -5803,9 +5803,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
-      "projectName": "A1_TransactionRecord",
-      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
+      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A1_TransactionRecord\\A2_TransactionRecord.csproj",
+      "projectName": "A2_TransactionRecord",
+      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A1_TransactionRecord\\A2_TransactionRecord.csproj",
       "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A1_TransactionRecord\\obj\\",
       "projectStyle": "PackageReference",

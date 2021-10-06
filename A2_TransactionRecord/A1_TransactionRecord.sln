@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A1_TransactionRecord", "A1_TransactionRecord\A1_TransactionRecord.csproj", "{3D1AB752-897D-414D-99E8-857CF40AA413}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A2_TransactionRecord", "A1_TransactionRecord\A2_TransactionRecord.csproj", "{3D1AB752-897D-414D-99E8-857CF40AA413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

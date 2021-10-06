@@ -72,5 +72,8 @@ namespace A1_TransactionRecord.Models
             }
         }
         #endregion
+
+        public string Slug =>
+            CompanyName?.Replace(' ', '-').ToLower() + '-' + TicketSymbol?.ToString();
     }
 }

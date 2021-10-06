@@ -34,6 +34,13 @@ namespace A1_TransactionRecord
         {
             services.AddControllersWithViews();
 
+            // lowercase routing and appending trailing slash
+            services.AddRouting(options =>
+            {
+                options.LowercaseUrls = true;
+                options.AppendTrailingSlash = true;
+            });
+
             services.AddDbContext<TransactionContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TransactionContext")));
         }
@@ -52,7 +59,7 @@ namespace A1_TransactionRecord
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
             });
         }
     }
