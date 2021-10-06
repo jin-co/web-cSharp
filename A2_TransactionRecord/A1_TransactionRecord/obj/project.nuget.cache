@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cU9UscEvShfRGi7SZxWKgYSmV2bB1NegM6vDtk8L3aT9jP8zbUL1lqeclwpHLggmuBjHifh8q2F47kPymq/bdA==",
+  "dgSpecHash": "xFroKl3pIvc16Q799V88Zs1AOuYnuO4C0fvpC3CUBJIKHxt1ZLJYkzms58iXwK7/DjHtU7NTnf8U7xmpjnV7FQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A1_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
+  "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A1_TransactionRecord\\A1_TransactionRecord.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
