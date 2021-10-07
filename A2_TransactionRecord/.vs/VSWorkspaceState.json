@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\A1_TransactionRecord",
-    "\\A1_TransactionRecord\\Migrations"
+    "\\A1_TransactionRecord\\Migrations",
+    "\\A1_TransactionRecord\\Models"
   ],
-  "SelectedNode": "\\A1_TransactionRecord.sln",
+  "SelectedNode": "\\A1_TransactionRecord\\Models\\TransactionRecordKbaek7943.cs",
   "PreviewInSolutionExplorer": false
 }
