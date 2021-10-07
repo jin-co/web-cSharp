@@ -84,6 +84,7 @@ namespace A1_TransactionRecord.Controllers
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+
         #endregion
     }
 }
