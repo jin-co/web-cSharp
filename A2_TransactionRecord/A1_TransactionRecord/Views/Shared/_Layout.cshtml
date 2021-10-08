@@ -28,33 +28,33 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark
-                               @(controller == "Home" && action == "Index" ? "active" : "")" 
-                               asp-area="" 
-                               asp-controller="Home" 
+                               @(controller == "Home" && action == "Index" ? "active" : "")"
+                               asp-area=""
+                               asp-controller="Home"
                                asp-action="Index">Home</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark
-                               @(controller == "Transaction" && action == "Add" ? "active" : "")" 
-                               asp-area="" 
-                               asp-controller="Transaction" 
+                               @(controller == "Transaction" && action == "Add" ? "active" : "")"
+                               asp-area=""
+                               asp-controller="Transaction"
                                asp-action="Add">Add Transaction</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark
-                               @(controller == "Home" && action == "" ? "active" : "")" 
-                               asp-area="" 
-                               asp-controller="Home" 
+                               @(controller == "Home" && action == "" ? "active" : "")"
+                               asp-area=""
+                               asp-controller="Home"
                                asp-action="Index">Transactions</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark
-                               @(controller == "" && action == "" ? "active" : "")" 
-                               asp-area="" 
-                               asp-controller="" 
+                               @(controller == "" && action == "" ? "active" : "")"
+                               asp-area=""
+                               asp-controller=""
                                asp-action="">Companies</a>
                         </li>
                     </ul>
@@ -64,27 +64,30 @@
     </header>
 
     <!-- tempdata -->
-    @{ 
-        @TempData["message"] = "Successful";
-
-        @*@if (true)
+    @{
+        @if (TempData.Keys.Contains("message"))
         {
-            <text>active</text>
-        }*@
+            if (TempData.Values.Contains("Save Successful"))
+            {
+                <div class="container">
+                    <p class="col-lg-12 bg-success text-light">
+                        @TempData["message"]
+                    </p>
+                </div>
+            }
+            else
+            {
+                <div class="container">
+                    <p class="col-lg-12 bg-danger text-light">
+                        @TempData["message"]
+                    </p>
+                </div>
+            }
+
+        }
     }
 
     <!-- /end tempdata -->
-
-    <div class="container">
-        <p class="col-lg-12">
-            Save Successful!
-        </p>
-        <p class="col-lg-12">
-            Save Failed!
-        </p>
-    </div>
-
-
 
     <div class="container">
         <main role="main" class="pb-3">
