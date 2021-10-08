@@ -84,11 +84,9 @@ namespace A1_TransactionRecord.Controllers
         {
             context.TransactionRecordKbaek7943s.Remove(transaction);
             context.SaveChanges();
-            TempData["message"] = "Save Successful";
-            
+            TempData["message"] = "Save Successful";            
             return RedirectToAction("Index", "Home");
         }
-
         #endregion
     }
 }
