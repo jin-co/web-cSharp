@@ -13,11 +13,11 @@ namespace A1_TransactionRecord.Models
         #region Properties
         public int TransactionRecordKbaek7943Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter a ticket symbol.")]
-        public string TicketSymbol { get; set; }
+        //[Required(ErrorMessage = "Please enter a ticket symbol.")]
+        //public string TicketSymbol { get; set; }
 
-        [Required(ErrorMessage = "Please enter a company name")]
-        public string CompanyName { get; set; }
+        //[Required(ErrorMessage = "Please enter a company name")]
+        //public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Please enter a quantity")]
         [RegularExpression("^(?=.*[1-9])[0-9]*[.,]?[0-9]{1,2}$",
@@ -29,10 +29,15 @@ namespace A1_TransactionRecord.Models
             ErrorMessage ="Share price must be greater than 0")]
         public double? SharePrice { get; set; }
 
+        // foreign key
         [Required(ErrorMessage = "Please select a transaction type")]
         public string TransactionTypeId { get; set; }
 
         public TransactionType TrasactionType { get; set; }
+
+        // foreign key
+        public int CompanyId { get; set; }
+
         #endregion
 
         #region Methods
