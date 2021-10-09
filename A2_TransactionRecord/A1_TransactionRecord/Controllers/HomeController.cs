@@ -25,7 +25,7 @@ namespace A1_TransactionRecord.Controllers
             {
                 var transactions = context.TransactionRecordKbaek7943s
                 .Include(t => t.TrasactionType)
-                .OrderBy(t => t.CompanyName)
+                .OrderBy(t => t.CompanyId)
                 .ToList();
                 ViewBag.Flag = "descending";
                 return View(transactions);
@@ -35,7 +35,7 @@ namespace A1_TransactionRecord.Controllers
             {
                 var transactions = context.TransactionRecordKbaek7943s
                 .Include(t => t.TrasactionType)
-                .OrderByDescending(t => t.CompanyName)
+                .OrderByDescending(t => t.CompanyId)
                 .ToList();
                 ViewBag.Flag = "ascending";
                 return View(transactions);

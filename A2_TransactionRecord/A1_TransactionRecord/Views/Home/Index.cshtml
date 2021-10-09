@@ -33,9 +33,9 @@
         @foreach (var i in Model)
         {
             <tr>
-                <td>@i.TicketSymbol</td>
+                @*<td>@i.TicketSymbol</td>*@
                 <td>@i.TrasactionType.Name</td>  
-                <td>@i.CompanyName</td>
+                @*<td>@i.CompanyName</td>*@
                 <td>@i.Quantity</td>
                 <td>$@i.SharePrice</td>
                 <td>$@i.TrasactionType.Commission</td>
@@ -45,12 +45,12 @@
                     <a asp-controller="Transaction"
                        asp-action="Edit"
                        asp-route-id="@i.TransactionRecordKbaek7943Id"
-                       asp-route-slug="@i.Slug">Edit</a>
+                       asp-route-slug="">Edit</a>
                     |
                     <a asp-controller="Transaction"
                        asp-action="Delete"
                        asp-route-id="@i.TransactionRecordKbaek7943Id"
-                       asp-route-slug="@i.Slug">Delete</a>
+                       asp-route-slug="">Delete</a>
                 </td>
             </tr>
         }
