@@ -19,9 +19,9 @@ namespace A1_TransactionRecord.Controllers
 
         private TransactionContext context { get; set; }
 
-        public IActionResult Index(string flag)
+        public IActionResult Index(string order)
         {
-            if (flag == "ascending")
+            if (order == "ascending")
             {
                 var transactions = context.TransactionRecordKbaek7943s
                 .Include(t => t.TrasactionType)
