@@ -27,7 +27,7 @@ namespace A1_TransactionRecord.Controllers
                 .Include(t => t.TrasactionType)
                 .OrderBy(t => t.CompanyName)
                 .ToList();
-                //ViewBag.Flag = "descending";
+                ViewBag.Flag = "descending";
                 return View(transactions);
             }
 
@@ -37,7 +37,7 @@ namespace A1_TransactionRecord.Controllers
                 .Include(t => t.TrasactionType)
                 .OrderByDescending(t => t.CompanyName)
                 .ToList();
-                //ViewBag.Flag = "ascending";
+                ViewBag.Flag = "ascending";
                 return View(transactions);
             }
         }

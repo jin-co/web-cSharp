@@ -1,19 +1,6 @@
 ﻿@model List<TransactionRecordKbaek7943>
 @{
     ViewData["Title"] = "Transactions";
-
-
-    string getOrder()
-    {
-        if (ViewBag.Flag == "ascending")
-        {
-            return "descending";
-        }
-        else
-        {
-            return "ascending";
-        }
-    }
 }
 <h1 class="jumbotron">@ViewData["Title"]</h1>
 
@@ -29,7 +16,7 @@
             <th>
                 <a asp-controller="Home"
                    asp-action="Index"
-                   asp-route-order="">
+                   asp-route-order="@ViewBag.Flag">
                     CompanyName
                 </a>
             </th>
