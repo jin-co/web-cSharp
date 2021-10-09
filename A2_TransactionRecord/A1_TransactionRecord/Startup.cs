@@ -58,6 +58,10 @@ namespace A1_TransactionRecord
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "transaction",
+                    pattern: "{controller}/{action}/name/{activeName}");
+                
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
             });

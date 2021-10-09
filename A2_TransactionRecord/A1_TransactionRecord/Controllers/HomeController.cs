@@ -19,8 +19,9 @@ namespace A1_TransactionRecord.Controllers
 
         private TransactionContext context { get; set; }
 
-        public IActionResult Index()
+        public IActionResult Index(bool flag = true)
         {
+            flag = !flag;
             var transactions = context.TransactionRecordKbaek7943s
                 .Include(t => t.TrasactionType)
                 .OrderBy(t => t.CompanyName)
