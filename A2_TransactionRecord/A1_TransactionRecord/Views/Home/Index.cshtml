@@ -5,10 +5,8 @@
 
     string getOrder()
     {
-        bool flag = false;
-        if (flag)
+        if (ViewBag.Flag == "ascending")
         {
-            flag = !flag;
             return "descending";
         }
         else

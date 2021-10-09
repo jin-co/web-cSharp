@@ -19,14 +19,27 @@ namespace A1_TransactionRecord.Controllers
 
         private TransactionContext context { get; set; }
 
-        public IActionResult Index(bool flag)
+        public IActionResult Index(string flag)
         {
-            flag = !flag;
-            var transactions = context.TransactionRecordKbaek7943s
+            if (flag == "ascending")
+            {
+                var transactions = context.TransactionRecordKbaek7943s
                 .Include(t => t.TrasactionType)
                 .OrderBy(t => t.CompanyName)
                 .ToList();
-            return View(transactions);
+                ViewBag.Flag = "descending";
+                return View(transactions);
+            }
+
+            else
+            {
+                var transactions = context.TransactionRecordKbaek7943s
+                .Include(t => t.TrasactionType)
+                .OrderByDescending(t => t.CompanyName)
+                .ToList();
+                ViewBag.Flag = "ascending";
+                return View(transactions);
+            }
         }
     }
 }
