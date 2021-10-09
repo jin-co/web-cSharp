@@ -12,7 +12,8 @@ namespace A2_TransactionRecord.Models
         
         [Required(ErrorMessage = "Please enter a company name")]
         public string Name { get; set; }
-        
+
+        [Required(ErrorMessage = "Please enter a address")]
         public string Address { get; set; }
         
         [Required(ErrorMessage = "Please enter a ticket symbol.")]
