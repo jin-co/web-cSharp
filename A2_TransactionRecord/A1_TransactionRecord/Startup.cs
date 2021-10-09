@@ -59,7 +59,7 @@ namespace A1_TransactionRecord
             {
                 endpoints.MapControllerRoute(
                     name: "transaction",
-                    pattern: "{controller}/{action}/name/{activeName}");
+                    pattern: "{controller}/{action}/orderBy/{order}");
                 
                 endpoints.MapControllerRoute(
                     name: "default",

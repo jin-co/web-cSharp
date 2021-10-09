@@ -19,7 +19,7 @@ namespace A1_TransactionRecord.Controllers
 
         private TransactionContext context { get; set; }
 
-        public IActionResult Index(bool flag = true)
+        public IActionResult Index(bool flag)
         {
             flag = !flag;
             var transactions = context.TransactionRecordKbaek7943s
