@@ -11,9 +11,22 @@ namespace A2_TransactionRecord.Controllers
 {
     public class HomeController : Controller
     {
+        #region  Constructor
+        public HomeController(TransactionContext context)
+        {
+            this.context = context;
+        }
+        #endregion
+
+        #region Properties
+        private TransactionContext context { get; set; }
+        #endregion
         public IActionResult Index()
         {
-            return View();
+            var transactions = context.TransactionRecordKbaek7943s
+                .OrderBy(t => t.CompanyName)
+                .ToList();
+            return View(transactions);
         }
     }
 }

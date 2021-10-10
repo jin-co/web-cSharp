@@ -22,5 +22,27 @@
             <th>Action</th>
         </tr>
     </thead>
-    
+
+    <tbody>
+        <!-- shows all the data in the transaction record database -->
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.TicketSymbol</td>
+                <td>@i.CompanyName</td>
+                <td>@i.Quantity</td>
+                <td>$@i.SharePrice</td>
+                <td class="text-nowrap">
+                    <a asp-controller="Transaction"
+                       asp-action="Edit"
+                       asp-route-id="@i.TransactionRecordKbaek7943Id">Edit</a>
+                    |
+                    <a asp-controller="Transaction"
+                       asp-action="Delete"
+                       asp-route-id="@i.TransactionRecordKbaek7943Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
 </table><!-- /end table -->
