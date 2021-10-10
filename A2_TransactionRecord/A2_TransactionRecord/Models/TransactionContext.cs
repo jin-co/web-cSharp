@@ -14,10 +14,27 @@ namespace A2_TransactionRecord.Models
 
         // generates database table
         public DbSet<TransactionRecordKbaek7943> TransactionRecordKbaek7943s { get; set; }
+        public DbSet<TransactionType> TransactionTypes { get; set; }
 
         // seeds the initial data to the database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<TransactionType>().HasData(
+                new TransactionType
+                {
+                    TransactionTypeId = "Buy",
+                    Name = "Buy",
+                    Commission = 5.99
+                },
+
+                new TransactionType
+                {
+                    TransactionTypeId = "Sell",
+                    Name = "Sell",
+                    Commission = 5.40
+                }
+            );
+
             modelBuilder.Entity<TransactionRecordKbaek7943>().HasData(
                 new TransactionRecordKbaek7943
                 {
@@ -25,7 +42,8 @@ namespace A2_TransactionRecord.Models
                     TicketSymbol = "MSFT",
                     CompanyName = "Microsoft",
                     Quantity = 100,
-                    SharePrice = 123.45
+                    SharePrice = 123.45,
+                    TransactionTypeId = "Sell"
                 },
 
                 new TransactionRecordKbaek7943
@@ -34,7 +52,8 @@ namespace A2_TransactionRecord.Models
                     TicketSymbol = "GOOG",
                     CompanyName = "Google",
                     Quantity = 100,
-                    SharePrice = 2701.76
+                    SharePrice = 2701.76,
+                    TransactionTypeId = "Buy"
                 }
             );
         }
