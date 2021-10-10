@@ -7,7 +7,8 @@
     @ViewData["Title"]
 </h1>
 
-
+<h2>Company List</h2>
+<a asp-action="Add">Add New Company</a>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -26,11 +27,24 @@
                 <td>@i.Address</td>
                 <td>@i.TickerSymbol</td>
                 <td>
-                    <a
-                       asp-action="Edit">Edit</a>
+                    <a asp-controller="Home"
+                       asp-action="Index">
+                        Transactions
+                    </a>
                     |
-                    <a
-                       asp-action="Delete">Delete</a>
+                    <a asp-action="Edit"
+                       asp-route-id="@i.CompanyId">
+                        Edit
+                    </a>
+                    |
+                    <a asp-action="Delete"
+                       asp-route-id="@i.CompanyId">
+                        Delete
+                    </a>
+                    |
+                    <a asp-action="Index">
+                        Details
+                    </a>
                 </td>
             </tr>
         }

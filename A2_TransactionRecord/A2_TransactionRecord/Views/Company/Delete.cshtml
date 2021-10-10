@@ -1,3 +1,19 @@
-﻿<h1>Delete</h1>
+﻿@model Company
+@{
+    ViewData["Title"] = "Delete Company";
+}
+<h1 class="jumbotron">@ViewData["Title"]</h1>
+<h2>Confirm Deletion</h2>
+<h3>
+    @Model.Name
+    (@Model.TickerSymbol)
+</h3>
 
+<!-- form start -->
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="CompanyId" />
 
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-action="Index" class="btn btn-primary">Cancel</a>
+
+</form><!-- /end form -->

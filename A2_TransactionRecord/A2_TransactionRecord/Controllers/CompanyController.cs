@@ -64,7 +64,7 @@ namespace A2_TransactionRecord.Controllers
                     context.Companies.Update(company);
                 }
                 context.SaveChanges(); // commit
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Company");
             }
             else
             {
