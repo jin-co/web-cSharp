@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\A1_TransactionRecord",
+    "\\A1_TransactionRecord\\Migrations",
+    "\\A1_TransactionRecord\\Models",
+    "\\A1_TransactionRecord\\Views",
+    "\\A1_TransactionRecord\\Views\\Home"
+  ],
+  "SelectedNode": "\\A1_TransactionRecord\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}
