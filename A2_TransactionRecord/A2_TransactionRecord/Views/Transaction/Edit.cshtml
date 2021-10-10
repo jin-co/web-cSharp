@@ -10,10 +10,10 @@
 <!-- form start -->
 <form asp-action="Edit" method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="form-group">
+    @*<div class="form-group">
         <label asp-for="TicketSymbol">Ticket Symbol</label>
         <input asp-for="TicketSymbol" type="text" class="form-control">
-    </div>
+    </div>*@
 
     <div class="form-group">
         <label asp-for="TransactionTypeId">Transaction Type</label>
@@ -26,10 +26,10 @@
         </select>
     </div>
 
-    <div class="form-group">
+    @*<div class="form-group">
         <label asp-for="CompanyName">Company Name</label>
         <input asp-for="CompanyName" class="form-control">
-    </div>
+    </div>*@
 
     <div class="form-group">
         <label asp-for="Quantity">Quantity</label>

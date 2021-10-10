@@ -13,11 +13,11 @@ namespace A2_TransactionRecord.Models
         #region Properties
         public int TransactionRecordKbaek7943Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter a ticket symbol.")]
-        public string TicketSymbol { get; set; }
+        //[Required(ErrorMessage = "Please enter a ticket symbol.")]
+        //public string TicketSymbol { get; set; }
 
-        [Required(ErrorMessage = "Please enter a company name")]
-        public string CompanyName { get; set; }
+        //[Required(ErrorMessage = "Please enter a company name")]
+        //public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Please enter a quantity")]
         [RegularExpression("^(?=.*[1-9])[0-9]*[.,]?[0-9]{1,2}$",
@@ -31,10 +31,17 @@ namespace A2_TransactionRecord.Models
         //[Range(0, double.MaxValue)]
         public double? SharePrice { get; set; }
 
+        public TransactionType TrasactionType { get; set; }
+
+        public Company Company { get; set; }
+
+        #region Foreign Keys
         [Required(ErrorMessage = "Please select a transaction type")]
         public string TransactionTypeId { get; set; }
 
-        public TransactionType TrasactionType { get; set; }
+        public int CompanyId { get; set; }
+        #endregion
+
         #endregion
 
         #region Methods
