@@ -12,26 +12,33 @@
 <a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
 
 <!-- table start -->
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-responsive">
     <thead>
         <tr>
             <th>Ticker Symbol</th>
+            <th>Transaction Type</th>
             <th>CompanyName</th>
             <th>Quantity</th>
             <th>Share Price</th>
+            <th>Commission Fee</th>
+            <th>Gross Value</th>
+            <th>Net Value</th>
             <th>Action</th>
         </tr>
     </thead>
-
     <tbody>
         <!-- shows all the data in the transaction record database -->
         @foreach (var i in Model)
         {
             <tr>
                 <td>@i.TicketSymbol</td>
+                <td>@i.TrasactionType.Name</td>
                 <td>@i.CompanyName</td>
                 <td>@i.Quantity</td>
                 <td>$@i.SharePrice</td>
+                <td>$@i.TrasactionType.Commission</td>
+                <td>$@i.CalculateGrossValue()</td>
+                <td>$@i.CalculateNetValue()</td>
                 <td class="text-nowrap">
                     <a asp-controller="Transaction"
                        asp-action="Edit"
@@ -44,5 +51,4 @@
             </tr>
         }
     </tbody>
-
 </table><!-- /end table -->
