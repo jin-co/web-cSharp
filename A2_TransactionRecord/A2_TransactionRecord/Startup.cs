@@ -51,6 +51,10 @@ namespace A2_TransactionRecord
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "orderByName",
+                    pattern: "{controller}/{action}/orderBy/{order}");
+                
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
