@@ -8,15 +8,16 @@
 <a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
 
 <!-- table start -->
-<table class="table table-bordered table-striped table-responsive">
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>Ticker Symbol</th>
-            <th>Transaction Type</th>
             <th>
                 <a asp-controller="Home"
                    asp-action="Index"
-                   asp-route-order="@ViewBag.Flag">
+                   asp-route-order="@ViewBag.Flag"
+                   class="sort-toggle"
+                   title="Sort alphabetically toggle on click(a - z / z - a)">
                     CompanyName
                 </a>
             </th>
@@ -33,9 +34,8 @@
         @foreach (var i in Model)
         {
             <tr>
-                @*<td>@i.TicketSymbol</td>*@
-                <td>@i.TrasactionType.Name</td>
-                @*<td>@i.CompanyName</td>*@
+                <td>@i.Company.TickerSymbol</td>
+                <td>@i.Company.Name</td>
                 <td>@i.Quantity</td>
                 <td>$@i.SharePrice</td>
                 <td>$@i.TrasactionType.Commission</td>
