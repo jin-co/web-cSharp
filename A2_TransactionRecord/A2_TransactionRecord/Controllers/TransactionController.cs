@@ -37,7 +37,6 @@ namespace A2_TransactionRecord.Controllers
         {
             ViewBag.Action = "Edit";
             ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
-            
             var transaction = context.TransactionRecordKbaek7943s.Find(id);
             return View(transaction);
         }
