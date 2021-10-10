@@ -64,12 +64,13 @@ namespace A2_TransactionRecord.Controllers
                     context.Companies.Update(company);
                 }
                 context.SaveChanges(); // commit
+                TempData["message"] = company.Name + " Save Successful";
                 return RedirectToAction("Index", "Company");
             }
             else
             {
                 ViewBag.Action = (company.CompanyId == 0) ? "Add" : "Edit";
-                //ViewBag.Companies = context.TransactionTypes.OrderBy(t => t.Name).ToList();
+                TempData["message"] = company.Name + " Save Failed";
                 return View(company);
             }
         }
@@ -89,6 +90,7 @@ namespace A2_TransactionRecord.Controllers
         {
             context.Companies.Remove(company);
             context.SaveChanges();
+            TempData["message"] = company.Name + " Delete Successful";
             return RedirectToAction("Index", "Home");
         }
         #endregion
