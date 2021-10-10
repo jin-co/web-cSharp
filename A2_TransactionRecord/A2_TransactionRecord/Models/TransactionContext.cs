@@ -20,6 +20,8 @@ namespace A2_TransactionRecord.Models
         // seeds the initial data to the database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<TransactionType>().HasData(
                 new TransactionType
                 {

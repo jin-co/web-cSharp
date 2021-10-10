@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "A2_TransactionRecord/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
