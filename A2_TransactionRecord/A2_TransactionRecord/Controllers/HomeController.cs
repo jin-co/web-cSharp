@@ -23,7 +23,7 @@ namespace A2_TransactionRecord.Controllers
         {
             var transactions = context.TransactionRecordKbaek7943s
                 .Include(t => t.TrasactionType)
-                .OrderBy(t => t.CompanyName)
+                //.OrderBy(t => t.CompanyName)
                 .ToList();
             return View(transactions);
         }

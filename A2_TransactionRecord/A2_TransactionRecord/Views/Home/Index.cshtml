@@ -31,9 +31,9 @@
         @foreach (var i in Model)
         {
             <tr>
-                <td>@i.TicketSymbol</td>
+                @*<td>@i.TicketSymbol</td>*@
                 <td>@i.TrasactionType.Name</td>
-                <td>@i.CompanyName</td>
+                @*<td>@i.CompanyName</td>*@
                 <td>@i.Quantity</td>
                 <td>$@i.SharePrice</td>
                 <td>$@i.TrasactionType.Commission</td>
