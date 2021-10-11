@@ -1,94 +1,184 @@
-﻿using A2_TransactionRecord.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using A2_TransactionRecord.Models;
 
 namespace A2_TransactionRecord.Controllers
 {
-    // Controller that handles request related to transaction records
     public class TransactionController : Controller
     {
-        #region Constructors
+        private readonly TransactionContext _context;
+
         public TransactionController(TransactionContext context)
         {
-            this.context = context;
+            _context = context;
         }
-        #endregion
 
-        #region Properties
-        private TransactionContext context { get; set; }
-        #endregion
-
-        #region Methods
-        // shows add page with a form to fill in
-        [HttpGet]
-        public IActionResult Add()
+        // GET: Transaction
+        public async Task<IActionResult> Index()
         {
-            ViewBag.Action = "Add";
-            ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
-            ViewBag.Company = context.Companies.ToList();
-            return View("Edit", new TransactionRecordKbaek7943());
+            var transactionContext = _context.TransactionRecordKbaek7943s.Include(t => t.Company).Include(t => t.TransactionType);
+            return View(await transactionContext.ToListAsync());
         }
 
-        // shows edit page with a form to fill in
-        [HttpGet]
-        public IActionResult Edit(int id)
+        // GET: Transaction/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            ViewBag.Action = "Edit";
-            ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
-            ViewBag.Company = context.Companies.ToList();
-            var transaction = context.TransactionRecordKbaek7943s.Find(id);
-            return View(transaction);
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s
+                .Include(t => t.Company)
+                .Include(t => t.TransactionType)
+                .FirstOrDefaultAsync(m => m.TransactionRecordKbaek7943Id == id);
+            if (transactionRecordKbaek7943 == null)
+            {
+                return NotFound();
+            }
+
+            return View(transactionRecordKbaek7943);
         }
+
+        // GET: Transaction/Create
+        public IActionResult Create()
+        {
+            //ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name");
+            //ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId");
+            
+            ViewBag.TransactionTypes = _context.TransactionTypes.ToList();
+            ViewBag.Companies = _context.Companies.ToList();
+            return View();
+        }
+
+        // POST: Transaction/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("TransactionRecordKbaek7943Id,Quantity,SharePrice,TransactionTypeId,CompanyId")] TransactionRecordKbaek7943 transactionRecordKbaek7943)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(transactionRecordKbaek7943);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name", transactionRecordKbaek7943.CompanyId);
+        //    ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
+        //    return View(transactionRecordKbaek7943);
+        //}
 
         // handles post request from the add or edit page
         // based on whether there is an ID attached
         [HttpPost]
-        public IActionResult Edit(TransactionRecordKbaek7943 transaction)
+        public IActionResult Create(TransactionRecordKbaek7943 transaction)
         {
             if (ModelState.IsValid)
             {
-                if (transaction.TransactionRecordKbaek7943Id == 0)
-                {
-                    context.TransactionRecordKbaek7943s.Add(transaction);
-                }
-                else
-                {
-                    context.TransactionRecordKbaek7943s.Update(transaction);
-                }
-                context.SaveChanges(); // commit
+                _context.Add(transaction);
+                _context.SaveChanges(); // commit
                 TempData["message"] = "Save Successful";
                 return RedirectToAction("Index", "Home");
             }
-            else
-            {
-                ViewBag.Action = (transaction.TransactionRecordKbaek7943Id == 0) ? "Add" : "Edit";
-                ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
-                TempData["message"] = "Save Failed";
-                return View(transaction);
-            }
-        }
-
-        // shows delete page with a confirm message
-        [HttpGet]
-        public IActionResult Delete(int id)
-        {
-            var transaction = context.TransactionRecordKbaek7943s.Find(id);
+            TempData["message"] = "Save Failed";
             return View(transaction);
         }
 
-        // deletes the data selected and show the main page with 
-        // chosen data deleted
-        [HttpPost]
-        public IActionResult Delete(TransactionRecordKbaek7943 transaction)
+        // GET: Transaction/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            context.TransactionRecordKbaek7943s.Remove(transaction);
-            context.SaveChanges();
-            TempData["message"] = "Delete Successful";
-            return RedirectToAction("Index", "Home");
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s.FindAsync(id);
+            if (transactionRecordKbaek7943 == null)
+            {
+                return NotFound();
+            }
+            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name", transactionRecordKbaek7943.CompanyId);
+            ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
+            return View(transactionRecordKbaek7943);
         }
-        #endregion
+
+        // POST: Transaction/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("TransactionRecordKbaek7943Id,Quantity,SharePrice,TransactionTypeId,CompanyId")] TransactionRecordKbaek7943 transactionRecordKbaek7943)
+        {
+            if (id != transactionRecordKbaek7943.TransactionRecordKbaek7943Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(transactionRecordKbaek7943);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TransactionRecordKbaek7943Exists(transactionRecordKbaek7943.TransactionRecordKbaek7943Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name", transactionRecordKbaek7943.CompanyId);
+            ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
+            return View(transactionRecordKbaek7943);
+        }
+
+        // GET: Transaction/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s
+                .Include(t => t.Company)
+                .Include(t => t.TransactionType)
+                .FirstOrDefaultAsync(m => m.TransactionRecordKbaek7943Id == id);
+            if (transactionRecordKbaek7943 == null)
+            {
+                return NotFound();
+            }
+
+            return View(transactionRecordKbaek7943);
+        }
+
+        // POST: Transaction/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s.FindAsync(id);
+            _context.TransactionRecordKbaek7943s.Remove(transactionRecordKbaek7943);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool TransactionRecordKbaek7943Exists(int id)
+        {
+            return _context.TransactionRecordKbaek7943s.Any(e => e.TransactionRecordKbaek7943Id == id);
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace A2_TransactionRecord.Models
         [ForeignKey("TransactionTypeId")]
         public string TransactionTypeId { get; set; }
 
-        public TransactionType TrasactionType { get; set; }
+        public TransactionType TransactionType { get; set; }
 
         [ForeignKey("CompanyId")]
         public int CompanyId { get; set; }
@@ -64,12 +64,12 @@ namespace A2_TransactionRecord.Models
         {
             if (TransactionTypeId.Equals("Buy"))
             {
-                double? calculatedValue = (Quantity * SharePrice) + TrasactionType.Commission;
+                double? calculatedValue = (Quantity * SharePrice) + TransactionType.Commission;
                 return String.Format("({0:n2})", calculatedValue);
             }
             else
             {
-                double? calculatedValue = (Quantity * SharePrice) - TrasactionType.Commission;
+                double? calculatedValue = (Quantity * SharePrice) - TransactionType.Commission;
                 return String.Format("{0:n2}", calculatedValue);
             }
         }

@@ -27,7 +27,7 @@ namespace A2_TransactionRecord.Controllers
             if (order == "ascending")
             {
                 var transactions = context.TransactionRecordKbaek7943s
-                .Include(t => t.TrasactionType)
+                .Include(t => t.TransactionType)
                 .Include(t => t.Company)
                 .OrderBy(t => t.Company.Name)
                 .ToList();
@@ -38,7 +38,7 @@ namespace A2_TransactionRecord.Controllers
             else
             {
                 var transactions = context.TransactionRecordKbaek7943s
-                .Include(t => t.TrasactionType)
+                .Include(t => t.TransactionType)
                 .Include(t => t.Company)
                 .OrderByDescending(t => t.Company.Name)
                 .ToList();

@@ -5,7 +5,7 @@
 <h1 class="jumbotron">@ViewData["Title"]</h1>
 
 <h2>My Transactions</h2>
-<a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
+<a asp-controller="Transaction" asp-action="Create">Add New Transaction</a>
 
 <!-- table start -->
 <table class="table table-bordered table-striped">
@@ -39,7 +39,7 @@
                 <td>@i.Company.Name</td>
                 <td>@i.Quantity</td>
                 <td>$@i.SharePrice</td>
-                <td>$@i.TrasactionType.Commission</td>
+                <td>$@i.TransactionType.Commission</td>
                 <td>$@i.CalculateGrossValue()</td>
                 <td>$@i.CalculateNetValue()</td>
                 <td class="text-nowrap">
