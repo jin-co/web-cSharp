@@ -7156,11 +7156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A2_TransactionRecord\\A2_TransactionRecord.csproj",
+      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord_T_C_Error\\A2_TransactionRecord\\A2_TransactionRecord.csproj",
       "projectName": "A2_TransactionRecord",
-      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A2_TransactionRecord\\A2_TransactionRecord.csproj",
+      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord_T_C_Error\\A2_TransactionRecord\\A2_TransactionRecord.csproj",
       "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord\\A2_TransactionRecord\\obj\\",
+      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A2_TransactionRecord_T_C_Error\\A2_TransactionRecord\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -12,6 +12,7 @@ namespace A2_TransactionRecord.Models
     public class TransactionRecordKbaek7943
     {
         #region Properties
+        [Key]
         public int TransactionRecordKbaek7943Id { get; set; }
 
         [Required(ErrorMessage = "Please enter a quantity")]

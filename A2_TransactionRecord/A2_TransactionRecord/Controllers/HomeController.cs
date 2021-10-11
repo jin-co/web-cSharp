@@ -12,20 +12,39 @@ namespace A2_TransactionRecord.Controllers
 {
     public class HomeController : Controller
     {
+        #region  Constructor
         public HomeController(TransactionContext context)
         {
             this.context = context;
         }
+        #endregion
 
+        #region Properties
         private TransactionContext context { get; set; }
-
-        public IActionResult Index()
+        #endregion
+        public IActionResult Index(string order = "ascending")
         {
-            var transactions = context.TransactionRecordKbaek7943s
+            if (order == "ascending")
+            {
+                var transactions = context.TransactionRecordKbaek7943s
                 .Include(t => t.TrasactionType)
-                //.OrderBy(t => t.CompanyName)
+                .Include(t => t.Company)
+                .OrderBy(t => t.Company.Name)
                 .ToList();
-            return View(transactions);
+                ViewBag.Flag = "descending";
+                return View(transactions);
+            }
+
+            else
+            {
+                var transactions = context.TransactionRecordKbaek7943s
+                .Include(t => t.TrasactionType)
+                .Include(t => t.Company)
+                .OrderByDescending(t => t.Company.Name)
+                .ToList();
+                ViewBag.Flag = "ascending";
+                return View(transactions);
+            }
         }
     }
 }

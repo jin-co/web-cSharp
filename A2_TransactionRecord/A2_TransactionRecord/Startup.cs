@@ -15,7 +15,7 @@ namespace A2_TransactionRecord
 {
     /*
      * Author: Kwangjin Baek
-     * Date: 2021. Oct. 12.
+     * Date: 2021. Oct. 10.
      * Description: Transaction application that shows transaction history
      * with the functions to add, edit, or delete
      */
@@ -32,6 +32,8 @@ namespace A2_TransactionRecord
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // obtaining DB object
             services.AddDbContext<TransactionContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TransactionContext")));
         }
@@ -48,6 +50,10 @@ namespace A2_TransactionRecord
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "orderByName",
+                    pattern: "{controller}/{action}/orderBy/{order}");
+                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

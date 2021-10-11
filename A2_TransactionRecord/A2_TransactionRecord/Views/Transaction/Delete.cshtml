@@ -4,12 +4,12 @@
 }
 <h1 class="jumbotron">@ViewData["Title"]</h1>
 <h2>Confirm Deletion</h2>
-@*<h3>
+<h3>
     @Model.Quantity
     shares of
-    @Model.CompanyName (@Model.TicketSymbol) -
+    @Model.Company.Name (@Model.Company.TickerSymbol) -
     share price: $@Model.SharePrice
-</h3>*@
+</h3>
 
 <!-- form start -->
 <form asp-action="Delete" method="post">

@@ -9,6 +9,7 @@ namespace A2_TransactionRecord.Models
     public class Company
     {
         #region Properties
+        [Key]
         public int CompanyId { get; set; }
 
         [Required(ErrorMessage = "Please enter a company name")]

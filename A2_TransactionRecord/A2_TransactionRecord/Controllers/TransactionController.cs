@@ -28,6 +28,7 @@ namespace A2_TransactionRecord.Controllers
         {
             ViewBag.Action = "Add";
             ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
+            ViewBag.Company = context.Companies.ToList();
             return View("Edit", new TransactionRecordKbaek7943());
         }
 
@@ -37,6 +38,7 @@ namespace A2_TransactionRecord.Controllers
         {
             ViewBag.Action = "Edit";
             ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
+            ViewBag.Company = context.Companies.ToList();
             var transaction = context.TransactionRecordKbaek7943s.Find(id);
             return View(transaction);
         }
@@ -57,12 +59,14 @@ namespace A2_TransactionRecord.Controllers
                     context.TransactionRecordKbaek7943s.Update(transaction);
                 }
                 context.SaveChanges(); // commit
+                TempData["message"] = "Save Successful";
                 return RedirectToAction("Index", "Home");
             }
             else
             {
                 ViewBag.Action = (transaction.TransactionRecordKbaek7943Id == 0) ? "Add" : "Edit";
                 ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
+                TempData["message"] = "Save Failed";
                 return View(transaction);
             }
         }
@@ -82,6 +86,7 @@ namespace A2_TransactionRecord.Controllers
         {
             context.TransactionRecordKbaek7943s.Remove(transaction);
             context.SaveChanges();
+            TempData["message"] = "Delete Successful";
             return RedirectToAction("Index", "Home");
         }
         #endregion

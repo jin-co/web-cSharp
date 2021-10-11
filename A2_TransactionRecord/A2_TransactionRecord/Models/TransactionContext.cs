@@ -59,7 +59,7 @@ namespace A2_TransactionRecord.Models
             modelBuilder.Entity<TransactionRecordKbaek7943>().HasData(
                 new TransactionRecordKbaek7943
                 {
-                    TransactionRecordKbaek7943Id = 1,
+                    TransactionRecordKbaek7943Id = 1,                    
                     Quantity = 100,
                     SharePrice = 123.45,
                     TransactionTypeId = "Sell",
@@ -68,7 +68,7 @@ namespace A2_TransactionRecord.Models
 
                 new TransactionRecordKbaek7943
                 {
-                    TransactionRecordKbaek7943Id = 2,
+                    TransactionRecordKbaek7943Id = 2,                    
                     Quantity = 100,
                     SharePrice = 2701.76,
                     TransactionTypeId = "Buy",
