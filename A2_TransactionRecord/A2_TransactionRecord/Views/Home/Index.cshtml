@@ -8,18 +8,11 @@
 }
 <h1 class="jumbotron">@ViewData["Title"]</h1>
 
-@*test area*@
-<div class="container border border-info p-2">
-    <h3 class="jumbotron">Test area</h3>
-    <p>@controller</p>
-    <p>@action</p>
-</div>
-
 <h2>My Transactions</h2>
 <a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
 
 <!-- table start -->
-<table class="table table-bordered table-striped table-responsive">
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>Ticker Symbol</th>
