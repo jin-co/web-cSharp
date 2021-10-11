@@ -1,5 +1,6 @@
 ﻿using A2_TransactionRecord.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace A2_TransactionRecord.Controllers
         public IActionResult Index()
         {
             var transactions = context.TransactionRecordKbaek7943s
+                .Include(t => t.TrasactionType)
                 .OrderBy(t => t.CompanyName)
                 .ToList();
             return View(transactions);

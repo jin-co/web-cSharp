@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,10 +31,48 @@ namespace A2_TransactionRecord.Models
             ErrorMessage = "Share price must be greater than 0")]
         //[Range(0, double.MaxValue)]
         public double? SharePrice { get; set; }
+
+        [ForeignKey("TransactionTypeId")]
+        [Required(ErrorMessage = "Please select a transaction type")]
+        public string TransactionTypeId { get; set; }
+
+        public TransactionType TrasactionType { get; set; }
         #endregion
 
         #region Methods
+        // Calculates Gross value using quantity and share price
+        // and returns value with or without the parenthesis 
+        // depending on the transaction type
+        public string CalculateGrossValue()
+        {
+            if (TransactionTypeId.Equals("Buy"))
+            {
+                double? calculatedValue = Quantity * SharePrice;
+                return String.Format("({0:n2})", calculatedValue);
+            }
+            else
+            {
+                double? calculatedValue = Quantity * SharePrice;
+                return String.Format("{0:n2}", calculatedValue);
+            }
+        }
 
+        // Calculates Gross value using gross value and commission
+        // and returns value with or without the parenthesis 
+        // depending on the transaction type
+        public string CalculateNetValue()
+        {
+            if (TransactionTypeId.Equals("Buy"))
+            {
+                double? calculatedValue = (Quantity * SharePrice) + TrasactionType.Commission;
+                return String.Format("({0:n2})", calculatedValue);
+            }
+            else
+            {
+                double? calculatedValue = (Quantity * SharePrice) - TrasactionType.Commission;
+                return String.Format("{0:n2}", calculatedValue);
+            }
+        }
         #endregion
     }
 }
