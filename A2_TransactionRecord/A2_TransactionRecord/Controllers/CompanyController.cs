@@ -67,12 +67,10 @@ namespace A2_TransactionRecord.Controllers
                 TempData["message"] = company.Name + " Save Successful";
                 return RedirectToAction("Index", "Company");
             }
-            else
-            {
+   
                 ViewBag.Action = (company.CompanyId == 0) ? "Add" : "Edit";
                 TempData["message"] = company.Name + " Save Failed";
                 return View(company);
-            }
         }
 
         // shows delete page with a confirm message
@@ -91,7 +89,7 @@ namespace A2_TransactionRecord.Controllers
             context.Companies.Remove(company);
             context.SaveChanges();
             TempData["message"] = company.Name + " Delete Successful";
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Company");
         }
         #endregion
     }

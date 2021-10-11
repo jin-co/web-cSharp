@@ -28,6 +28,7 @@ namespace A2_TransactionRecord.Controllers
         {
             ViewBag.Action = "Add";
             ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
+            ViewBag.Company = context.Companies.ToList();
             return View("Edit", new TransactionRecordKbaek7943());
         }
 
@@ -37,6 +38,7 @@ namespace A2_TransactionRecord.Controllers
         {
             ViewBag.Action = "Edit";
             ViewBag.TransactionTypes = context.TransactionTypes.OrderBy(t => t.Name).ToList();
+            ViewBag.Company = context.Companies.ToList();
             var transaction = context.TransactionRecordKbaek7943s.Find(id);
             return View(transaction);
         }

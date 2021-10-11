@@ -7,54 +7,52 @@
 <h2>My Transactions</h2>
 <a asp-controller="Transaction" asp-action="Add">Add New Transaction</a>
 
-<!-- toggle sort -->
-<a asp-controller="Home"
-   asp-action="Index"
-   asp-route-order="@ViewBag.Flag"
-   class="sort-toggle"
-   title="Sort alphabetically toggle on click(a - z / z - a)">
-
-    <!-- table start -->
-    <table class="table table-bordered table-striped">
-        <thead>
+<!-- table start -->
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Ticker Symbol</th>
+            <th>
+                <!-- toggle sort -->
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   asp-route-order="@ViewBag.Flag"
+                   class="sort-toggle"
+                   title="Sort alphabetically toggle on click(a - z / z - a)">
+                    CompanyName
+                </a>
+            </th>
+            <th>Quantity</th>
+            <th>Share Price</th>
+            <th>Commission Fee</th>
+            <th>Gross Value</th>
+            <th>Net Value</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- shows all the data in the transaction record database -->
+        @foreach (var i in Model)
+        {
             <tr>
-                <th>Ticker Symbol</th>
-                <th>
-                    <a>
-                        CompanyName
-                    </a>
-                </th>
-                <th>Quantity</th>
-                <th>Share Price</th>
-                <th>Commission Fee</th>
-                <th>Gross Value</th>
-                <th>Net Value</th>
-                <th>Action</th>
+                <td>@i.Company.TickerSymbol</td>
+                <td>@i.Company.Name</td>
+                <td>@i.Quantity</td>
+                <td>$@i.SharePrice</td>
+                <td>$@i.TrasactionType.Commission</td>
+                <td>$@i.CalculateGrossValue()</td>
+                <td>$@i.CalculateNetValue()</td>
+                <td class="text-nowrap">
+                    <a asp-controller="Transaction"
+                        asp-action="Edit"
+                        asp-route-id="@i.TransactionRecordKbaek7943Id">Edit</a>
+                    |
+                    <a asp-controller="Transaction"
+                        asp-action="Delete"
+                        asp-route-id="@i.TransactionRecordKbaek7943Id">Delete</a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            <!-- shows all the data in the transaction record database -->
-            @foreach (var i in Model)
-            {
-                <tr>
-                    <td>@i.Company.TickerSymbol</td>
-                    <td>@i.Company.Name</td>
-                    <td>@i.Quantity</td>
-                    <td>$@i.SharePrice</td>
-                    <td>$@i.TrasactionType.Commission</td>
-                    <td>$@i.CalculateGrossValue()</td>
-                    <td>$@i.CalculateNetValue()</td>
-                    <td class="text-nowrap">
-                        <a asp-controller="Transaction"
-                           asp-action="Edit"
-                           asp-route-id="@i.TransactionRecordKbaek7943Id">Edit</a>
-                        |
-                        <a asp-controller="Transaction"
-                           asp-action="Delete"
-                           asp-route-id="@i.TransactionRecordKbaek7943Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table><!-- /end table -->
-</a>
+        }
+    </tbody>
+</table><!-- /end table -->
+

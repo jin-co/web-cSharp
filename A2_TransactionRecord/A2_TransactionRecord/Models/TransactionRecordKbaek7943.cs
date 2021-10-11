@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,13 +12,8 @@ namespace A2_TransactionRecord.Models
     public class TransactionRecordKbaek7943
     {
         #region Properties
+        [Key]
         public int TransactionRecordKbaek7943Id { get; set; }
-
-        //[Required(ErrorMessage = "Please enter a ticket symbol.")]
-        //public string TicketSymbol { get; set; }
-
-        //[Required(ErrorMessage = "Please enter a company name")]
-        //public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Please enter a quantity")]
         [RegularExpression("^(?=.*[1-9])[0-9]*[.,]?[0-9]{1,2}$",
@@ -31,17 +27,16 @@ namespace A2_TransactionRecord.Models
         //[Range(0, double.MaxValue)]
         public double? SharePrice { get; set; }
 
-        public TransactionType TrasactionType { get; set; }
-
-        public Company Company { get; set; }
-
-        #region Foreign Keys
         [Required(ErrorMessage = "Please select a transaction type")]
+        [ForeignKey("TransactionTypeId")]
         public string TransactionTypeId { get; set; }
 
-        public int CompanyId { get; set; }
-        #endregion
+        public TransactionType TrasactionType { get; set; }
 
+        [ForeignKey("CompanyId")]
+        public int CompanyId { get; set; }
+
+        public Company Company { get; set; }
         #endregion
 
         #region Methods
