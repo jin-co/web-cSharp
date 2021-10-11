@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\A2_TransactionRecord",
+    "\\A2_TransactionRecord\\Models"
   ],
-  "SelectedNode": "\\A2_TransactionRecord.sln",
+  "SelectedNode": "\\A2_TransactionRecord\\Models\\Company.cs",
   "PreviewInSolutionExplorer": false
 }
