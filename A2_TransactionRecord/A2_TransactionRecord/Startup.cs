@@ -1,6 +1,8 @@
+using A2_TransactionRecord.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +13,12 @@ using System.Threading.Tasks;
 
 namespace A2_TransactionRecord
 {
+    /*
+     * Author: Kwangjin Baek
+     * Date: 2021. Oct. 12.
+     * Description: Transaction application that shows transaction history
+     * with the functions to add, edit, or delete
+     */
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -24,6 +32,8 @@ namespace A2_TransactionRecord
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<TransactionContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("TransactionContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
