@@ -1,52 +1,47 @@
-﻿@model List<Company>
+﻿@model IEnumerable<A2_TransactionRecord.Models.Company>
+
 @{
-    ViewData["Title"] = "Companies";
+    ViewData["Title"] = "Index";
 }
 
-<h1 class="jumbotron">
-    @ViewData["Title"]
-</h1>
+<h1>Index</h1>
 
-<h2>Company List</h2>
-<a asp-controller="Company" asp-action="Add">Add New Company</a>
-<table class="table table-bordered table-striped">
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Ticker Symbol</th>
-            <th>Action</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TickerSymbol)
+            </th>
+            <th></th>
         </tr>
     </thead>
-
     <tbody>
-        @foreach (var i in Model)
-        {
-            <tr>
-                <td>@i.Name</td>
-                <td>@i.Address</td>
-                <td>@i.TickerSymbol</td>
-                <td>
-                    <a asp-controller="Home"
-                       asp-action="Index">
-                        Transactions
-                    </a>
-                    |
-                    <a asp-action="Edit"
-                       asp-route-id="@i.CompanyId">
-                        Edit
-                    </a>
-                    |
-                    <a asp-action="Delete"
-                       asp-route-id="@i.CompanyId">
-                        Delete
-                    </a>
-                    |
-                    <a asp-action="Index">
-                        Details
-                    </a>
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TickerSymbol)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CompanyId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CompanyId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CompanyId">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>
