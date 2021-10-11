@@ -1,0 +1,52 @@
+﻿@model List<Company>
+@{
+    ViewData["Title"] = "Companies";
+}
+
+<h1 class="jumbotron">
+    @ViewData["Title"]
+</h1>
+
+<h2>Company List</h2>
+<a asp-controller="Company" asp-action="Add">Add New Company</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Ticker Symbol</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Name</td>
+                <td>@i.Address</td>
+                <td>@i.TickerSymbol</td>
+                <td>
+                    <a asp-controller="Home"
+                       asp-action="Index">
+                        Transactions
+                    </a>
+                    |
+                    <a asp-action="Edit"
+                       asp-route-id="@i.CompanyId">
+                        Edit
+                    </a>
+                    |
+                    <a asp-action="Delete"
+                       asp-route-id="@i.CompanyId">
+                        Delete
+                    </a>
+                    |
+                    <a asp-action="Index">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
