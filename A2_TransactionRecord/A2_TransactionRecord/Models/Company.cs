@@ -12,10 +12,13 @@ namespace A2_TransactionRecord.Models
         [Key]
         public int CompanyId { get; set; }
         
+        [Required(ErrorMessage ="Please enter a company name")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Please enter an address")]
         public string Address { get; set; }
 
+        [Required(ErrorMessage = "Please enter a ticker symbol")]
         public string TickerSymbol { get; set; }
         #endregion
     }
