@@ -66,9 +66,10 @@ namespace A2_TransactionRecord.Controllers
         // GET: Transaction/Create
         public IActionResult Create()
         {
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId");
-            ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId");
+            //ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId");
+            //ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId");
             ViewBag.Company = _context.Companies.ToList();
+            ViewBag.TransactionType = _context.TransactionTypes.ToList();
             return View();
         }
 

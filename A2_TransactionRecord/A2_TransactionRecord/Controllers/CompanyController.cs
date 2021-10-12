@@ -53,13 +53,14 @@ namespace A2_TransactionRecord.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CompanyId,Name,Address,TickerSymbol")] Company company)
+        public async Task<IActionResult> Create(
+            [Bind("CompanyId,Name,Address,TickerSymbol")] Company company)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(company);
                 await _context.SaveChangesAsync();
-                TempData["success"] = company.Name + " Save Successful";
+                TempData["success"] = company.Name + " has been added";
                 return RedirectToAction(nameof(Index));
             }
             TempData["fail"] = company.Name + " Save Failed";
@@ -87,7 +88,9 @@ namespace A2_TransactionRecord.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CompanyId,Name,Address,TickerSymbol")] Company company)
+        public async Task<IActionResult> Edit(
+            int id, 
+            [Bind("CompanyId,Name,Address,TickerSymbol")] Company company)
         {
             if (id != company.CompanyId)
             {
@@ -112,7 +115,7 @@ namespace A2_TransactionRecord.Controllers
                         throw;
                     }
                 }
-                TempData["success"] = company.Name + " Edit Successful";
+                TempData["success"] = company.Name + " has been edited";
                 return RedirectToAction(nameof(Index));
             }
             TempData["fail"] = company.Name + " Edit Failed";
@@ -145,7 +148,7 @@ namespace A2_TransactionRecord.Controllers
             var company = await _context.Companies.FindAsync(id);
             _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
-            TempData["success"] = company.Name + " Delete Successful";
+            TempData["success"] = company.Name + " has been deleted";
             return RedirectToAction(nameof(Index));
         }
 
