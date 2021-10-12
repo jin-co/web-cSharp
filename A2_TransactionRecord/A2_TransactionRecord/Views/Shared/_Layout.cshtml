@@ -17,6 +17,8 @@
 }
 <body>
     <header>
+        @*test*@
+        <p>@controller  @action</p>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand"
@@ -32,36 +34,35 @@
 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item
-                            @(controller == "Home" && action == "Index" ? "active" : "")">
-                            <a class="nav-link text-dark"
+                        <li class="nav-item">
+                            <a class="nav-link text-dark
+                               @(controller == "Home" && action == "Index" ? "active" : "")"
                                asp-controller="Home"
                                asp-action="Index">
                                 Home
                             </a>
                         </li>
 
-                        <li class="nav-item
-                            @(controller == "Home" && action == "Index" ? "active" : "")">
-                            <a class="nav-link text-dark"
+                        <li class="nav-item">
+                            <a class="nav-link text-dark
+                               @(controller == "Transaction" && action == "Create" ? "active" : "")"
                                asp-controller="Transaction"
                                asp-action="Create">
                                 Add Transaction
                             </a>
                         </li>
 
-                        <li class="nav-item
-                            @(controller == "Home" && action == "Index" ? "active" : "")">
-                            <a class="nav-link text-dark"
+                        <li class="nav-item">
+                            <a class="nav-link text-dark
                                asp-controller="Home"
                                asp-action="Index">
                                 Transactions
                             </a>
                         </li>
 
-                        <li class="nav-item
-                            @(controller == "Home" && action == "Index" ? "active" : "")">
-                            <a class="nav-link text-dark"
+                        <li class="nav-item">
+                            <a class="nav-link text-dark
+                               @(controller == "Company" && action == "Index" ? "active" : "")"
                                asp-controller="Company"
                                asp-action="Index">
                                 Companies
