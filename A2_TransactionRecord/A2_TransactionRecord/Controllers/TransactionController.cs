@@ -21,7 +21,18 @@ namespace A2_TransactionRecord.Controllers
         // GET: Transaction
         public async Task<IActionResult> Index()
         {
-            var transactionContext = _context.TransactionRecordKbaek7943s.Include(t => t.Company).Include(t => t.TransactionType);
+            var transactionContext = _context.TransactionRecordKbaek7943s
+                .Include(t => t.Company)
+                .Include(t => t.TransactionType);
+            return View(await transactionContext.ToListAsync());
+        }
+
+        // GET: Transaction
+        public async Task<IActionResult> CompanyTransaction(int id)
+        {
+            var transactionContext = _context.TransactionRecordKbaek7943s
+                .Include(t => t.Company)
+                .Include(t => t.TransactionType);
             return View(await transactionContext.ToListAsync());
         }
 

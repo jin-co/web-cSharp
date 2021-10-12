@@ -40,7 +40,7 @@
                     @Html.DisplayFor(modelItem => item.TickerSymbol)
                 </td>
                 <td>
-                    <a asp-action="" asp-route-id="@item.CompanyId">Transactions</a> |
+                    <a asp-controller="Transaction" asp-action="CompanyTransaction" asp-route-id="@item.CompanyId">Transactions</a> |
                     <a asp-action="Edit" asp-route-id="@item.CompanyId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.CompanyId">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.CompanyId">Delete</a>
