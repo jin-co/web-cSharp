@@ -59,8 +59,10 @@ namespace A2_TransactionRecord.Controllers
             {
                 _context.Add(company);
                 await _context.SaveChangesAsync();
+                TempData["success"] = company.Name + " Save Successful";
                 return RedirectToAction(nameof(Index));
             }
+            TempData["fail"] = company.Name + " Save Failed";
             return View(company);
         }
 
@@ -110,8 +112,10 @@ namespace A2_TransactionRecord.Controllers
                         throw;
                     }
                 }
+                TempData["success"] = company.Name + " Edit Successful";
                 return RedirectToAction(nameof(Index));
             }
+            TempData["fail"] = company.Name + " Edit Failed";
             return View(company);
         }
 
@@ -141,6 +145,7 @@ namespace A2_TransactionRecord.Controllers
             var company = await _context.Companies.FindAsync(id);
             _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
+            TempData["success"] = company.Name + " Delete Successful";
             return RedirectToAction(nameof(Index));
         }
 

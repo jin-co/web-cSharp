@@ -49,7 +49,7 @@ namespace A2_TransactionRecord.Controllers
         public IActionResult Create()
         {
             ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId");
-            ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId");
+            ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId");            
             return View();
         }
 
@@ -64,10 +64,12 @@ namespace A2_TransactionRecord.Controllers
             {
                 _context.Add(transactionRecordKbaek7943);
                 await _context.SaveChangesAsync();
+                TempData["success"] = transactionRecordKbaek7943.Company + " Save Successful";                
                 return RedirectToAction(nameof(Index), "Home");
             }
             ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
+            TempData["fail"] = transactionRecordKbaek7943.Company + " Save Failed";
             return View(transactionRecordKbaek7943);
         }
 
@@ -119,10 +121,12 @@ namespace A2_TransactionRecord.Controllers
                         throw;
                     }
                 }
+                TempData["success"] = transactionRecordKbaek7943.Company + " Edit Successful";
                 return RedirectToAction(nameof(Index), "Home");
             }
             ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
+            TempData["fail"] = transactionRecordKbaek7943.Company + " Edit Failed";
             return View(transactionRecordKbaek7943);
         }
 
@@ -154,6 +158,7 @@ namespace A2_TransactionRecord.Controllers
             var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s.FindAsync(id);
             _context.TransactionRecordKbaek7943s.Remove(transactionRecordKbaek7943);
             await _context.SaveChangesAsync();
+            TempData["success"] = transactionRecordKbaek7943.Company + " Delete Successful";
             return RedirectToAction(nameof(Index), "Home");
         }
 
