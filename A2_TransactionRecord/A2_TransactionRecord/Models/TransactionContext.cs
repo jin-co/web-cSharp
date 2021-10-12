@@ -8,6 +8,7 @@ namespace A2_TransactionRecord.Models
 {
     public class TransactionContext : DbContext
     {
+        // This class handles DB creating
         public TransactionContext(
             DbContextOptions<TransactionContext> options) : base(options)
         { }

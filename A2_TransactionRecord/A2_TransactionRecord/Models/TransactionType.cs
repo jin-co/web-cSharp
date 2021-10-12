@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace A2_TransactionRecord.Models
 {
+    // Transaction type class that stores the information
+    // about transaction type record
     public class TransactionType
     {
         #region Properties

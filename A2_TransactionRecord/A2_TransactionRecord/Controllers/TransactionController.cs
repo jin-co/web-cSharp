@@ -66,19 +66,16 @@ namespace A2_TransactionRecord.Controllers
         // GET: Transaction/Create
         public IActionResult Create()
         {
-            //ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId");
-            //ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId");
             ViewBag.Company = _context.Companies.ToList();
             ViewBag.TransactionType = _context.TransactionTypes.ToList();
             return View();
         }
 
         // POST: Transaction/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TransactionRecordKbaek7943Id,Quantity,SharePrice,TransactionTypeId,CompanyId")] TransactionRecordKbaek7943 transactionRecordKbaek7943)
+        public async Task<IActionResult> Create(
+            [Bind("TransactionRecordKbaek7943Id,Quantity,SharePrice,TransactionTypeId,CompanyId")] TransactionRecordKbaek7943 transactionRecordKbaek7943)
         {
             if (ModelState.IsValid)
             {
@@ -114,11 +111,11 @@ namespace A2_TransactionRecord.Controllers
         }
 
         // POST: Transaction/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TransactionRecordKbaek7943Id,Quantity,SharePrice,TransactionTypeId,CompanyId")] TransactionRecordKbaek7943 transactionRecordKbaek7943)
+        public async Task<IActionResult> Edit(
+            int id, 
+            [Bind("TransactionRecordKbaek7943Id,Quantity,SharePrice,TransactionTypeId,CompanyId")] TransactionRecordKbaek7943 transactionRecordKbaek7943)
         {
             if (id != transactionRecordKbaek7943.TransactionRecordKbaek7943Id)
             {

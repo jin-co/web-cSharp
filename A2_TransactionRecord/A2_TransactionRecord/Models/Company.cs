@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace A2_TransactionRecord.Models
 {
+    // Company class that stores the information
+    // about company record
     public class Company
     {
         #region Properties

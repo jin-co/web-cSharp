@@ -9,6 +9,7 @@ using A2_TransactionRecord.Models;
 
 namespace A2_TransactionRecord.Controllers
 {
+    // Controller that handles calls for the company class
     public class CompanyController : Controller
     {
         private readonly TransactionContext _context;
@@ -24,7 +25,7 @@ namespace A2_TransactionRecord.Controllers
             return View(await _context.Companies.ToListAsync());
         }
 
-        // GET: Company/Details/5
+        // GET: Company/Details/id
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,8 +50,6 @@ namespace A2_TransactionRecord.Controllers
         }
 
         // POST: Company/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(
@@ -67,7 +66,7 @@ namespace A2_TransactionRecord.Controllers
             return View(company);
         }
 
-        // GET: Company/Edit/5
+        // GET: Company/Edit/id
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,9 +82,7 @@ namespace A2_TransactionRecord.Controllers
             return View(company);
         }
 
-        // POST: Company/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Company/Edit/id
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(
@@ -122,7 +119,7 @@ namespace A2_TransactionRecord.Controllers
             return View(company);
         }
 
-        // GET: Company/Delete/5
+        // GET: Company/Delete/id
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -140,7 +137,7 @@ namespace A2_TransactionRecord.Controllers
             return View(company);
         }
 
-        // POST: Company/Delete/5
+        // POST: Company/Delete/id
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

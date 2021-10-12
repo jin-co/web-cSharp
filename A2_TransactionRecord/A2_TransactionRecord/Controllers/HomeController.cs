@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace A2_TransactionRecord.Controllers
 {
+    // Controller that handles calls for the main page
     public class HomeController : Controller
     {
         #region  Constructor
