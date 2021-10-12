@@ -48,11 +48,8 @@ namespace A2_TransactionRecord.Controllers
         // GET: Transaction/Create
         public IActionResult Create()
         {
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name");
+            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId");
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId");
-
-            //ViewBag.TransactionTypes = _context.TransactionTypes.ToList();
-            //ViewBag.Companies = _context.Companies.ToList();
             return View();
         }
 
@@ -69,26 +66,10 @@ namespace A2_TransactionRecord.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name", transactionRecordKbaek7943.CompanyId);
+            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
             return View(transactionRecordKbaek7943);
         }
-
-        // handles post request from the add or edit page
-        // based on whether there is an ID attached
-        //[HttpPost]
-        //public IActionResult Create(TransactionRecordKbaek7943 transaction)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(transaction);
-        //        _context.SaveChanges(); // commit
-        //        TempData["message"] = "Save Successful";
-        //        return RedirectToAction("Index", "Home");
-        //    }
-        //    TempData["message"] = "Save Failed";
-        //    return View(transaction);
-        //}
 
         // GET: Transaction/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -103,7 +84,7 @@ namespace A2_TransactionRecord.Controllers
             {
                 return NotFound();
             }
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name", transactionRecordKbaek7943.CompanyId);
+            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
             return View(transactionRecordKbaek7943);
         }
@@ -138,12 +119,11 @@ namespace A2_TransactionRecord.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index), "Home");
+                return RedirectToAction(nameof(Index));
             }
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "Name", transactionRecordKbaek7943.CompanyId);
+            ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
-            //return Redirect("Home/Index");
-            return View("Home/Index",transactionRecordKbaek7943);
+            return View(transactionRecordKbaek7943);
         }
 
         // GET: Transaction/Delete/5
@@ -174,7 +154,7 @@ namespace A2_TransactionRecord.Controllers
             var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s.FindAsync(id);
             _context.TransactionRecordKbaek7943s.Remove(transactionRecordKbaek7943);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index), "Home");
+            return RedirectToAction(nameof(Index));
         }
 
         private bool TransactionRecordKbaek7943Exists(int id)
