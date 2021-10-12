@@ -99,10 +99,12 @@ namespace A2_TransactionRecord.Controllers
                 return NotFound();
             }
 
-            var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s.FindAsync(id);
+            var transactionRecordKbaek7943 = 
+                await _context.TransactionRecordKbaek7943s.FindAsync(id);
             if (transactionRecordKbaek7943 == null)
             {
                 return NotFound();
+                TempData["fail"] = transactionRecordKbaek7943.Company + " ID doesn't exist";
             }
             ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
