@@ -30,9 +30,16 @@ namespace A2_TransactionRecord.Controllers
         // GET: Transaction
         public async Task<IActionResult> CompanyTransaction(int id)
         {
+            Company company = _context.Companies
+                .Where(w => w.CompanyId == id).FirstOrDefault();
+
+            ViewBag.CompanyName = company.Name;
+            ViewBag.TickerSymbol = company.TickerSymbol;
+            
             var transactionContext = _context.TransactionRecordKbaek7943s
                 .Include(t => t.Company)
-                .Include(t => t.TransactionType);
+                .Include(t => t.TransactionType)
+                .Where(w => w.CompanyId == id);
             return View(await transactionContext.ToListAsync());
         }
 
