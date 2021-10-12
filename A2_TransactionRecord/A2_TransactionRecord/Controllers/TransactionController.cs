@@ -64,7 +64,7 @@ namespace A2_TransactionRecord.Controllers
             {
                 _context.Add(transactionRecordKbaek7943);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), "Home");
             }
             ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
@@ -119,7 +119,7 @@ namespace A2_TransactionRecord.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), "Home");
             }
             ViewData["CompanyId"] = new SelectList(_context.Companies, "CompanyId", "CompanyId", transactionRecordKbaek7943.CompanyId);
             ViewData["TransactionTypeId"] = new SelectList(_context.TransactionTypes, "TransactionTypeId", "TransactionTypeId", transactionRecordKbaek7943.TransactionTypeId);
@@ -154,7 +154,7 @@ namespace A2_TransactionRecord.Controllers
             var transactionRecordKbaek7943 = await _context.TransactionRecordKbaek7943s.FindAsync(id);
             _context.TransactionRecordKbaek7943s.Remove(transactionRecordKbaek7943);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), "Home");
         }
 
         private bool TransactionRecordKbaek7943Exists(int id)
