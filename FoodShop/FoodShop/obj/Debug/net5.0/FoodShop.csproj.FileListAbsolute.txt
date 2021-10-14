@@ -38,3 +38,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\FoodShop\FoodShop\obj\Debug\net5.0\ref\
 C:\Users\jin\Documents\GitHub\web-cSharp\FoodShop\FoodShop\obj\Debug\net5.0\FoodShop.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\FoodShop\FoodShop\obj\Debug\net5.0\FoodShop.genruntimeconfig.cache
 C:\Users\jin\Documents\GitHub\web-cSharp\FoodShop\FoodShop\obj\Debug\net5.0\FoodShop.csproj.CopyComplete
+C:\Users\jin\Documents\GitHub\web-cSharp\FoodShop\FoodShop\bin\Debug\net5.0\libman.json
