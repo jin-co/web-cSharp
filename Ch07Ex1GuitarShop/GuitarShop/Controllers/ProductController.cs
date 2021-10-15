@@ -37,7 +37,6 @@ namespace GuitarShop.Controllers
                     .Where(a => a.Category.Name == "Guitars" 
                     || a.Category.Name == "Basses")
                     .OrderBy(p => p.ProductID).ToList();
-
             }
             else
             {
