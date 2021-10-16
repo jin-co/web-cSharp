@@ -20,7 +20,7 @@ namespace HeartRateApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            //services.AddControllersWithViews();
 
             /* required to make use of Session(by default it is not enabled)
              * must be added before calling the 'services.AddControllersWithViews()'
@@ -34,6 +34,10 @@ namespace HeartRateApp
             //    options.Cookie.HttpOnly = false;
             //    options.Cookie.IsEssential = true;
             //});
+
+            // allowing seeiong to use json(default is either int or string)
+            // for this to work install 'Microsoft.AspNetCore.Mvc'.NewtonsoftJson'
+            services.AddControllersWithViews().AddNewtonsoftJson();
 
 
             // Add Sql server support:

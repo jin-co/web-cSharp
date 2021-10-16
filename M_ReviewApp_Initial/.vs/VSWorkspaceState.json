@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\HeartRateApp_Initial"
+    "\\HeartRateApp_Initial",
+    "\\HeartRateApp_Initial\\HeartRateApp",
+    "\\HeartRateApp_Initial\\HeartRateApp\\Views",
+    "\\HeartRateApp_Initial\\HeartRateApp\\Views\\Shared"
   ],
-  "SelectedNode": "\\HeartRateApp_Initial\\heart-rate-app.sln",
+  "SelectedNode": "\\HeartRateApp_Initial\\HeartRateApp\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
