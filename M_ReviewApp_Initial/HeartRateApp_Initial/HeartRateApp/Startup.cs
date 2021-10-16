@@ -22,6 +22,20 @@ namespace HeartRateApp
         {
             services.AddControllersWithViews();
 
+            /* required to make use of Session(by default it is not enabled)
+             * must be added before calling the 'services.AddControllersWithViews()'
+             */
+            services.AddMemoryCache();
+            services.AddSession();
+            /* session with options */
+            //services.AddSession(options =>
+            //{
+            //    options.IdleTimeout = TimeSpan.FromSeconds(60 * 5);
+            //    options.Cookie.HttpOnly = false;
+            //    options.Cookie.IsEssential = true;
+            //});
+
+
             // Add Sql server support:
             services.AddDbContext<HeartRateDbContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("HeartRateDbContext")));
@@ -36,6 +50,10 @@ namespace HeartRateApp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // to specify to the middle ware of using session state
+            // Needs to be called before configuring endpoint below
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

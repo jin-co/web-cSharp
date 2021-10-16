@@ -440,3 +440,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\M_ReviewApp_Initial\HeartRateApp_Initia
 C:\Users\jin\Documents\GitHub\web-cSharp\M_ReviewApp_Initial\HeartRateApp_Initial\HeartRateApp\obj\Debug\net5.0\ref\HeartRateApp.dll
 C:\Users\jin\Documents\GitHub\web-cSharp\M_ReviewApp_Initial\HeartRateApp_Initial\HeartRateApp\obj\Debug\net5.0\HeartRateApp.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\M_ReviewApp_Initial\HeartRateApp_Initial\HeartRateApp\obj\Debug\net5.0\HeartRateApp.genruntimeconfig.cache
+C:\Users\jin\Documents\GitHub\web-cSharp\M_ReviewApp_Initial\HeartRateApp_Initial\HeartRateApp\obj\Debug\net5.0\Razor\Views\SessionTest\Index.cshtml.g.cs

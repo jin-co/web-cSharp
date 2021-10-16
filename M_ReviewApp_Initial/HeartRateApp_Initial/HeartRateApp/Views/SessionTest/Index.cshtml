@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNetCore.Http
+@{ 
+    int num = (int)Context.Session.GetInt32("num");
+}
+
+<p>
+    @Context.Session.GetInt32("num");
+</p>

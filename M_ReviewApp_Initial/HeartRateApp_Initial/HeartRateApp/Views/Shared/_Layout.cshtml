@@ -34,7 +34,7 @@
         @RenderBody()
     </div>
     <footer class="card-footer bg-light fixed-bottom">
-        @if (ViewData.Keys.Contains("WelcomeMessage")
+        @if (ViewData.Keys.Contains("WelcomeMessage"))
         {
             @ViewData["WelcomeMessage"]
         }
