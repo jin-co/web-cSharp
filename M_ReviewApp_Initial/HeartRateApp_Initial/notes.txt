@@ -1,0 +1,10 @@
+https://www.heart.org/en/healthy-living/fitness/fitness-basics/target-heart-rates
+
+<!-- for dismissible "last action messages" see chapter 3 for mre but... -->
+<div class="alert alert-success alert-dismissible">
+                <button class="close" data-dismiss="alert">&times;</button>
+   Your message content goes here!!
+</div>
+
+
+Note this also requires bootstrap's JavaScript code if you want it to be dismissable

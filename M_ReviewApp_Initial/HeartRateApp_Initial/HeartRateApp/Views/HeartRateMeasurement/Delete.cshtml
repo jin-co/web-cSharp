@@ -1,0 +1,13 @@
+﻿@model HeartRateMeasurement
+@{
+    ViewData["Title"] = "Delete Heart Rate Measurement";
+}
+
+<h2>Confirm Delete</h2>
+<h3>@Model.BPMValue (taken on @Model.MeasurementDate)</h3>
+
+<form asp-controller="HeartRateMeasurement" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="@Model.HeartRateMeasurementId" />
+    <input type="submit" class="btn btn-primary" value="Delete" />
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
