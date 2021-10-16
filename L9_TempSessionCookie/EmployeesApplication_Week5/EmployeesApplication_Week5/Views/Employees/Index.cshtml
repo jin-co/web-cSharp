@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EmployeesApplication_Week5.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Employee List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <!-- By passing an additional dynamic segment to the routing link below, we can pass a sort order
+                    to use as a way to reorder the employee entries in the table by flipping between the sort order
+                    "SortByAsc" or "SortByDesc" accordingly every time the page is reloaded with the use of a viewbag. -->
+                <a asp-controller="Employees" asp-action="Index" asp-route-sortOrder="@(ViewBag.SortOrder)">
+                    @Html.DisplayNameFor(model => model.Company.Name)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                Role
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

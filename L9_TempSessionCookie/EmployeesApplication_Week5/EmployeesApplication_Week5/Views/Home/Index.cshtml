@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <!-- Demonstrating the use of a cookie (name: newUser) which keeps track of whether the cookie was added
+        to the collection upon viewing this page. If the cookie was created when the user visits the Index page
+        on the Employees controller, then we display "Welcome back {name}!", otherwise, we display the generic
+        message of "Welcome to our site!". -->
+    @{ if (Context.Request.Cookies["newUser"] != null)
+        {
+            <h1 class="display-4">Welcome back @(Context.Request.Cookies["newUser"])!</h1>
+        }
+        else
+        {
+            <h1 class="display-4">Welcome to our site!</h1>
+        }
+    }
+
+    <a asp-controller="Employees" asp-action="Index" class="btn btn-primary">View List of Employees</a>
+</div>
