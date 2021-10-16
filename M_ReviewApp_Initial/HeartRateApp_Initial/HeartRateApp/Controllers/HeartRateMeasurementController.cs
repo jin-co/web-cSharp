@@ -80,14 +80,25 @@ namespace HeartRateApp.Controllers
             return View(hrMsmt);
         }
 
-        [HttpPost]
-        public IActionResult Delete(HeartRateMeasurement hrMsmt)
+        //[HttpPost("/[Controller]")]
+        [HttpPost("/HeartRateMeasurement/Delete/{id}")]
+        public IActionResult DeleteById(int id)
         {
+            //if (hrMsmt != null)
+            //{
+            //    _heartRateDbContext.HeartRateMeasurements.Remove(hrMsmt);
+            //    _heartRateDbContext.SaveChanges();
+            //}
+
+            var hrMsmt = _heartRateDbContext.HeartRateMeasurements.Find(id);
+
             if (hrMsmt != null)
             {
                 _heartRateDbContext.HeartRateMeasurements.Remove(hrMsmt);
                 _heartRateDbContext.SaveChanges();
-            }          
+            }
+
+            TempData["LastActionMessage"] = $"Measurement {hrMsmt.BPMValue} has been deleted.";
 
             return RedirectToAction("Index", "Home");
         }
