@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using HeartRateApp.Models;
+using System;
 
 namespace HeartRateApp.Controllers
 {
@@ -28,6 +29,10 @@ namespace HeartRateApp.Controllers
                 // since valid hr msmt add to DB and redirect back to all msmt view:
                 _heartRateDbContext.HeartRateMeasurements.Add(heartRateMeasurement);
                 _heartRateDbContext.SaveChanges();
+
+                // tempData
+                TempData["LastActionMessage"] = 
+                    $"Measurement {heartRateMeasurement.BPMValue} has been added.";
 
                 return RedirectToAction("Index", "Home");
             }
@@ -58,6 +63,10 @@ namespace HeartRateApp.Controllers
                 // since valid hr msmt update in the DB and redirect back to all msmt view:
                 _heartRateDbContext.HeartRateMeasurements.Update(heartRateMeasurement);
                 _heartRateDbContext.SaveChanges();
+
+                // tempData
+                TempData["LastActionMessage"] =
+                    $"Measurement {heartRateMeasurement.BPMValue} has been updated.";
 
                 return RedirectToAction("Index", "Home");
             }
@@ -98,7 +107,8 @@ namespace HeartRateApp.Controllers
                 _heartRateDbContext.SaveChanges();
             }
 
-            TempData["LastActionMessage"] = $"Measurement {hrMsmt.BPMValue} has been deleted.";
+            TempData["LastActionMessage"] 
+                = $"Measurement {hrMsmt.BPMValue} has been deleted. {DateTime.Now}";
 
             return RedirectToAction("Index", "Home");
         }
