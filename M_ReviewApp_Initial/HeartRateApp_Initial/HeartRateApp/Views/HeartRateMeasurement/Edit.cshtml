@@ -17,6 +17,17 @@
         <label asp-for="BPMValue">Measurement date</label>
         <input type="datetime" asp-for="MeasurementDate" class="form-control" value="@Model.MeasurementDate.ToString("d")" />
     </div>
+    
+    <div class="form-group">
+        <label asp-for="TargetHeartRateGroupId">Target Heart Rate Group</label>
+        <select asp-for="TargetHeartRateGroupId" class="form-control">
+            <option value="Place holder"></option>
+            @foreach (var i in ViewBag.THRGs)
+            {
+                <option value="@i.TargetHeartRateGroupId">@i.Age</option>
+            }
+        </select>
+    </div>
 
     <input type="hidden" asp-for="HeartRateMeasurementId" />
 

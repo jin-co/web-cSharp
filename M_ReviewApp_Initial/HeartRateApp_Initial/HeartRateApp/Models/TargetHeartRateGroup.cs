@@ -7,10 +7,10 @@ namespace HeartRateApp.Models
 {
     public class TargetHeartRateGroup
     {
-        public int TargetHeartRateGroupId { get; set; }
+        public string TargetHeartRateGroupId { get; set; }
         public int Age { get; set; }
         public int LowerEndBPMValue { get; set; }
         public int UpperEndBPMValue { get; set; }
-        public int AverageMaxBPMValue { get; set; }
+        public int AverageMaximumBPMValue { get; set; }
     }
 }

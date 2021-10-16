@@ -2,6 +2,7 @@
 
 using HeartRateApp.Models;
 using System;
+using System.Linq;
 
 namespace HeartRateApp.Controllers
 {
@@ -18,6 +19,10 @@ namespace HeartRateApp.Controllers
         public IActionResult Add()
         {
             this.ViewBag.Action = "Add";
+
+            // second table
+            ViewBag.THRGs = _heartRateDbContext.TargetHeartRateGroups.ToList();
+
             return View("Edit", new HeartRateMeasurement());
         }
 
@@ -50,6 +55,9 @@ namespace HeartRateApp.Controllers
 
             // get model from DB using the ID passed as a param (it came in the URL):
             var hrMsmt = _heartRateDbContext.HeartRateMeasurements.Find(id);
+
+            // second table
+            ViewBag.THRGs = _heartRateDbContext.TargetHeartRateGroups.ToList();
 
             // and return it to the view:
             return View(hrMsmt);

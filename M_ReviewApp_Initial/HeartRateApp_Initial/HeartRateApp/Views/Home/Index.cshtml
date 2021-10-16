@@ -11,6 +11,7 @@
     <thead>
         <tr>
             <th>BPM</th>
+            <th>Target Category</th>
             <th>Date Taken</th>
             <th>Action</th>
         </tr>
@@ -18,9 +19,11 @@
     <tbody>
         @foreach (var msmt in Model)
         {
+            var hrClass = "hr" + Regex.Replace(msmt.GetCategory(), " ", "");
             <tr>
-                <td>@msmt.BPMValue</td>
-                <td>@msmt.MeasurementDate.ToString("d")</td>
+                <td class="@hrClass">@msmt.BPMValue</td>
+                <td class="@hrClass">@msmt.GetCategory()</td>
+                <td class="@hrClass">@msmt.MeasurementDate.ToString("d")</td>
                 <td>
                     <a asp-controller="HeartRateMeasurement" asp-action="Edit" asp-route-id="@msmt.HeartRateMeasurementId">Edit</a>
                     <span class="linkSpacer">|</span>

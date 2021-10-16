@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using HeartRateApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HeartRateApp.Controllers
 {
@@ -23,8 +24,12 @@ namespace HeartRateApp.Controllers
 
         public IActionResult Index()
         {
+            // setting cookie
+            SetWelcomeMessage();
+
             // We get all HR msmts ordered by data desc (i.e. most recent at the top):
             var heartRateMeasurments = _heartRateDbContext.HeartRateMeasurements
+                .Include(m => m.TargetHeartRateGroup)
                 .OrderByDescending(msmt => msmt.MeasurementDate)
                 .ToList();
             
@@ -33,7 +38,24 @@ namespace HeartRateApp.Controllers
 
         public IActionResult HeartRateInfo()
         {
+            // setting cookie
+            SetWelcomeMessage();
+
             return View();
+        }
+
+        private void SetWelcomeMessage()
+        {
+            if (!HttpContext.Request.Cookies.ContainsKey("WelcomeUser"))
+            {
+                ViewData["WelcomeMessage"] = "Welcome";
+                HttpContext.Response.Cookies.Append("WelcomeUser",
+                    "Welcome back" + DateTime.Now);
+            }
+            else
+            {
+                ViewData["WelcomeMessage"] = HttpContext.Request.Cookies["WelcomeUser"];
+            }
         }
     }
 }

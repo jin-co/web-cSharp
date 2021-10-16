@@ -4,14 +4,16 @@ using HeartRateApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HeartRateApp.Migrations
 {
     [DbContext(typeof(HeartRateDbContext))]
-    partial class HeartRateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211016052958_TargetHeatRateGroup")]
+    partial class TargetHeatRateGroup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -74,3 +74,20 @@ body {
     margin-left: 0.8em;
     margin-right: 0.8em;
 }
+
+/*custom style*/
+.hrBelow {
+    color: blue;
+}
+
+.hrInRange {
+    color: darkgreen;
+}
+
+.hrAboveRange {
+    color: orangered;
+}
+
+.hrAboveAverageMaximum {
+    color: darkred;
+}
