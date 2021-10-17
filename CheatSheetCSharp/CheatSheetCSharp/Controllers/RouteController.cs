@@ -10,7 +10,32 @@ namespace CheatSheetCSharp.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
+        
+        public IActionResult Home()
+        {
+            return Content("Home");
+        }
+        
+        
+        public IActionResult Privacy()
+        {
+            return Content("Privacy");
+        }
+
+        public IActionResult Display(string id)
+        {
+            if (id == null)
+            {
+                return Content("No ID supplied.");
+            }
+            else
+            {
+                return Content("ID: " + id);
+            }
+        }
+
     }
 }
