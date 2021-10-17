@@ -48,6 +48,32 @@ namespace CheatSheetCSharp.Controllers
             }
             return Content(content);
         }
+        
+        //Attribute routing -> overrides all the setting in the method
+        [Route("[action]/{id?}")]
+        public IActionResult CountdownAttributeRouting(int id)
+        {
+            string content = "Counting down: \n";
+            for (int i = id; i >= 0; i--)
+            {
+                content += i + "\n";
+            }
+            return Content(content);
+        }
+
+        //Attribute routing -> overrides all the setting in the method
+        [Route("[controller]/[action]/{start}/{end?}/{message?}")]
+        public IActionResult CountdownAttributeRouting(
+            int start, int end = 0, string message = "")
+        {
+            string content = "Counting down: \n";
+            for (int i = start; i >= end; i--)
+            {
+                content += i + "\n";
+            }
+            content += message;
+            return Content(content);
+        }
 
     }
 }
