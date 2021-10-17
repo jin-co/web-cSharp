@@ -37,5 +37,17 @@ namespace CheatSheetCSharp.Controllers
             }
         }
 
+        //for int default is 0 so int id = 0 and int id are the same
+        //when no parameter is given
+        public IActionResult Countdown(int id)
+        {
+            string content = "Counting down: \n";
+            for (int i = id; i >= 0; i--)
+            {
+                content += i + "\n";
+            }
+            return Content(content);
+        }
+
     }
 }

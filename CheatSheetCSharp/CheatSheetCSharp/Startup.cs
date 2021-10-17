@@ -24,6 +24,12 @@ namespace CheatSheetCSharp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddRouting(options =>
+            {
+                options.LowercaseUrls = true;  // makes it lower case
+                options.AppendTrailingSlash = true;  // append trailing slash
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
