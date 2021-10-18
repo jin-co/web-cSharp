@@ -54,6 +54,16 @@ namespace CheatSheetCSharp
 
             app.UseEndpoints(endpoints =>
             {
+                /* Routing order -> most specific(top) -> least specific(bottom) */
+
+                // attribute routing mapping
+                // -> no need as it is automatically enabled(ASP.NET Core 3.0 or later)
+                // -> just add this if attribute routing seems not working
+                //endpoints.MapControllers();  
+                endpoints.MapControllerRoute(
+                    name: "slug",
+                    pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

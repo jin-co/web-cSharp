@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace CheatSheetCSharp.Controllers
 {
     //setting attribute for the entire controller
-    //[Route("Retail/[Controller] /[Action] /{id ?}")]
+    //[Route("Retail/[Controller]/[Action]/{id ?}")]
+    //[Route("Retail/[Controller]s/[Action]/{id ?}")]
     public class RouteController : Controller
     {
         /* return types
@@ -16,7 +17,6 @@ namespace CheatSheetCSharp.Controllers
          */
         public IActionResult Index()
         {
-
             return View();
         }
         
@@ -56,9 +56,15 @@ namespace CheatSheetCSharp.Controllers
 
         //Attribute routing
         //-> specifies static route, not patterns
-        //-> overrides all the setting in the 'Startup.cs'
-        [Route("About")]
-        public IActionResult NotAbout(int id)
+        //-> overrides all the settings in the 'Startup.cs'
+        [Route("/")]
+        public IActionResult Slash()
+        {
+            return Content("Route controller, slash action");
+        }
+
+        [Route("About")]  // for this to work, route needs to be '/About' without controller
+        public IActionResult NotAbout(int id) // method name doesn't matter for 'About' is used
         {
             string content = "Counting down: \n";
             for (int i = id; i >= 0; i--)
@@ -68,15 +74,22 @@ namespace CheatSheetCSharp.Controllers
             return Content(content);
         }
 
-        [Route("[action]/{id?}")]
+        [Route("Product/{cat?}")]
+        public IActionResult ProductList()
+        {
+            return Content("Route controller, about action");
+        }
+
+        [NonAction]
+        public IActionResult NotApprochableByUsers()
+        {
+            return Content("Route controller, about action");
+        }
+
+        [Route("[action]/{id?}")]  // flexible way that allows to match with method name
         public IActionResult CountdownAttributeRouting(int id)
         {
-            string content = "Counting down: \n";
-            for (int i = id; i >= 0; i--)
-            {
-                content += i + "\n";
-            }
-            return Content(content);
+            return Content("About");
         }
 
         [Route("[controller]/[action]/{start}/{end?}/{message?}")]
