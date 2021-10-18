@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\Routing\\Routing\\Routing.csproj",
+      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\L8_Routing\\Routing\\Routing.csproj",
       "projectName": "Routing",
-      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\Routing\\Routing\\Routing.csproj",
+      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\L8_Routing\\Routing\\Routing.csproj",
       "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\Routing\\Routing\\obj\\",
+      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\L8_Routing\\Routing\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -71,7 +71,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
