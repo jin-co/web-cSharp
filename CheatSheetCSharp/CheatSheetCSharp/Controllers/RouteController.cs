@@ -53,8 +53,21 @@ namespace CheatSheetCSharp.Controllers
             }
             return Content(content);
         }
-        
-        //Attribute routing -> overrides all the setting in the method
+
+        //Attribute routing
+        //-> specifies static route, not patterns
+        //-> overrides all the setting in the 'Startup.cs'
+        [Route("About")]
+        public IActionResult NotAbout(int id)
+        {
+            string content = "Counting down: \n";
+            for (int i = id; i >= 0; i--)
+            {
+                content += i + "\n";
+            }
+            return Content(content);
+        }
+
         [Route("[action]/{id?}")]
         public IActionResult CountdownAttributeRouting(int id)
         {
@@ -66,7 +79,6 @@ namespace CheatSheetCSharp.Controllers
             return Content(content);
         }
 
-        //Attribute routing -> overrides all the setting in the method
         [Route("[controller]/[action]/{start}/{end?}/{message?}")]
         public IActionResult CountdownAttributeRouting(
             int start, int end = 0, string message = "")
