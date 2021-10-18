@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace CheatSheetCSharp.Controllers
 {
+    //setting attribute for the entire controller
+    //[Route("Retail/[Controller] /[Action] /{id ?}")]
     public class RouteController : Controller
     {
+        /* return types
+         * Content(string) -> returns plain text
+         * 
+         */
         public IActionResult Index()
         {
 
@@ -37,8 +43,7 @@ namespace CheatSheetCSharp.Controllers
             }
         }
 
-        //for int default is 0 so int id = 0 and int id are the same
-        //when no parameter is given
+        //numbers are set to 0 by default when no parameter is passed
         public IActionResult Countdown(int id)
         {
             string content = "Counting down: \n";
@@ -75,5 +80,13 @@ namespace CheatSheetCSharp.Controllers
             return Content(content);
         }
 
+        //with static AssemblyLoadEventHandler dynamic data
+        public IActionResult List(string id = "All", int page = 1, string sortBy = "Price")
+        {
+            return Content("Product controller, List action, " +
+                "id: " + id +
+                ", Page number: " + page +
+                ", Sort By: " + sortBy);
+        }
     }
 }
