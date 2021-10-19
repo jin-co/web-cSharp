@@ -23,8 +23,10 @@ namespace CheatSheetCSharp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-
+            /* Methods for adding the MVC service */
+            services.AddControllersWithViews();  // ASP.NET Core 2.2 and later
+            //services.AddMvc();  // Versions prior to 2.2(includes unnecessary services)
+            
             services.AddRouting(options =>
             {
                 options.LowercaseUrls = true;  // makes it lower case
@@ -48,25 +50,34 @@ namespace CheatSheetCSharp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
+            /* Methods for enabling and configuring routing */
+            app.UseRouting();  // select endpoint if found
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            /* Methods for enabling and configuring routing */
+            app.UseEndpoints(endpoints =>  // executes the endpoint selected by the routing
             {
                 /* Routing order -> most specific(top) -> least specific(bottom) */
 
-                // attribute routing mapping
+                /* attribute routing mapping */
+                //endpoints.MapControllers();  
                 // -> no need as it is automatically enabled(ASP.NET Core 3.0 or later)
                 // -> just add this if attribute routing seems not working
-                //endpoints.MapControllers();  
+
+                
+
                 endpoints.MapControllerRoute(
                     name: "slug",
                     pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
 
+                /* default route */
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                /* another way to set the default route */
+                //endpoints.MapDefaultControllerRoute();
             });
         }
     }
