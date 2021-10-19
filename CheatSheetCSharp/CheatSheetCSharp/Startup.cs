@@ -65,7 +65,16 @@ namespace CheatSheetCSharp
                 // -> no need as it is automatically enabled(ASP.NET Core 3.0 or later)
                 // -> just add this if attribute routing seems not working
 
-                
+                endpoints.MapControllerRoute(
+                    name: "category_and_num",
+                    //pattern: "{controller}/{action}/{cat}/{num}"
+                    pattern: "{controller}/{action}/{cat}/Page{num}" // with static segment'Page'
+                );
+
+                endpoints.MapControllerRoute(
+                    name: "paging_and_sorting",
+                    pattern: "{controller}/{action}/{id}/Page{page}/sort-by-{sortby}" // with static segment'Page'
+                );
 
                 endpoints.MapControllerRoute(
                     name: "slug",
