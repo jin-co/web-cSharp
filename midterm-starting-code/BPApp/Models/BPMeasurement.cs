@@ -47,15 +47,15 @@ namespace BPApp.Models
             }
             else if (Systolic < 140 || (Diastolic >= 80 && Diastolic < 90))
             {
-                category = "HIGH BLOOD PRESSURE\n(HYPERTENSION) STAGE 1";
+                category = "HYPERTENSION STAGE 1";
             }
             else if (Systolic >= 140 || (Diastolic >= 90))
             {
-                category = "HIGH BLOOD PRESSURE\n(HYPERTENSION) STAGE 2";
+                category = "HYPERTENSION STAGE 2";
             }
             else
             {
-                category = "HYPERTENSIVE CRISIS\n(consult your doctor immediately)";
+                category = "HYPERTENSIVE CRISIS";
             }
 
             return category;
