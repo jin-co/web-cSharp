@@ -15,9 +15,11 @@ namespace BPApp.Models
         public int BPMeasurementId { get; set; }
 
         [Required(ErrorMessage = "Please enter Systolic")]
+        [Range(20, 400, ErrorMessage = "Systolic: Must be between 20 and 400")]
         public int Systolic { get; set; }
 
         [Required(ErrorMessage = "Please enter Diastolic")]
+        [Range(10, 300, ErrorMessage = "Diastolic: Must be between 10 and 300")]
         public int Diastolic { get; set; }
 
         // Date the measurement was taken that defaults to today
