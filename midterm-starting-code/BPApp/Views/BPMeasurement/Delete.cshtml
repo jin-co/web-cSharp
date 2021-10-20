@@ -1,0 +1,23 @@
+﻿@model BPMeasurement
+@{
+    string title = ViewBag.Action + " BP Measurement";
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+<form asp-controller="BPMeasurement" asp-action="@ViewBag.Action" method="post" enctype="application/x-www-form-urlencoded">
+
+    <!-- Complete this form to have input fields for the remaining properties of a BPMeasurement... -->
+
+    <div class="form-group">
+        <label asp-for="MeasurementDate">Date of measurement</label>
+        <input type="datetime" id="datepicker" asp-for="MeasurementDate"
+               class="form-control" value="@Model.MeasurementDate.ToString("d")" />
+    </div>
+
+    <input type="hidden" asp-for="BPMeasurementId" />
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
