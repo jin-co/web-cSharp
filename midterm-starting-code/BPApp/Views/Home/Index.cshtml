@@ -11,6 +11,8 @@
     <thead>
         <tr>
             <th>Reading</th>
+            <th>Category</th>
+            <th>Position</th>
             <th>Date Taken</th>
             <th>Action</th>
         </tr>
@@ -20,6 +22,8 @@
         {
             <tr>
                 <td>@msmt.Systolic.ToString()/@msmt.Diastolic.ToString()</td>
+                <td>@msmt.getCategory()</td>
+                <td>@msmt.Positions.Name</td>
                 <td>@msmt.MeasurementDate.ToString("d")</td>
                 <td>
                     <a asp-controller="BPMeasurement" asp-action="Edit" asp-route-id="@msmt.BPMeasurementId">Edit</a>

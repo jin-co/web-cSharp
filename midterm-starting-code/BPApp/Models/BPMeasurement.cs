@@ -33,5 +33,32 @@ namespace BPApp.Models
 
         // Date the measurement was taken that defaults to today
         public DateTime MeasurementDate { get; set; } = DateTime.Now;
+
+        public string getCategory()
+        {
+            string category = "";
+            if (Systolic < 120 && Diastolic < 80)
+            {
+                category = "NORMAL";
+            }
+            else if (Systolic < 130 && Diastolic < 80)
+            {
+                category = "ELEVATED";
+            }
+            else if (Systolic < 140 || (Diastolic >= 80 && Diastolic < 90))
+            {
+                category = "HIGH BLOOD PRESSURE\n(HYPERTENSION) STAGE 1";
+            }
+            else if (Systolic >= 140 || (Diastolic >= 90))
+            {
+                category = "HIGH BLOOD PRESSURE\n(HYPERTENSION) STAGE 2";
+            }
+            else
+            {
+                category = "HYPERTENSIVE CRISIS\n(consult your doctor immediately)";
+            }
+
+            return category;
+        }
     }
 }
