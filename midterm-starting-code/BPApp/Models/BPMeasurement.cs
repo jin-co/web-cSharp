@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,6 +22,14 @@ namespace BPApp.Models
         [Required(ErrorMessage = "Please enter Diastolic")]
         [Range(10, 300, ErrorMessage = "Diastolic: Must be between 10 and 300")]
         public int Diastolic { get; set; }
+
+        // Added properties
+        [ForeignKey("PositionId")]
+        public string PositionId { get; set; }
+
+        public Position Positions { get; set; }
+
+
 
         // Date the measurement was taken that defaults to today
         public DateTime MeasurementDate { get; set; } = DateTime.Now;

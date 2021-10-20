@@ -4,14 +4,16 @@ using BPApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BPApp.Migrations
 {
     [DbContext(typeof(BPContext))]
-    partial class BPContextModelSnapshot : ModelSnapshot
+    [Migration("20211020215516_Position")]
+    partial class Position
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

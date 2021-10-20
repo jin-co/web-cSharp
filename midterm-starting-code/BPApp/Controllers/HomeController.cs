@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using BPApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BPApp.Controllers
 {
@@ -19,7 +20,10 @@ namespace BPApp.Controllers
 
         public IActionResult Index()
         {
-            var bpMeasurements = _bpContext.BPMeasurements.OrderByDescending(msmt => msmt.MeasurementDate).ToList();
+            var bpMeasurements = _bpContext.BPMeasurements
+                .Include(msmt => msmt.Positions)
+                .OrderByDescending(msmt => msmt.MeasurementDate)
+                .ToList();
             return View(bpMeasurements);
         }
 
