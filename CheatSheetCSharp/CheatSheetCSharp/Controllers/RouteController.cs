@@ -57,11 +57,11 @@ namespace CheatSheetCSharp.Controllers
         //Attribute routing
         //-> specifies static route, not patterns
         //-> overrides all the settings in the 'Startup.cs'
-        [Route("/")]
-        public IActionResult Slash()
-        {
-            return Content("Route controller, slash action");
-        }
+        //[Route("/")] 
+        //public IActionResult Slash()
+        //{
+        //    return Content("Route controller, slash action");
+        //}
 
         [Route("About")]  // for this to work, route needs to be '/About' without controller
         public IActionResult NotAbout(int id) // method name doesn't matter for 'About' is used
