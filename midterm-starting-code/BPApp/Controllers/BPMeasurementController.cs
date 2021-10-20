@@ -21,6 +21,10 @@ namespace BPApp.Controllers
         {
             ViewBag.Action = "Edit";
             var measurement = _bpContext.BPMeasurements.Find(id);
+
+            // second table
+            ViewBag.Positions = _bpContext.Positions.ToList();
+
             return View(measurement);
         }
 
@@ -48,6 +52,10 @@ namespace BPApp.Controllers
         public IActionResult Delete(int id)
         {
             var measurement = _bpContext.BPMeasurements.Find(id);
+
+            // second table
+            ViewBag.Positions = _bpContext.Positions.ToList();
+
             return View(measurement);
         }
 

@@ -15,19 +15,30 @@
 
     <div class="form-group">
         <label asp-for="Systolic">Systolic</label>
-        <input type="number" asp-for="Systolic" 
+        <input type="number" asp-for="Systolic"
                class="form-control" value="@Model.Systolic" />
     </div>
 
     <div class="form-group">
         <label asp-for="Diastolic">Diastolic</label>
-        <input type="number" asp-for="Diastolic" 
+        <input type="number" asp-for="Diastolic"
                class="form-control" value="@Model.Diastolic" />
     </div>
-    
+
+    <div class="form-group">
+        <label asp-for="PositionId">Position</label>
+        <select asp-for="PositionId" class="form-control">
+            <option value="Place holder"></option>
+            @foreach (var i in ViewBag.Positions)
+            {
+                <option value="@i.Name">@i.Name</option>
+            }
+        </select>
+    </div>
+
     <div class="form-group">
         <label asp-for="MeasurementDate">Date of measurement</label>
-        <input type="datetime" id="datepicker" asp-for="MeasurementDate" 
+        <input type="datetime" id="datepicker" asp-for="MeasurementDate"
                class="form-control" value="@Model.MeasurementDate.ToString("d")" />
     </div>
 
