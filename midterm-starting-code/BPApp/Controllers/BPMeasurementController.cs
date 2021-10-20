@@ -57,6 +57,10 @@ namespace BPApp.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
+
+            // second table
+            ViewBag.Positions = _bpContext.Positions.ToList();
+
             return View("Edit", new BPMeasurement());
         }
 
