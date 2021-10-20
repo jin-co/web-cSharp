@@ -11,6 +11,12 @@
     <!-- Complete this form to have input fields for the remaining properties of a BPMeasurement... -->
 
     <div class="form-group">
+        <label asp-for="Systolic">Systolic</label>
+        <input type="number" asp-for="Systolic"
+               class="form-control" value="@Model.Systolic" />
+    </div>
+
+    <div class="form-group">
         <label asp-for="MeasurementDate">Date of measurement</label>
         <input type="datetime" id="datepicker" asp-for="MeasurementDate"
                class="form-control" value="@Model.MeasurementDate.ToString("d")" />
