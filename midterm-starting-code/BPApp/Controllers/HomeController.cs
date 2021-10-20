@@ -20,6 +20,9 @@ namespace BPApp.Controllers
 
         public IActionResult Index()
         {
+            // setting cookie
+            SetWelcomeMessage();
+
             var bpMeasurements = _bpContext.BPMeasurements
                 .Include(msmt => msmt.Positions)
                 .OrderByDescending(msmt => msmt.MeasurementDate)
@@ -29,6 +32,9 @@ namespace BPApp.Controllers
 
         public IActionResult BPInfo()
         {
+            // setting cookie
+            SetWelcomeMessage();
+
             return View();
         }
 
@@ -36,6 +42,21 @@ namespace BPApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private void SetWelcomeMessage()
+        {
+            if (!HttpContext.Request.Cookies.ContainsKey("WelcomeUser"))
+            {
+                ViewData["WelcomeMessage"] = "Welcome";
+                HttpContext.Response.Cookies.Append("WelcomeUser",
+                    "Welcome back! You first used this app on" + DateTime.Now);
+            }
+            else
+            {
+                ViewData["WelcomeMessage"] = 
+                    HttpContext.Request.Cookies["Hey, welcome to the BP App!"];
+            }
         }
 
         private BPContext _bpContext;

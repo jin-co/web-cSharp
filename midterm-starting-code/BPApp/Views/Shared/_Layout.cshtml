@@ -31,7 +31,10 @@
         @RenderBody()
     </div>
     <footer class="card-footer bg-light fixed-bottom">
-        Welcome to the BP measurements app
+        @if (ViewData.Keys.Contains("WelcomeMessage"))
+        {
+            @ViewData["WelcomeMessage"]
+        }
     </footer>
 </body>
 </html>
