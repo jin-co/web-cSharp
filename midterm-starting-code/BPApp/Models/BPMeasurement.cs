@@ -36,29 +36,26 @@ namespace BPApp.Models
 
         public string getCategory()
         {
-            string category = "";
             if (Systolic < 120 && Diastolic < 80)
             {
-                category = "NORMAL";
+                return "Normal";
             }
             else if (Systolic < 130 && Diastolic < 80)
             {
-                category = "ELEVATED";
+                return "Elevated";
             }
             else if (Systolic < 140 || (Diastolic >= 80 && Diastolic < 90))
             {
-                category = "HYPERTENSION STAGE 1";
+                return "Hypertension Stage 1";
             }
             else if (Systolic >= 140 || (Diastolic >= 90))
             {
-                category = "HYPERTENSION STAGE 2";
+                return "Hypertension Stage 2";
             }
             else
             {
-                category = "HYPERTENSIVE CRISIS";
+                return "Hypertensive Crisis";
             }
-
-            return category;
         }
     }
 }
