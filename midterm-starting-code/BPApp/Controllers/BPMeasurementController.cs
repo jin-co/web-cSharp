@@ -67,6 +67,9 @@ namespace BPApp.Controllers
         [HttpPost()]
         public IActionResult Add(BPMeasurement bpMeasurement)
         {
+            // second table
+            ViewBag.Positions = _bpContext.Positions.ToList();
+
             if (ModelState.IsValid)
             {
                 // since valid hr msmt add to DB and redirect back to all msmt view:
@@ -98,15 +101,10 @@ namespace BPApp.Controllers
         }
 
         [HttpPost()]
-        public IActionResult DeleteById(int id)
+        public IActionResult DeleteById(BPMeasurement measurement)
         {
-            var measurement = _bpContext.BPMeasurements.Find(id);
-
-            if (measurement != null)
-            {
-                _bpContext.BPMeasurements.Remove(measurement);
-                _bpContext.SaveChanges();
-            }
+            _bpContext.BPMeasurements.Remove(measurement);
+            _bpContext.SaveChanges();
 
             TempData["LastActionMessage"]
                 = $"Measurement {measurement.Systolic} " +
