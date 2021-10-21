@@ -22,10 +22,10 @@
         {
             var bpClass = "bp" + Regex.Replace(msmt.getCategory(), " ", "");
             <tr>
-                <td class="@bpClass">@msmt.Systolic.ToString()/@msmt.Diastolic.ToString()</td>
-                <td class="@bpClass">@msmt.getCategory()</td>
-                <td class="@bpClass">@msmt.Positions.Name</td>
-                <td class="@bpClass">@msmt.MeasurementDate.ToString("d")</td>
+                <td class="@bpClass bg-dark">@msmt.Systolic.ToString()/@msmt.Diastolic.ToString()</td>
+                <td class="@bpClass bg-dark">@msmt.getCategory()</td>
+                <td>@msmt.Positions.Name</td>
+                <td>@msmt.MeasurementDate.ToString("d")</td>
                 <td>
                     <a asp-controller="BPMeasurement" asp-action="Edit" asp-route-id="@msmt.BPMeasurementId">Edit</a>
                     <span class="linkSpacer">|</span>

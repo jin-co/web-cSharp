@@ -27,6 +27,11 @@ namespace BPApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BPContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BPMeasurements")));
+
+            // setting session
+            services.AddMemoryCache();
+            services.AddSession();
+
             services.AddControllersWithViews();
         }
 
@@ -49,6 +54,8 @@ namespace BPApp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
