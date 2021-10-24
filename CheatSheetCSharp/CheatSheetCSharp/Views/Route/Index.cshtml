@@ -1,45 +1,75 @@
-﻿@{ 
+﻿@{
     ViewData["Title"] = "Routing";
 }
 
 
-<hi class="jumbotron">@ViewData["Title"]</hi>
+<h1 class="jumbotron">@ViewData["Title"]</h1>
 
 <div class="container">
-    <nav>
-        <ul>
-            <li>
-                <a asp-action="Home">Content Home</a>
-            </li>
+    <nav class="nav nav-tabs navbar-expand-md bg-dark p-1">
 
-            <li>
-                <a asp-action="Privacy">Content Privacy</a>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-action="Home">Content Home</a>
+        </li>
 
-            <li>
-                <a asp-action="Display">Content Display with no Id</a>
-                <a asp-action="Display"
-                   asp-route-id="1">Content Display with Id</a>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-action="Privacy">Content Privacy</a>
+        </li>
 
-            <li>
-                <a asp-action="/">Slash Static</a>
-                <a asp-action="About">Attribute Static</a>
-                <a asp-action="Product">Product Static</a>
-                <a asp-action="Countdown">Content Default int</a>
-                <a asp-action="Countdown"
-                   asp-route-id="10">Countdown</a>
-                <a asp-action="CountdownAttributeRouting"
-                   asp-route-id="10">Countdown Attribute Routing</a>
-                <a asp-action="CountdownAttributeRouting"
-                   asp-route-start="10"
-                   asp-route-end="1"
-                   asp-route-message="Liftoff">Countdown Attribute Routing</a>
-            </li>
-            
-            <li>
-                <a asp-action="List">List Routing</a>
-            </li>
-        </ul>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-action="Display">Content Display with no Id</a>
+            <a class="nav-link text-light" asp-action="Display"
+               asp-route-id="1">Content Display with Id</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-action="/">Slash Static</a>
+            <a class="nav-link text-light" asp-action="About">Attribute Static</a>
+            <a class="nav-link text-light" asp-action="Product">Product Static</a>
+            <a class="nav-link text-light" asp-action="Countdown">Content Default int</a>
+            <a class="nav-link text-light" asp-action="Countdown"
+               asp-route-id="10">Countdown</a>
+            <a class="nav-link text-light" asp-action="CountdownAttributeRouting"
+               asp-route-id="10">Countdown Attribute Routing</a>
+            <a class="nav-link text-light" asp-action="CountdownAttributeRouting"
+               asp-route-start="10"
+               asp-route-end="1"
+               asp-route-message="Liftoff">Countdown Attribute Routing</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-action="List">List Routing</a>
+        </li>
+
     </nav>
 </div>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">My Guitar Shop</a>
+    <button class="navbar-toggler" type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav class="collapse navbar-collapse"
+         id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link"
+               href="/products">Products</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+        </div>
+        <div class="navbar-nav navbar-right">
+            <a class="nav-item nav-link" href="/cart">
+                <span class="fas fa-shopping-cart"></span>
+                &nbsp;Cart&nbsp;
+                <span class="badge badge-primary">2</span>
+            </a>
+        </div>
+    </nav>
+</nav>
+
+
