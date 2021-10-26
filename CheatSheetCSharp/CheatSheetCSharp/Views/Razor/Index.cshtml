@@ -5,7 +5,6 @@
     {
         message = "Welcome Back";
     }
-
 }
 
 <p>
@@ -15,6 +14,7 @@
 
 @*drop down month*@
 <select name="month" id="month">
+    @*Razor inline expression*@
     @for (int month = 1; month <= 12; month++)
     {
         <option value="@month">@month</option>
@@ -25,26 +25,30 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Department</th>
-            <th>Phone Number</th>
-            <th>Extension</th>
+            <th>Categories</th>
+            <th>Level</th>
         </tr>
     </thead>
     <tbody>
+        @foreach (var i in ViewBag.Categories)
+        {
         <tr>
-            <td>General</td>
-            <td>555-555-5555</td>
-            <td>1</td>
+            <td>@i</td>
+            @if (i == "C1")
+            {
+                <td>Best</td>
+            }
+            else if (i == "C2")
+            {
+                <td>Second</td>
+            }
+            else
+            {
+                <td>Third</td>
+            }
+
+
         </tr>
-        <tr>
-            <td>Customer Service</td>
-            <td>555-555-5556</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>Billing and Accounts</td>
-            <td>555-555-5557</td>
-            <td>3</td>
-        </tr>
+        }
     </tbody>
 </table>
