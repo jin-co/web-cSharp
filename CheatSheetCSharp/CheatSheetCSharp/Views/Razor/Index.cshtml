@@ -27,13 +27,18 @@
         <tr>
             <th>Categories</th>
             <th>Level</th>
+            <th>Styling</th>
+            <th>Styling</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var i in ViewBag.Categories)
         {
         <tr>
+            @*first column*@
             <td>@i</td>
+
+            @*second column*@
             @if (i == "C1")
             {
                 <td>Best</td>
@@ -47,6 +52,11 @@
                 <td>Third</td>
             }
 
+            @*third column*@
+            <td class="@if (i == "C1") { <text>font-red</text> } ">@i</td>
+    
+            @*fourth column*@
+            <td class="@(i == "C1" ? "font-blue" : "")">@i</td>
 
         </tr>
         }
