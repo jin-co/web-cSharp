@@ -65,12 +65,19 @@ namespace CheatSheetCSharp
                 // -> no need as it is automatically enabled(ASP.NET Core 3.0 or later)
                 // -> just add this if attribute routing seems not working
 
-                endpoints.MapAreaControllerRoute(
-                    name: "admin",
-                    areaName: "Admin",
-                    pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
-                );
+                //endpoints.MapAreaControllerRoute(
+                //    name: "admin",
+                //    areaName: "Admin",
+                //    pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
+                //);
 
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                      name: "areas",
+                      pattern: "{area}/{controller=Home}/{action=Index}/{id?}"
+                    );
+                });
 
                 endpoints.MapControllerRoute(
                     name: "category_and_num",

@@ -21,7 +21,7 @@ namespace CheatSheetCSharp.Controllers
                 "C1",
                 "C2",
                 "C3",
-            };
+            };           
             return View();  // returns Views/Razor/Index.cshtml
             //return View("List");  // returns Views/Product/List.cshtml
         }

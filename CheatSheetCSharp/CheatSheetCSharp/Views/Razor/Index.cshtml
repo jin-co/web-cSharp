@@ -1,4 +1,6 @@
-﻿@*Razor Code Block*@
+﻿@*importing model*@
+@model RazorDemo
+@*Razor Code Block*@
 @{
     string message = "Welcome";
     if (ViewBag.Name != null)
@@ -21,7 +23,6 @@
     }
 </select>
 
-
 <table class="table">
     <thead>
         <tr>
@@ -34,31 +35,63 @@
     <tbody>
         @foreach (var i in ViewBag.Categories)
         {
-        <tr>
-            @*first column*@
-            <td>@i</td>
+            <tr>
+                @*first column*@
+                <td>@i</td>
 
-            @*second column*@
-            @if (i == "C1")
-            {
-                <td>Best</td>
-            }
-            else if (i == "C2")
-            {
-                <td>Second</td>
-            }
-            else
-            {
-                <td>Third</td>
-            }
+                @*second column*@
+                @if (i == "C1")
+                {
+                    <td>Best</td>
+                }
+                else if (i == "C2")
+                {
+                    <td>Second</td>
+                }
+                else
+                {
+                    <td>Third</td>
+                }
 
-            @*third column*@
-            <td class="@if (i == "C1") { <text>font-red</text> } ">@i</td>
-    
-            @*fourth column*@
-            <td class="@(i == "C1" ? "font-blue" : "")">@i</td>
+                @*third column*@
+                <td class="@if (i == "C1") { <text>font-red</text> } ">@i</td>
 
-        </tr>
+                @*fourth column*@
+                <td class="@(i == "C1" ? "font-blue" : "")">@i</td>
+
+            </tr>
         }
     </tbody>
 </table>
+
+<hr />
+@*using model*@
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input type="number" asp-for="Age" class="form-control">
+    </div>
+
+    <input type="hidden" asp-for="RazorDemoId" />
+
+    <button asp-action="Update" type="submit"
+            class="btn btn-primary">
+        Update
+    </button>
+    <a asp-action="Index" class="btn btn-primary">
+        Cancel
+    </a>
+</form>
+
+@*<h1>Product Details</h1>
+<div>ID: @Model.RazorDemoId</div>
+<div>Name: @Model.Name</div>
+<div>Category: @Model.Age</div>*@
+
+
+
