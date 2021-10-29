@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheatSheetCSharp.Areas.FutureValue.Controllers
 {
+    [Area("FutureValue")]
     public class HomeController : Controller
     {
         public IActionResult Index()

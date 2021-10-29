@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\FutureValue\Data\" />
-    <Folder Include="Areas\FutureValue\Models\" />
   </ItemGroup>
 
 </Project>
