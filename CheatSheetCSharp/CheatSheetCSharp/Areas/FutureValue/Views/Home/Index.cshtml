@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@model CheatSheetCSharp.Areas.FutureValue.Models.FutureValueModel
+@{ 
     ViewData["Title"] = "Future Value Calculator";
 }
 <h1 class="badge-dark">
@@ -6,25 +7,25 @@
 </h1>
 
 <div class="container mt-5">
-    <form class="py-3">
+    <form asp-action="Index" method="post"
+          class="py-3">
         <div class="form-group row">
-            <label class="form-label col-2">Monthly Investment: </label>
-            <input class="col-10" type="text" />
+            <label asp-for="MonthlyInvestment" class="form-label col-2">Monthly Investment: </label>
+            <input asp-for="MonthlyInvestment" class="col-10" type="text" />
         </div>
 
         <div class="form-group row">
-            <label class="form-label col-2">Yearly Interest Rate: </label>
-            <input class="col-10" type="text" />
+            <label asp-for="YearlyInterestRate" class="form-label col-2">Yearly Interest Rate: </label>
+            <input asp-for="YearlyInterestRate" class="col-10" type="text" />
         </div>
 
         <div class="form-group row">
-            <label class="form-label col-2">Number of Years: </label>
-            <input class="col-10" type="text" />
+            <label asp-for="Years" class="form-label col-2">Number of Years: </label>
+            <input asp-for="Years" class="col-10" type="text" />
         </div>
 
         <div class="form-group row">
-            <label class="form-label col-2">Future Value: </label>
-            <input class="col-10" type="text" />
+            <p>Future Value: @ViewBag.FV</p>
         </div>
 
         <button class="btn btn-primary btn-block mb-1">Calculate</button>
