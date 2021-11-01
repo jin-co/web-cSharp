@@ -17,7 +17,7 @@ namespace PressYourLuck.Controllers
         public IActionResult Join(int id)
         {
             
-            return Redirect("Home/Index");
+            return Redirect("default");
         }
     }
 }
