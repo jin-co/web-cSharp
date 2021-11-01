@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "8apY2yu3iFnbWrCu/+/noY4/TwgVNxCnFMGebUgKvWkSLqdnBi1RQj+08wF8B+DC5U8yDGsLBz2DhTiGzkTAvA==",
+  "dgSpecHash": "WOTnw1YkErIjbckQ5LZXBVUMV8fE+Xv9+8gjwnBhaOx9e20vR8jBju8WsJBkcifye5etZWeOHRqvDebbJP8P+A==",
   "success": true,
   "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jin\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.11\\microsoft.aspnetcore.jsonpatch.5.0.11.nupkg.sha512",
+    "C:\\Users\\jin\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.11\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.11.nupkg.sha512",
+    "C:\\Users\\jin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\jin\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\jin\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

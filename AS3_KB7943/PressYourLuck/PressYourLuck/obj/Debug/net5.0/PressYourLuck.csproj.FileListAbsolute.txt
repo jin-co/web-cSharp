@@ -77,3 +77,7 @@ C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\
 C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\obj\Debug\net5.0\PressYourLuck.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\obj\Debug\net5.0\PressYourLuck.genruntimeconfig.cache
 C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\obj\Debug\net5.0\PressYourLuck.csproj.CopyComplete
+C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\jin\Documents\GitHub\web-cSharp\AS3_KB7943\PressYourLuck\PressYourLuck\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

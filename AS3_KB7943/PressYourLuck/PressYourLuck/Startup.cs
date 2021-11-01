@@ -23,6 +23,13 @@ namespace PressYourLuck
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // session
+            services.AddMemoryCache();
+            services.AddSession();
+
+            // json
+            services.AddControllersWithViews().AddNewtonsoftJson();
+
             services.AddControllersWithViews();
         }
 
@@ -45,6 +52,9 @@ namespace PressYourLuck
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // session
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
