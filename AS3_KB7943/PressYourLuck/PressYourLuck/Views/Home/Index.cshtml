@@ -1,15 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@{ if (Context.Request.Cookies["newUser"] != null)
-    {
-        <h1 class="display-4">Welcome back @(Context.Request.Cookies["newUser"])!</h1>
-    }
-    else
-    {
-        <h1 class="display-4">Welcome to our site!</h1>
-    }
-}
 <div class="text-center">
     <a asp-controller="Game" asp-action="Index">Check out the Tile List</a>
 </div>

@@ -14,10 +14,10 @@ namespace PressYourLuck.Controllers
         }
         
         [HttpPost]
-        public IActionResult Join()
+        public IActionResult Join(int id)
         {
-            Redirect("Home/Index");
-            return View();
+            
+            return Redirect("Home/Index");
         }
     }
 }
