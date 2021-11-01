@@ -14,6 +14,7 @@ namespace CheatSheetCSharp.Areas.FutureValue.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.FV = 0;
             return View();
         } 
         

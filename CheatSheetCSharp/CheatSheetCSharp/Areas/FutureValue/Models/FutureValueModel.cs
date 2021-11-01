@@ -8,10 +8,14 @@ namespace CheatSheetCSharp.Areas.FutureValue.Models
 {
     public class FutureValueModel
     {
+        [Required(ErrorMessage = "Monthly required")]
         public decimal MonthlyInvestment { get; set; }
+
+        [Required(ErrorMessage = "Year interest required")]
         public decimal YearlyInterestRate { get; set; }
+
+        [Required(ErrorMessage = "Years required")]
         public int Years { get; set; }
-        public decimal FValue { get; set; }
 
         public decimal GetFutureValue()
         {
