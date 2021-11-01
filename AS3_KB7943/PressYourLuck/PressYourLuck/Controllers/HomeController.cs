@@ -20,7 +20,14 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (Context.Request.Cookies["newUser"] != null)
+            {
+            }       
+            else
+            {
+     
+            }
+return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
