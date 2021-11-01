@@ -1,0 +1,26 @@
+﻿@model List<Tile>
+<div>
+    @foreach (var tile in Model)
+    {
+        <div>
+            <div class="card">
+                @if (tile.Visible == false)
+                {
+                    <img src="~/images/unknown.png" class="card-img-top" alt="...">
+                }
+                else if (tile.Value == "0.00")
+                {
+                    <img src="~/images/bust.png" class="card-img-top" alt="...">
+                }
+                else
+                {
+                    <img src="~/images/money.png" class="card-img-top" alt="...">
+                }
+                <div class="card-body">
+                    <div>@tile.Value</div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
