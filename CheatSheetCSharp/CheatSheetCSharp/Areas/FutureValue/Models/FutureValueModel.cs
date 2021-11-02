@@ -9,21 +9,21 @@ namespace CheatSheetCSharp.Areas.FutureValue.Models
     public class FutureValueModel
     {
         [Required(ErrorMessage = "Monthly required")]
-        public decimal MonthlyInvestment { get; set; }
+        public decimal? MonthlyInvestment { get; set; }
 
         [Required(ErrorMessage = "Year interest required")]
-        public decimal YearlyInterestRate { get; set; }
+        public decimal? YearlyInterestRate { get; set; }
 
         [Required(ErrorMessage = "Years required")]
-        public int Years { get; set; }
+        public int? Years { get; set; }
 
         public decimal FutureValue { get; set; }
 
-        public decimal GetFutureValue()
+        public decimal? GetFutureValue()
         {
-            int months = Years * 12;
-            decimal monthlyInterestRate = YearlyInterestRate / 12 / 100;
-            decimal futureValue = 0;
+            int? months = Years * 12;
+            decimal? monthlyInterestRate = YearlyInterestRate / 12 / 100;
+            decimal? futureValue = 0;
             for (int i = 0; i < months; i++)
             {
                 futureValue = (futureValue + MonthlyInvestment) *

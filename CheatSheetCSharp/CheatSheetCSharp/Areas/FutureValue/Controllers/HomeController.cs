@@ -15,6 +15,12 @@ namespace CheatSheetCSharp.Areas.FutureValue.Controllers
         public IActionResult Index()
         {
             ViewBag.FV = 0;
+            ViewBag.SelectList = new List<string>
+            {
+                "Guitars",
+                "Basses",
+                "Drums"
+            };
             return View();
         } 
         
