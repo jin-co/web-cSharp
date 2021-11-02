@@ -17,6 +17,8 @@ namespace CheatSheetCSharp.Areas.FutureValue.Models
         [Required(ErrorMessage = "Years required")]
         public int Years { get; set; }
 
+        public decimal FutureValue { get; set; }
+
         public decimal GetFutureValue()
         {
             int months = Years * 12;
@@ -27,6 +29,7 @@ namespace CheatSheetCSharp.Areas.FutureValue.Models
                 futureValue = (futureValue + MonthlyInvestment) *
                                 (1 + monthlyInterestRate);
             }
+            FutureValue = 10;
             return futureValue;
         }
     }

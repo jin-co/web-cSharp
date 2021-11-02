@@ -26,10 +26,11 @@
 
         <div class="form-group row">
             <p>Future Value: @ViewBag.FV</p>
+            @*<p>Future Value: FutureValue</p>*@
         </div>
 
         <button class="btn btn-primary btn-block mb-1">Calculate</button>
-        <a class="btn btn-danger btn-block">Clear</a>
+        <a asp-action="Index" class="btn btn-danger btn-block">Clear</a>
     </form>
 
 </div>
