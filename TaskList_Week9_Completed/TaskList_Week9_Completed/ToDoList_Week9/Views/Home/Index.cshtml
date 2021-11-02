@@ -1,0 +1,44 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "ToDo Task List";
+}
+
+<div class="text-center">
+    <h2>List of tasks (Logged in user: @Model.LoggedInUser)</h2>
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Task Name
+            </th>
+            <th>
+                Task Length
+            </th>
+            <th>
+                Assigned To
+            </th>
+            <th>
+                IsCompleted
+            </th>
+            <th>
+                Priority
+            </th>
+        </tr>
+         @foreach (var taskItem in Model.TaskList)
+         {
+            <tr>
+                <td>@taskItem.TaskName</td>
+                <td>@taskItem.TaskLength</td>
+                <td>@taskItem.AssignedTo</td>
+                <td>@taskItem.IsCompleted</td>
+                <td>@taskItem.Priority</td>
+            </tr>
+         }
+        </table>
+</div>
+
+<div class="text-center">
+    <a type="button" class="btn btn-primary" asp-controller="Home" asp-action="AddNewRandomTask">Add New Random Task</a>
+    <a type="button" class="btn btn-info" asp-controller="Home" asp-action="ClearTaskList">Clear All Tasks</a>
+</div>
