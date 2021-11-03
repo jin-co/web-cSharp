@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj": {}
+    "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\TaskList_Week9_Completed\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj": {}
   },
   "projects": {
-    "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj": {
+    "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\TaskList_Week9_Completed\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj",
+        "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\TaskList_Week9_Completed\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj",
         "projectName": "ToDoList_Week9",
-        "projectPath": "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj",
-        "packagesPath": "C:\\Users\\csdai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\TaskList_Week9_Completed\\ToDoList_Week9\\obj\\",
+        "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\TaskList_Week9_Completed\\TaskList_Week9_Completed\\ToDoList_Week9\\ToDoList_Week9.csproj",
+        "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\TaskList_Week9_Completed\\TaskList_Week9_Completed\\ToDoList_Week9\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\csdai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
