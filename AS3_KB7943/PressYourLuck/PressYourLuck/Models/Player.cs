@@ -8,8 +8,6 @@ namespace PressYourLuck.Models
 {
     public class Player
     {
-        public int PlayerId { get; set; }
-
         [Required(ErrorMessage = "required")]
         public string Name { get; set; }
 

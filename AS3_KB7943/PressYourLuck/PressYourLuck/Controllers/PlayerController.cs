@@ -18,8 +18,12 @@ namespace PressYourLuck.Controllers
         [HttpPost]
         public IActionResult Index(Player player)
         {
-            HttpContext.Session.SetString("newUser", player.Name);
-            return Redirect("Home/Index");
+            if (ModelState.IsValid)
+            {
+                HttpContext.Session.SetString("newUser", player.Name);
+                return Redirect("Home/Index");
+            }
+            return View(player);
         }
     }
 }
