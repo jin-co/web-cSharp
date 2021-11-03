@@ -10,10 +10,10 @@ namespace PressYourLuck.Models
     {
         public int PlayerId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "required")]
         public string Name { get; set; }
 
-        [Range(1.00, 10000.00)]
+        [Range(1.00, 10000.00, ErrorMessage = "must be between 1 ~ 10000")]
         public double StartingCoins { get; set; }
     }
 }
