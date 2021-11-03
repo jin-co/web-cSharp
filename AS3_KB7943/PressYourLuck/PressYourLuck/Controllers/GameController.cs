@@ -10,18 +10,17 @@ namespace PressYourLuck.Controllers
 {
     public class GameController : Controller
     {
-        [HttpPost]
-        public IActionResult Index()
+        public IActionResult Index(int bet)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-            else
-            {
-                var tileList = GameHelper.GenerateNewGame();
-                return View(tileList);
-            }
+            //var playerJson = HttpContext.Session.GetString("newUser");
+            //var player = new Player();
+            
+            //player = JsonConvert.DeserializeObject<Player>(playerJson);
+            
+
+
+            var tileList = GameHelper.GenerateNewGame();
+            return View(tileList);
         }
     }
 }

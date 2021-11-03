@@ -14,9 +14,7 @@ namespace PressYourLuck.Helpers
          * total number of coins (which we'll store in Cookies)
          * 
          * HINT: Remember that HttpContext as well as Response and Request objects are not
-         * available from here, so you may need to pass those in from your controller.
-         * 
-         * I've coded the first one for you and have created placeholders for the rest.
+         * available from here, pass those in from your controller.
          * 
          */
         public static void SaveCurrentBet(HttpContext httpContext, double bet)

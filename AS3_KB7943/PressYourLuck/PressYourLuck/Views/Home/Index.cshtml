@@ -7,7 +7,7 @@
 <h1>Welcome, @ViewBag.Name !</h1>
 
 <div asp-validation-summary="All"></div>
-<form asp-action="Index" method="post">
+<form asp-action="Index">
     <div class="form-group">
         <p>How many coins would you like to wager?</p>
         <input type="number" class="form-control w-25" min="1" required/>
@@ -17,7 +17,6 @@
         asp-controller="Game"
         asp-action="Index"
         class="btn btn-primary">Start Playing!</button>
-
 </form>
 
 @*<div class="text-center">
