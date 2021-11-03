@@ -51,7 +51,9 @@ namespace PressYourLuck.Controllers
 
         public IActionResult ClearUser()
         {
-            HttpContext.Session.Remove("newUser");
+            //HttpContext.Session.Remove("newUser");
+            Response.Cookies.Delete("name");
+            Response.Cookies.Delete("coins");
             return RedirectToAction("Index");
         }
 

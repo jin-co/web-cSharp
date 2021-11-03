@@ -13,5 +13,8 @@ namespace PressYourLuck.Models
 
         [Range(1.00, 10000.00, ErrorMessage = "coin numbers must be between 1 ~ 10000")]
         public double StartingCoins { get; set; }
+
+        [Range(1.00, 10000.00, ErrorMessage = "bet must be greater than 1")]
+        public double? Bet { get; set; }
     }
 }

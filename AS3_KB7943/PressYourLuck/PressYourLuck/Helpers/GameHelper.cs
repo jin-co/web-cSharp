@@ -35,13 +35,7 @@ namespace PressYourLuck.Helpers
         }
 
         /*
-        * There are MANY other helpers you may want to create here.  I've created some
-        *  placeholder as well as hints for others you may find useful:
-        *
-        * 
-        * HINT: Remember that your HttpContext is not available in this class so you may
-        * need to pass it into methods that need it!
-        * 
+        * HINT: HttpContext is not available in this class pass it into methods 
         */
 
 

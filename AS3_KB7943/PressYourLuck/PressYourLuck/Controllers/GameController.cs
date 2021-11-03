@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PressYourLuck.Helpers;
+using PressYourLuck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,18 @@ namespace PressYourLuck.Controllers
 {
     public class GameController : Controller
     {
+        [HttpPost]
         public IActionResult Index()
         {
-            var tileList = GameHelper.GenerateNewGame();
-            return View(tileList);
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                var tileList = GameHelper.GenerateNewGame();
+                return View(tileList);
+            }
         }
     }
 }
