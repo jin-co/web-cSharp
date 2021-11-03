@@ -1,7 +1,17 @@
 ﻿@model List<Tile>
 
-<div>
+<div class="row justify-content-between mb-4">
     <h3>Current Bet:</h3>
+    @if (true)
+    {
+        // if bet is above 0
+        <button class="btn btn-success">TAKE THE COINS</button>
+    }
+    else
+    {
+        // if bet is 0
+        <button class="btn btn-success">Try Again</button>
+    }
 </div>
 
 <div class="row card-deck">
@@ -21,8 +31,15 @@
                 {
                     <img src="~/images/money.png" class="card-img-top" alt="...">
                 }
-                <div class="card-body">
-                    <div>@tile.Value</div>
+                <div class="card-body text-center">
+                    @if (tile.Visible)
+                    {
+                        <div>@tile.Value</div>
+                    }
+                    else
+                    {
+                        <button class="btn btn-primary btn-sm">CHOOSE</button>
+                    }
                 </div>
             </div>
         </div>
