@@ -1,22 +1,22 @@
 ﻿@model Player
 
+<h1 class="jumbotron">Welcome to Press Your Luck!</h1>
+<p>Please enter your name and the number of coins you have to get started.</p>
 
-<div asp-validation-summary="All" class=""></div>
+<div asp-validation-summary="All" class="text-info"></div>
 <form asp-controller="Player" asp-action="Index" class="" method="post">
     <div class="form-group">
         <label asp-for="Name"
                class="control-label">Name</label>
         <input asp-for="Name"
                class="form-control w-25" type="text" />
-        <span asp-validation-for="Name"></span>
     </div>
     
     <div class="form-group">
         <label asp-for="StartingCoins"
                class="control-label">Total Coins</label>
         <input asp-for="StartingCoins"
-               class="form-control w-25" type="number" />
-        <span asp-validation-for="StartingCoins"></span>
+               class="form-control w-25" type="number"  value="0"/>
     </div>
 
     <button type="submit" class="btn btn-primary">

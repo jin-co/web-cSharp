@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using PressYourLuck.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,8 @@ namespace PressYourLuck.Controllers
         {
             if (ModelState.IsValid)
             {
-                HttpContext.Session.SetString("newUser", player.Name);
+                string user = JsonConvert.SerializeObject(player);
+                HttpContext.Session.SetString("newUser", user);
                 return Redirect("Home/Index");
             }
             return View(player);
