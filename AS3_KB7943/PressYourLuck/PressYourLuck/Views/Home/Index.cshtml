@@ -1,4 +1,4 @@
-﻿@model Player
+﻿@model CurrentGameModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -7,16 +7,15 @@
 <h1>Welcome, @ViewBag.Name !</h1>
 
 <div asp-validation-summary="All"></div>
-<form asp-action="Index">
+<form asp-action="Index" method="post">
     <div class="form-group">
         <p>How many coins would you like to wager?</p>
-        <input type="number" class="form-control w-25" min="1" required/>
+        <input asp-for="CurrentBettingAmount" 
+               type="number" 
+               class="form-control w-25" min="1" required/>
     </div>
-    <button
-        type="submit"
-        asp-controller="Game"
-        asp-action="Index"
-        class="btn btn-primary">Start Playing!</button>
+    <button type="submit"
+            class="btn btn-primary">Start Playing!</button>
 </form>
 
 @*<div class="text-center">

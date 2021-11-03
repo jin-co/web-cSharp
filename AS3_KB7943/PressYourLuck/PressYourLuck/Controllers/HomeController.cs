@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using PressYourLuck.Models;
+using PressYourLuck.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -34,6 +35,19 @@ namespace PressYourLuck.Controllers
             {
                 return Redirect("Player/Index");
             }
+        }
+
+        [HttpPost]
+        public IActionResult Index(CurrentGameModel currenGame)
+        {
+            double currentBetting = currenGame.CurrentBettingAmount;
+            //double total = double.Parse(HttpContext.Request.Cookies["coins"]);
+            //total -= currentBetting;
+
+            HttpContext.Session.SetString("bet", currentBetting.ToString());
+            ViewBag.Name = Request.Cookies["name"];
+            ViewBag.Coin = Request.Cookies["coins"];
+            return Redirect("Game/Index");
         }
 
         public IActionResult ClearUser()

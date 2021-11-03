@@ -3,8 +3,9 @@
     "",
     "\\PressYourLuck",
     "\\PressYourLuck\\PressYourLuck",
+    "\\PressYourLuck\\PressYourLuck\\Controllers",
     "\\PressYourLuck\\PressYourLuck\\Helpers"
   ],
-  "SelectedNode": "\\PressYourLuck\\PressYourLuck.sln",
+  "SelectedNode": "\\PressYourLuck\\PressYourLuck\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }
