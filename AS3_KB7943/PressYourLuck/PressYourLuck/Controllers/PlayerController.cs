@@ -19,10 +19,18 @@ namespace PressYourLuck.Controllers
         [HttpPost]
         public IActionResult Index(Player player)
         {
+            var options = new CookieOptions
+            {
+                Expires = DateTime.Now.AddDays(30)
+            };
+
             if (ModelState.IsValid)
             {
-                string user = JsonConvert.SerializeObject(player);
-                HttpContext.Session.SetString("newUser", user);
+                //string user = JsonConvert.SerializeObject(player);
+                //HttpContext.Session.SetString("newUser", user);
+
+                Response.Cookies.Append("name", player.Name, options);
+                Response.Cookies.Append("coins", player.StartingCoins.ToString("c"), options);
                 return Redirect("/");
             }
             return View(player);

@@ -25,13 +25,24 @@ namespace PressYourLuck.Controllers
         {
             var playerJson = HttpContext.Session.GetString("newUser");
             var player = new Player();
-            if (HttpContext.Session.GetString("newUser") != null)
+            //if (HttpContext.Session.GetString("newUser") != null)
+            //{
+            //    //player = JsonConvert.DeserializeObject<Player>(playerJson);
+            //    //ViewBag.Name = player.Name;
+            //    //ViewBag.Coin = player.StartingCoins;
+            //    return View();
+            //}       
+            //else
+            //{
+            //    return Redirect("Player/Index");
+            //}
+            if (Request.Cookies["name"] != null)
             {
-                player = JsonConvert.DeserializeObject<Player>(playerJson);
-                ViewBag.Name = player.Name;
-                ViewBag.Coin = player.StartingCoins;
+                //player = JsonConvert.DeserializeObject<Player>(playerJson);
+                ViewBag.Name = Request.Cookies["name"];
+                ViewBag.Coin = Request.Cookies["coins"];
                 return View();
-            }       
+            }
             else
             {
                 return Redirect("Player/Index");
