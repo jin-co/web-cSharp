@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PressYourLuck.Models;
 using System;
@@ -20,7 +21,7 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Index()
         {
-            if (Request.Cookies["newUser"] != null)
+            if (HttpContext.Session.GetString("newUser") != null)
             {
                 return View();
             }       

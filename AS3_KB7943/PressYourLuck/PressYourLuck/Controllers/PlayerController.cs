@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using PressYourLuck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +16,10 @@ namespace PressYourLuck.Controllers
         }
         
         [HttpPost]
-        public IActionResult Join(int id)
+        public IActionResult Index(Player player)
         {
-            
-            return Redirect("default");
+            HttpContext.Session.SetString("newUser", player.Name);
+            return Redirect("Home/Index");
         }
     }
 }
