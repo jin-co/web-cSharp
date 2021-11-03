@@ -23,7 +23,7 @@ namespace PressYourLuck.Controllers
             {
                 string user = JsonConvert.SerializeObject(player);
                 HttpContext.Session.SetString("newUser", user);
-                return Redirect("Home/Index");
+                return Redirect("/");
             }
             return View(player);
         }

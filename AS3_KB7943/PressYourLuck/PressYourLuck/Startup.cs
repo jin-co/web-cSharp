@@ -25,7 +25,9 @@ namespace PressYourLuck
         {
             // session
             services.AddMemoryCache();
-            services.AddSession();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromSeconds(60 * 5);
+            });
 
             // json
             services.AddControllersWithViews().AddNewtonsoftJson();

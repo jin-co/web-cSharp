@@ -1,6 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div class="text-center">
-    <a asp-controller="Game" asp-action="Index">Check out the Tile List</a>
+
+<h1>Welcome, @ViewBag.Name !</h1>
+
+<div class="form-group">
+    <p>How many coins would you like to wager?</p>
+    <input type="number" class="form-control w-25" value="0"/>
 </div>
+<a 
+    asp-controller="Game"
+    asp-action="Index"
+    class="btn btn-primary">Start Playing!</a>
+
+@*<div class="text-center">
+    <a asp-controller="Game" asp-action="Index">Check out the Tile List</a>
+</div>*@

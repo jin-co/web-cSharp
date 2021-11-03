@@ -34,8 +34,11 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        Total Coins: @Context.Session.GetString("newUser")
-                        <button class="btn btn-success">
+                        Total Coins: @ViewBag.Coin
+                        <button
+                            asp-controller="Home"
+                            asp-action="ClearUser"
+                            class="btn btn-success">
                             Cash Out
                         </button>
                     </li>
