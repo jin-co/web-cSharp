@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using PressYourLuck.Models;
+using PressYourLuck.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace PressYourLuck.Helpers
                 };
 
                 tileList.Add(tile);
+
             }
             return tileList;
         }

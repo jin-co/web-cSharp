@@ -27,9 +27,15 @@ namespace PressYourLuck.Controllers
         {
             //ViewBag.Name = Request.Cookies["name"];
             //ViewBag.Coin = Request.Cookies["coins"];
-            //ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
-            var tileList = GameHelper.GenerateNewGame();
-            return View(tileList);
+            double bet = double.Parse(HttpContext.Session.GetString("bet"));
+            double coin = double.Parse(Request.Cookies["coins"]);
+            double cal = coin - bet;
+
+            Response.Cookies.Append("coins", cal.ToString());
+
+            ViewBag.Coin = Request.Cookies["coins"];
+
+            return RedirectToAction("Index");
         }
     }
 }
