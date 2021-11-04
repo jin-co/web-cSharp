@@ -1,6 +1,7 @@
 ﻿using ETicket.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,5 +17,18 @@ namespace ETicket.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public MovieCategory MovieCategory { get; set; }
+
+        // Relationship
+        public List<ActorMovie> ActorMovies { get; set; }
+
+        // Cinema
+        [ForeignKey("CinemaId")]
+        public int CinemaId { get; set; }
+        public Cinema Cinema { get; set; }
+        
+        // Producer
+        [ForeignKey("ProducerId")]
+        public int ProducerId { get; set; }
+        public Producer Producer { get; set; }
     }
 }
