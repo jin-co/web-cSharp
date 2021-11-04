@@ -1,8 +1,8 @@
 ﻿@model List<Tile>
 
 <div class="row justify-content-between mb-4">
-    <h3>Current Bet:</h3>
-    @if (true)
+    <h3>Current Bet: $@ViewBag.CurrentBet</h3>
+    @if (double.Parse(ViewBag.CurrentBet) > 0)
     {
         // if bet is above 0
         <button class="btn btn-success">TAKE THE COINS</button>
@@ -38,7 +38,9 @@
                     }
                     else
                     {
-                        <button class="btn btn-primary btn-sm">CHOOSE</button>
+                        <a asp-action="Bet"
+                           asp-route-index="@Model.IndexOf(tile)"
+                           class="btn btn-primary btn-sm">CHOOSE</a>
                     }
                 </div>
             </div>

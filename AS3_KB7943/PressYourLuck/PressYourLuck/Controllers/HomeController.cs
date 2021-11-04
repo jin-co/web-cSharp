@@ -40,11 +40,7 @@ namespace PressYourLuck.Controllers
         [HttpPost]
         public IActionResult Index(CurrentGameModel currenGame)
         {
-            double currentBetting = currenGame.CurrentBettingAmount;
-            //double total = double.Parse(HttpContext.Request.Cookies["coins"]);
-            //total -= currentBetting;
-
-            HttpContext.Session.SetString("bet", currentBetting.ToString());
+            HttpContext.Session.SetString("bet", currenGame.CurrentBettingAmount.ToString());            
             ViewBag.Name = Request.Cookies["name"];
             ViewBag.Coin = Request.Cookies["coins"];
             return Redirect("Game/Index");

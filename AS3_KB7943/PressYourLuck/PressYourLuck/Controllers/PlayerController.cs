@@ -26,9 +26,6 @@ namespace PressYourLuck.Controllers
 
             if (ModelState.IsValid)
             {
-                //string user = JsonConvert.SerializeObject(player);
-                //HttpContext.Session.SetString("newUser", user);
-
                 Response.Cookies.Append("name", player.Name, options);
                 Response.Cookies.Append("coins", player.StartingCoins.ToString("c"), options);
                 return Redirect("/");

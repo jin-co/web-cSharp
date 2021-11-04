@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using PressYourLuck.Helpers;
 using PressYourLuck.Models;
 using System;
@@ -12,14 +13,21 @@ namespace PressYourLuck.Controllers
     {
         public IActionResult Index()
         {
-            //var playerJson = HttpContext.Session.GetString("newUser");
-            //var player = new Player();
-
-            //player = JsonConvert.DeserializeObject<Player>(playerJson);
-
-            ViewBag.Name = Request.Cookies["name"];
+            ViewBag.Name = Request.Cookies["name"];            
             ViewBag.Coin = Request.Cookies["coins"];
+            ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
+            var tileList = GameHelper.GenerateNewGame();
 
+            HttpContext.Session.SetString("tiles", tileList.ToString());
+
+            return View(tileList);
+        }
+
+        public IActionResult Bet(int index)
+        {
+            //ViewBag.Name = Request.Cookies["name"];
+            //ViewBag.Coin = Request.Cookies["coins"];
+            //ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
             var tileList = GameHelper.GenerateNewGame();
             return View(tileList);
         }
