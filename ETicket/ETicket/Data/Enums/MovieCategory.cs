@@ -10,6 +10,8 @@ namespace ETicket.Data
         Action = 1,  // changing starting index(default: 0)
         Comedy,
         Drama,
-        Documentary
+        Documentary,
+        Cartoon,
+        Horror
     }
 }
