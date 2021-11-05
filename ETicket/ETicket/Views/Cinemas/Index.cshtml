@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Cinema>
 
 @{
-    ViewData["Title"] = "List of Producers";
+    ViewData["Title"] = "List of Cinemas";
 }
 
 <div class="row">
@@ -21,7 +21,7 @@
                 {
                     <tr>
                         <td class="align-middle">
-                            <img src="@i.Logo" style="min-width: 150px;" class="rounded-circle" />
+                            <img src="@i.Logo" style="max-width: 150px;" class="rounded-circle" />
                         </td>
                         <td class="align-middle">
                             @i.Name
