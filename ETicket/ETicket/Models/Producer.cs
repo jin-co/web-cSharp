@@ -10,7 +10,7 @@ namespace ETicket.Models
     {        
         public int ProducerId { get; set; }
 
-        [DisplayName("ProFile Piture URL")]
+        [DisplayName("ProFile Picture")]
         public string ProfilePictureURL { get; set; }
 
         [DisplayName("Full Name")]

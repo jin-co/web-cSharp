@@ -10,7 +10,7 @@ namespace ETicket.Models
     {
         public int ActorId { get; set; }
         
-        [Display(Name = "Profile Picture URL")]  // this will be displayed title
+        [Display(Name = "Profile Picture")]  // this will be displayed title
         public string ProfilePictureURL { get; set; }
 
         [Display(Name = "Full Name")]

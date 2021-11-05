@@ -19,8 +19,8 @@ namespace ETicket.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allCinemas = await context.Cinemas.ToListAsync();
-            return View();
+            var cinemas = await context.Cinemas.ToListAsync();
+            return View(cinemas);
         }
     }
 }
