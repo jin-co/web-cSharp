@@ -20,8 +20,8 @@ namespace ETicket.Controllers
         // getting data asynchronously
         public async Task<IActionResult> Index()
         {
-            var allProducers = await context.Producers.ToListAsync();
-            return View();
+            var producers = await context.Producers.ToListAsync();
+            return View(producers);
         }
     }
 }
