@@ -70,3 +70,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\ETicke
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\ref\ETicket.dll
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\ETicket.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\ETicket.genruntimeconfig.cache
+C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Actors\Index.cshtml.g.cs

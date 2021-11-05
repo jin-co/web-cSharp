@@ -19,7 +19,7 @@ namespace ETicket.Controllers
         public IActionResult Index()
         {
             var data = context.Actors.ToList();
-            return View();
+            return View(data);
         }
     }
 }
