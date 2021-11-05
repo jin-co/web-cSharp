@@ -11,12 +11,15 @@ namespace ETicket.Models
         public int ActorId { get; set; }
         
         [Display(Name = "Profile Picture")]  // this will be displayed title
+        [Required(ErrorMessage = "Picture Required")]
         public string ProfilePictureURL { get; set; }
 
         [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "Name Required")]
         public string FullName { get; set; }
 
         [Display(Name = "Biography")]
+        [Required(ErrorMessage = "Bio Required")]
         public string Bio { get; set; }
 
         // Relationship

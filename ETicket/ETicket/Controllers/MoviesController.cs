@@ -21,6 +21,7 @@ namespace ETicket.Controllers
         {
             var moives = await context.Movies
                 .Include(n => n.Cinema)
+                .OrderBy(m => m.Name)
                 .ToListAsync();
             return View(moives);
         }

@@ -1,4 +1,5 @@
 using ETicket.Data;
+using ETicket.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,9 @@ namespace ETicket
             services.AddDbContext<AppDbContext>(options => 
             options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnectionString")));
+
+            // Service configAddScoped[life time](interface, implementation)
+            services.AddScoped<IActorsService, ActorsService>();
 
             services.AddControllersWithViews();
         }
