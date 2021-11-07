@@ -35,7 +35,7 @@ namespace ETicket.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var data = await service.GetAll();
+            var data = await service.GetAllAsync();
             return View(data);
         }
 
@@ -53,8 +53,20 @@ namespace ETicket.Controllers
             {
                 return View(actor);
             }
-            service.Add(actor);
+            await service.AddAsync(actor);
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var actorDetails = await service.GetByIdAsync(id);
+
+            if(actorDetails == null)
+            {
+                return View("Empty");
+            }
+
+            return View(actorDetails);
         }
     }
 }

@@ -73,3 +73,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Cinemas\Index.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Actors\Create.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Actors\Details.cshtml.g.cs
