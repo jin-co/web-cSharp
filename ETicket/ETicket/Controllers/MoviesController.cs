@@ -33,7 +33,7 @@ namespace ETicket.Controllers
             //    .ToListAsync();
             //return View(moives);
 
-            var moives = await service.GetAllAsync();
+            var moives = await service.GetAllAsync(n => n.Cinema);
             return View(moives);
         }
     }

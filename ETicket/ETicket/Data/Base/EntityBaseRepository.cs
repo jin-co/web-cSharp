@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace ETicket.Data.Base
@@ -37,6 +38,14 @@ namespace ETicket.Data.Base
         {
             var result = await context.Set<T>().ToListAsync();
             return result;
+        }
+
+        // to include other table when using generic
+        public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
+        {
+            IQueryable<T> query = context.Set<T>();
+            query = includeProperties.Aggregate(query, (current, includeProperties) => current.Include(includeProperties));
+            return await query.ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)
