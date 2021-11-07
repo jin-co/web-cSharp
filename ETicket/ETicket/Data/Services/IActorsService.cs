@@ -1,4 +1,5 @@
-﻿using ETicket.Models;
+﻿using ETicket.Data.Base;
+using ETicket.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,13 @@ namespace ETicket.Data.Services
      * make an interface -> implement
      */
 
-    public interface IActorsService
+    public interface IActorsService : IEntityBaseRepository<Actor>
     {
-        Task<IEnumerable<Actor>> GetAllAsync();
-        Task<Actor> GetByIdAsync(int id);
-        Task AddAsync(Actor actor);
-        Task<Actor> UpdateAsync(int id, Actor actor);
-        Task DeleteAsync(int id);
+        // before generic
+        //Task<IEnumerable<Actor>> GetAllAsync();
+        //Task<Actor> GetByIdAsync(int id);
+        //Task AddAsync(Actor actor);
+        //Task<Actor> UpdateAsync(int id, Actor actor);
+        //Task DeleteAsync(int id);
     }
 }

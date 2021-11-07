@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ETicket.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace ETicket.Models
 {
-    public class Actor
+    public class Actor : IEntityBase
     {
-        public int ActorId { get; set; }
+        public int Id { get; set; }
+        
+        // before generic
+        //public int ActorId { get; set; }
         
         [Display(Name = "Profile Picture")]  // this will be displayed title
         [Required(ErrorMessage = "Picture Required")]

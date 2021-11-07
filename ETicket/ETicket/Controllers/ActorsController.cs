@@ -54,6 +54,7 @@ namespace ETicket.Controllers
                 return View(actor);
             }
             await service.AddAsync(actor);
+
             return RedirectToAction(nameof(Index));
         }
 
