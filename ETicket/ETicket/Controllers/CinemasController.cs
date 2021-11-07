@@ -32,6 +32,17 @@ namespace ETicket.Controllers
             return View(cinemas);
         }
 
+        //Get: cinemas/details/1
+        public async Task<IActionResult> Details(int id)
+        {
+            var cinemaDetails= await service.GetByIdAsync(id);
+            if (cinemaDetails == null)
+            {
+                return View("NotFound");
+            }
+            return View(cinemaDetails);
+        }
+
         //Get: cinemas/Create
         public IActionResult Create()
         {
