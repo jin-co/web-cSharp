@@ -95,20 +95,26 @@ namespace ETicket.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete()
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+            var actorDetails = await service.GetByIdAsync(id);
+
+            if (actorDetails == null)
+            {
+                return View("NotFound");
+            }
+
+            return View(actorDetails);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(
-            [Bind("FullName, ProfilePictureURL, Bio")] Actor actor)
+        public async Task<IActionResult> Delete(int id,
+            [Bind("ActorId, FullName, ProfilePictureURL, Bio")] Actor actor)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(actor);
-            }
-            await service.AddAsync(actor);
+            var actorDetails = await service.GetByIdAsync(id);
+            if (actorDetails == null) return View("NotFound");
+
+            await service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
     }

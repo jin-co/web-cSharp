@@ -24,7 +24,14 @@ namespace ETicket.Data.Services
             await context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task<Actor> UpdateAsync(int id, Actor actor)
+        {
+            context.Remove(id);
+            await context.SaveChangesAsync();
+            return actor;
+        }
+
+        public Task DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -41,11 +48,6 @@ namespace ETicket.Data.Services
             return result;
         }
 
-        public async Task<Actor> UpdateAsync(int id, Actor actor)
-        {
-            context.Update(actor);
-            await context.SaveChangesAsync();
-            return actor;
-        }
+
     }
 }
