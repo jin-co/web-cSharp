@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\Week 9 - Nov 5\\RegistrationApp - Final\\Registration\\Registration.csproj": {}
+    "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\RegistrationApp\\Registration\\Registration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\Week 9 - Nov 5\\RegistrationApp - Final\\Registration\\Registration.csproj": {
+    "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\RegistrationApp\\Registration\\Registration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\Week 9 - Nov 5\\RegistrationApp - Final\\Registration\\Registration.csproj",
+        "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\RegistrationApp\\Registration\\Registration.csproj",
         "projectName": "Registration",
-        "projectPath": "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\Week 9 - Nov 5\\RegistrationApp - Final\\Registration\\Registration.csproj",
-        "packagesPath": "C:\\Users\\csdai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\csdai\\Documents\\Prog 2230 - Fall 2021 - Section 5\\Lectures\\Extra Content\\Week 9\\Week 9 - Nov 5\\RegistrationApp - Final\\Registration\\obj\\",
+        "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\RegistrationApp\\Registration\\Registration.csproj",
+        "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\RegistrationApp\\Registration\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\csdai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
