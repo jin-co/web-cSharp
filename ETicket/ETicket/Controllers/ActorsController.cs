@@ -103,16 +103,17 @@ namespace ETicket.Controllers
             {
                 return View("NotFound");
             }
-
             return View(actorDetails);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Delete(int id,
-            [Bind("ActorId, FullName, ProfilePictureURL, Bio")] Actor actor)
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var actorDetails = await service.GetByIdAsync(id);
-            if (actorDetails == null) return View("NotFound");
+            if (actorDetails == null)
+            {
+                return View("NotFound");
+            }
 
             await service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));

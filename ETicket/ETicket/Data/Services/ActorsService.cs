@@ -26,14 +26,16 @@ namespace ETicket.Data.Services
 
         public async Task<Actor> UpdateAsync(int id, Actor actor)
         {
-            context.Remove(id);
+            context.Update(actor);
             await context.SaveChangesAsync();
             return actor;
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await context.Actors.FirstOrDefaultAsync(n => n.ActorId == id);
+            context.Actors.Remove(result);
+            await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Actor>> GetAllAsync()
