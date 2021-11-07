@@ -65,6 +65,12 @@
 
 @section Scripts{
     <script>
+        // to show the url preview even when there is no change in the input
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $(#ProfilePictureURL).val();
+        })
+
         // #ProfilePictureURL is the field name(so here whenever it is updated)
         $("#ProfilePictureURL").on('change', function () {
             var output = document.getElementById('ProfilePicturePreview');
