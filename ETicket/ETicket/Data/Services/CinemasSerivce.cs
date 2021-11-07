@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace ETicket.Data.Services
 {
-    public interface ICinemasService : IEntityBaseRepository<Cinema>
+    public class CinemasSerivce : EntityBaseRepository<Cinema>, ICinemasService
     {
+        public CinemasSerivce(AppDbContext context) : base(context) { }
     }
 }
