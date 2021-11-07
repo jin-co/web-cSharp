@@ -41,9 +41,11 @@ namespace ETicket.Data.Services
             return result;
         }
 
-        public Actor Update(int id, Actor actor)
+        public async Task<Actor> UpdateAsync(int id, Actor actor)
         {
-            throw new NotImplementedException();
+            context.Update(actor);
+            await context.SaveChangesAsync();
+            return actor;
         }
     }
 }
