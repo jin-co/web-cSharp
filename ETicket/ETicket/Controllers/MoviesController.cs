@@ -36,5 +36,12 @@ namespace ETicket.Controllers
             var moives = await service.GetAllAsync(n => n.Cinema);
             return View(moives);
         }
+
+        //Get: Movies/Details/1
+        public async Task<IActionResult> Details(int id)
+        {
+            var movieDetail = await service.GetMovieByIdAsync(id);
+            return View(movieDetail);
+        }
     }
 }
