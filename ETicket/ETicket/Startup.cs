@@ -35,6 +35,7 @@ namespace ETicket
             services.AddScoped<IActorsService, ActorsService>();
             services.AddScoped<IProducersService, ProducersService>();
             services.AddScoped<ICinemasService, CinemasSerivce>();
+            services.AddScoped<IMoviesService, MoviesService>();
 
             services.AddControllersWithViews();
         }
