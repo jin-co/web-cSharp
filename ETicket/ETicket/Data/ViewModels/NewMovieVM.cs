@@ -12,6 +12,8 @@ namespace ETicket.Models
     // this if not for storing data so no need of PK
     public class NewMovieVM
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Name required")]
         public string Name { get; set; }
 

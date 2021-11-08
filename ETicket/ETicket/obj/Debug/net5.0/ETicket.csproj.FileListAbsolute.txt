@@ -88,3 +88,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Movies\Create.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_CreateItem.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Movies\Edit.cshtml.g.cs
