@@ -49,6 +49,7 @@ namespace PressYourLuck.Controllers
             if (tileList[index].Value == "0.00")
             {
                 bet = 0.00;
+                TempData["Busted"] = "Oh no! You busted out. Better luck next time!";
                 foreach (var i in tileList)
                 {
                     i.Visible = true;
@@ -57,6 +58,9 @@ namespace PressYourLuck.Controllers
             else
             {
                 bet *= double.Parse(tileList[index].Value);
+                TempData["Found"] = $"Congrats You've found a {tileList[index].Value} " +
+                    $"Multiplier! All remaining values have doubled. Will you Press Your " +
+                    $"Luck?";
                 foreach (var i in tileList)
                 {
                     if (i.Value != "0.00")
@@ -89,6 +93,10 @@ namespace PressYourLuck.Controllers
             Response.Cookies.Append("coins", cal.ToString("N2"));
             //ViewBag.Coin = Request.Cookies["coins"];
 
+            //TempMessage
+            TempData["Take"] = $"BIG WINNER! You cashed out for {cal} coins" +
+                $" Care to press you luck again?";
+
             return Redirect("/");
         }
 
@@ -100,6 +108,9 @@ namespace PressYourLuck.Controllers
 
             if (double.Parse(Request.Cookies["coins"]) <= 0)
             {
+                //TempMessage
+                TempData["Broken"] = $"You've lost all you coins and must enter" +
+                    $" more to keep playing";
                 return Redirect("/Home/ClearUser");
             }            
             return Redirect("/");

@@ -1,8 +1,18 @@
 ﻿@model List<Tile>
 
+<div>
+    <p>message</p>
+</div>
+@{ 
+    if (TempData.Keys)
+    {
+
+    }
+}
+
 <div class="row justify-content-between mb-4">
     <h3>Current Bet: $@ViewBag.CurrentBet</h3>
-    @if (double.Parse(ViewBag.CurrentBet) > 0)
+    @if (true)
     {
         // if bet is above 0 double.Parse(ViewBag.CurrentBet) > 0
         <a class="btn btn-success"
