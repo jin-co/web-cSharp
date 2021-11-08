@@ -1,4 +1,5 @@
 ﻿using ETicket.Data.Base;
+using ETicket.Data.ViewModels;
 using ETicket.Models;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace ETicket.Data.Services
     public interface IMoviesService : IEntityBaseRepository<Movie>
     {
         Task<Movie> GetMovieByIdAsync(int id);
+        Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues();
     }
 }
