@@ -26,7 +26,6 @@ namespace PressYourLuck.Controllers
         {
             if (Request.Cookies["name"] != null)
             {
-                //player = JsonConvert.DeserializeObject<Player>(playerJson);
                 ViewBag.Name = Request.Cookies["name"];
                 ViewBag.Coin = Request.Cookies["coins"];
                 return View();
@@ -48,7 +47,6 @@ namespace PressYourLuck.Controllers
 
         public IActionResult ClearUser()
         {
-            //HttpContext.Session.Remove("newUser");
             Response.Cookies.Delete("name");
             Response.Cookies.Delete("coins");
             return RedirectToAction("Index");
