@@ -4,20 +4,35 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div>
+    @{
+        if (TempData["Broken"] != null)
+        {
+            <p class="bg-danger text-light">@TempData["Broken"]</p>
+        }
+        if (TempData["Take"] != null)
+        {
+            <p class="bg-success text-light">@TempData["Take"]</p>
+        }
+    }
+</div>
+
 <h1>Welcome, @ViewBag.Name !</h1>
 
 <div asp-validation-summary="All"></div>
 <form asp-action="Index" method="post">
     <div class="form-group">
         <p>How many coins would you like to wager?</p>
-        <input asp-for="CurrentBettingAmount" 
-               type="number" 
-               class="form-control w-25" min="1" required/>
+        <input asp-for="CurrentBettingAmount"
+               type="number"
+               class="form-control w-25" min="1" required />
     </div>
     <button type="submit"
-            class="btn btn-primary">Start Playing!</button>
+            class="btn btn-primary">
+        Start Playing!
+    </button>
 </form>
 
 @*<div class="text-center">
-    <a asp-controller="Game" asp-action="Index">Check out the Tile List</a>
-</div>*@
+        <a asp-controller="Game" asp-action="Index">Check out the Tile List</a>
+    </div>*@
