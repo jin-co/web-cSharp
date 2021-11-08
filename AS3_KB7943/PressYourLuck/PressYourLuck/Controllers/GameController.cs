@@ -15,6 +15,13 @@ namespace PressYourLuck.Controllers
     {        
         public IActionResult Index()
         {
+            //double bet = double.Parse(HttpContext.Session.GetString("bet"));
+            //double coin = double.Parse(Request.Cookies["coins"]);
+            //double cal = coin - bet;
+
+            //// total coin 
+            //Response.Cookies.Append("coins", cal.ToString());
+
             ViewBag.Name = Request.Cookies["name"];            
             ViewBag.Coin = Request.Cookies["coins"];
             ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
@@ -31,18 +38,18 @@ namespace PressYourLuck.Controllers
         {
             double bet = double.Parse(HttpContext.Session.GetString("bet"));
             ViewBag.Coin = Request.Cookies["coins"];
-            double coin = double.Parse(Request.Cookies["coins"]);
-            double cal = coin - bet;
+            //double coin = double.Parse(Request.Cookies["coins"]);
+            //double cal = coin - bet;
+
+            //// total coin 
+            //Response.Cookies.Append("coins", cal.ToString());
+            //ViewBag.Coin = Request.Cookies["coins"];
 
             // get cookie
             string currentGameJSON = HttpContext.Session.GetString("currentGame");
             var tileList = new List<Tile>();
             tileList = JsonConvert.DeserializeObject<List<Tile>>(currentGameJSON);
             tileList[index].Visible = true;
-
-            // total coin 
-            Response.Cookies.Append("coins", cal.ToString());
-            ViewBag.Coin = Request.Cookies["coins"];
 
             // bet result
             if (tileList[index].Value == "0.00")
