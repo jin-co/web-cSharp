@@ -25,8 +25,6 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Bet(int index)
         {
-            //ViewBag.Name = Request.Cookies["name"];
-            //ViewBag.Coin = Request.Cookies["coins"];
             double bet = double.Parse(HttpContext.Session.GetString("bet"));
             double coin = double.Parse(Request.Cookies["coins"]);
             double cal = coin - bet;

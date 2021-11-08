@@ -27,7 +27,7 @@ namespace PressYourLuck.Controllers
             if (ModelState.IsValid)
             {
                 Response.Cookies.Append("name", player.Name, options);
-                Response.Cookies.Append("coins", player.StartingCoins.ToString("c"), options);
+                Response.Cookies.Append("coins", player.StartingCoins.ToString(), options);
                 return Redirect("/");
             }
             return View(player);
