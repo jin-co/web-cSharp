@@ -39,9 +39,13 @@ namespace PressYourLuck.Controllers
             tileList = JsonConvert.DeserializeObject<List<Tile>>(currentGameJSON);
             tileList[index].Visible = true;
 
+            // total coin 
             Response.Cookies.Append("coins", cal.ToString());
-
             ViewBag.Coin = Request.Cookies["coins"];
+
+            // current bet
+            HttpContext.Session.SetString("bet", cal.ToString());
+            ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
 
             return View("Index", tileList);
         }
