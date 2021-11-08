@@ -2,7 +2,7 @@
 
 <div class="row justify-content-between mb-4">
     <h3>Current Bet: $@ViewBag.CurrentBet</h3>
-    @if (true)
+    @if (double.Parse(ViewBag.CurrentBet) > 0)
     {
         // if bet is above 0 double.Parse(ViewBag.CurrentBet) > 0
         <a class="btn btn-success"
@@ -13,7 +13,8 @@
     else
     {
         // if bet is 0
-        <button class="btn btn-success">Try Again</button>
+        <a class="btn btn-success"
+                asp-action="TryAgain">Try Again</a>
     }
 </div>
 

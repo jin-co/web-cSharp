@@ -38,12 +38,6 @@ namespace PressYourLuck.Controllers
         {
             double bet = double.Parse(HttpContext.Session.GetString("bet"));
             ViewBag.Coin = Request.Cookies["coins"];
-            //double coin = double.Parse(Request.Cookies["coins"]);
-            //double cal = coin - bet;
-
-            //// total coin 
-            //Response.Cookies.Append("coins", cal.ToString());
-            //ViewBag.Coin = Request.Cookies["coins"];
 
             // get cookie
             string currentGameJSON = HttpContext.Session.GetString("currentGame");
@@ -55,6 +49,10 @@ namespace PressYourLuck.Controllers
             if (tileList[index].Value == "0.00")
             {
                 bet = 0.00;
+                foreach (var i in tileList)
+                {
+                    i.Visible = true;
+                }
             }
             else
             {
@@ -91,6 +89,19 @@ namespace PressYourLuck.Controllers
             Response.Cookies.Append("coins", cal.ToString("N2"));
             //ViewBag.Coin = Request.Cookies["coins"];
 
+            return Redirect("/");
+        }
+
+        public IActionResult TryAgain()
+        {
+            ViewBag.Name = Request.Cookies["name"];
+            ViewBag.Coin = Request.Cookies["coins"];
+            ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
+
+            if (double.Parse(Request.Cookies["coins"]) <= 0)
+            {
+                return Redirect("/Home/ClearUser");
+            }            
             return Redirect("/");
         }
     }
