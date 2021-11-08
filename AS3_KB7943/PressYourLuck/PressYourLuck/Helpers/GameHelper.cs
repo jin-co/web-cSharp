@@ -26,7 +26,7 @@ namespace PressYourLuck.Helpers
                 var tile = new Tile()
                 {
                     TileIndex = i,
-                    Visible = false,
+                    Visible = true,
                     Value = randomValue.ToString("N2")
                 };
 

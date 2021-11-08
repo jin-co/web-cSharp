@@ -5,7 +5,10 @@
     @if (true)
     {
         // if bet is above 0 double.Parse(ViewBag.CurrentBet) > 0
-        <button class="btn btn-success">TAKE THE COINS</button>
+        <a class="btn btn-success"
+                asp-action="TakeCoins">
+                TAKE THE COINS
+        </a>
     }
     else
     {
@@ -31,18 +34,21 @@
                 {
                     <img src="~/images/money.png" class="card-img-top" alt="...">
                 }
-                <div class="card-body text-center">
-                    @if (tile.Visible)
-                    {
-                        <div>@tile.Value</div>
-                    }
-                    else
-                    {
-                        <a asp-action="Bet"
-                           asp-route-index="@Model.IndexOf(tile)"
-                           class="btn btn-primary btn-sm">CHOOSE</a>
-                    }
-                </div>
+            <div class="card-body text-center">
+                @if (tile.Visible)
+                {
+                    <div>@tile.Value</div>
+                    <a asp-action="Bet"
+                       asp-route-index="@Model.IndexOf(tile)"
+                       class="btn btn-primary btn-sm">CHOOSE</a>
+                }
+                else
+                {
+                    <a asp-action="Bet"
+                       asp-route-index="@Model.IndexOf(tile)"
+                       class="btn btn-primary btn-sm">CHOOSE</a>
+                }
+            </div>
             </div>
         </div>
     }
