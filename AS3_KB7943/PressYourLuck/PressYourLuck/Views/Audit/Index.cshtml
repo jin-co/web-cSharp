@@ -14,8 +14,8 @@
 <ul class="nav nav-pills">
     <li class="nav-item">
         <a class="nav-link
-           @(action == "Index" ? "active" : "")"
-           asp-action="Index">
+           @(action == "Index" || action == "All" ? "active" : "")"
+           asp-action="All">
             All
         </a>
     </li>

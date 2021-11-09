@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PressYourLuck.Models;
 using System;
@@ -19,6 +20,23 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Index()
         {
+            string typeChosen = HttpContext.Session.GetString("TypeChosen");
+
+            switch (typeChosen)
+            {
+                case "Cash In":
+                    return RedirectToAction("CashIn");                    
+
+                case "Cash Out":
+                    return RedirectToAction("CashOut");                    
+
+                case "Lose":
+                    return RedirectToAction("Lose");                    
+
+                case "Win":
+                    return RedirectToAction("Win");                    
+            }
+
             var audit = context.Audits
                 .Include(a => a.AuditTypes)
                 .OrderByDescending(a => a.CreatedDate)
@@ -26,8 +44,18 @@ namespace PressYourLuck.Controllers
             return View(audit);
         }
 
+        public IActionResult All()
+        {
+            var audit = context.Audits
+                .Include(a => a.AuditTypes)
+                .OrderByDescending(a => a.CreatedDate)
+                .ToList();
+            return View("Index", audit);
+        }
+
         public IActionResult CashIn(string cashIn)
         {
+            HttpContext.Session.SetString("TypeChosen", "Cash In");
             var audit = context.Audits
                             .Include(a => a.AuditTypes)
                             .Where(a => a.AuditTypeId == cashIn)
@@ -38,6 +66,7 @@ namespace PressYourLuck.Controllers
 
         public IActionResult CashOut(string cashOut)
         {
+            HttpContext.Session.SetString("TypeChosen", "Cash Out");
             var audit = context.Audits
                             .Include(a => a.AuditTypes)
                             .Where(a => a.AuditTypeId == cashOut)
@@ -48,6 +77,7 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Lose(string lose)
         {
+            HttpContext.Session.SetString("TypeChosen", "Lose");
             var audit = context.Audits
                 .Include(a => a.AuditTypes)
                 .Where(a => a.AuditTypeId == lose)
@@ -58,6 +88,7 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Win(string win)
         {
+            HttpContext.Session.SetString("TypeChosen", "Win");
             var audit = context.Audits
                 .Include(a => a.AuditTypes)
                 .Where(a => a.AuditTypeId == win)
