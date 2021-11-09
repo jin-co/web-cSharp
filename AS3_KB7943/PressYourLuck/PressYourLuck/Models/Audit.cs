@@ -9,6 +9,16 @@ namespace PressYourLuck.Models
 {
     public class Audit
     {
+        public Audit() { }
+
+        public Audit(string playerName, DateTime createdDate, double amount, string auditTypeId)
+        {
+            PlayerName = playerName;
+            CreatedDate = createdDate;
+            Amount = amount;
+            AuditTypeId = auditTypeId;
+        }
+
         public int AuditId { get; set; }
 
         [DisplayName("Player Name")]

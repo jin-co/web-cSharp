@@ -11,6 +11,13 @@ namespace PressYourLuck.Controllers
 {
     public class PlayerController : Controller
     {
+        private readonly PressLuckContext context;
+
+        public PlayerController(PressLuckContext context)
+        {
+            this.context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -24,6 +31,16 @@ namespace PressYourLuck.Controllers
                 var user = new UserCookies(Response.Cookies);
                 user.SetUser(player.Name);
                 user.SetCoin(player.StartingCoins.ToString());
+
+                // save data
+                var cashIn = new Audit(
+                    player.Name,
+                    DateTime.Now,
+                    player.StartingCoins,
+                    "Cash In");
+                context.Add(cashIn);
+                context.SaveChanges();
+
                 return Redirect("/");
             }
             return View(player);

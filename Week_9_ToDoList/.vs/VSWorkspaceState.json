@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Ch10bToDoList"
+    "\\Ch10bToDoList",
+    "\\Ch10bToDoList\\ToDoList",
+    "\\Ch10bToDoList\\ToDoList\\Models"
   ],
-  "SelectedNode": "\\Ch10bToDoList\\Ch10bToDoList.sln",
+  "SelectedNode": "\\Ch10bToDoList\\ToDoList\\Models\\Status.cs",
   "PreviewInSolutionExplorer": false
 }
