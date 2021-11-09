@@ -1,5 +1,12 @@
 ﻿@model Player
 
+@{
+    if (TempData["CashOut"] != null)
+    {
+        <p class="bg-success text-light">@TempData["CashOut"]</p>
+    }
+}
+
 <h1 class="jumbotron">Welcome to Press Your Luck!</h1>
 <p>Please enter your name and the number of coins you have to get started.</p>
 
@@ -11,12 +18,12 @@
         <input asp-for="Name"
                class="form-control w-25" type="text" />
     </div>
-    
+
     <div class="form-group">
         <label asp-for="StartingCoins"
                class="control-label">Total Coins</label>
         <input asp-for="StartingCoins"
-               class="form-control w-25" type="number"  value="0"/>
+               class="form-control w-25" type="number" value="0" />
     </div>
 
     <button type="submit" class="btn btn-primary">

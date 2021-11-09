@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
+@{   
+    string controller =
+    ViewContext.RouteData.Values["controller"].ToString();
+    string action =
+        ViewContext.RouteData.Values["action"].ToString();
+}
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -32,9 +40,10 @@
                     </ul>
                 </div>
 
-                <ul class="navbar-nav">
+                <ul class="navbar-nav
+                    @(controller == "Player" && action == "Index" ? "invisible" : "")">
                     <li class="nav-item">
-                        Total Coins: @ViewBag.Coin
+                        Total Coins: $@ViewBag.Coin
                         <a
                             asp-controller="Home"
                             asp-action="ClearUser"

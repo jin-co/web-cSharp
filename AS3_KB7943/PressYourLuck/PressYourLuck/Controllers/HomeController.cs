@@ -55,6 +55,13 @@ namespace PressYourLuck.Controllers
 
         public IActionResult ClearUser()
         {
+            double coin = double.Parse(Request.Cookies["coins"]);
+            if (coin > 0)
+            {
+                //TempMessage
+                TempData["CashOut"] = $"You cashed out for ${coin}";
+            }
+
             Response.Cookies.Delete("name");
             Response.Cookies.Delete("coins");
             return RedirectToAction("Index");

@@ -91,7 +91,6 @@ namespace PressYourLuck.Controllers
             double cal = coin + bet;
             // total coin 
             Response.Cookies.Append("coins", cal.ToString("N2"));
-            //ViewBag.Coin = Request.Cookies["coins"];
 
             //TempMessage
             TempData["Take"] = $"BIG WINNER! You cashed out for {cal} coins" +
