@@ -14,11 +14,11 @@ namespace PressYourLuck.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly PressLuckContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(PressLuckContext context)
         {
-            _logger = logger;
+            this.context = context;
         }
 
         [HttpGet]
@@ -54,13 +54,22 @@ namespace PressYourLuck.Controllers
         }
 
         public IActionResult ClearUser()
-        {
+        {                        
             double coin = double.Parse(Request.Cookies["coins"]);
             if (coin > 0)
             {
                 //TempMessage
                 TempData["CashOut"] = $"You cashed out for ${coin}";
             }
+
+            //save data
+            var cashOut = new Audit(
+                Request.Cookies["name"],
+                DateTime.Now,
+                coin,
+                "Cash Out");
+            context.Add(cashOut);
+            context.SaveChanges();
 
             Response.Cookies.Delete("name");
             Response.Cookies.Delete("coins");
