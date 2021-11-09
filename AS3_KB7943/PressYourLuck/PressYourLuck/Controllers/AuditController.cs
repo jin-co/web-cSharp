@@ -21,6 +21,7 @@ namespace PressYourLuck.Controllers
         {
             var audit = context.Audits
                 .Include(a => a.AuditTypes)
+                .OrderByDescending(a => a.CreatedDate)
                 .ToList();
             return View(audit);
         }
