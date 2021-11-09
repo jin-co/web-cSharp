@@ -12,16 +12,16 @@ using System.Threading.Tasks;
 namespace PressYourLuck.Controllers
 {
     public class GameController : Controller
-    {        
+    {
+        private readonly PressLuckContext context;
+
+        public GameController(PressLuckContext context)
+        {
+            this.context = context;
+        }
+
         public IActionResult Index()
         {
-            //double bet = double.Parse(HttpContext.Session.GetString("bet"));
-            //double coin = double.Parse(Request.Cookies["coins"]);
-            //double cal = coin - bet;
-
-            //// total coin 
-            //Response.Cookies.Append("coins", cal.ToString());
-
             ViewBag.Name = Request.Cookies["name"];            
             ViewBag.Coin = Request.Cookies["coins"];
             ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
@@ -30,7 +30,6 @@ namespace PressYourLuck.Controllers
             string currentGameJSON = JsonConvert.SerializeObject(tileList);
             HttpContext.Session.SetString("currentGame", currentGameJSON);
             
-
             return View(tileList);
         }
 
@@ -44,10 +43,20 @@ namespace PressYourLuck.Controllers
             var tileList = new List<Tile>();
             tileList = JsonConvert.DeserializeObject<List<Tile>>(currentGameJSON);
             tileList[index].Visible = true;
+            double chosenValue = double.Parse(tileList[index].Value);
 
             // bet result
             if (tileList[index].Value == "0.00")
             {
+                //save data
+                var lose = new Audit(
+                    Request.Cookies["name"],
+                    DateTime.Now,
+                    bet,
+                    "Lose");
+                context.Add(lose);
+                context.SaveChanges();
+
                 bet = 0.00;
                 TempData["Busted"] = "Oh no! You busted out. Better luck next time!";
                 foreach (var i in tileList)
@@ -57,8 +66,17 @@ namespace PressYourLuck.Controllers
             }
             else
             {
-                bet *= double.Parse(tileList[index].Value);
-                TempData["Found"] = $"Congrats You've found a {tileList[index].Value} " +
+                //save data
+                var win = new Audit(
+                    Request.Cookies["name"],
+                    DateTime.Now,
+                    ((bet * chosenValue) - bet),
+                    "Win");
+                context.Add(win);
+                context.SaveChanges();
+
+                bet *= chosenValue;
+                TempData["Found"] = $"Congrats You've found a {chosenValue} " +
                     $"Multiplier! All remaining values have doubled. Will you Press Your " +
                     $"Luck?";
                 foreach (var i in tileList)
