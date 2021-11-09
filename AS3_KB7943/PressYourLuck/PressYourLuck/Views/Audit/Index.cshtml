@@ -1,0 +1,55 @@
+﻿
+@model IEnumerable<Audit>
+@{
+    ViewData["Title"] = "Audit Records";
+    
+    string controller =
+        ViewContext.RouteData.Values["controller"].ToString();
+    string action =
+        ViewContext.RouteData.Values["action"].ToString();
+}
+<h2 class="jumbotron">@ViewData["Title"]</h2>
+
+<!-- nav -->
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">All</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Cash In</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Cash Out</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">Lose</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">Win</a>
+    </li>
+</ul>
+
+<!-- table start -->
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(p => p.CreatedDate)</th>
+            <th>@Html.DisplayNameFor(p => p.PlayerName)</th>
+            <th>@Html.DisplayNameFor(p => p.AuditTypes)</th>
+            <th>@Html.DisplayNameFor(p => p.Amount)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- shows all the data in the audit database -->
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.CreatedDate</td>
+                <td>@i.PlayerName</td>
+                <td>@i.AuditTypes.Name</td>
+                <td>@i.Amount</td>
+                
+            </tr>
+        }
+    </tbody>
+</table><!-- /end table -->
