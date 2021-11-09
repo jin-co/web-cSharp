@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PressYourLuck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,12 @@ using System.Threading.Tasks;
 
 namespace PressYourLuck
 {
+    /*
+     * Author: Kwangjin Baek
+     * Date: 2021. Nov. 10.
+     * Description: Game application that a user can wager money
+     * and flip a card. If the card has a number user wins
+     */
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -31,6 +39,10 @@ namespace PressYourLuck
 
             // json
             services.AddControllersWithViews().AddNewtonsoftJson();
+
+            // obtaining DB object
+            services.AddDbContext<PressLuckContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("PressLuckContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
