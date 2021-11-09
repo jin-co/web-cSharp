@@ -14,8 +14,8 @@ namespace PressYourLuck.Models
         public double Amount { get; set; }
 
         // Relation
-        [ForeignKey("AuditTypeId")]
-        public string AuditTypeId { get; set; }
-        public AuditType AuditTypes { get; set; }
+        //[ForeignKey("AuditTypeId")]
+        //public string AuditTypeId { get; set; }
+        //public AuditType AuditTypes { get; set; }
     }
 }
