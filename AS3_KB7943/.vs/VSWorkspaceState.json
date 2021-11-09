@@ -4,8 +4,10 @@
     "\\PressYourLuck",
     "\\PressYourLuck\\PressYourLuck",
     "\\PressYourLuck\\PressYourLuck\\Controllers",
-    "\\PressYourLuck\\PressYourLuck\\Helpers"
+    "\\PressYourLuck\\PressYourLuck\\Helpers",
+    "\\PressYourLuck\\PressYourLuck\\Views",
+    "\\PressYourLuck\\PressYourLuck\\Views\\Home"
   ],
-  "SelectedNode": "\\PressYourLuck\\PressYourLuck\\Controllers\\GameController.cs",
+  "SelectedNode": "\\PressYourLuck\\PressYourLuck\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
