@@ -25,5 +25,45 @@ namespace PressYourLuck.Controllers
                 .ToList();
             return View(audit);
         }
+
+        public IActionResult CashIn(string cashIn)
+        {
+            var audit = context.Audits
+                            .Include(a => a.AuditTypes)
+                            .Where(a => a.AuditTypeId == cashIn)
+                            .OrderByDescending(a => a.CreatedDate)
+                            .ToList();
+            return View("Index", audit);
+        }
+
+        public IActionResult CashOut(string cashOut)
+        {
+            var audit = context.Audits
+                            .Include(a => a.AuditTypes)
+                            .Where(a => a.AuditTypeId == cashOut)
+                            .OrderByDescending(a => a.CreatedDate)
+                            .ToList();
+            return View("Index", audit);
+        }
+
+        public IActionResult Lose(string lose)
+        {
+            var audit = context.Audits
+                .Include(a => a.AuditTypes)
+                .Where(a => a.AuditTypeId == lose)
+                .OrderByDescending(a => a.CreatedDate)
+                .ToList();
+            return View("Index" ,audit);
+        }
+
+        public IActionResult Win(string win)
+        {
+            var audit = context.Audits
+                .Include(a => a.AuditTypes)
+                .Where(a => a.AuditTypeId == win)
+                .OrderByDescending(a => a.CreatedDate)
+                .ToList();
+            return View("Index", audit);
+        }
     }
 }

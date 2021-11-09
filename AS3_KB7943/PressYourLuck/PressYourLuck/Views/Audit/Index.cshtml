@@ -13,19 +13,43 @@
 <!-- nav -->
 <ul class="nav nav-pills">
     <li class="nav-item">
-        <a class="nav-link active" href="#">All</a>
+        <a class="nav-link
+           @(action == "Index" ? "active" : "")"
+           asp-action="Index">
+            All
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Cash In</a>
+        <a class="nav-link
+           @(action == "CashIn" ? "active" : "")"
+           asp-action="CashIn"
+           asp-route-cashIn="Cash In">
+            Cash In
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Cash Out</a>
+        <a class="nav-link
+           @(action == "CashOut" ? "active" : "")"
+           asp-action="CashOut"
+           asp-route-cashOut="Cash Out">
+            Cash Out
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="#">Lose</a>
+        <a class="nav-link
+           @(action == "Lose" ? "active" : "")"
+           asp-action="Lose"
+           asp-route-lose="Lose">
+            Lose
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="#">Win</a>
+        <a class="nav-link
+           @(action == "Win" ? "active" : "")"
+           asp-action="Win"
+           asp-route-win="Win">
+            Win
+        </a>
     </li>
 </ul>
 
