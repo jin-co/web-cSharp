@@ -43,6 +43,26 @@ namespace ETicket.Data.Cart
             context.SaveChanges();
         }
 
+        public void RemoveItemFromCart(Movie movie)
+        {
+            var shoppingCartItem = context.ShoppingCartItems
+                .FirstOrDefault(n => n.Movie.Id == movie.Id &&
+                n.ShoppingCartId == ShoppingCartId);
+
+            if (shoppingCartItem != null)
+            {
+                if (shoppingCartItem.Amount > 1)
+                {
+                    shoppingCartItem.Amount--;
+                }
+                else
+                {
+                    context.ShoppingCartItems.Remove(shoppingCartItem);
+                }
+            }
+            context.SaveChanges();
+        }
+
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
             return ShoppingCartItems ?? ( // ??: null check
