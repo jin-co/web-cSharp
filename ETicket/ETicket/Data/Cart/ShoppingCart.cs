@@ -1,5 +1,7 @@
 ﻿using ETicket.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,22 @@ namespace ETicket.Data.Cart
         public ShoppingCart(AppDbContext context)
         {
             this.context = context;
+        }
+
+        public static ShoppingCart GetShoppingCart(IServiceProvider service)
+        {
+            // if session exists get it using service provider
+            ISession session = 
+                service.GetRequiredService<IHttpContextAccessor>()?
+                .HttpContext.Session;
+            var context = service.GetService<AppDbContext>();
+            string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
+            session.SetString("CartId", cartId);
+
+            return new ShoppingCart(context)
+            {
+                ShoppingCartId = cartId
+            };
         }
 
         public void AddItemToCart(Movie movie)
