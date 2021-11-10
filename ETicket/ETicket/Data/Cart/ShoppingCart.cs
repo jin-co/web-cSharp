@@ -19,6 +19,30 @@ namespace ETicket.Data.Cart
             this.context = context;
         }
 
+        public void AddItemToCart(Movie movie)
+        {
+            var shoppingCartItem = context.ShoppingCartItems
+                .FirstOrDefault(n => n.Movie.Id == movie.Id &&
+                n.ShoppingCartId == ShoppingCartId);
+
+            if (shoppingCartItem == null)
+            {
+                shoppingCartItem = new ShoppingCartItem()
+                {
+                    ShoppingCartId = ShoppingCartId,
+                    Movie = movie,
+                    Amount = 1
+                };
+
+                context.ShoppingCartItems.Add(shoppingCartItem);
+            }
+            else
+            {
+                shoppingCartItem.Amount++;
+            }
+            context.SaveChanges();
+        }
+
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
             return ShoppingCartItems ?? ( // ??: null check
