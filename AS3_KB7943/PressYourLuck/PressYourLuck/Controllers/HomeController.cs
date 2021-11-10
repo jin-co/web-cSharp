@@ -29,16 +29,6 @@ namespace PressYourLuck.Controllers
             {
                 ViewBag.Name = Request.Cookies["name"];
                 ViewBag.Coin = Request.Cookies["coins"];
-
-                // check if a user is broken
-                double coinLeft = double.Parse(Request.Cookies["coins"]);
-                if (coinLeft <= 0 || coinLeft == null)
-                {
-                    //TempMessage
-                    TempData["Broken"] = $"You've lost all you coins and must enter" +
-                        $" more to keep playing";
-                    return Redirect("/ClearUser");
-                }
                 return View();
             }
             else
@@ -61,6 +51,14 @@ namespace PressYourLuck.Controllers
             // total coin calculation and storing back to cookie
             double bet = double.Parse(HttpContext.Session.GetString("bet"));
             double coin = double.Parse(Request.Cookies["coins"]);
+
+            // check if the bet is more than the budget
+            if (bet > coin)
+            {
+                TempData["OverBet"] = "You cannot bet more than you have";
+                return Redirect("/");
+            }
+
             double cal = coin - bet;
             Response.Cookies.Append("coins", cal.ToString());
 

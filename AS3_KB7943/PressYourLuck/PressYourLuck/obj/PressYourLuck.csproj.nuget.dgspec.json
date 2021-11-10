@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj": {}
+    "C:\\Users\\jin\\Downloads\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj": {
+    "C:\\Users\\jin\\Downloads\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj",
+        "projectUniqueName": "C:\\Users\\jin\\Downloads\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj",
         "projectName": "PressYourLuck",
-        "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj",
+        "projectPath": "C:\\Users\\jin\\Downloads\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\PressYourLuck.csproj",
         "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\obj\\",
+        "outputPath": "C:\\Users\\jin\\Downloads\\AS3_KB7943\\PressYourLuck\\PressYourLuck\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

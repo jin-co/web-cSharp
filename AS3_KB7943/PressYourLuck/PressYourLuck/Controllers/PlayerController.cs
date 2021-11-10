@@ -26,7 +26,7 @@ namespace PressYourLuck.Controllers
         
         [HttpPost]
         public IActionResult Index(Player player)
-        {
+        {            
             if (ModelState.IsValid)
             {
                 var user = new UserCookies(Response.Cookies);

@@ -14,9 +14,9 @@
         {
             <p class="bg-success text-light">@TempData["Take"]</p>
         }
-        if (TempData["Overbetting"] != null)
+        if (TempData["OverBet"] != null)
         {
-            <p class="bg-success text-light">@TempData["Overbetting"]</p>
+            <p class="bg-danger text-light">@TempData["OverBet"]</p>
         }
     }
 </div>
@@ -24,7 +24,7 @@
 <h1>Welcome, @ViewBag.Name !</h1>
 
 <div asp-validation-summary="All"></div>
-<form asp-action="Index" method="post">
+<form asp-action="Index">
     <div class="form-group">
         <p>How many coins would you like to wager?</p>
         <input asp-for="CurrentBettingAmount"

@@ -23,7 +23,7 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Name = Request.Cookies["name"];            
+            ViewBag.Name = Request.Cookies["name"];
             ViewBag.Coin = Request.Cookies["coins"];
             ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
 
@@ -37,17 +37,9 @@ namespace PressYourLuck.Controllers
         public IActionResult Bet(int index)
         {
             double bet = double.Parse(HttpContext.Session.GetString("bet"));
-            double coinLeft = double.Parse(Request.Cookies["coins"]);
             ViewBag.Coin = Request.Cookies["coins"];
 
-            // check if a user bet less than the total
-            //if (bet > coinLeft)
-            //{
-            //    TempData["Overbetting"] = $"Your betting is over budget";
-            //    return RedirectToAction("Index");
-            //}
-
-            // get tile list
+            // get cookie
             string currentGameJSON = HttpContext.Session.GetString("currentGame");
             var tileList = new List<Tile>();
             tileList = JsonConvert.DeserializeObject<List<Tile>>(currentGameJSON);
@@ -130,10 +122,8 @@ namespace PressYourLuck.Controllers
             ViewBag.Name = Request.Cookies["name"];
             ViewBag.Coin = Request.Cookies["coins"];
             ViewBag.CurrentBet = HttpContext.Session.GetString("bet");
-            
-            double coinLeft = double.Parse(Request.Cookies["coins"]);
 
-            if (coinLeft <= 0 || coinLeft == null)
+            if (double.Parse(Request.Cookies["coins"]) <= 0)
             {
                 //TempMessage
                 TempData["Broken"] = $"You've lost all you coins and must enter" +
