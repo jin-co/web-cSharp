@@ -48,11 +48,10 @@ namespace PressYourLuck.Controllers
             ViewBag.Name = Request.Cookies["name"];
             ViewBag.Coin = Request.Cookies["coins"];
 
+            // total coin calculation and storing back to cookie
             double bet = double.Parse(HttpContext.Session.GetString("bet"));
             double coin = double.Parse(Request.Cookies["coins"]);
             double cal = coin - bet;
-
-            // total coin 
             Response.Cookies.Append("coins", cal.ToString());
 
             return Redirect("Game/Index");

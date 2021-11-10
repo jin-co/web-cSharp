@@ -5,6 +5,10 @@
     {
         <p class="bg-success text-light">@TempData["CashOut"]</p>
     }
+    if (TempData["Broken"] != null)
+    {
+        <p class="bg-danger text-light">@TempData["Broken"]</p>
+    }
 }
 
 <h1 class="jumbotron">Welcome to Press Your Luck!</h1>
