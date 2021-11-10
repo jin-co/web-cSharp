@@ -29,6 +29,16 @@ namespace PressYourLuck.Controllers
             {
                 ViewBag.Name = Request.Cookies["name"];
                 ViewBag.Coin = Request.Cookies["coins"];
+
+                // check if a user is broken
+                double coinLeft = double.Parse(Request.Cookies["coins"]);
+                if (coinLeft <= 0 || coinLeft == null)
+                {
+                    //TempMessage
+                    TempData["Broken"] = $"You've lost all you coins and must enter" +
+                        $" more to keep playing";
+                    return Redirect("/ClearUser");
+                }
                 return View();
             }
             else
