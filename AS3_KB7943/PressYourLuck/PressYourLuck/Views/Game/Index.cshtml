@@ -52,9 +52,6 @@
                     @if (tile.Visible)
                     {
                         <div>@tile.Value</div>
-                        <a asp-action="Bet"
-                            asp-route-index="@Model.IndexOf(tile)"
-                            class="btn btn-primary btn-sm">CHOOSE</a>
                     }
                     else
                     {
