@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PressYourLuck.Models
 {
+    // user cookie class that is use to get and set the user info
     public class UserCookies
     {
         private IRequestCookieCollection requestCookies { get; set; }

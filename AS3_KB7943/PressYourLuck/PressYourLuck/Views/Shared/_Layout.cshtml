@@ -41,7 +41,8 @@
                 </div>
 
                 <ul class="navbar-nav
-                    @(controller == "Player" && action == "Index" ? "invisible" : "")">
+                    @(controller == "Player" && action == "Index" ? "invisible" : "")
+                    @(controller == "Audit" ? "invisible" : "")">
                     <li class="nav-item">
                         Total Coins: $@ViewBag.Coin
                         <a

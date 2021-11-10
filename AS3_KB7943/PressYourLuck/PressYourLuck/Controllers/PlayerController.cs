@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PressYourLuck.Controllers
 {
+    // Player controller that manages calls for player pages
     public class PlayerController : Controller
     {
         private readonly PressLuckContext context;

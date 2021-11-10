@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PressYourLuck.Controllers
 {    
+    // Audit controller that manages calls for game records
     public class AuditController : Controller
     {
         private readonly PressLuckContext context;

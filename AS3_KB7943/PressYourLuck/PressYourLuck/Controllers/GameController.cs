@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace PressYourLuck.Controllers
 {
+    // Game controller that manages calls for game play
     public class GameController : Controller
     {
         private readonly PressLuckContext context;
@@ -87,7 +88,6 @@ namespace PressYourLuck.Controllers
                         multiplied = double.Parse(i.Value) * 2;
                         i.Value = multiplied.ToString("N2");
                     }
-                    
                 }
             }
 

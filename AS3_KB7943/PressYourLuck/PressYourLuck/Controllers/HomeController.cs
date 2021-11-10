@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace PressYourLuck.Controllers
 {
+    // Home controller that manages calls for the main page
     public class HomeController : Controller
     {
         private readonly PressLuckContext context;
@@ -39,6 +40,10 @@ namespace PressYourLuck.Controllers
         [HttpPost]
         public IActionResult Index(CurrentGameModel currenGame)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
             HttpContext.Session.SetString("bet", currenGame.CurrentBettingAmount.ToString());            
             ViewBag.Name = Request.Cookies["name"];
             ViewBag.Coin = Request.Cookies["coins"];
