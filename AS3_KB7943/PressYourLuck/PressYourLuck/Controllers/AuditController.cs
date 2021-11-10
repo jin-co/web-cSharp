@@ -46,6 +46,7 @@ namespace PressYourLuck.Controllers
 
         public IActionResult All()
         {
+            HttpContext.Session.SetString("TypeChosen", "All");
             var audit = context.Audits
                 .Include(a => a.AuditTypes)
                 .OrderByDescending(a => a.CreatedDate)
@@ -55,10 +56,15 @@ namespace PressYourLuck.Controllers
 
         public IActionResult CashIn(string cashIn)
         {
-            HttpContext.Session.SetString("TypeChosen", "Cash In");
+            if (cashIn != null)
+            {
+                HttpContext.Session.SetString("TypeChosen", cashIn);
+            }
+            string typeChosen = HttpContext.Session.GetString("TypeChosen");
+
             var audit = context.Audits
                             .Include(a => a.AuditTypes)
-                            .Where(a => a.AuditTypeId == cashIn)
+                            .Where(a => a.AuditTypeId == typeChosen)
                             .OrderByDescending(a => a.CreatedDate)
                             .ToList();
             return View("Index", audit);
@@ -66,10 +72,15 @@ namespace PressYourLuck.Controllers
 
         public IActionResult CashOut(string cashOut)
         {
-            HttpContext.Session.SetString("TypeChosen", "Cash Out");
+            if (cashOut != null)
+            {
+                HttpContext.Session.SetString("TypeChosen", cashOut);
+            }
+            string typeChosen = HttpContext.Session.GetString("TypeChosen");
+            
             var audit = context.Audits
                             .Include(a => a.AuditTypes)
-                            .Where(a => a.AuditTypeId == cashOut)
+                            .Where(a => a.AuditTypeId == typeChosen)
                             .OrderByDescending(a => a.CreatedDate)
                             .ToList();
             return View("Index", audit);
@@ -77,10 +88,15 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Lose(string lose)
         {
-            HttpContext.Session.SetString("TypeChosen", "Lose");
+            if (lose != null)
+            {
+                HttpContext.Session.SetString("TypeChosen", lose);
+            }
+            string typeChosen = HttpContext.Session.GetString("TypeChosen");
+            
             var audit = context.Audits
                 .Include(a => a.AuditTypes)
-                .Where(a => a.AuditTypeId == lose)
+                .Where(a => a.AuditTypeId == typeChosen)
                 .OrderByDescending(a => a.CreatedDate)
                 .ToList();
             return View("Index" ,audit);
@@ -88,10 +104,15 @@ namespace PressYourLuck.Controllers
 
         public IActionResult Win(string win)
         {
-            HttpContext.Session.SetString("TypeChosen", "Win");
+            if (win != null)
+            {
+                HttpContext.Session.SetString("TypeChosen", win);
+            }
+            string typeChosen = HttpContext.Session.GetString("TypeChosen");
+            
             var audit = context.Audits
                 .Include(a => a.AuditTypes)
-                .Where(a => a.AuditTypeId == win)
+                .Where(a => a.AuditTypeId == typeChosen)
                 .OrderByDescending(a => a.CreatedDate)
                 .ToList();
             return View("Index", audit);
