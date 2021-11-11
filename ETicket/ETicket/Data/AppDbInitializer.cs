@@ -1,5 +1,6 @@
 ﻿using ETicket.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -319,6 +320,15 @@ namespace ETicket.Data
                     });
                     context.SaveChanges();
                 }
+            }
+        }
+
+        public static async Task SeedUsersAndRolesAsync(
+            IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             }
         }
     }
