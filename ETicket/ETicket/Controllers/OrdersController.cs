@@ -42,5 +42,17 @@ namespace ETicket.Controllers
             }
             return RedirectToAction(nameof(ShoppingCart));
         }
+
+        // RedirectToActionResult and IActionResult work the same
+        public async Task<RedirectToActionResult> RemoveItemFromShoppingCart(int id)
+        {
+            var item = await moviesService.GetMovieByIdAsync(id);
+
+            if (item != null)
+            {
+                shoppingCart.RemoveItemFromCart(item);
+            }
+            return RedirectToAction(nameof(ShoppingCart));
+        }
     }
 }
