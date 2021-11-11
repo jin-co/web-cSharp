@@ -69,5 +69,12 @@ namespace ETicket.Controllers
             await shoppingCart.ClearShoppingCartAsync();
             return View("OrderCompleted");
         }
+
+        public async Task<IActionResult> Index()
+        {
+            string userId = "";
+            var orders = await orderService.GetOrdersByUserIdAsync(userId);
+            return View(orders);
+        }
     }
 }
