@@ -13,11 +13,16 @@ namespace ETicket.Controllers
     {
         private readonly IMoviesService moviesService;
         private readonly ShoppingCart shoppingCart;
+        private readonly IOrdersService orderService;
 
-        public OrdersController(IMoviesService moviesService, ShoppingCart shoppingCart)
+        public OrdersController(
+            IMoviesService moviesService, 
+            ShoppingCart shoppingCart, 
+            IOrdersService orderService)
         {
             this.moviesService = moviesService;
             this.shoppingCart = shoppingCart;
+            this.orderService = orderService;
         }
 
         public IActionResult ShoppingCart()
@@ -53,6 +58,16 @@ namespace ETicket.Controllers
                 shoppingCart.RemoveItemFromCart(item);
             }
             return RedirectToAction(nameof(ShoppingCart));
+        }
+
+        public async Task<IActionResult> CompleteOrder()
+        {
+            var items = shoppingCart.GetShoppingCartItems();
+            string userId = "";
+            string userEmailAddress = "";
+            await orderService.StoreOrderAsync(items, userId, userEmailAddress);
+            await shoppingCart.ClearShoppingCartAsync();
+            return View("OrderCompleted");
         }
     }
 }
