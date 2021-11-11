@@ -79,6 +79,7 @@ namespace ETicket
 
             // seed database
             AppDbInitializer.Seed(app);
+            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait(); //Wait is needed as it is async
         }
     }
 }

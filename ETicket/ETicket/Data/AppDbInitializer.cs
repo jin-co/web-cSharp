@@ -1,4 +1,5 @@
-﻿using ETicket.Models;
+﻿using ETicket.Data.Static;
+using ETicket.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -328,7 +329,55 @@ namespace ETicket.Data
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
+                // Roles
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                }
+
+                if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                }
+
+                // Users
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                string adminEmail = "admin@etickets.com";
+
+                var adminUser = await userManager.FindByEmailAsync(adminEmail);
+                if (adminUser == null)
+                {
+                    var newAdminUser = new ApplicationUser()
+                    {
+                        FullName = "Admin User",
+                        UserName = "admin",
+                        Email = adminEmail,
+                        EmailConfirmed = true
+                    };
+                    // creating a user
+                    await userManager.CreateAsync(newAdminUser, "123456");
+                    // giving a role to the created user
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+                }
+
+                string userEmail = "user@etickets.com";
+
+                var appUser = await userManager.FindByEmailAsync(userEmail);
+                if (adminUser == null)
+                {
+                    var newAppUser = new ApplicationUser()
+                    {
+                        FullName = "App User",
+                        UserName = "user",
+                        Email = userEmail,
+                        EmailConfirmed = true
+                    };
+                    // creating a user
+                    await userManager.CreateAsync(newAppUser, "123456");
+                    // giving a role to the created user
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+                }
             }
         }
     }
