@@ -20,7 +20,7 @@ namespace ETicket.Controllers
             this.shoppingCart = shoppingCart;
         }
 
-        public IActionResult Index()
+        public IActionResult ShoppingCart()
         {
             var items = shoppingCart.GetShoppingCartItems();
             shoppingCart.ShoppingCartItems = items;
@@ -30,6 +30,17 @@ namespace ETicket.Controllers
                 ShoppingCartTotal = shoppingCart.GetShoppingCartTotal()
             };
             return View(response);
+        }
+
+        public async Task<RedirectToActionResult> AddItemToShoppingCart(int id)
+        {
+            var item = await moviesService.GetMovieByIdAsync(id);
+
+            if (item != null)
+            {
+                shoppingCart.AddItemToCart(item);
+            }
+            return RedirectToAction(nameof(ShoppingCart));
         }
     }
 }
