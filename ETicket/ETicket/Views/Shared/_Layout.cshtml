@@ -93,12 +93,20 @@
                         Log in
                     </a>
 
+                    @*padding between*@
+                    <span class="p-1"></span>
+
+
                     <a class="btn btn-outline-success my-2 my-sm-0"
                        asp-controller="Account"
                        asp-action="Register">
                         <i class="bi bi-person-plus"></i>
                         Register
                     </a>
+
+                    @*padding between*@
+                    <span class="p-1"></span>
+
 
                     @*User profile section*@
                     <div class="dropdown">
@@ -116,6 +124,17 @@
                             </li>
                         </ul>
                     </div>
+
+                    @*padding between*@
+                    <span class="p-1"></span>
+
+                    <form asp-controller="Account" asp-action="Logout">
+                        <button class="btn btn-outline-danger my-2 my-sm-0">
+                            <i class="bi bi-box-arrow-in-right"></i>
+                            Log out
+                        </button>
+                    </form>
+
                 </div>
             </div>
         </nav>

@@ -1,4 +1,5 @@
 ﻿using ETicket.Data;
+using ETicket.Data.Static;
 using ETicket.Data.ViewModels;
 using ETicket.Models;
 using Microsoft.AspNetCore.Identity;
@@ -64,6 +65,45 @@ namespace ETicket.Controllers
         public IActionResult Register()
         {
             return View(new RegisterVM());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterVM registerVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(registerVM);
+            }
+
+            var user = await userManager.FindByEmailAsync(registerVM.EmailAddress);
+            if (user != null)
+            {
+                TempData["Error"] = "Email already being used";
+                return View(registerVM);
+            }
+
+            var newUser = new ApplicationUser()
+            {
+                FullName = registerVM.FullName,
+                Email = registerVM.EmailAddress,
+                UserName = registerVM.EmailAddress
+            };
+
+            var newUserResponse = await userManager
+                .CreateAsync(newUser, registerVM.Password);
+            if (newUserResponse.Succeeded)
+            {
+                await userManager.AddToRoleAsync(newUser, UserRoles.User);
+            }
+
+            return View("RegisterCompleted");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Movies"); // to specify the controller("Movies")
         }
     }
 }
