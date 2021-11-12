@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,6 +15,8 @@ namespace ETicket.Models
         public string UserId { get; set; }
 
         // relation
+        [ForeignKey(nameof(UserId))]
+        public ApplicationUser User { get; set; }
         public List<OrderItem> OrderItems { get; set; }
     }
 }

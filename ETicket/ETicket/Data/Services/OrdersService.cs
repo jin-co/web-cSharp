@@ -16,13 +16,26 @@ namespace ETicket.Data.Services
             this.context = context;
         }
 
-        public async Task<List<Order>> GetOrdersByUserIdAsync(string userId)
+        public async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(string userId, string userRole)
         {
-            return await context.Orders
+            //return await context.Orders
+            //    .Include(n => n.OrderItems)
+            //    .ThenInclude(n => n.Movie)
+            //    .Where(n => n.UserId == userId)
+            //    .ToListAsync();
+            var orders = await context.Orders
                 .Include(n => n.OrderItems)
                 .ThenInclude(n => n.Movie)
+                .ToListAsync();
+
+            if (userRole != "Admin")
+            {
+                orders = await context.Orders
                 .Where(n => n.UserId == userId)
                 .ToListAsync();
+            }
+
+            return orders;
         }
 
         public async Task StoreOrderAsync(List<ShoppingCartItem> items, string userId, string userEmailAddress)

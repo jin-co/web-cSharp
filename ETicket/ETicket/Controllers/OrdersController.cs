@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace ETicket.Controllers
@@ -27,8 +28,10 @@ namespace ETicket.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string userId = "";
-            var orders = await orderService.GetOrdersByUserIdAsync(userId);
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            //string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userRole = User.FindFirst(ClaimTypes.Role).Value;
+            var orders = await orderService.GetOrdersByUserIdAndRoleAsync(userId, userRole);
             return View(orders);
         }
 
@@ -70,8 +73,8 @@ namespace ETicket.Controllers
         public async Task<IActionResult> CompleteOrder()
         {
             var items = shoppingCart.GetShoppingCartItems();
-            string userId = "";
-            string userEmailAddress = "";
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            string userEmailAddress = User.FindFirst(ClaimTypes.Email).Value;
             await orderService.StoreOrderAsync(items, userId, userEmailAddress);
             await shoppingCart.ClearShoppingCartAsync();
             return View("OrderCompleted");
