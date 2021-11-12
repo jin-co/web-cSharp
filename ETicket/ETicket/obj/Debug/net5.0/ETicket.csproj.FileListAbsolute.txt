@@ -101,3 +101,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\bin\Debug\net5.0\Micros
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Account\RegisterCompleted.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Shared\_Identity.cshtml.g.cs
