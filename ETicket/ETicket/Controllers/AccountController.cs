@@ -1,4 +1,5 @@
 ﻿using ETicket.Data;
+using ETicket.Data.ViewModels;
 using ETicket.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -25,9 +26,9 @@ namespace ETicket.Controllers
             this.context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Login()
         {
-            return View();
+            return View(new LoginVM());
         }
     }
 }
