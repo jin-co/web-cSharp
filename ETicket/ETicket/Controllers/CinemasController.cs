@@ -1,6 +1,8 @@
 ﻿using ETicket.Data;
 using ETicket.Data.Services;
+using ETicket.Data.Static;
 using ETicket.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace ETicket.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)] // adding a role restriction
     public class CinemasController : Controller
     {
         //private readonly AppDbContext context;
@@ -26,6 +29,7 @@ namespace ETicket.Controllers
             this.service = service;
         }
 
+        [AllowAnonymous] // this overrides '[Authorize]' and allow access to this action
         public async Task<IActionResult> Index()
         {
             var cinemas = await service.GetAllAsync();
@@ -33,6 +37,7 @@ namespace ETicket.Controllers
         }
 
         //Get: cinemas/details/1
+        [AllowAnonymous] // this overrides '[Authorize]' and allow access to this action
         public async Task<IActionResult> Details(int id)
         {
             var cinemaDetails= await service.GetByIdAsync(id);

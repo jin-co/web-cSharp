@@ -1,6 +1,8 @@
 ﻿using ETicket.Data.Cart;
 using ETicket.Data.Services;
+using ETicket.Data.Static;
 using ETicket.Data.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace ETicket.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly IMoviesService moviesService;
@@ -25,7 +28,7 @@ namespace ETicket.Controllers
             this.shoppingCart = shoppingCart;
             this.orderService = orderService;
         }
-
+        
         public async Task<IActionResult> Index()
         {
             string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;

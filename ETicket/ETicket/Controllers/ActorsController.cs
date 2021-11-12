@@ -1,6 +1,8 @@
 ﻿using ETicket.Data;
 using ETicket.Data.Services;
+using ETicket.Data.Static;
 using ETicket.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace ETicket.Controllers
 {
+    //[Authorize] // without a argument, only checks if a user is logged in or not
+    [Authorize(Roles = UserRoles.Admin)] // adding a role restriction
     public class ActorsController : Controller
     {
         //* Directly accessing DB
@@ -33,6 +37,7 @@ namespace ETicket.Controllers
             this.service = service;
         }
 
+        [AllowAnonymous] // this overrides '[Authorize]' and allow access to this action
         public async Task<IActionResult> Index()
         {
             var data = await service.GetAllAsync();
@@ -58,6 +63,7 @@ namespace ETicket.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [AllowAnonymous] // this overrides '[Authorize]' and allow access to this action
         public async Task<IActionResult> Details(int id)
         {
             var actorDetails = await service.GetByIdAsync(id);

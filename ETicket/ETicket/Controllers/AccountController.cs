@@ -4,6 +4,7 @@ using ETicket.Data.ViewModels;
 using ETicket.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace ETicket.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.context = context;
+        }
+
+        public async Task<IActionResult> Users()
+        {
+            var users = await context.Users.ToListAsync();
+            return View(users);
         }
 
         public IActionResult Login()
@@ -104,6 +111,11 @@ namespace ETicket.Controllers
         {
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Movies"); // to specify the controller("Movies")
+        }
+
+        public IActionResult AccessDenied(string ReturnUrl)
+        {
+            return View();
         }
     }
 }

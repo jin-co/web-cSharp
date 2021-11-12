@@ -102,3 +102,5 @@ C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Account\RegisterCompleted.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_Identity.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Account\Users.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\ETicket\ETicket\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs

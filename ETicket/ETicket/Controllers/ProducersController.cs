@@ -1,6 +1,8 @@
 ﻿using ETicket.Data;
 using ETicket.Data.Services;
+using ETicket.Data.Static;
 using ETicket.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace ETicket.Controllers
 {    
+    [Authorize(Roles = UserRoles.Admin)] // adding a role restriction
     public class ProducersController : Controller
     {
         //private readonly AppDbContext context;
@@ -27,6 +30,7 @@ namespace ETicket.Controllers
         }
 
         // getting data asynchronously
+        [AllowAnonymous] // this overrides '[Authorize]' and allow access to this action
         public async Task<IActionResult> Index()
         {
             var producers = await service.GetAllAsync();
@@ -34,6 +38,7 @@ namespace ETicket.Controllers
         }
 
         //Get: producers/details/1
+        [AllowAnonymous] // this overrides '[Authorize]' and allow access to this action
         public async Task<IActionResult> Details(int id)
         {
             var producerDetails = await service.GetByIdAsync(id);

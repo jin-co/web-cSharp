@@ -16,7 +16,8 @@ namespace ETicket.Data.Services
             this.context = context;
         }
 
-        public async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(string userId, string userRole)
+        public async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(
+            string userId, string userRole)
         {
             //return await context.Orders
             //    .Include(n => n.OrderItems)
@@ -26,6 +27,7 @@ namespace ETicket.Data.Services
             var orders = await context.Orders
                 .Include(n => n.OrderItems)
                 .ThenInclude(n => n.Movie)
+                .Include(n => n.User)
                 .ToListAsync();
 
             if (userRole != "Admin")
@@ -38,7 +40,10 @@ namespace ETicket.Data.Services
             return orders;
         }
 
-        public async Task StoreOrderAsync(List<ShoppingCartItem> items, string userId, string userEmailAddress)
+        public async Task StoreOrderAsync(
+            List<ShoppingCartItem> items, 
+            string userId, 
+            string userEmailAddress)
         {
             var order = new Order()
             {
