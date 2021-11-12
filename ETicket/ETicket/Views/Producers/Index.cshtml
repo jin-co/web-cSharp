@@ -12,23 +12,28 @@
                     <th>@Html.DisplayNameFor(m => m.ProfilePictureURL)</th>
                     <th>@Html.DisplayNameFor(m => m.FullName)</th>
                     <th>@Html.DisplayNameFor(m => m.Bio)</th>
-                    <th>Actions</th>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <th>Actions</th>
+                    }
                 </tr>
             </thead>
 
             <tbody>
                 @foreach (var i in Model)
                 {
-                    <tr>
-                        <td class="align-middle">
-                            <img src="@i.ProfilePictureURL" style="max-width: 150px;" class="rounded-circle" />
-                        </td>
-                        <td class="align-middle">
-                            @i.FullName
-                        </td>
-                        <td class="align-middle">
-                            @i.Bio
-                        </td>
+                <tr>
+                    <td class="align-middle">
+                        <img src="@i.ProfilePictureURL" style="max-width: 150px;" class="rounded-circle" />
+                    </td>
+                    <td class="align-middle">
+                        @i.FullName
+                    </td>
+                    <td class="align-middle">
+                        @i.Bio
+                    </td>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
                         <td class="align-middle">
                             <a class="btn btn-outline-primary"
                                asp-action="Edit"
@@ -46,7 +51,8 @@
                                 <i class="bi bi-trash">Delete</i>
                             </a>
                         </td>
-                    </tr>
+                    }
+                </tr>
                 }
             </tbody>
         </table>
