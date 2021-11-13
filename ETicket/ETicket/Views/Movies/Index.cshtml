@@ -65,7 +65,8 @@
                            asp-action="Details" asp-route-id="@item.Id">
                             <i class="bi bi-eye-fill"></i> Show Details
                         </a>
-                        <a class="btn btn-success text-white"
+                        <a class="btn btn-success text-white
+                           @((DateTime.Now > item.EndDate) ? "disabled" : "")"
                            asp-controller="Orders"
                            asp-action="AddItemToShoppingCart"
                            asp-route-id="@item.Id">
