@@ -104,6 +104,7 @@ namespace ETicket.Data.Cart
                 .ToListAsync();
             context.ShoppingCartItems.RemoveRange(items);
             await context.SaveChangesAsync();
+            ShoppingCartItems = new List<ShoppingCartItem>(); // reset shopping cart
         }
     }
 }

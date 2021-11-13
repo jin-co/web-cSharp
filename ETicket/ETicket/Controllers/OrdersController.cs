@@ -80,6 +80,7 @@ namespace ETicket.Controllers
             string userEmailAddress = User.FindFirst(ClaimTypes.Email).Value;
             await orderService.StoreOrderAsync(items, userId, userEmailAddress);
             await shoppingCart.ClearShoppingCartAsync();
+            //shoppingCart.ShoppingCartItems = null;  // reset shopping cart
             return View("OrderCompleted");
         }
     }
