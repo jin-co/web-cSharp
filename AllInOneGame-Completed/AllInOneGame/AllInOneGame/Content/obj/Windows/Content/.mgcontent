@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Fonts/hilightFont.spritefont</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Fonts/regularFont.spritefont</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/aboutImage.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/background.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/Ball.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/Bat.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/creditImage.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/explosion.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/helpImage.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Images/highScoreImage.png</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Music/applause1.wav</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Music/chimes.mp3</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Music/click.wav</File>
+    <File>C:/2370/ws/w11-05/AllInOneGame/AllInOneGame/Content/Music/ding.wav</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
