@@ -23,6 +23,7 @@ namespace Registration.Models
             return new ValidationResult(GetMsg(ctx.DisplayName));
         }
 
+        // client side validation
         public void AddValidation(ClientModelValidationContext ctx)
         {
             if (!ctx.Attributes.ContainsKey("data-val"))
