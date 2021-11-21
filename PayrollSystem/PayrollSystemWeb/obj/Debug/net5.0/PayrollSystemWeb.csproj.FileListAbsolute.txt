@@ -38,3 +38,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\PayrollSystem\PayrollSystemWeb\obj\Debu
 C:\Users\jin\Documents\GitHub\web-cSharp\PayrollSystem\PayrollSystemWeb\obj\Debug\net5.0\PayrollSystemWeb.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\PayrollSystem\PayrollSystemWeb\obj\Debug\net5.0\PayrollSystemWeb.genruntimeconfig.cache
 C:\Users\jin\Documents\GitHub\web-cSharp\PayrollSystem\PayrollSystemWeb\obj\Debug\net5.0\PayrollSystemWeb.csproj.CopyComplete
+C:\Users\jin\Documents\GitHub\web-cSharp\PayrollSystem\PayrollSystemWeb\obj\Debug\net5.0\Razor\Views\Company\Index.cshtml.g.cs
