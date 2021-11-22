@@ -16,10 +16,15 @@
     </div>
 </div>
 
-@if (TempData["DeletedPatientName"] != null && TempData["PatientID"] != null)
+@if (TempData["DeletedVendorName"] != null && TempData["DeletedVendorId"] != null)
 {
     <div class="text-right pb-5">
-        <span class="alert alert-info pb-3">The patient "@TempData["DeletedPatientName"]" was deleted. <a asp-action="UndoDelete" asp-route-patientId="@TempData["PatientID"]">Undo</a> this delete.</span>
+        <span class="alert alert-info pb-3">
+        vendor"@TempData["DeletedVendorName"]" was deleted. 
+        <a asp-action="UnDoSoftDelete" 
+           asp-route-id="@TempData["DeletedVendorId"]">Undo
+        </a> this delete.
+        </span>
     </div>
 }
 
@@ -59,7 +64,7 @@
 </table>
 
 <div class="row w-25 position-fixed fixed-bottom mx-auto">
-    <ul class="nav nav-pills ml-4 mb-4 border border-dark 
+    <ul class="nav nav-pills mb-4 border border-dark 
     rounded w-100 text-center bg-info">        
         <a class="text-light nav-item col-3
            @Model.GetActiveVendorFilter("ae")"
@@ -88,26 +93,5 @@
             asp-route-vendorFilter="sz">
             S-Z
         </a>
-        
-        @*@foreach (var i in Model.VendorNameFilter)
-        {
-            <li class="nav-item">
-                <a asp-action="VendorList"
-                   asp-route-vendorFilter="@i"
-                   class="nav-link">@i</a>
-            </li>
-        }*@
     </ul>
 </div>
-
-@*<div>
-        <ul class="nav nav-pills">
-            @foreach (var nameGroupFilter in Model.NameGroupFilters)
-            {
-                <li class="nav-item">
-                    <a asp-action="PatientList" asp-route-cityFilter="@Model.SelectedCity" asp-route-nameGroupFilterId="@nameGroupFilter.NameGroupId"
-                       class="nav-link @Model.GetActiveGroupNameFilter(nameGroupFilter.NameGroupId)">@nameGroupFilter.GroupName</a>
-                </li>
-            }
-        </ul>
-    </div>*@

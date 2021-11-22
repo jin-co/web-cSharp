@@ -37,7 +37,6 @@ namespace A4_AccountsPayable.Controllers
             return View(vlvm);
         }
 
-
         public IActionResult VendorList(string vendorFilter)
         {
             // vendors
@@ -78,6 +77,36 @@ namespace A4_AccountsPayable.Controllers
             return View("Index", vlvm);
         }
 
+        public IActionResult SoftDelete(int id)
+        {
+            var vendor = context.Vendors.Find(id);
+
+            if (vendor != null)
+            {
+                vendor.IsDeleted = true;
+                context.Update(vendor);
+                context.SaveChanges();
+            }
+
+            TempData["DeletedVendorName"] = vendor.VendorName;
+            TempData["DeletedVendorId"] = vendor.VendorId;
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult UnDoSoftDelete(int id)
+        {
+            var vendor = context.Vendors.Find(id);
+
+            if (vendor != null)
+            {
+                vendor.IsDeleted = false;
+                context.Update(vendor);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Privacy()
         {

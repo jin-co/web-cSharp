@@ -52,7 +52,7 @@ namespace PharmacyApp_Week11_Final
 
             /*
              * commend that generates entity classes from a Sql server db
-             PM> Scaffold-DbContext -Connection name=AccountPayableContext 
+             PM> Scaffold-DbContext -Connection name=AccountPayableDBContext 
             -Provider Microsoft.EntityFrameworkCore.SqlServer 
             -OutputDir Models\DBGenerated -DataAnnotations –Force
              */
