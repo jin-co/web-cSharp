@@ -42,34 +42,37 @@ namespace A4_AccountsPayable.Controllers
         {
             // vendors
             var vendors = new List<Vendor>();
-            vendors = context.Vendors.ToList();
-
-            // vendor names
-            List<string> vendorNameList = 
-                vendors.Select(s => s.VendorName).Distinct().ToList();
+            vendors = context.Vendors.ToList();            
 
             switch (vendorFilter)
             {
                 case "ae":
-                    vendorNameList.Where(a => a.ToLower()[0] < 'f');
+                    vendors = vendors
+                        .Where(a => a.VendorName.ToLower()[0] <= 'e')
+                        .OrderBy(a => a.VendorName).ToList();
                     break;
                 case "fk":
-                    vendorNameList.Where(a => a.ToLower()[0] < 'l');
+                    vendors = vendors
+                        .Where(a => a.VendorName.ToLower()[0] > 'f' &&
+                        a.VendorName.ToLower()[0] <= 'k')
+                        .OrderBy(a => a.VendorName).ToList();
                     break;
                 case "lr":
-                    vendorNameList.Where(a => a.ToLower()[0] < 's');
+                    vendors = vendors
+                        .Where(a => a.VendorName.ToLower()[0] > 'l' &&
+                        a.VendorName.ToLower()[0] <= 'r')
+                        .OrderBy(a => a.VendorName).ToList();
                     break;
                 case "sz":
-                    vendorNameList.Where(a => a.ToLower()[0] >= 's');
+                    vendors = vendors
+                        .Where(a => a.VendorName.ToLower()[0] > 's')
+                        .OrderBy(a => a.VendorName).ToList();
                     break;
-            }
-
-            
+            }            
 
             VendorListViewModel vlvm = new VendorListViewModel()
             {
                 Vendors = vendors,
-                VendorNameFilter = vendorNameList,
                 SelectedVendorFilter = vendorFilter
             };
             return View("Index", vlvm);
