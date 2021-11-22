@@ -69,7 +69,8 @@ namespace A4_AccountsPayable.Controllers
             VendorListViewModel vlvm = new VendorListViewModel()
             {
                 Vendors = vendors,
-                VendorNameFilter = vendorNameList
+                VendorNameFilter = vendorNameList,
+                SelectedVendorFilter = vendorFilter
             };
             return View("Index", vlvm);
         }

@@ -61,25 +61,29 @@
 <div class="row w-25 position-fixed fixed-bottom mx-auto">
     <ul class="nav nav-pills ml-4 mb-4 border border-dark 
     rounded w-100 text-center bg-info">        
-        <a class="text-light nav-item col-3"
+        <a class="text-light nav-item col-3
+           @Model.GetActiveVendorFilter("ae")"
             asp-action="VendorList"
         asp-route-vendorFilter="ae">
             A-E
         </a>
         
-        <a class="text-light nav-item col-3"
+        <a class="text-light nav-item col-3
+           @Model.GetActiveVendorFilter("fk")"
             asp-action="VendorList"
         asp-route-vendorFilter="fk">
             F-K
         </a>
         
-        <a class="text-light nav-item col-3"
+        <a class="text-light nav-item col-3
+           @Model.GetActiveVendorFilter("lr")"
             asp-action="VendorList"
             asp-route-vendorFilter="lr">
             L-R
         </a>
         
-        <a class="text-light nav-item col-3"
+        <a class="text-light nav-item col-3
+           @Model.GetActiveVendorFilter("sz")"
             asp-action="VendorList"
             asp-route-vendorFilter="sz">
             S-Z

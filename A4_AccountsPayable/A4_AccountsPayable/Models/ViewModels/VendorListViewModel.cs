@@ -10,5 +10,11 @@ namespace A4_AccountsPayable.Models.ViewModels
     {
         public List<Vendor> Vendors { get; set; }
         public List<string> VendorNameFilter { get; set; }
+        public string SelectedVendorFilter { get; set; }
+
+        public string GetActiveVendorFilter(string filterName)
+        {
+            return SelectedVendorFilter == filterName ? "bg-dark" : "";
+        }
     }
 }
