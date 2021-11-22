@@ -5501,20 +5501,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\csdai\\.nuget\\packages\\": {}
+    "C:\\Users\\jin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\csdai\\source\\repos\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final.csproj",
+      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final.csproj",
       "projectName": "PharmacyApp_Week11_Final",
-      "projectPath": "C:\\Users\\csdai\\source\\repos\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final.csproj",
-      "packagesPath": "C:\\Users\\csdai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\csdai\\source\\repos\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final\\obj\\",
+      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final.csproj",
+      "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\PharmacyApp_Week11_Final\\PharmacyApp_Week11_Final\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\csdai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
