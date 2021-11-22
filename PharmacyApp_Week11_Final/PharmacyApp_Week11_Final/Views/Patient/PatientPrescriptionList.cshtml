@@ -1,0 +1,99 @@
+﻿@model PatientPrescriptionViewModel
+
+<div class="container">
+    <div class="row">
+        <h4 class="text-left col-8">Prescriptions for @Model.PatientName</h4>
+
+        @if (Model.NameGroupFilter != null)
+        {
+            <a asp-action="PatientList" asp-route-nameGroupFilterId="@Model.NameGroupFilter.NameGroupId" class="text-right col-4">Return to @Model.NameGroupFilter.GroupName Patients</a>
+        }
+        else
+        {
+            <a asp-action="PatientList" asp-route-nameGroupFilterId="0" class="text-right col-4">Return to Patient List</a>
+        }
+    </div>
+
+
+    <div class="row">
+        <span style="color:gray;" class="text-left col-7">Pharmacy: @Model.PharmacyName.</span>
+        <span style="color:gray;" class="text-right col-5">Health Insurance: @Model.HealthInsurance</span>
+    </div>
+
+    @if (Model.Prescriptions.Count() > 0)
+    {
+        <div class="row pt-5">
+            <div class="col-3">
+                <h4 class="font-weight-bold">Prescriptions:</h4>
+                <ul class="nav nav-pills flex-column">
+                    @foreach (var prescription in Model.Prescriptions)
+                    {
+                        <li class="nav-item">
+                            <a asp-action="PatientPrescriptionList"
+                               asp-route-prescriptionId="@prescription.PrescriptionId"
+                               class="nav-link @Model.GetActivePrescription(prescription.PrescriptionId)">Prescription #: @prescription.PrescriptionNumber</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-6">
+                @if (Model.SelectedPrescription != null)
+                {
+                    <h4 class="font-weight-bold">Line Items for Prescription #@(Model.SelectedPrescription.PrescriptionNumber)</h4>
+
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (PrescriptionLineItem lineItem in Model.PrescriptionsLineItems)
+                            {
+                                <tr>
+                                    <td>@lineItem.LineItemDescription</td>
+                                    <td>@lineItem.LineItemAmount.ToString("C2")</td>
+                                </tr>
+                            }
+                            @if (Model.PrescriptionsLineItems.Count() > 0)
+                            {
+                                <tr>
+                                    <td>Total</td>
+                                    <td>@Model.SelectedPrescription.PrescriptionTotal.ToString("C2")</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+
+                    <form method="post" asp-action="AddNewPrescriptionLine" asp-route-prescriptionId="@Model.SelectedPrescriptionID">
+
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <input type="text" class="form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Amount:</label>
+                            <input type="text" class="form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+
+                        <input type="submit" value="Add new line item" />
+                    </form>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="jumbotron pt-5 text-center">
+            <h2>No Prescriptions for Patient: @Model.PatientName</h2>
+        </div>
+    }
+</div>
+
