@@ -73,3 +73,5 @@ C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\o
 C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\obj\Debug\net5.0\ref\A4_AccountsPayable.dll
 C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\obj\Debug\net5.0\A4_AccountsPayable.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\obj\Debug\net5.0\A4_AccountsPayable.genruntimeconfig.cache
+C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\obj\Debug\net5.0\Razor\Views\Home\Invoice.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\obj\Debug\net5.0\Razor\Views\Home\VendorRecord.cshtml.g.cs

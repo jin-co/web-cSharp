@@ -1,3 +1,4 @@
+using A4_AccountsPayable.Models.DBGenerated;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,8 +33,8 @@ namespace A4_AccountsPayable
             services.AddControllersWithViews().AddNewtonsoftJson();
 
             // configure application to use SQL server (using Database-First approach)
-            //services.AddDbContext<AccountPayableContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("AccountPayableDBContext")));
+            services.AddDbContext<apContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("AccountPayableDBContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

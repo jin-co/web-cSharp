@@ -26,8 +26,22 @@ using A4_AccountsPayable.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\Views\_ViewImports.cshtml"
+using A4_AccountsPayable.Models.DBGenerated;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\jin\Documents\GitHub\web-cSharp\A4_AccountsPayable\A4_AccountsPayable\Views\_ViewImports.cshtml"
+using A4_AccountsPayable.Models.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"debbed195a92b27a3bdc03692ae5dc33d9252a51", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"881ba8495b3fc385338312c1e98d7b3220c6e394", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998
