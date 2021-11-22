@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,7 +24,16 @@ namespace A4_AccountsPayable
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            // Configure application to use session services (e.g. Session variables and cookies)
+            services.AddMemoryCache();
+            services.AddSession();
+
+            // Configure application to use the MVC design pattern
+            services.AddControllersWithViews().AddNewtonsoftJson();
+
+            // configure application to use SQL server (using Database-First approach)
+            //services.AddDbContext<AccountPayableContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("AccountPayableDBContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,12 +56,18 @@ namespace A4_AccountsPayable
 
             app.UseAuthorization();
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            /*
+             * Scaffold-DbContext -Connection name=AccountPayableDBContext -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\DBGenerated -DataAnnotations –Force
+             */
         }
     }
 }
