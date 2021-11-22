@@ -14,19 +14,6 @@
            asp-route-groupNameFilterId=""
            asp-action="PatientRecord">Add new vendor</a>
     </div>
-
-    <div class="text-right col-10">
-        <ul class="nav nav-pills">
-            @foreach (var i in Model.VendorNameFilter)
-            {
-                <li class="nav-item">
-                    <a asp-action="VendorList" 
-                       asp-route-vendorFilter="@i"                        
-                       class="nav-link">@i</a>
-                </li>
-            }
-        </ul>
-    </div>
 </div>
 
 @if (TempData["DeletedPatientName"] != null && TempData["PatientID"] != null)
@@ -71,14 +58,52 @@
     </tbody>
 </table>
 
-@*<div>
-    <ul class="nav nav-pills">
-        @foreach (var nameGroupFilter in Model.NameGroupFilters)
+<div class="row w-25 position-fixed fixed-bottom mx-auto">
+    <ul class="nav nav-pills ml-4 mb-4 border border-dark 
+    rounded w-100 text-center bg-info">        
+        <a class="text-light nav-item col-3"
+            asp-action="VendorList"
+        asp-route-vendorFilter="ae">
+            A-E
+        </a>
+        
+        <a class="text-light nav-item col-3"
+            asp-action="VendorList"
+        asp-route-vendorFilter="fk">
+            F-K
+        </a>
+        
+        <a class="text-light nav-item col-3"
+            asp-action="VendorList"
+            asp-route-vendorFilter="lr">
+            L-R
+        </a>
+        
+        <a class="text-light nav-item col-3"
+            asp-action="VendorList"
+            asp-route-vendorFilter="sz">
+            S-Z
+        </a>
+        
+        @*@foreach (var i in Model.VendorNameFilter)
         {
             <li class="nav-item">
-                <a asp-action="PatientList" asp-route-cityFilter="@Model.SelectedCity" asp-route-nameGroupFilterId="@nameGroupFilter.NameGroupId"
-                   class="nav-link @Model.GetActiveGroupNameFilter(nameGroupFilter.NameGroupId)">@nameGroupFilter.GroupName</a>
+                <a asp-action="VendorList"
+                   asp-route-vendorFilter="@i"
+                   class="nav-link">@i</a>
             </li>
-        }
+        }*@
     </ul>
-</div>*@
+</div>
+
+@*<div>
+        <ul class="nav nav-pills">
+            @foreach (var nameGroupFilter in Model.NameGroupFilters)
+            {
+                <li class="nav-item">
+                    <a asp-action="PatientList" asp-route-cityFilter="@Model.SelectedCity" asp-route-nameGroupFilterId="@nameGroupFilter.NameGroupId"
+                       class="nav-link @Model.GetActiveGroupNameFilter(nameGroupFilter.NameGroupId)">@nameGroupFilter.GroupName</a>
+                </li>
+            }
+        </ul>
+    </div>*@
