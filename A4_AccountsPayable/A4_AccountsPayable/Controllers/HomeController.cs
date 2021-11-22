@@ -51,7 +51,7 @@ namespace A4_AccountsPayable.Controllers
             switch (vendorFilter)
             {
                 case "ae":
-                    vendorNameList.Where(a => a.StartsWith("A"));
+                    vendorNameList.Where(a => a.ToLower()[0] < 'f');
                     break;
                 case "fk":
                     vendorNameList.Where(a => a.ToLower()[0] < 'l');
