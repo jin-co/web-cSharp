@@ -20,28 +20,27 @@ namespace A4_AccountsPayable.Controllers
             this.context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string vendorFilter)
         {
+            //// vendors
+            //var vendors = new List<Vendor>();
+            //vendors = context.Vendors.ToList();
+
+            //// vendor names
+            //List<string> vendorNameList = vendors.Select(s => s.VendorName).Distinct().ToList();
+
+            //// soft delete
+            //vendors = vendors.Where(a => a.IsDeleted == false).ToList();
+
+            //VendorListViewModel vlvm = new VendorListViewModel()
+            //{
+            //    Vendors = vendors,
+            //    VendorNameFilter = vendorNameList
+            //};
+            //return View(vlvm);
             // vendors
             var vendors = new List<Vendor>();
             vendors = context.Vendors.ToList();
-
-            // vendor names
-            List<string> vendorNameList = vendors.Select(s => s.VendorName).Distinct().ToList();
-
-            VendorListViewModel vlvm = new VendorListViewModel()
-            {
-                Vendors = vendors,
-                VendorNameFilter = vendorNameList
-            };
-            return View(vlvm);
-        }
-
-        public IActionResult VendorList(string vendorFilter)
-        {
-            // vendors
-            var vendors = new List<Vendor>();
-            vendors = context.Vendors.ToList();            
 
             switch (vendorFilter)
             {
@@ -49,25 +48,35 @@ namespace A4_AccountsPayable.Controllers
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] <= 'e')
                         .OrderBy(a => a.VendorName).ToList();
+                    TempData["activePage"] = "ae";
                     break;
                 case "fk":
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] > 'f' &&
                         a.VendorName.ToLower()[0] <= 'k')
                         .OrderBy(a => a.VendorName).ToList();
+                    TempData["activePage"] = "fk";
                     break;
                 case "lr":
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] > 'l' &&
                         a.VendorName.ToLower()[0] <= 'r')
                         .OrderBy(a => a.VendorName).ToList();
+                    TempData["activePage"] = "lr";
                     break;
                 case "sz":
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] > 's')
                         .OrderBy(a => a.VendorName).ToList();
+                    TempData["activePage"] = "sz";
                     break;
-            }            
+                default:
+                    vendors = vendors.OrderBy(a => a.VendorName).ToList();
+                    break;
+            }
+
+            // soft delete
+            vendors = vendors.Where(a => a.IsDeleted == false).ToList();
 
             VendorListViewModel vlvm = new VendorListViewModel()
             {
@@ -76,6 +85,46 @@ namespace A4_AccountsPayable.Controllers
             };
             return View("Index", vlvm);
         }
+
+        //public IActionResult VendorList(string vendorFilter)
+        //{
+        //    // vendors
+        //    var vendors = new List<Vendor>();
+        //    vendors = context.Vendors.ToList();            
+
+        //    switch (vendorFilter)
+        //    {
+        //        case "ae":
+        //            vendors = vendors
+        //                .Where(a => a.VendorName.ToLower()[0] <= 'e')
+        //                .OrderBy(a => a.VendorName).ToList();                    
+        //            break;
+        //        case "fk":
+        //            vendors = vendors
+        //                .Where(a => a.VendorName.ToLower()[0] > 'f' &&
+        //                a.VendorName.ToLower()[0] <= 'k')
+        //                .OrderBy(a => a.VendorName).ToList();
+        //            break;
+        //        case "lr":
+        //            vendors = vendors
+        //                .Where(a => a.VendorName.ToLower()[0] > 'l' &&
+        //                a.VendorName.ToLower()[0] <= 'r')
+        //                .OrderBy(a => a.VendorName).ToList();
+        //            break;
+        //        case "sz":
+        //            vendors = vendors
+        //                .Where(a => a.VendorName.ToLower()[0] > 's')
+        //                .OrderBy(a => a.VendorName).ToList();
+        //            break;
+        //    }            
+
+        //    VendorListViewModel vlvm = new VendorListViewModel()
+        //    {
+        //        Vendors = vendors,
+        //        SelectedVendorFilter = vendorFilter
+        //    };
+        //    return View("Index", vlvm);
+        //}
 
         public IActionResult SoftDelete(int id)
         {
@@ -91,7 +140,7 @@ namespace A4_AccountsPayable.Controllers
             TempData["DeletedVendorName"] = vendor.VendorName;
             TempData["DeletedVendorId"] = vendor.VendorId;
 
-            return RedirectToAction("Index");
+            return Redirect($"/Home/?vendorFilter={TempData["activePage"]}");
         }
 
         public IActionResult UnDoSoftDelete(int id)
@@ -105,7 +154,7 @@ namespace A4_AccountsPayable.Controllers
                 context.SaveChanges();
             }
 
-            return RedirectToAction("Index");
+            return Redirect($"/Home/?vendorFilter={TempData["activePage"]}");
         }
 
         public IActionResult Privacy()
