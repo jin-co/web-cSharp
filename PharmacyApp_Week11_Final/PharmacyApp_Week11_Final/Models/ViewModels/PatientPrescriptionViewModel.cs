@@ -16,6 +16,8 @@ namespace PharmacyApp_Week11_Final.Models.ViewModels
 
         public int SelectedPrescriptionID { get; set; }
 
+        public int SelectedPharmacyID { get; set; }
+
         public NameGroupFilter NameGroupFilter { get; set; }
 
         public List<Prescription> Prescriptions { get; set; }

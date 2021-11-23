@@ -16,7 +16,7 @@
 
 
     <div class="row">
-        <span style="color:gray;" class="text-left col-7">Pharmacy: @Model.PharmacyName.</span>
+        <span style="color:gray;" class="text-left col-7">Pharmacy: @Model.PharmacyName</span>
         <span style="color:gray;" class="text-right col-5">Health Insurance: @Model.HealthInsurance</span>
     </div>
 
@@ -69,21 +69,25 @@
                     </table>
 
 
-                    <form method="post" asp-action="AddNewPrescriptionLine" asp-route-prescriptionId="@Model.SelectedPrescriptionID">
+                    <form method="post" 
+                          asp-action="AddNewPrescriptionLineItem" 
+                          asp-route-pharmacyNumber="@Model.SelectedPharmacyID"
+                          asp-route-patientId="@Model.SelectedPrescription.PatientId"
+                          asp-route-prescriptionId="@Model.SelectedPrescriptionID">
 
-                        <div class="form-group">
-                            <label>Description:</label>
-                            <input type="text" class="form-control" />
+                        <div class="row pb-2">
+                            <label class="col-3">Description:</label>
+                            <input type="text" name="description" class="col-9 form-control" />
                             <span class="text-danger"></span>
                         </div>
 
-                        <div class="form-group">
-                            <label>Amount:</label>
-                            <input type="text" class="form-control" />
+                        <div class="row pb-2">
+                            <label class="col-3">Amount:</label>
+                            <input type="text" name="amount" class="col-9 form-control" />
                             <span class="text-danger"></span>
                         </div>
 
-                        <input type="submit" value="Add new line item" />
+                        <input class="btn btn-outline-info" type="submit" value="Add new line item" />
                     </form>
                 }
             </div>

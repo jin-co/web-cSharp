@@ -35,7 +35,7 @@ namespace PharmacyApp_Week11_Final.Models.DBGenerated
 
         [Required]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
-        [Remote("CheckPhoneNumber", "Validation")]
+        [Remote("CheckPhoneNumber", "Validation", ErrorMessage = "Phone number already exists in the database.")]
         public string PatientPhone { get; set; }
 
         [Required]

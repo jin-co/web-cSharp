@@ -41,6 +41,7 @@ namespace PharmacyApp_Week11_Final
 
             app.UseAuthorization();
 
+            // Enable session use for our application
             app.UseSession();
 
             app.UseEndpoints(endpoints =>
@@ -49,13 +50,6 @@ namespace PharmacyApp_Week11_Final
                     name: "default",
                     pattern: "{controller=Patient}/{action=PatientList}/{patientId?}");
             });
-
-            /*
-             * commend that generates entity classes from a Sql server db
-             PM> Scaffold-DbContext -Connection name=AccountPayableDBContext 
-            -Provider Microsoft.EntityFrameworkCore.SqlServer 
-            -OutputDir Models\DBGenerated -DataAnnotations –Force
-             */
         }
     }
 }

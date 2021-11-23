@@ -8,6 +8,10 @@ namespace PharmacyApp_Week11_Final.Helpers
 {
     public static class PatientHelper
     {
+        /// <summary>
+        /// Class used to populate four name group filter records to be used on the PatientList.cshtml view page as filter options
+        /// </summary>
+        /// <returns>A list of four name group filter records</returns>
         public static List<NameGroupFilter> GetNameGroupFilters()
         {
             List<NameGroupFilter> nameGroupList = new List<NameGroupFilter>();

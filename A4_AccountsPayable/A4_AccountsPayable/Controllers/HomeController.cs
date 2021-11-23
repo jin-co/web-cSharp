@@ -25,6 +25,9 @@ namespace A4_AccountsPayable.Controllers
             var vendors = new List<Vendor>();
             vendors = context.Vendors.ToList();
 
+            // cookie
+            Response.Cookies.Append("activePage", vendorFilter);
+
             switch (vendorFilter)
             {
                 case "ae":
@@ -105,7 +108,7 @@ namespace A4_AccountsPayable.Controllers
         {
             //ModelState.AddModelError("", "Error");
             ViewBag.ActionType = actionType;
-
+            
             // edit
             var vendor = context.Vendors.Find(id);
 
@@ -134,7 +137,7 @@ namespace A4_AccountsPayable.Controllers
                     context.Update(vendor);
                 }
                 context.SaveChanges();
-                return Redirect($"/?vendorFilter={TempData["activePage"]}");
+                return Redirect($"/?vendorFilter={Request.Cookies["activePage"]}");
             }
             else
             {

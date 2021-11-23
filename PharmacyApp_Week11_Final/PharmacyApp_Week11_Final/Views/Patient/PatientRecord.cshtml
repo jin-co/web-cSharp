@@ -2,7 +2,12 @@
 
 <h2>@Model.ActionName a patient</h2>
 
-<form asp-action="PatientRecord" method="post">
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<form asp-action="PatientRecord" asp-route-nameGroupFilterId="@Model.SelectedGroupNameFilterId" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <input type="hidden" asp-for="@Model.Patient.PatientId" />
@@ -80,8 +85,6 @@
             }
         </select>
     </div>
-
-    <input type="hidden" asp-for="@Model.SelectedGroupNameFilterId" />
 
     <div>
         <input type="submit" class="btn btn-primary" value="@Model.ActionName" />
