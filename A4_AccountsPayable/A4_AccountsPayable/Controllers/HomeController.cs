@@ -26,7 +26,11 @@ namespace A4_AccountsPayable.Controllers
             vendors = context.Vendors.ToList();
 
             // cookie
-            Response.Cookies.Append("activePage", vendorFilter);
+            if (Request.Cookies["activePage"] == null)
+            {
+                Response.Cookies.Append("activePage", vendorFilter);
+            }
+            
 
             switch (vendorFilter)
             {
@@ -152,6 +156,11 @@ namespace A4_AccountsPayable.Controllers
 
                 return View(vrvm);
             }            
+        }
+
+        public IActionResult Invoice()
+        {
+            return View();
         }
 
         public IActionResult Privacy()
