@@ -118,6 +118,38 @@ namespace A4_AccountsPayable.Controllers
             return View(vrvm);
         }
 
+        [HttpPost]
+        public IActionResult VendorRecord(Vendor vendor)
+        {
+            if (ModelState.IsValid)
+            {
+                //add
+                if (vendor.VendorId == 0)
+                {
+                    context.Vendors.Add(vendor);
+                }
+                else
+                {
+                    context.Update(vendor);
+                }
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ModelState.AddModelError("", "There are errors");
+                
+                VendorRecordViewModel vrvm = new VendorRecordViewModel()
+                {
+                    Vendor = vendor,
+                    Accounts = context.GeneralLedgerAccounts.ToList(),
+                    Terms = context.Terms.ToList()
+                };
+
+                return View(vrvm);
+            }            
+        }
+
         public IActionResult Privacy()
         {
             return View();
