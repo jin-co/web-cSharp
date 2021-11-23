@@ -22,23 +22,6 @@ namespace A4_AccountsPayable.Controllers
 
         public IActionResult Index(string vendorFilter)
         {
-            //// vendors
-            //var vendors = new List<Vendor>();
-            //vendors = context.Vendors.ToList();
-
-            //// vendor names
-            //List<string> vendorNameList = vendors.Select(s => s.VendorName).Distinct().ToList();
-
-            //// soft delete
-            //vendors = vendors.Where(a => a.IsDeleted == false).ToList();
-
-            //VendorListViewModel vlvm = new VendorListViewModel()
-            //{
-            //    Vendors = vendors,
-            //    VendorNameFilter = vendorNameList
-            //};
-            //return View(vlvm);
-            // vendors
             var vendors = new List<Vendor>();
             vendors = context.Vendors.ToList();
 
@@ -86,46 +69,6 @@ namespace A4_AccountsPayable.Controllers
             return View("Index", vlvm);
         }
 
-        //public IActionResult VendorList(string vendorFilter)
-        //{
-        //    // vendors
-        //    var vendors = new List<Vendor>();
-        //    vendors = context.Vendors.ToList();            
-
-        //    switch (vendorFilter)
-        //    {
-        //        case "ae":
-        //            vendors = vendors
-        //                .Where(a => a.VendorName.ToLower()[0] <= 'e')
-        //                .OrderBy(a => a.VendorName).ToList();                    
-        //            break;
-        //        case "fk":
-        //            vendors = vendors
-        //                .Where(a => a.VendorName.ToLower()[0] > 'f' &&
-        //                a.VendorName.ToLower()[0] <= 'k')
-        //                .OrderBy(a => a.VendorName).ToList();
-        //            break;
-        //        case "lr":
-        //            vendors = vendors
-        //                .Where(a => a.VendorName.ToLower()[0] > 'l' &&
-        //                a.VendorName.ToLower()[0] <= 'r')
-        //                .OrderBy(a => a.VendorName).ToList();
-        //            break;
-        //        case "sz":
-        //            vendors = vendors
-        //                .Where(a => a.VendorName.ToLower()[0] > 's')
-        //                .OrderBy(a => a.VendorName).ToList();
-        //            break;
-        //    }            
-
-        //    VendorListViewModel vlvm = new VendorListViewModel()
-        //    {
-        //        Vendors = vendors,
-        //        SelectedVendorFilter = vendorFilter
-        //    };
-        //    return View("Index", vlvm);
-        //}
-
         public IActionResult SoftDelete(int id)
         {
             var vendor = context.Vendors.Find(id);
@@ -155,6 +98,24 @@ namespace A4_AccountsPayable.Controllers
             }
 
             return Redirect($"/Home/?vendorFilter={TempData["activePage"]}");
+        }
+        
+        public IActionResult VendorRecord(int id, string actionType)
+        {
+            //ModelState.AddModelError("", "Error");
+            ViewBag.ActionType = actionType;
+
+            // edit
+            var vendor = context.Vendors.Find(id);
+
+            VendorRecordViewModel vrvm = new VendorRecordViewModel()
+            {
+                Vendor = vendor,
+                Accounts = context.GeneralLedgerAccounts.ToList(),
+                Terms = context.Terms.ToList()
+            };
+
+            return View(vrvm);
         }
 
         public IActionResult Privacy()

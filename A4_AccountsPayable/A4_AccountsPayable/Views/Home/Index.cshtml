@@ -11,22 +11,22 @@
     <div class="text-left col-2">
         <a class="btn btn-outline-success"
            asp-route-actionType="Add"
-           asp-route-groupNameFilterId=""
-           asp-action="PatientRecord">Add new vendor</a>
+           asp-action="VendorRecord">Add new vendor</a>
     </div>
-</div>
 
-@if (TempData["DeletedVendorName"] != null && TempData["DeletedVendorId"] != null)
-{
-    <div class="text-right pb-5">
-        <span class="alert alert-info pb-3">
-        vendor"@TempData["DeletedVendorName"]" was deleted. 
-        <a asp-action="UnDoSoftDelete" 
-           asp-route-id="@TempData["DeletedVendorId"]">Undo
-        </a> this delete.
-        </span>
-    </div>
-}
+    @if (TempData["DeletedVendorName"] != null && TempData["DeletedVendorId"] != null)
+    {
+        <div class="text-right undo-message-box col h-50">
+            <span class="alert alert-info pb-3">
+                vendor"@TempData["DeletedVendorName"]" was deleted.
+                <a asp-action="UnDoSoftDelete"
+                   asp-route-id="@TempData["DeletedVendorId"]">
+                    Undo
+                </a> this delete.
+            </span>
+        </div>
+    }
+</div>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -48,9 +48,8 @@
 
                     <span class="linkSpacer">|</span>
 
-                    <a asp-action="PatientRecord"
+                    <a asp-action="VendorRecord"
                        asp-route-actionType="Edit"
-                       asp-route-groupNameFilterId=""
                        asp-route-id="@i.VendorId">Edit</a>
 
                     <span class="linkSpacer">|</span>
@@ -95,3 +94,12 @@
         </a>
     </ul>
 </div>
+
+@section Scripts{
+    <script>
+        //const undoMessage = document.querySelector('.undo-message-box')
+        setTimeout(() => {
+            $('.undo-message-box').fadeOut(1600, "linear")
+        }, 3000)
+    </script>
+}
