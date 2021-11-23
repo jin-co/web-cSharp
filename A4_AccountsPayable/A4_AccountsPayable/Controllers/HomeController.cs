@@ -58,7 +58,7 @@ namespace A4_AccountsPayable.Controllers
                     break;
             }
 
-            // soft delete
+            // soft delete filter
             vendors = vendors.Where(a => a.IsDeleted == false).ToList();
 
             VendorListViewModel vlvm = new VendorListViewModel()
@@ -100,6 +100,7 @@ namespace A4_AccountsPayable.Controllers
             return Redirect($"/Home/?vendorFilter={TempData["activePage"]}");
         }
         
+        // edit and add
         public IActionResult VendorRecord(int id, string actionType)
         {
             //ModelState.AddModelError("", "Error");
@@ -133,7 +134,7 @@ namespace A4_AccountsPayable.Controllers
                     context.Update(vendor);
                 }
                 context.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect($"/?vendorFilter={TempData["activePage"]}");
             }
             else
             {

@@ -96,6 +96,8 @@
 
     <div>
         <input type="submit" class="btn btn-primary" value="@ViewBag.ActionType" />
-        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        <a asp-action="Index" 
+           asp-route-vendorFilter="@TempData["activePage"]"
+           class="btn btn-secondary">Cancel</a>
     </div>
 </form>
