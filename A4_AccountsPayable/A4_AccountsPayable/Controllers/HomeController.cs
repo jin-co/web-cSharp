@@ -134,11 +134,15 @@ namespace A4_AccountsPayable.Controllers
         public IActionResult VendorRecord(Vendor vendor)
         {
             // test
-            
+            List<string> phones = context.Vendors.Select(a => a.VendorPhone).ToList();
 
-
-
-
+            foreach (var i in phones)
+            {
+                if (i == vendor.VendorPhone)
+                {
+                    ModelState.AddModelError(nameof(Vendor.VendorPhone), "exists");
+                }
+            }
             //test
 
 
