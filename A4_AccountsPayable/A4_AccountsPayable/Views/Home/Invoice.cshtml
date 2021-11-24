@@ -80,9 +80,9 @@
                     </table>
 
                     <form method="post"
-                          asp-action="AddNewPrescriptionLineItem"
-                          asp-route-pharmacyNumber=""
-                          asp-route-patientId=".PatientId"
+                          asp-action="AddNewInvoiceLineItem"
+                          asp-route-vendorId="@Model.Vendor.VendorId"
+                          asp-route-invoiceId="@Model.Invoice"
                           asp-route-prescriptionId="">
 
                         <div class="row pb-2">
@@ -97,7 +97,8 @@
                             <span class="text-danger"></span>
                         </div>
 
-                        <input class="btn btn-outline-info" type="submit" value="Add new line item" />
+                        <input class="btn btn-outline-info" 
+                               type="submit" value="Add new line item" />
                     </form>
                 }
             </div>

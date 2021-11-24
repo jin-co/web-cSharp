@@ -133,6 +133,15 @@ namespace A4_AccountsPayable.Controllers
         [HttpPost]
         public IActionResult VendorRecord(Vendor vendor)
         {
+            // test
+            
+
+
+
+
+            //test
+
+
             if (ModelState.IsValid)
             {
                 //add
@@ -165,14 +174,18 @@ namespace A4_AccountsPayable.Controllers
         public IActionResult Invoice(int vendorId, int invoiceId)
         {
             var vendor = context.Vendors.Find(vendorId);
-            var invoice = context.Invoices.Where(a => a.VendorId == vendorId).ToList();
+            var invoice = context.Invoices
+                .Where(a => a.VendorId == vendorId).ToList();
 
-            decimal total = context.Invoices.Where(a => a.VendorId == vendorId).Sum(a => a.InvoiceTotal);
+            decimal total = context.Invoices
+                .Where(a => a.VendorId == vendorId).Sum(a => a.InvoiceTotal);
 
             if (invoiceId != 0)
             {
                 invoice = invoice.Where(a => a.InvoiceId == invoiceId).ToList();
-                total = context.Invoices.Where(a => a.VendorId == vendorId && a.InvoiceId == invoiceId).Sum(a => a.InvoiceTotal);
+                total = context.Invoices
+                    .Where(a => a.VendorId == vendorId && 
+                    a.InvoiceId == invoiceId).Sum(a => a.InvoiceTotal);
             }
             
             // active page
@@ -183,6 +196,17 @@ namespace A4_AccountsPayable.Controllers
                 Vendor = vendor,
                 Invoice = invoice,
                 CreditTotal = total,
+                Accounts = context.GeneralLedgerAccounts.ToList(),
+                Terms = context.Terms.ToList()
+            };
+            return View(ivm);
+        }
+
+        public IActionResult AddNewInvoiceLineItem()
+        {
+            InvoiceViewModel ivm = new InvoiceViewModel()
+            {
+   
                 Accounts = context.GeneralLedgerAccounts.ToList(),
                 Terms = context.Terms.ToList()
             };

@@ -13,7 +13,9 @@ namespace A4_AccountsPayable.Models.ViewModels
 
 
         public decimal CreditTotal { get; set; }
-        public List<InvoiceLineItem> InvoiceLineItem { get; set; }
+        public List<InvoiceLineItem> InvoiceLineItems { get; set; }
+
+        public InvoiceLineItem InvoiceLineItem { get; set; }
 
         public List<GeneralLedgerAccount> Accounts { get; set; }
         public List<Term> Terms { get; set; }
