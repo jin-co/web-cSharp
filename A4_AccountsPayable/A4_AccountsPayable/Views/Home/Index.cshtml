@@ -43,8 +43,8 @@
                 <td>@i.VendorName</td>
                 <td class="col-5">@i.VendorAddress1</td>
                 <td class="col-2">
-                    <a asp-action=""
-                       asp-route-patientId="@i.VendorId">Invoice</a>
+                    <a asp-action="Invoice"
+                       asp-route-id="@i.VendorId">Invoice</a>
 
                     <span class="linkSpacer">|</span>
 
@@ -66,30 +66,30 @@
     <ul class="nav nav-pills mb-4 border border-dark 
     rounded w-100 text-center bg-info">        
         <a class="text-light nav-item col-3
-           @Model.GetActiveVendorFilter("ae")"
+           @Model.GetActiveVendorFilter("A-E")"
             asp-action="Index"
-        asp-route-vendorFilter="ae">
+        asp-route-vendorFilter="A-E">
             A-E
         </a>
         
         <a class="text-light nav-item col-3
-           @Model.GetActiveVendorFilter("fk")"
+           @Model.GetActiveVendorFilter("F-K")"
             asp-action="Index"
-        asp-route-vendorFilter="fk">
+        asp-route-vendorFilter="F-K">
             F-K
         </a>
         
         <a class="text-light nav-item col-3
-           @Model.GetActiveVendorFilter("lr")"
+           @Model.GetActiveVendorFilter("L-R")"
             asp-action="Index"
-            asp-route-vendorFilter="lr">
+            asp-route-vendorFilter="L-R">
             L-R
         </a>
         
         <a class="text-light nav-item col-3
-           @Model.GetActiveVendorFilter("sz")"
+           @Model.GetActiveVendorFilter("S-Z")"
             asp-action="Index"
-            asp-route-vendorFilter="sz">
+            asp-route-vendorFilter="S-Z">
             S-Z
         </a>
     </ul>

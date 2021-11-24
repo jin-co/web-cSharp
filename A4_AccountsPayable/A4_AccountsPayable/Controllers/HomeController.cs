@@ -1,6 +1,7 @@
 ﻿using A4_AccountsPayable.Models;
 using A4_AccountsPayable.Models.DBGenerated;
 using A4_AccountsPayable.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -26,39 +27,41 @@ namespace A4_AccountsPayable.Controllers
             vendors = context.Vendors.ToList();
 
             // cookie
-            if (Request.Cookies["activePage"] != null)
-            {
-                Response.Cookies.Append("activePage", vendorFilter);
-            }
             
+            var options = new CookieOptions { Expires = DateTime.Now.AddDays(30) };
+            if (vendorFilter != null)
+            {
+                Response.Cookies.Append("activePage", vendorFilter, options);
+            }
+
 
             switch (vendorFilter)
             {
-                case "ae":
+                case "A-E":
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] <= 'e')
                         .OrderBy(a => a.VendorName).ToList();
-                    TempData["activePage"] = "ae";
+                    TempData["activePage"] = "A-E";
                     break;
-                case "fk":
+                case "F-K":
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] > 'f' &&
                         a.VendorName.ToLower()[0] <= 'k')
                         .OrderBy(a => a.VendorName).ToList();
-                    TempData["activePage"] = "fk";
+                    TempData["activePage"] = "F-K";
                     break;
-                case "lr":
+                case "L-R":
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] > 'l' &&
                         a.VendorName.ToLower()[0] <= 'r')
                         .OrderBy(a => a.VendorName).ToList();
-                    TempData["activePage"] = "lr";
+                    TempData["activePage"] = "L-R";
                     break;
-                case "sz":
+                case "S-Z":
                     vendors = vendors
                         .Where(a => a.VendorName.ToLower()[0] > 's')
                         .OrderBy(a => a.VendorName).ToList();
-                    TempData["activePage"] = "sz";
+                    TempData["activePage"] = "S-Z";
                     break;
                 default:
                     vendors = vendors.OrderBy(a => a.VendorName).ToList();
@@ -158,9 +161,11 @@ namespace A4_AccountsPayable.Controllers
             }            
         }
 
-        public IActionResult Invoice()
+        public IActionResult Invoice(int id)
         {
-            return View();
+            var vendor = context.Vendors.Find(id);
+            ViewBag.Page = Request.Cookies["activePage"];
+            return View(vendor);
         }
 
         public IActionResult Privacy()

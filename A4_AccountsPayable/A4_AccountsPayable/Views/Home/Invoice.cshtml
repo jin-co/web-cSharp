@@ -1,16 +1,20 @@
-﻿
+﻿@model Vendor
 
 <div class="container">
     <div class="row">
-        <h4 class="text-left col-8">Prescriptions for </h4>
+        <h4 class="text-left col-8">Invoices for @Model.VendorName</h4>
 
         @if (true)
         {
-            <a asp-action="PatientList" asp-route-nameGroupFilterId=".NameGroupId" class="text-right col-4">Return to .GroupName Patients</a>
+            <a asp-action="Index" 
+               asp-route-vendorFilter="@ViewBag.Page"
+               class="text-right col-4">Return to @ViewBag.Page Vendors</a>
         }
         else
         {
-            <a asp-action="PatientList" asp-route-nameGroupFilterId="0" class="text-right col-4">Return to Patient List</a>
+            <a asp-action="PatientList" 
+               asp-route-nameGroupFilterId="0" 
+               class="text-right col-4">Return to Patient List</a>
         }
     </div>
 
@@ -67,7 +71,6 @@
 
                         </tbody>
                     </table>
-
 
                     <form method="post"
                           asp-action="AddNewPrescriptionLineItem"
