@@ -26,7 +26,7 @@ namespace A4_AccountsPayable.Controllers
             vendors = context.Vendors.ToList();
 
             // cookie
-            if (Request.Cookies["activePage"] == null)
+            if (Request.Cookies["activePage"] != null)
             {
                 Response.Cookies.Append("activePage", vendorFilter);
             }
