@@ -28,20 +28,20 @@
         </span>
     </div>
 
-    @if (Model.InvoiceLineItems.Count() > 0)
+    @if (Model.Invoices.Count() > 0)
     {
         <div class="row pt-5">
             <div class="col-6">
                 <h4 class="font-weight-bold">Invoices:</h4>
                 <ul class="nav nav-pills flex-column">
-                    @foreach (var i in @Model.InvoiceLineItems)
+                    @foreach (var i in @Model.Invoices)
                     {
                         <li class="nav-item">
                             <a asp-action="Invoice"
                                asp-route-vendorId="@Model.Vendor.VendorId"
                                asp-route-invoiceId="@i.InvoiceId"
                                class="nav-link (prescription.PrescriptionId)">
-                                Invoice #: @i.AccountNumber
+                                Invoice #: @i.InvoiceId
                             </a>
                         </li>
                     }
@@ -71,15 +71,15 @@
                             @foreach (var i in Model.InvoiceLineItems)
                             {
                                 <tr>
-                                    <td>line</td>
+                                    <td>@i.LineItemDescription</td>
                                     <td>@i.LineItemAmount.ToString("C2")</td>
                                 </tr>
                             }
-                            @if (Model.Invoices.Count() > 0)
+                            @if (Model.InvoiceLineItems.Count() > 0)
                             {
                                 <tr>
                                     <td>Total</td>
-                                    <td>@Model.LineItemAmountTotal.ToString("C2")</td>
+                                    <td>@Model.SelectedInvoice.InvoiceTotal.ToString("C2")</td>
                                 </tr>
                             }
 

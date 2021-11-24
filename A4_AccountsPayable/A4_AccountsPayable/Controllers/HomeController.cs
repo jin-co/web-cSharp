@@ -177,39 +177,74 @@ namespace A4_AccountsPayable.Controllers
 
         public IActionResult Invoice(int vendorId, int invoiceId)
         {
-            var vendor = context.Vendors.Find(vendorId);
-            var invoices = context.Invoices
-                .Where(a => a.VendorId == vendorId).ToList();
+            //var vendor = context.Vendors.Find(vendorId);
+            //var invoices = context.Invoices
+            //    .Where(a => a.VendorId == vendorId).ToList();
 
-            //test
-            var invoice = context.Invoices.Where(a => a.VendorId == vendorId).Select(a => a.InvoiceId);
-            
-            //test
-            var invoiceLineItem = context.InvoiceLineItems
-                .Where(a => a.InvoiceId == int.Parse(invoice.ToString())).ToList();
+            ////test
+            //var vendoro = context.Vendors.Include(a => a.Invoices).ThenInclude(a => a.InvoiceLineItems);
+
+            ////test
+            //var vendorRecord = vendoro.Where(a => a.VendorId == vendorId);            
+            //var invoiceLineItem = context.InvoiceLineItems.Find(vendorRecord);
+
+            ////test
+            //var invoice = new Invoice();
+            //invoice = context.Invoices.Find(vendorId);                                    
 
             decimal total = context.InvoiceLineItems
                 .Where(a => a.InvoiceId == invoiceId).Sum(a => a.LineItemAmount);
+
+            //test
+            var vendors = context.Vendors.Include(i => i.Invoices).ThenInclude(ti => ti.InvoiceLineItems);
+            var vendorRecord = vendors.Where(w => w.VendorId == vendorId).FirstOrDefault();
+            var term = context.Terms.Find(vendorRecord.DefaultTermsId);
+            var ledger = context.GeneralLedgerAccounts.Find(vendorRecord.DefaultAccountNumber);
+            var invoices = vendorRecord.Invoices.ToList();
+
+            var selectedInvoiceID = 0;
+            Invoice selectedInvoice = null;
+            List<InvoiceLineItem> invoiceLineItems = new List<InvoiceLineItem>();
+
+            if (invoiceId != 0)
+            {
+                selectedInvoiceID = invoiceId;
+                selectedInvoice = invoices.Where(w => w.InvoiceId == selectedInvoiceID).FirstOrDefault();
+                invoiceLineItems = selectedInvoice.InvoiceLineItems.ToList();
+            }
+            else if (invoices.Count() > 0)
+            {
+                selectedInvoiceID = invoices.First().InvoiceId;
+                selectedInvoice = invoices.First();
+                invoiceLineItems = selectedInvoice.InvoiceLineItems.ToList();
+            }
+
 
             if (invoiceId != 0)
             {
                 invoices = invoices.Where(a => a.InvoiceId == invoiceId).ToList();
                 total = context.Invoices
-                    .Where(a => a.VendorId == vendorId && 
+                    .Where(a => a.VendorId == vendorId &&
                     a.InvoiceId == invoiceId).Sum(a => a.InvoiceTotal);
             }
-            
+
             // active page
             ViewBag.Page = Request.Cookies["activePage"];
 
             InvoiceViewModel ivm = new InvoiceViewModel()
             {
-                Vendor = vendor,
+                //Vendor = vendor,
+                //Invoices = invoices,
+                //InvoiceLineItems = invoiceLineItem,
+                //LineItemAmountTotal = total,
+                //Accounts = context.GeneralLedgerAccounts.ToList(),
+                //Terms = context.Terms.ToList()
+                Vendor = vendorRecord,
                 Invoices = invoices,
-                InvoiceLineItems = invoiceLineItem,
+                InvoiceLineItems = invoiceLineItems,
                 LineItemAmountTotal = total,
-                Accounts = context.GeneralLedgerAccounts.ToList(),
-                Terms = context.Terms.ToList()
+                SelectedInvoiceID = selectedInvoiceID,
+                SelectedInvoice = selectedInvoice,                
             };
             return View(ivm);
         }
