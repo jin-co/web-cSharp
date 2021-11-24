@@ -178,15 +178,22 @@ namespace A4_AccountsPayable.Controllers
         public IActionResult Invoice(int vendorId, int invoiceId)
         {
             var vendor = context.Vendors.Find(vendorId);
-            var invoice = context.Invoices
+            var invoices = context.Invoices
                 .Where(a => a.VendorId == vendorId).ToList();
 
-            decimal total = context.Invoices
-                .Where(a => a.VendorId == vendorId).Sum(a => a.InvoiceTotal);
+            //test
+            var invoice = context.Invoices.Where(a => a.VendorId == vendorId).Select(a => a.InvoiceId);
+            
+            //test
+            var invoiceLineItem = context.InvoiceLineItems
+                .Where(a => a.InvoiceId == int.Parse(invoice.ToString())).ToList();
+
+            decimal total = context.InvoiceLineItems
+                .Where(a => a.InvoiceId == invoiceId).Sum(a => a.LineItemAmount);
 
             if (invoiceId != 0)
             {
-                invoice = invoice.Where(a => a.InvoiceId == invoiceId).ToList();
+                invoices = invoices.Where(a => a.InvoiceId == invoiceId).ToList();
                 total = context.Invoices
                     .Where(a => a.VendorId == vendorId && 
                     a.InvoiceId == invoiceId).Sum(a => a.InvoiceTotal);
@@ -198,8 +205,9 @@ namespace A4_AccountsPayable.Controllers
             InvoiceViewModel ivm = new InvoiceViewModel()
             {
                 Vendor = vendor,
-                Invoice = invoice,
-                CreditTotal = total,
+                Invoices = invoices,
+                InvoiceLineItems = invoiceLineItem,
+                LineItemAmountTotal = total,
                 Accounts = context.GeneralLedgerAccounts.ToList(),
                 Terms = context.Terms.ToList()
             };

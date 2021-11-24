@@ -9,10 +9,10 @@ namespace A4_AccountsPayable.Models.ViewModels
     public class InvoiceViewModel
     {
         public Vendor Vendor { get; set; }
-        public List<Invoice> Invoice { get; set; }
+        public List<Invoice> Invoices { get; set; }
 
-
-        public decimal CreditTotal { get; set; }
+        public Invoice Invoice { get; set; }
+        public decimal LineItemAmountTotal { get; set; }
         public List<InvoiceLineItem> InvoiceLineItems { get; set; }
 
         public InvoiceLineItem InvoiceLineItem { get; set; }
