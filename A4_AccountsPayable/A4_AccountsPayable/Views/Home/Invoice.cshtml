@@ -1,8 +1,8 @@
-﻿@model Vendor
+﻿@model InvoiceViewModel
 
 <div class="container">
     <div class="row">
-        <h4 class="text-left col-8">Invoices for @Model.VendorName</h4>
+        <h4 class="text-left col-8">Invoices for @Model.Vendor.VendorName</h4>
 
         @if (true)
         {
@@ -20,31 +20,38 @@
 
 
     <div class="row">
-        <span style="color:gray;" class="text-left col-7">Pharmacy: </span>
-        <span style="color:gray;" class="text-right col-5">Health Insurance: </span>
+        <span style="color:gray;" 
+              class="text-left col-7">Address: @Model.Vendor.VendorAddress1
+        </span>
+        <span style="color:gray;" 
+              class="text-right col-5">Terms: @Model.Vendor.DefaultTerms.TermsDueDays Days
+        </span>
     </div>
 
     @if (1 > 0)
     {
         <div class="row pt-5">
             <div class="col-3">
-                <h4 class="font-weight-bold">Prescriptions:</h4>
+                <h4 class="font-weight-bold">Invoices:</h4>
                 <ul class="nav nav-pills flex-column">
-                    @*@foreach (var prescription in Prescriptions)
+                    @foreach (var i in @Model.Invoice)
                     {
                         <li class="nav-item">
-                            <a asp-action="PatientPrescriptionList"
-                               asp-route-prescriptionId="@prescription.PrescriptionId"
-                               class="nav-link (prescription.PrescriptionId)">Prescription #: @prescription.PrescriptionNumber</a>
+                            <a asp-action="Invoice"
+                               asp-route-vendorId="@i.VendorId"
+                               asp-route-invoiceId="@i.InvoiceId"
+                               class="nav-link (prescription.PrescriptionId)">
+                                Invoice #: @i.InvoiceNumber
+                            </a>
                         </li>
-                    }*@
+                    }
                 </ul>
             </div>
             <div class="col-3"></div>
             <div class="col-6">
                 @if (true)
                 {
-                    <h4 class="font-weight-bold">Line Items for Prescription </h4>
+                    <h4 class="font-weight-bold">Line Items for Invoice </h4>
 
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -54,18 +61,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @*@foreach (var lineItem in PrescriptionsLineItems)
+                            @foreach (var i in Model.Invoice)
                             {
                                 <tr>
-                                    <td>@lineItem.LineItemDescription</td>
-                                    <td>@lineItem.LineItemAmount.ToString("C2")</td>
+                                    <td>line</td>
+                                    <td>@i.InvoiceTotal.ToString("C2")</td>
                                 </tr>
-                            }*@
+                            }
                             @if (1 > 0)
                             {
                                 <tr>
                                     <td>Total</td>
-                                    <td>.PrescriptionTotal.ToString("C2")</td>
+                                    <td>@Model.CreditTotal.ToString("C2")</td>
                                 </tr>
                             }
 

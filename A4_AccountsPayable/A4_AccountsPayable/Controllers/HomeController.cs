@@ -3,6 +3,7 @@ using A4_AccountsPayable.Models.DBGenerated;
 using A4_AccountsPayable.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -45,21 +46,21 @@ namespace A4_AccountsPayable.Controllers
                     break;
                 case "F-K":
                     vendors = vendors
-                        .Where(a => a.VendorName.ToLower()[0] > 'f' &&
+                        .Where(a => a.VendorName.ToLower()[0] > 'e' &&
                         a.VendorName.ToLower()[0] <= 'k')
                         .OrderBy(a => a.VendorName).ToList();
                     TempData["activePage"] = "F-K";
                     break;
                 case "L-R":
                     vendors = vendors
-                        .Where(a => a.VendorName.ToLower()[0] > 'l' &&
+                        .Where(a => a.VendorName.ToLower()[0] > 'k' &&
                         a.VendorName.ToLower()[0] <= 'r')
                         .OrderBy(a => a.VendorName).ToList();
                     TempData["activePage"] = "L-R";
                     break;
                 case "S-Z":
                     vendors = vendors
-                        .Where(a => a.VendorName.ToLower()[0] > 's')
+                        .Where(a => a.VendorName.ToLower()[0] > 'r')
                         .OrderBy(a => a.VendorName).ToList();
                     TempData["activePage"] = "S-Z";
                     break;
@@ -161,11 +162,31 @@ namespace A4_AccountsPayable.Controllers
             }            
         }
 
-        public IActionResult Invoice(int id)
+        public IActionResult Invoice(int vendorId, int invoiceId)
         {
-            var vendor = context.Vendors.Find(id);
+            var vendor = context.Vendors.Find(vendorId);
+            var invoice = context.Invoices.Where(a => a.VendorId == vendorId).ToList();
+
+            decimal total = context.Invoices.Where(a => a.VendorId == vendorId).Sum(a => a.InvoiceTotal);
+
+            if (invoiceId != 0)
+            {
+                invoice = invoice.Where(a => a.InvoiceId == invoiceId).ToList();
+                total = context.Invoices.Where(a => a.VendorId == vendorId && a.InvoiceId == invoiceId).Sum(a => a.InvoiceTotal);
+            }
+            
+            // active page
             ViewBag.Page = Request.Cookies["activePage"];
-            return View(vendor);
+
+            InvoiceViewModel ivm = new InvoiceViewModel()
+            {
+                Vendor = vendor,
+                Invoice = invoice,
+                CreditTotal = total,
+                Accounts = context.GeneralLedgerAccounts.ToList(),
+                Terms = context.Terms.ToList()
+            };
+            return View(ivm);
         }
 
         public IActionResult Privacy()
