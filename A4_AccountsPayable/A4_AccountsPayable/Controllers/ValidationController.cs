@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace A4_AccountsPayable.Controllers
 {
-    public class ValidationController
+    public class ValidationController : Controller
     {
         private readonly apContext context;
 
@@ -20,7 +20,7 @@ namespace A4_AccountsPayable.Controllers
         /// <summary>
         /// Remote validation logic to check and see if another patient has the same phone number stored in their record
         /// </summary>
-        /// <param name="patient">Binding a patient model through the Remote validation call due to approach taken (only need the patient's phone number)</param>
+        /// <param name="vendor">Binding a patient model through the Remote validation call due to approach taken (only need the patient's phone number)</param>
         /// <returns>JsonResult indicating if there is another phone number for a patient record that matches the one passed</returns>
         public JsonResult CheckPhoneNumber(Vendor vendor)
         {
@@ -31,7 +31,7 @@ namespace A4_AccountsPayable.Controllers
             // message returned from the method call above.
             if (string.IsNullOrEmpty(msg))
             {
-                TempDate["okPhoneNumber"] = true;
+                TempData["okPhoneNumber"] = true;
                 return Json(true);
             }
             else
