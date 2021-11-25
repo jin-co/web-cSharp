@@ -33,25 +33,6 @@ namespace A4_AccountsPayable.Controllers
             {
                 return Json(msg);
             }
-            //if (vendor.VendorId == 0)
-            //{
-
-            //}
-
-            //if (vendor.VendorId == 0)
-            //{
-            //    string msg = ValidationHelper.PhoneNumberExists(context, vendor.VendorPhone);
-            //    if (string.IsNullOrEmpty(msg))
-            //    {
-            //        return Json(true);
-            //    }
-            //    else
-            //    {
-            //        return Json(msg);
-            //    }
-            //}
-
-            //return Json(true);
         }
     }
 }

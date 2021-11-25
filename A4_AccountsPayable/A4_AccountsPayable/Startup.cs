@@ -13,6 +13,12 @@ using System.Threading.Tasks;
 
 namespace A4_AccountsPayable
 {
+    /*
+     * Author: Kwangjin Baek
+     * Date: 2021. Nov. 24.
+     * Description: Invoice management application
+     * with the functions to add, edit, or delete
+     */
     public class Startup
     {
         public Startup(IConfiguration configuration)

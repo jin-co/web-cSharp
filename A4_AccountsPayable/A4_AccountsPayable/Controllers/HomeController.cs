@@ -1,4 +1,5 @@
-﻿using A4_AccountsPayable.Models;
+﻿using A4_AccountsPayable.Helpers;
+using A4_AccountsPayable.Models;
 using A4_AccountsPayable.Models.DBGenerated;
 using A4_AccountsPayable.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -27,8 +28,7 @@ namespace A4_AccountsPayable.Controllers
             var vendors = new List<Vendor>();
             vendors = context.Vendors.ToList();
 
-            // cookie
-            var options = new CookieOptions { Expires = DateTime.Now.AddDays(30) };
+            // session
             if (vendorFilter != null)
             {
                 Response.Cookies.Append("activePage", vendorFilter, options);
@@ -151,12 +151,11 @@ namespace A4_AccountsPayable.Controllers
                     context.Update(vendor);
                 }
                 context.SaveChanges();
-                return Redirect($"/?vendorFilter={Request.Cookies["activePage"]}");
+                return Redirect($"/?vendorFilter={HttpContext.Session.GetString("activePage")}");
             }
             else
             {
                 ModelState.AddModelError("", "There are errors");
-                
                 VendorRecordViewModel vrvm = new VendorRecordViewModel()
                 {
                     Vendor = vendor,

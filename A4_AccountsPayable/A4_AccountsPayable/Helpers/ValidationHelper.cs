@@ -24,6 +24,7 @@ namespace A4_AccountsPayable.Helpers
             {
                 foreach (var i in vendorIds)
                 {
+                    // allows a user can use the same old phone when editing
                     if (i == vendor.VendorId && storedPhone.VendorPhone == vendor.VendorPhone)
                     {
                         msg = "";
@@ -34,7 +35,6 @@ namespace A4_AccountsPayable.Helpers
                 if (phones.Contains(vendor.VendorPhone))
                 {
                     msg = $"Phone number {vendor.VendorPhone} is already in use.";
-                    //return msg;
                 }
             }
             else
@@ -42,7 +42,6 @@ namespace A4_AccountsPayable.Helpers
                 if (phones.Contains(vendor.VendorPhone))
                 {
                     msg = $"Phone number {vendor.VendorPhone} is already in use.";
-                    //return msg;
                 }
             }
             
