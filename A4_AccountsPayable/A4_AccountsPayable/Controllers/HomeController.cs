@@ -216,7 +216,8 @@ namespace A4_AccountsPayable.Controllers
             {
                 selectedInvoiceID = invoices.First().InvoiceId;
                 selectedInvoice = invoices.First();
-                invoiceLineItems = selectedInvoice.InvoiceLineItems.ToList();
+                //invoiceLineItems = selectedInvoice.InvoiceLineItems.ToList();
+                invoiceLineItems = context.InvoiceLineItems.Where(a => a.InvoiceId == selectedInvoiceID).ToList();
             }
 
 
