@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace A4_AccountsPayable.Models.ViewModels
 {
+    // vendor record view model with properties to render to VendorRecord view
     public class VendorRecordViewModel
     {
         public Vendor Vendor { get; set; }

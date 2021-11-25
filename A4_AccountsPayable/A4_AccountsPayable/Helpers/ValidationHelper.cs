@@ -14,19 +14,39 @@ namespace A4_AccountsPayable.Helpers
         /// <param name="context">Binds the application database context</param>
         /// <param name="patientPhone">Binds the passed phone number to validate for uniqueness</param>
         /// <returns>A string indicating whether there was a match found or not</returns>
-        public static string PhoneNumberExists(apContext context, string vendorPhone)
+        public static string PhoneNumberExists(apContext context, Vendor vendor)
         {
             List<string> phones = context.Vendors.Select(a => a.VendorPhone).ToList();
+            List<int> vendorIds = context.Vendors.Select(a => a.VendorId).ToList();
+            Vendor storedPhone = context.Vendors.Find(vendor.VendorId);
             string msg = "";
-            foreach (var i in phones)
+            if (vendorIds.Contains(vendor.VendorId))
             {
-                if (i == vendorPhone)
+                foreach (var i in vendorIds)
                 {
-                    msg = $"Phone number {vendorPhone} is already in use.";
-                    return msg;
+                    if (i == vendor.VendorId && storedPhone.VendorPhone == vendor.VendorPhone)
+                    {
+                        msg = "";
+                        return msg;
+                    }
+                }
+
+                if (phones.Contains(vendor.VendorPhone))
+                {
+                    msg = $"Phone number {vendor.VendorPhone} is already in use.";
+                    //return msg;
                 }
             }
-            return "";
+            else
+            {
+                if (phones.Contains(vendor.VendorPhone))
+                {
+                    msg = $"Phone number {vendor.VendorPhone} is already in use.";
+                    //return msg;
+                }
+            }
+            
+            return msg;
         }
     }
 }

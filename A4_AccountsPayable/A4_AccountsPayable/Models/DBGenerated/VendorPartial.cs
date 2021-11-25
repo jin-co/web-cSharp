@@ -42,7 +42,7 @@ namespace A4_AccountsPayable.Models.DBGenerated
         [Required(ErrorMessage="Please enter phone")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", 
             ErrorMessage = "Entered phone format is not valid.")]
-        [Remote("CheckPhoneNumber", "Validation",
+        [Remote("CheckPhoneNumber", "Validation", AdditionalFields = "VendorId", 
             ErrorMessage = "Phone number already exists in the database.")]
         public string VendorPhone { get; set; }
         

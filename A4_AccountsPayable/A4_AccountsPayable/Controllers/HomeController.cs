@@ -113,10 +113,8 @@ namespace A4_AccountsPayable.Controllers
         public IActionResult VendorRecord(int id, string actionType)
         {
             ViewBag.ActionType = actionType;
-
             Vendor vendor = null;
 
-            // Need to check if we are dealing with a new patient record or an existing one.
             if (actionType == "Add")
             {
                 vendor = new Vendor();
@@ -125,7 +123,6 @@ namespace A4_AccountsPayable.Controllers
             {
                 vendor = context.Vendors.Find(id);
             }
-            //var vendor = context.Vendors.Find(id);
 
             VendorRecordViewModel vrvm = new VendorRecordViewModel()
             {

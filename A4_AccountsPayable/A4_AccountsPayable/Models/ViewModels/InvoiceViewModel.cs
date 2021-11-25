@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace A4_AccountsPayable.Models.ViewModels
 {
+    // invoice view model with properties to render to Invoice view
     public class InvoiceViewModel
     {
         public Vendor Vendor { get; set; }
