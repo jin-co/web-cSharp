@@ -17,7 +17,7 @@ namespace A4_AccountsPayable.Models.ViewModels
 
         //public InvoiceLineItem InvoiceLineItem { get; set; }
 
-        public List<GeneralLedgerAccount> Accounts { get; set; }
+        public GeneralLedgerAccount Account { get; set; }
         public List<Term> Terms { get; set; }
 
         public Vendor Vendor { get; set; }

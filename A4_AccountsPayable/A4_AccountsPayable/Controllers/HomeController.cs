@@ -244,21 +244,34 @@ namespace A4_AccountsPayable.Controllers
                 Invoices = invoices,
                 InvoiceLineItems = invoiceLineItems,
                 LineItemAmountTotal = total,
+                Account = ledger,
                 SelectedInvoiceID = selectedInvoiceID,
-                SelectedInvoice = selectedInvoice,                
+                SelectedInvoice = selectedInvoice         
             };
             return View(ivm);
         }
 
-        public IActionResult AddNewInvoiceLineItem()
+        public IActionResult AddNewInvoiceLineItem(
+            int vendorId, int invoiceId, int accountNumber, decimal amount, string description)
         {
-            InvoiceViewModel ivm = new InvoiceViewModel()
+            var lastSequence = context.InvoiceLineItems
+                .Where(a => a.InvoiceId == invoiceId).Max(a => a.InvoiceSequence);
+            InvoiceLineItem invoiceLineItem = new InvoiceLineItem()
             {
-   
-                Accounts = context.GeneralLedgerAccounts.ToList(),
-                Terms = context.Terms.ToList()
+                InvoiceId = invoiceId,
+                InvoiceSequence = lastSequence++,
+                AccountNumber = accountNumber,
+                LineItemAmount = amount,
+                LineItemDescription = description
             };
-            return View(ivm);
+            context.InvoiceLineItems.Add(invoiceLineItem);
+
+            var invoice = context.Invoices.Find(invoiceId);
+            invoice.InvoiceTotal += amount;
+            context.Invoices.Update(invoice);
+            context.SaveChanges();
+
+            return RedirectToAction("Invoice", new { vendorId, invoiceId });
         }
 
         public IActionResult Privacy()
