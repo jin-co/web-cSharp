@@ -18,26 +18,25 @@ namespace A4_AccountsPayable.Controllers
         }
 
         /// <summary>
-        /// Remote validation logic to check and see if another patient has the same phone number stored in their record
+        /// Remote validation to check if there is the same phone number stored 
         /// </summary>
         /// <param name="vendor">Binding a patient model through the Remote validation call due to approach taken (only need the patient's phone number)</param>
         /// <returns>JsonResult indicating if there is another phone number for a patient record that matches the one passed</returns>
         public JsonResult CheckPhoneNumber(Vendor vendor)
-        {
-            // Call the validation helper class and execute its static method PhoneNumberExists to see there is a phone number match or not.
-            string msg = ValidationHelper.PhoneNumberExists(context, vendor.VendorPhone);
-
-            // If there is no message returned from the method above, the phone number is unique and there is no validation errors, otherwise, return the error
-            // message returned from the method call above.
-            if (string.IsNullOrEmpty(msg))
+        {            
+            if (vendor.VendorId == 0)
             {
-                TempData["okPhoneNumber"] = true;
-                return Json(true);
+                string msg = ValidationHelper.PhoneNumberExists(context, vendor.VendorPhone);
+                if (string.IsNullOrEmpty(msg))
+                {
+                    return Json(true);
+                }
+                else
+                {
+                    return Json(msg);
+                }
             }
-            else
-            {
-                return Json(msg);
-            }
+            return Json(true);
         }
     }
 }

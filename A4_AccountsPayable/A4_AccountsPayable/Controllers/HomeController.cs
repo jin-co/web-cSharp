@@ -28,13 +28,11 @@ namespace A4_AccountsPayable.Controllers
             vendors = context.Vendors.ToList();
 
             // cookie
-            
             var options = new CookieOptions { Expires = DateTime.Now.AddDays(30) };
             if (vendorFilter != null)
             {
                 Response.Cookies.Append("activePage", vendorFilter, options);
             }
-
 
             switch (vendorFilter)
             {
@@ -114,10 +112,8 @@ namespace A4_AccountsPayable.Controllers
         // edit and add
         public IActionResult VendorRecord(int id, string actionType)
         {
-            //ModelState.AddModelError("", "Error");
             ViewBag.ActionType = actionType;
             
-            // edit
             var vendor = context.Vendors.Find(id);
 
             VendorRecordViewModel vrvm = new VendorRecordViewModel()
@@ -131,20 +127,9 @@ namespace A4_AccountsPayable.Controllers
         }
 
         [HttpPost]
-        public IActionResult VendorRecord(Vendor vendor)
+        public IActionResult VendorRecord(Vendor vendor, string actionType)
         {
-            // test
-            List<string> phones = context.Vendors.Select(a => a.VendorPhone).ToList();
-
-            foreach (var i in phones)
-            {
-                if (i == vendor.VendorPhone)
-                {
-                    ModelState.AddModelError(nameof(Vendor.VendorPhone), "exists");
-                }
-            }
-            //test
-
+            ViewBag.ActionType = actionType;
 
             if (ModelState.IsValid)
             {
@@ -176,26 +161,10 @@ namespace A4_AccountsPayable.Controllers
         }
 
         public IActionResult Invoice(int vendorId, int invoiceId)
-        {
-            //var vendor = context.Vendors.Find(vendorId);
-            //var invoices = context.Invoices
-            //    .Where(a => a.VendorId == vendorId).ToList();
-
-            ////test
-            //var vendoro = context.Vendors.Include(a => a.Invoices).ThenInclude(a => a.InvoiceLineItems);
-
-            ////test
-            //var vendorRecord = vendoro.Where(a => a.VendorId == vendorId);            
-            //var invoiceLineItem = context.InvoiceLineItems.Find(vendorRecord);
-
-            ////test
-            //var invoice = new Invoice();
-            //invoice = context.Invoices.Find(vendorId);                                    
-
+        {                                 
             decimal total = context.InvoiceLineItems
                 .Where(a => a.InvoiceId == invoiceId).Sum(a => a.LineItemAmount);
 
-            //test
             var vendors = context.Vendors.Include(i => i.Invoices).ThenInclude(ti => ti.InvoiceLineItems);
             var vendorRecord = vendors.Where(w => w.VendorId == vendorId).FirstOrDefault();
             var term = context.Terms.Find(vendorRecord.DefaultTermsId);
@@ -216,7 +185,6 @@ namespace A4_AccountsPayable.Controllers
             {
                 selectedInvoiceID = invoices.First().InvoiceId;
                 selectedInvoice = invoices.First();
-                //invoiceLineItems = selectedInvoice.InvoiceLineItems.ToList();
                 invoiceLineItems = context.InvoiceLineItems.Where(a => a.InvoiceId == selectedInvoiceID).ToList();
             }
 
@@ -234,12 +202,6 @@ namespace A4_AccountsPayable.Controllers
 
             InvoiceViewModel ivm = new InvoiceViewModel()
             {
-                //Vendor = vendor,
-                //Invoices = invoices,
-                //InvoiceLineItems = invoiceLineItem,
-                //LineItemAmountTotal = total,
-                //Accounts = context.GeneralLedgerAccounts.ToList(),
-                //Terms = context.Terms.ToList()
                 Vendor = vendorRecord,
                 Invoices = invoices,
                 InvoiceLineItems = invoiceLineItems,
@@ -259,7 +221,7 @@ namespace A4_AccountsPayable.Controllers
             InvoiceLineItem invoiceLineItem = new InvoiceLineItem()
             {
                 InvoiceId = invoiceId,
-                InvoiceSequence = lastSequence++,
+                InvoiceSequence = lastSequence += 1,
                 AccountNumber = accountNumber,
                 LineItemAmount = amount,
                 LineItemDescription = description

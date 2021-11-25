@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace A4_AccountsPayable.Models.DBGenerated
 {
+    // partial class to add additional features to
+    // the vendor class
     [ModelMetadataType(typeof(VendorMetaData))]
     public partial class Vendor
     {
@@ -20,15 +22,12 @@ namespace A4_AccountsPayable.Models.DBGenerated
             ErrorMessage = "Name may not contain special characters.")]
         public string VendorName { get; set; }
 
-        [Required(ErrorMessage = "Please enter address")]
-        [StringLength(128)]
+        [Required(ErrorMessage = "Please enter address")]        
         public string VendorAddress1 { get; set; } 
-        
-        [StringLength(128)]
+                
         public string VendorAddress2 { get; set; }
         
-        [Required(ErrorMessage="Please enter city")]        
-        [StringLength(64)]
+        [Required(ErrorMessage="Please enter city")]                
         public string VendorCity { get; set; }
 
         [Required(ErrorMessage="Please enter state")]
@@ -43,26 +42,14 @@ namespace A4_AccountsPayable.Models.DBGenerated
         [Required(ErrorMessage="Please enter phone")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", 
             ErrorMessage = "Entered phone format is not valid.")]
-        [Remote("CheckPhoneNumber", "Validation", 
+        [Remote("CheckPhoneNumber", "Validation",
             ErrorMessage = "Phone number already exists in the database.")]
         public string VendorPhone { get; set; }
         
-        [StringLength(128)]
-        public string VendorContactLastName { get; set; }        
-        [StringLength(128)]
-        public string VendorContactFirstName { get; set; }        
-        [StringLength(128)]
-        public string VendorContactEmail { get; set; }        
-        public int DefaultTermsId { get; set; }        
-        public int DefaultAccountNumber { get; set; }        
-        public bool IsDeleted { get; set; }
+        [Required(ErrorMessage = "Please enter term")]
+        public int DefaultTermsId { get; set; }
 
-        [Required(ErrorMessage = "Please enter account number")]
-        public virtual GeneralLedgerAccount DefaultAccountNumberNavigation { get; set; }
-
-        [Required(ErrorMessage = "Please enter default terms")]
-        public virtual Term DefaultTerms { get; set; }
-        
-        public virtual ICollection<Invoice> Invoices { get; set; }
+        [Required(ErrorMessage = "Please enter account")]
+        public int DefaultAccountNumber { get; set; }
     }
 }
