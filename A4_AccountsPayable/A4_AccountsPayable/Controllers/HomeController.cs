@@ -28,10 +28,10 @@ namespace A4_AccountsPayable.Controllers
             var vendors = new List<Vendor>();
             vendors = context.Vendors.ToList();
 
-            // session
+            // cookie
             if (vendorFilter != null)
             {
-                Response.Cookies.Append("activePage", vendorFilter, options);
+                HttpContext.Session.SetString("activePage", vendorFilter);
             }
 
             switch (vendorFilter)
