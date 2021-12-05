@@ -1,0 +1,36 @@
+﻿@model DropDownFilterViewModel
+
+<h3>Filter View Component:</h3>
+<div class="row">
+    <div class="col-3">
+        <label>Movie</label>
+        <select name="movieFilter" class="form-control m-2"
+                asp-items="@(new SelectList(
+                    Model.MovieItems, "Key", "Value", Model.SelectedMovieValue))">
+            <option value="@Model.DefaultMovieValue">All</option>
+        </select>
+    </div>
+    
+    <div class="col-3">
+        <label>Genre</label>
+        <select name="genreFilter" class="form-control m-2"
+                asp-items="@(new SelectList(
+                    Model.GenreItems, "Key", "Value", Model.SelectedGenreValue))">
+            <option value="@Model.DefaultGenreValue">All</option>
+        </select>
+    </div>
+   
+    <div class="col-3">
+        <label>Rating</label>
+        <select name="ratingFilter" class="form-control m-2"
+                asp-items="@(new SelectList(
+                    Model.RatingItems, "Key", "Value", Model.SelectedRatingValue))">
+            <option value="@Model.DefaultRatingValue">All</option>
+        </select>
+    </div>
+    
+    <div class="col-3">
+        <label></label>
+        <a class="btn btn-primary form-control m-2">Filter</a>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+﻿@model TagHelperModel
+
+<div class="jumbotron">
+    <h3>The Tag Helper Page</h3>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+        </div>
+        <div class="col-3">
+            <a asp-action="Index">Return to Home page</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            A simple input field
+        </div>
+        <div class="col-9">
+            <input asp-for="FirstName" />
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            A simple form
+        </div>
+        <div class="col-9">
+            <form asp-action="Edit" method="post">
+                <input asp-for="FirstName" />
+            </form>
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            A complex form
+        </div>
+        <div class="col-9">
+            <form asp-action="Edit" method="post" class="form-inline">
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" class="form-control m-2" />
+                <label asp-for="Price">Price</label>
+                <input asp-for="Price" class="form-control m-2"
+                       placeholder="e.g., $14.99" />
+            </form>
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            Using a custom Button Tag Helper
+        </div>
+        <div class="col-9">
+            <button>This is a fun button!</button>
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            Creating our very own submit button Tag Helper
+        </div>
+        <div class="col-9">
+            <submit-button>Our own submit button!</submit-button>
+            <submit-button class="p-3">Submit button with padding!</submit-button>
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            Creating labels with specific HTMLTargetElement attribute
+        </div>
+        <div class="col-9">
+            <label>I am outside the form!</label>
+
+            <form>
+                <label label-form>I am inside the form!</label>
+            </form>
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            Creating our own validation span indicator
+        </div>
+        <div class="col-9">
+            <input my-required />
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            Our own dynamically generate select list
+        </div>
+        <div class="col-9">
+            <select class="form-control" my-min-number="1" my-max-number="10"></select>
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            Our custom TempData tag
+        </div>
+        <div class="col-9">
+            @if (TempData.Keys.Contains("message"))
+            {
+                <h4 class="bg-info text-center text-white p-2">
+                    @TempData["message"]
+                </h4>
+            }
+            @*<my-temp-message />*@
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+﻿@model PartialViewModel
+
+<div class="jumbotron">
+    <h3>The Partial View Page</h3>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+        </div>
+        <div class="col-3">
+            <a asp-action="Index">Return to Home page</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            A partial view for a link
+        </div>
+        <div class="col-9">
+            <h5>
+                <partial name="_BookLinkPartial" model="@Model.Book" />
+            </h5>
+        </div>
+    </div>
+
+    <div class="row m-3 hoverDiv">
+        <div class="col-3">
+            A partial view for favourite colour
+        </div>
+        <div class="col-9">
+            <h5>
+                <partial name="_FavColourPartial" model="@Model.Colour" />
+            </h5>
+        </div>
+    </div>
+
+    <partial name="_DivSectionPartial" />
+</div>
