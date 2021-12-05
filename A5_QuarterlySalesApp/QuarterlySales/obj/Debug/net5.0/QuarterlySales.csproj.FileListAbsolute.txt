@@ -144,3 +144,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\obj
 C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\obj\Debug\net5.0\ref\QuarterlySales.dll
 C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\obj\Debug\net5.0\QuarterlySales.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\obj\Debug\net5.0\QuarterlySales.genruntimeconfig.cache
+C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\obj\Debug\net5.0\Razor\Views\Shared\Components\TopQuartersByEmployee\Default.cshtml.g.cs
