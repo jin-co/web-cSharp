@@ -5452,24 +5452,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pmadziak\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\jin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\peter\\src\\PROG2230\\assignments\\asst5\\starting-code\\QuarterlySales\\QuarterlySales.csproj",
+      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A5_QuarterlySalesApp\\QuarterlySales\\QuarterlySales.csproj",
       "projectName": "QuarterlySales",
-      "projectPath": "C:\\peter\\src\\PROG2230\\assignments\\asst5\\starting-code\\QuarterlySales\\QuarterlySales.csproj",
-      "packagesPath": "C:\\Users\\pmadziak\\.nuget\\packages\\",
-      "outputPath": "C:\\peter\\src\\PROG2230\\assignments\\asst5\\starting-code\\QuarterlySales\\obj\\",
+      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A5_QuarterlySalesApp\\QuarterlySales\\QuarterlySales.csproj",
+      "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\A5_QuarterlySalesApp\\QuarterlySales\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\pmadziak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5527,7 +5531,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
