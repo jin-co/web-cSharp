@@ -11,6 +11,9 @@ namespace SandboxApp_Week12.TagHelpers
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.Attributes.SetAttribute("class", "btn btn-primary");
+
+            // using extension
+            output.Attributes.AppendCssClass("btn btn-primary");
         }
     }
 }

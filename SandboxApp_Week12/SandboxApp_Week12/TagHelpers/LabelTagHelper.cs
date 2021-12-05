@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SandboxApp_Week12.TagHelpers
 {
+    // specifying tag
     [HtmlTargetElement("label", Attributes = "label-Form", ParentTag = "form")]
     public class LabelTagHelper : TagHelper
     {
