@@ -1,9 +1,13 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace QuarterlySales.Models
 {
-    public class SalesContext : DbContext
+    public class SalesContext : IdentityDbContext<User>
+
     {
         public SalesContext(DbContextOptions<SalesContext> options)
             : base(options)
@@ -14,6 +18,7 @@ namespace QuarterlySales.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // ensures that the identity runs first
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Employee>().HasData(
