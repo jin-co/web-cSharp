@@ -16,9 +16,31 @@ namespace QuarterlySales.Components
             _context = context;
         }
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(string input)
         {
-            return View();
+            int quarter = 0;
+            var sale = new List<Sales>();
+
+
+            if (input != null && input != "all")
+            {
+                quarter = int.Parse(input);
+                
+                sale = _context.Sales
+                .Where(a => a.Quarter == quarter)
+                .OrderByDescending(a => a.Amount)
+                .Take(3)
+                .ToList();
+            }
+            else
+            {
+                sale = _context.Sales                
+                .OrderByDescending(a => a.Amount)
+                .Take(3)
+                .ToList();
+            }
+            
+            return View(sale);
         }
     }
 }
