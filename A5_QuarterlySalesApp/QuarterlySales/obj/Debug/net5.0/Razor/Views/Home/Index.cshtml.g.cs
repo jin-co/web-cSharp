@@ -26,8 +26,15 @@ using QuarterlySales.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"61e0395bda832baedcc3840b656e8f49549bd9f9", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"080aeb9f41d6a9d45ce71238a0108b8234a2f15e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"34a2288594e55d59c3922c5b3932c56d4e098d0f", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SalesListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "filter", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -80,11 +87,11 @@ using QuarterlySales.Models;
 #nullable disable
             WriteLiteral("\r\n<h4 class=\"mt-2 mb-2\">Quarterly Sales</h4>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col\">\r\n");
             WriteLiteral("        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f96183", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f96404", async() => {
                 WriteLiteral("\r\n\r\n            <label>Employee: </label>\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f96498", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f96719", async() => {
                     WriteLiteral("\r\n                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f96782", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f97003", async() => {
                         WriteLiteral("All");
                     }
                     );
@@ -132,9 +139,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = (new SelectList(Mo
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n            <label>Year: </label>\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f910235", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f910456", async() => {
                     WriteLiteral("\r\n                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f910520", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f910741", async() => {
                         WriteLiteral("All");
                     }
                     );
@@ -182,9 +189,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = (new SelectList(Mo
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n            <label>Quarter: </label>\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f913943", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f914164", async() => {
                     WriteLiteral("\r\n                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f914228", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f914449", async() => {
                         WriteLiteral("All");
                     }
                     );
@@ -261,7 +268,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = (new SelectList(Mo
 #line hidden
 #nullable disable
             WriteLiteral("                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f919764", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f919985", async() => {
                 WriteLiteral("Year");
             }
             );
@@ -293,7 +300,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues = routes;
 #line hidden
 #nullable disable
             WriteLiteral("                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f921797", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f922018", async() => {
                 WriteLiteral("Quarter");
             }
             );
@@ -325,7 +332,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues = routes;
 #line hidden
 #nullable disable
             WriteLiteral("                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f923828", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f924049", async() => {
                 WriteLiteral("Employee");
             }
             );
@@ -357,7 +364,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues = routes;
 #line hidden
 #nullable disable
             WriteLiteral("                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f925864", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f926085", async() => {
                 WriteLiteral("Amount");
             }
             );
@@ -465,7 +472,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues = routes;
 #line hidden
 #nullable disable
             WriteLiteral("        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f930956", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61e0395bda832baedcc3840b656e8f49549bd9f931177", async() => {
 #nullable restore
 #line 97 "C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\Views\Home\Index.cshtml"
                                                                                 Write(i);

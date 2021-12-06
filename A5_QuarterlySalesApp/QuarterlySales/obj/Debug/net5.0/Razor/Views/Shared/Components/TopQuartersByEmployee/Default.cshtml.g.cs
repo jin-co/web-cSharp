@@ -26,8 +26,15 @@ using QuarterlySales.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c856125877aa13d41aa9b795c2db3420b88bcd33", @"/Views/Shared/Components/TopQuartersByEmployee/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"080aeb9f41d6a9d45ce71238a0108b8234a2f15e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"34a2288594e55d59c3922c5b3932c56d4e098d0f", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_TopQuartersByEmployee_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Sales>>
     {
         #pragma warning disable 1998

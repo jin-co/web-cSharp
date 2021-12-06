@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using QuarterlySales.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace QuarterlySales
 {
@@ -30,6 +31,20 @@ namespace QuarterlySales
 
             services.AddDbContext<SalesContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("SalesContext")));
+            
+            // Adds identity service
+            //services.AddIdentity<User, IdentityRole>()
+            //    .AddEntityFrameworkStores<SalesContext>()
+            //    .AddDefaultTokenProviders();
+
+            // Identity with options
+            services.AddIdentity<User, IdentityRole>(options => {
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+            }).AddEntityFrameworkStores<SalesContext>()
+            .AddDefaultTokenProviders();
+
         }
 
         // Use this method to configure the HTTP request pipeline.
@@ -40,6 +55,10 @@ namespace QuarterlySales
             app.UseStaticFiles();
 
             app.UseSession();
+
+            // identity
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseRouting();
             app.UseEndpoints(endpoints =>
