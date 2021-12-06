@@ -70,28 +70,17 @@
                             </li>
                         }
 
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller=""
-                               asp-action="">
-                                Register
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller=""
-                               asp-action="">
-                                Admin
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller=""
-                               asp-action="">
-                                Log In
-                            </a>
-                        </li>
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark"
+                                   asp-area="Admin"
+                                   asp-controller="User"
+                                   asp-action="Index">
+                                    Admin
+                                </a>
+                            </li>
+                        }                        
                     </ul>
                 </div>
             </div>
