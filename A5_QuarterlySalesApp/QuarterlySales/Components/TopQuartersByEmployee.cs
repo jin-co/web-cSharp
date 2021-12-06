@@ -21,11 +21,8 @@ namespace QuarterlySales.Components
             int quarter = 0;
             var sale = new List<Sales>();
 
-
-            if (input != null && input != "all")
+            if (int.TryParse(input, out quarter))
             {
-                quarter = int.Parse(input);
-                
                 sale = _context.Sales
                 .Where(a => a.Quarter == quarter)
                 .OrderByDescending(a => a.Amount)
