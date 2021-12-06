@@ -31,24 +31,34 @@
                         @inject SignInManager<User> signInManager
                         @if (signInManager.IsSignedIn(User))
                         {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark"
+                                   asp-controller="Sales"
+                                   asp-action="Add">
+                                    Add Sales
+                                </a>
+                            </li>
+
                             if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                             {
+
                                 <li class="nav-item">
                                     <a class="nav-link text-dark"
-                                       asp-controller="Sales"
+                                       asp-controller="Employee"
                                        asp-action="Add">
-                                        Add Sales
+                                        Add Employee
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark"
+                                       asp-area="Admin"
+                                       asp-controller="User"
+                                       asp-action="Index">
+                                        Admin
                                     </a>
                                 </li>
                             }
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark"
-                                   asp-controller="Employee"
-                                   asp-action="Add">
-                                    Add Employee
-                                </a>
-                            </li>
 
                             // signed-in user - Log Out button and username
                             <li class="text-dark nav-item ml-5 mr-2">
@@ -81,18 +91,6 @@
                                 <a asp-action="Login" asp-controller="Account"
                                    asp-area="" class="btn btn-outline-warning text-dark">
                                     Log In
-                                </a>
-                            </li>
-                        }
-
-                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark"
-                                   asp-area="Admin"
-                                   asp-controller="User"
-                                   asp-action="Index">
-                                    Admin
                                 </a>
                             </li>
                         }

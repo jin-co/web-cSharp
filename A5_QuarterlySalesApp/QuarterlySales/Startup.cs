@@ -59,9 +59,10 @@ namespace QuarterlySales
 
             // identity
             app.UseAuthentication();
-            app.UseAuthorization();
-
+            
             app.UseRouting();
+
+            app.UseAuthorization();  // after routing before endpoint
 
             app.UseEndpoints(endpoints =>
             {
