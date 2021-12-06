@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QuarterlySales",
+    "\\QuarterlySales\\Controllers"
   ],
-  "SelectedNode": "\\QuarterlySales.sln",
+  "SelectedNode": "\\QuarterlySales\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }
