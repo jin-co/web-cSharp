@@ -28,7 +28,7 @@ namespace QuarterlySales.Controllers
                     OrderBy = e => e.Firstname
                 }),
                 CurrentRoute = builder.CurrentRoute,
-                TotalPages = builder.GetTotalPages(data.Sales.Count)
+                TotalPages = builder.GetTotalPages(data.Sales.Count),                                
             };
             return View(vm);
         }

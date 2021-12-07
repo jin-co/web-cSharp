@@ -8,6 +8,7 @@ namespace QuarterlySales.Models
         public IEnumerable<Sales> Sales { get; set; }    
         public RouteDictionary CurrentRoute { get; set; }
         public int TotalPages { get; set; }
+        public int TopCount { get; set; } //test
 
         // for filter drop-downs - two hard coded
         public IEnumerable<Employee> Employees { get; set; }
