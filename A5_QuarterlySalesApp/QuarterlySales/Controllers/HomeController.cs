@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using QuarterlySales.Models;
 
 namespace QuarterlySales.Controllers
@@ -18,25 +19,32 @@ namespace QuarterlySales.Controllers
                 Includes = "Employee",
                 OrderByDirection = builder.CurrentRoute.SortDirection,
                 PageNumber = builder.CurrentRoute.PageNumber,
-                PageSize = builder.CurrentRoute.PageSize
+                PageSize = builder.CurrentRoute.PageSize               
             };
             options.SortFilter(builder);
 
             var vm = new SalesListViewModel {
-                Sales = data.Sales.List(options),  
-                Employees = data.Employees.List(new QueryOptions<Employee> { 
+                Sales = data.Sales.List(options),
+                Employees = data.Employees.List(new QueryOptions<Employee> {
                     OrderBy = e => e.Firstname
                 }),
                 CurrentRoute = builder.CurrentRoute,
-                TotalPages = builder.GetTotalPages(data.Sales.Count),                                
+                TotalPages = builder.GetTotalPages(data.Sales.Count)                
             };
             return View(vm);
         }
 
         [HttpPost]
-        public RedirectToActionResult Filter(string[] filter, bool clear = false)
+        public RedirectToActionResult Filter(string[] filter, 
+            SalesListViewModel sv, bool clear = false)
         {
             var builder = new SalesGridBuilder(HttpContext.Session);
+
+            // sets the number of count for the 'Top quarter' component
+            if (sv != null)
+            {
+                HttpContext.Session.SetInt32("TopCount", sv.TopCount);
+            }
 
             if (clear) {
                 builder.ClearFilterSegments();

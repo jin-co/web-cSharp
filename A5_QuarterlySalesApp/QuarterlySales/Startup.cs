@@ -7,6 +7,13 @@ using Microsoft.AspNetCore.Identity;
 
 namespace QuarterlySales
 {
+    /*
+     * Author: Kwangjin Baek
+     * Date: 2021. Dec. 7.
+     * Description: Quarterly sales application 
+     * with the functions to add, edit, or delete,
+     * and Identity
+     */
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -85,7 +92,6 @@ namespace QuarterlySales
             });
 
             SalesContext.CreateAdminUser(app.ApplicationServices).Wait();
-
         }
     }
 }
