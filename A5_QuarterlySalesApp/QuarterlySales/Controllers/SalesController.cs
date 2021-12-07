@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuarterlySales.Models;
 
 namespace QuarterlySales.Controllers
 {
+    [Authorize]
     public class SalesController : Controller
     {
         private UnitOfWork data { get; set; }
