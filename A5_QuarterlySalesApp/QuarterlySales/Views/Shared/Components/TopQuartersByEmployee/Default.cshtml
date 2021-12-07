@@ -6,8 +6,12 @@
         @for (int i = 0, j = 1; i < Model.Count; i++, j++)
         {
             <p class="card-text">
-                @j. @Model[i].Year Q @Model[i].Quarter : @Model[i].Amount?.ToString("c") <br />
-                <small class="bg-secondary text-light py-1 px-2 rounded">@Model[i].Employee.Fullname</small> 
+                @j. @Model[i].Year Q @Model[i].Quarter : @Model[i].Amount?.ToString("c") 
+                <br />
+                <small class="bg-secondary text-light py-1 px-2 rounded" 
+                       style="display: flex; flex-wrap: wrap; justify-content: center">
+                    @Model[i].Employee.Fullname
+                </small> 
             </p>
         }
     </div>

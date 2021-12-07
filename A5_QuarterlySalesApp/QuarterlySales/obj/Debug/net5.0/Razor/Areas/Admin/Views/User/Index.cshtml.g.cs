@@ -40,8 +40,15 @@ using QuarterlySales.Areas.Admin.Controllers;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\jin\Documents\GitHub\web-cSharp\A5_QuarterlySalesApp\QuarterlySales\Areas\Admin\Views\_ViewImports.cshtml"
+using QuarterlySales.Areas.Admin.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c02865bfc02b3543f3d3803535935a97096d6d14", @"/Areas/Admin/Views/User/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8e341f121e5ba80643c2f0a76e2341ef03cf8d1b", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8e95f3b46d22b416897658761e793c61f4fb2d33", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_User_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<UserViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Add", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -87,7 +94,7 @@ using QuarterlySales.Areas.Admin.Controllers;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1 class=\"mb-2\">Manage Users</h1>\r\n\r\n<h5 class=\"mt-2\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d146460", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d146697", async() => {
                 WriteLiteral("Add a User");
             }
             );
@@ -177,7 +184,7 @@ using QuarterlySales.Areas.Admin.Controllers;
 #line hidden
 #nullable disable
             WriteLiteral("                    </td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1410090", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1410327", async() => {
                 WriteLiteral("\r\n                            <button type=\"submit\" class=\"btn btn-primary\">\r\n                                Delete User\r\n                            </button>\r\n                        ");
             }
             );
@@ -212,7 +219,7 @@ using QuarterlySales.Areas.Admin.Controllers;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1413009", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1413246", async() => {
                 WriteLiteral("\r\n                            <button type=\"submit\" class=\"btn btn-primary\">\r\n                                Add To Admin\r\n                            </button>\r\n                        ");
             }
             );
@@ -247,7 +254,7 @@ using QuarterlySales.Areas.Admin.Controllers;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1415929", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1416166", async() => {
                 WriteLiteral("\r\n                            <button type=\"submit\" class=\"btn btn-primary\">\r\n                                Remove From Admin\r\n                            </button>\r\n                        ");
             }
             );
@@ -307,7 +314,7 @@ using QuarterlySales.Areas.Admin.Controllers;
 #line hidden
 #nullable disable
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1419627", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1419864", async() => {
                 WriteLiteral("\r\n        <button type=\"submit\" class=\"btn btn-primary\">\r\n            Create Admin Role\r\n        </button>\r\n    ");
             }
             );
@@ -354,7 +361,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1422450", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02865bfc02b3543f3d3803535935a97096d6d1422687", async() => {
                 WriteLiteral("\r\n                            <button type=\"submit\"\r\n                                    class=\"btn btn-primary\">\r\n                                Delete Role\r\n                            </button>\r\n                        ");
             }
             );

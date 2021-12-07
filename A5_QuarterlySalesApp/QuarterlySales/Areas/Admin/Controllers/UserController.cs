@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using QuarterlySales.Models;
+using QuarterlySales.Areas.Admin.Models;
 
 namespace QuarterlySales.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
-
     public class UserController : Controller
     {
         private UserManager<User> userManager;
@@ -39,6 +39,24 @@ namespace QuarterlySales.Areas.Admin.Controllers
             };
             return View(model);
 
+        }
+
+        public async Task<IActionResult> Add()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> Add(NewUser newUser)
+        {
+            string username = newUser.UserName;
+            string password = newUser.Password;            
+            if (await userManager.FindByNameAsync(username) == null)
+            {
+                User user = new User { UserName = username };
+                var result = await userManager.CreateAsync(user, password);                
+            }
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
