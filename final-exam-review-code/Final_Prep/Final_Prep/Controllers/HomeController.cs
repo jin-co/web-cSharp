@@ -1,5 +1,6 @@
 ﻿using Final_Prep.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,15 +12,51 @@ namespace Final_Prep.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private AutoContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(AutoContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            List<Manufacturer> manufacturerList = _context.Manufacturers
+                .Include(a => a.Cars).ToList();
+            return View(manufacturerList);
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Manufacturer manufacturer)
+        {
+            
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Manufacturer manufacturer)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            else
+            {
+                // adding generic error message
+                ModelState.AddModelError("", "There are errors");
+            }
             return View();
         }
 

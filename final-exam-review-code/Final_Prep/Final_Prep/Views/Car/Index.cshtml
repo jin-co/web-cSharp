@@ -1,0 +1,47 @@
+﻿@model List<Car>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<a asp-controller="Manufacturer" asp-action="Add">Add M</a>
+<a asp-controller="Car" asp-action="Add">Add C</a>
+<a asp-controller="Part" asp-action="Add">Add P</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Home"
+                       asp-action="Index">
+                        @i.Make
+                    </a>
+                </td>
+                <td>@i.Model</td>
+                <td>@i.Year</td>
+                <td>
+                    <a asp-controller="Part"
+                       asp-action="ListByCar"
+                       asp-route-CarId="@i.CarId">Parts</a>
+                    <a asp-controller="Car"
+                       asp-action="Edit"
+                       asp-route-CarId="@i.CarId">Edit</a>
+                    <a asp-controller="Car"
+                       asp-action="Delete"
+                       asp-route-CarId="@i.CarId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
