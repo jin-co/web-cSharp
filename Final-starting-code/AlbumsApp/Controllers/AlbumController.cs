@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using AlbumsApp.Models;
 using AlbumsApp.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 
 namespace AlbumsApp.Controllers
 {
@@ -23,7 +24,40 @@ namespace AlbumsApp.Controllers
         [Route("/")]
         public IActionResult List()
         {
-            var albums = _albumsDbContext.Albums.Include(a => a.Studio).OrderByDescending(a => a.YearProduced).ToList();
+            // page visit count
+            int visitCountSession = 0;
+            if (HttpContext.Session.Keys.Contains("VisitCountSession"))
+            {
+                visitCountSession =  
+                    (int)HttpContext.Session.GetInt32("VisitCountSession");
+                visitCountSession++;
+                HttpContext.Session.SetInt32("VisitCountSession", visitCountSession);
+            }
+            else
+            {
+                 HttpContext.Session.SetInt32("VisitCountSession", visitCountSession);
+            }
+            ViewBag.SessionCount = visitCountSession;
+
+            int visitCountCookie = 0;
+            if (Request.Cookies["VisitCountCookie"] != null)
+            {
+                visitCountCookie =
+                    int.Parse(Request.Cookies["VisitCountCookie"]);                    
+                visitCountCookie++;
+                Response.Cookies.Append("VisitCountCookie", visitCountCookie.ToString());
+            }
+            else
+            {
+                Response.Cookies.Append("VisitCountCookie", visitCountCookie.ToString());
+            }
+            ViewBag.CookieCount = visitCountCookie;
+
+
+            var albums = _albumsDbContext.Albums
+                .Include(a => a.Studio)
+                .OrderByDescending(a => a.YearProduced)
+                .ToList();
             return View(albums);
         }
 

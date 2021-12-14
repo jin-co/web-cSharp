@@ -47,8 +47,15 @@ using AlbumsApp.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\jin\Documents\GitHub\web-cSharp\Final-starting-code\AlbumsApp\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Http;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9438cc7298f8d079b5de694179b4095159bf3fb3", @"/Views/Album/AlbumsInStudio.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c529b8b33078f1be4d9d5acd4d7464b7c4f8f4a2", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0c8c2eba3916af9817caa4e5397336cd8164cab2", @"/Views/_ViewImports.cshtml")]
     public class Views_Album_AlbumsInStudio : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Album>>
     {
         private global::AspNetCore.Views_Album_AlbumsInStudio.__Generated__TopRatedAlbumsViewComponentTagHelper __TopRatedAlbumsViewComponentTagHelper;
@@ -107,7 +114,7 @@ Write(title);
 #line hidden
 #nullable disable
             WriteLiteral("</h3>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9438cc7298f8d079b5de694179b4095159bf3fb36054", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9438cc7298f8d079b5de694179b4095159bf3fb36265", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -168,7 +175,7 @@ Write(title);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9438cc7298f8d079b5de694179b4095159bf3fb38766", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9438cc7298f8d079b5de694179b4095159bf3fb38977", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -201,7 +208,7 @@ Write(title);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        <span class=\"linkSpacer\">|</span>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9438cc7298f8d079b5de694179b4095159bf3fb311227", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9438cc7298f8d079b5de694179b4095159bf3fb311438", async() => {
                 WriteLiteral("Delete");
             }
             );
@@ -242,7 +249,7 @@ Write(title);
 #line hidden
 #nullable disable
             WriteLiteral("        </tbody>\r\n    </table>\r\n    <div class=\"col-sm-3\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:top-rated-albums", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9438cc7298f8d079b5de694179b4095159bf3fb313966", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:top-rated-albums", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9438cc7298f8d079b5de694179b4095159bf3fb314177", async() => {
             }
             );
             __TopRatedAlbumsViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Album_AlbumsInStudio.__Generated__TopRatedAlbumsViewComponentTagHelper>();
