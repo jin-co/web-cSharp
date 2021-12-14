@@ -1,16 +1,16 @@
 ﻿@model List<Album>
 
 @{
-    string title = "All Albums";
+    string title = "Albums Produced at";
 }
 
 <h3>@title</h3>
 
-<partial name="_NavPartial"/>
+<partial name="_NavPartial" />
 
 @*<a asp-controller="Album" asp-action="Add">Add a new album</a>
-<span class="linkSpacer">|</span>
-<a asp-controller="Studio" asp-action="Add">Add a new studio</a>*@
+    <span class="linkSpacer">|</span>
+    <a asp-controller="Studio" asp-action="Add">Add a new studio</a>*@
 
 <div class="row">
     <table class="table table-bordered table-striped col-sm-9">
@@ -18,7 +18,6 @@
             <tr>
                 <th>Name</th>
                 <th>Year Produced</th>
-                <th>Production Studio</th>
                 <th>Rating</th>
                 <th>Action</th>
             </tr>
@@ -29,18 +28,15 @@
                 <tr>
                     <td>@album.Name</td>
                     <td>@album.YearProduced</td>
-                    <td>
-                        <a asp-controller="Album"
-                           asp-action="AlbumsInStudio"
-                           asp-route-studioId="@album.StudioId">
-                            @album.Studio.Name
-                        </a>                    
-                    </td>
                     <td>@album.Rating?.ToString("N1")</td>
                     <td>
-                        <a asp-controller="Album" asp-action="Edit" asp-route-id="@album.AlbumId">Edit</a>
+                        <a asp-controller="Album" 
+                           asp-action="Edit" 
+                           asp-route-id="@album.AlbumId">Edit</a>
                         <span class="linkSpacer">|</span>
-                        <a asp-controller="Album" asp-action="DeleteConfirmation" asp-route-id="@album.AlbumId">Delete</a>
+                        <a asp-controller="Album" 
+                           asp-action="DeleteConfirmation" 
+                           asp-route-id="@album.AlbumId">Delete</a>
                     </td>
                 </tr>
             }

@@ -27,6 +27,16 @@ namespace AlbumsApp.Controllers
             return View(albums);
         }
 
+        public IActionResult AlbumsInStudio(int studioId)
+        {
+            var albums = _albumsDbContext.Albums
+                .Include(a => a.Studio)
+                .Where(a => a.StudioId == studioId)
+                .OrderByDescending(a => a.YearProduced)
+                .ToList();
+            return View(albums);
+        }
+
         [HttpGet]
         [Authorize]
         public IActionResult Add()

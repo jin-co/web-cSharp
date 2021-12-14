@@ -25,6 +25,6 @@ namespace AlbumsApp.Models
         [Display(Name = "Studio")]
         public int StudioId { get; set; }
 
-        public Studio Studio { get; set; }
+        public Studio Studio { get; set; }        
     }
 }
