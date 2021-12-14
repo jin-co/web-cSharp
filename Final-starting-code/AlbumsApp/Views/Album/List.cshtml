@@ -32,7 +32,8 @@
                     <td>
                         <a asp-controller="Album"
                            asp-action="AlbumsInStudio"
-                           asp-route-studioId="@album.StudioId">
+                           asp-route-studioId="@album.StudioId"
+                           asp-route-studioName="@album.Studio.Name">
                             @album.Studio.Name
                         </a>                    
                     </td>

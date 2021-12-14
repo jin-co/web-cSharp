@@ -27,13 +27,14 @@ namespace AlbumsApp.Controllers
             return View(albums);
         }
 
-        public IActionResult AlbumsInStudio(int studioId)
+        public IActionResult AlbumsInStudio(int studioId, string studioName)
         {
             var albums = _albumsDbContext.Albums
                 .Include(a => a.Studio)
                 .Where(a => a.StudioId == studioId)
                 .OrderByDescending(a => a.YearProduced)
                 .ToList();
+            ViewBag.Studio = studioName;
             return View(albums);
         }
 
