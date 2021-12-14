@@ -15,9 +15,13 @@ namespace AlbumsApp.Components
             _albumDbContext = albumDbContext;
         }
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int count)
         {
-            var albums = _albumDbContext.Albums.Where(a => a.Rating >= 8.0).OrderByDescending(a => a.Rating).ToList();
+            var albums = _albumDbContext.Albums
+                .Where(a => a.Rating >= 8.0)
+                .OrderByDescending(a => a.Rating)
+                .Take(count)
+                .ToList();
 
             var viewModel = new TopRatedAlbumsViewModel() { 
                 Albums = albums, 

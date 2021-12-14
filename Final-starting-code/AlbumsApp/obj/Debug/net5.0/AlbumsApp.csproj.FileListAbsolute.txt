@@ -959,3 +959,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\Final-starting-code\AlbumsApp\obj\Debug
 C:\Users\jin\Documents\GitHub\web-cSharp\Final-starting-code\AlbumsApp\obj\Debug\net5.0\ref\AlbumsApp.dll
 C:\Users\jin\Documents\GitHub\web-cSharp\Final-starting-code\AlbumsApp\obj\Debug\net5.0\AlbumsApp.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\Final-starting-code\AlbumsApp\obj\Debug\net5.0\AlbumsApp.genruntimeconfig.cache
+C:\Users\jin\Documents\GitHub\web-cSharp\Final-starting-code\AlbumsApp\obj\Debug\net5.0\Razor\Views\Shared\_NavPartial.cshtml.g.cs

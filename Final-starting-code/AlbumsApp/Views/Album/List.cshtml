@@ -6,9 +6,11 @@
 
 <h3>@title</h3>
 
-<a asp-controller="Album" asp-action="Add">Add a new album</a>
+<partial name="_NavPartial"/>
+
+@*<a asp-controller="Album" asp-action="Add">Add a new album</a>
 <span class="linkSpacer">|</span>
-<a asp-controller="Studio" asp-action="Add">Add a new studio</a>
+<a asp-controller="Studio" asp-action="Add">Add a new studio</a>*@
 
 <div class="row">
     <table class="table table-bordered table-striped col-sm-9">
@@ -39,6 +41,6 @@
         </tbody>
     </table>
     <div class="col-sm-3">
-        <vc:top-rated-albums></vc:top-rated-albums>
+        <vc:top-rated-albums count="10"></vc:top-rated-albums>
     </div>
 </div>
