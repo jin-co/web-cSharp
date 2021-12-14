@@ -34,9 +34,15 @@ namespace AlbumsApp
 
             services.AddControllersWithViews();
 
-            services.AddDbContext<AlbumsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AlbumsDbContext")));
+            services.AddDbContext<AlbumsDbContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("AlbumsDbContext")));
 
-            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AlbumsDbContext>().AddDefaultTokenProviders();
+            services.AddIdentity<User, IdentityRole>(options => {
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireDigit = true;
+            }).AddEntityFrameworkStores<AlbumsDbContext>()
+            .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

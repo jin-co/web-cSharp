@@ -30,10 +30,18 @@ namespace AlbumsApp.Controllers
         [HttpPost]
         public IActionResult Add(Studio studio)
         {
-            _albumsDbContext.Studios.Add(studio);
-            _albumsDbContext.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _albumsDbContext.Studios.Add(studio);
+                _albumsDbContext.SaveChanges();
 
-            return RedirectToAction("List", "Album");
+                return RedirectToAction("List", "Album");
+            }
+            else
+            {
+                ModelState.AddModelError("", "There are errors");
+                return View(studio);
+            }                        
         }
 
         [HttpGet]
