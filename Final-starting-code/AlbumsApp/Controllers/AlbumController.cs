@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using AlbumsApp.Models;
 using AlbumsApp.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AlbumsApp.Controllers
 {
@@ -27,6 +28,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Add()
         {
             var viewModel = new AddOrEditAlbumViewModel();
@@ -35,6 +37,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Add(AddOrEditAlbumViewModel viewModel)
         {
             if (ModelState.IsValid)
@@ -53,6 +56,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Edit(int id)
         {
             AddOrEditAlbumViewModel viewModel = new AddOrEditAlbumViewModel(_albumsDbContext.Albums.Include(a => a.Studio).Where(a => a.AlbumId == id).FirstOrDefault());
@@ -61,6 +65,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Edit(AddOrEditAlbumViewModel viewModel)
         {
             if (ModelState.IsValid)
@@ -79,6 +84,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult DeleteConfirmation(int id)
         {
             Album album = _albumsDbContext.Albums.Include(a => a.Studio).Where(a => a.AlbumId == id).FirstOrDefault();
@@ -86,6 +92,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Delete(int id)
         {
             Album album = _albumsDbContext.Albums.Include(a => a.Studio).Where(a => a.AlbumId == id).FirstOrDefault();

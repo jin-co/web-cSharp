@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using AlbumsApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AlbumsApp.Controllers
 {
@@ -22,12 +23,14 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Add()
         {
             return View(new Studio());
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Add(Studio studio)
         {
             if (ModelState.IsValid)
@@ -45,6 +48,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Edit(int id)
         {
             Studio studio = _albumsDbContext.Studios.Where(a => a.StudioId == id).FirstOrDefault();
@@ -52,6 +56,7 @@ namespace AlbumsApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Edit(Studio studio)
         {
             _albumsDbContext.Studios.Update(studio);
