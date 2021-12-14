@@ -86,3 +86,4 @@ C:\Users\jin\Documents\GitHub\web-cSharp\final-exam-review-code\Final_Prep\Final
 C:\Users\jin\Documents\GitHub\web-cSharp\final-exam-review-code\Final_Prep\Final_Prep\obj\Debug\net5.0\Razor\Views\Part\Delete.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\final-exam-review-code\Final_Prep\Final_Prep\obj\Debug\net5.0\Razor\Views\Part\Edit.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\final-exam-review-code\Final_Prep\Final_Prep\obj\Debug\net5.0\Razor\Views\Part\Index.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\final-exam-review-code\Final_Prep\Final_Prep\obj\Debug\net5.0\Razor\Views\Shared\_NavPartial.cshtml.g.cs
