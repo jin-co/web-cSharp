@@ -31,5 +31,39 @@ namespace Final_Prep.Controllers
             }
             return View("Index", cars);
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Car car)
+        {
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Car car)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            else
+            {
+                // adding generic error message
+                ModelState.AddModelError("", "There are errors");
+            }
+            return View();
+        }
     }
 }

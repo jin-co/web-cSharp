@@ -1,0 +1,39 @@
+﻿@model List<Part>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<a asp-controller="Manufacturer" asp-action="Add">Add M</a>
+<a asp-controller="Car" asp-action="Add">Add C</a>
+<a asp-controller="Part" asp-action="Add">Add P</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Part Name</th>
+            <th>Items in Stock</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.PartName</td>
+                <td>@i.ItemsInStock</td>
+                <td>@i.Price</td>
+                <td>
+                    <a asp-controller="Part"
+                       asp-action="Edit"
+                       asp-route-CarId="@i.CarId">Edit</a>
+                    <a asp-controller="Part"
+                       asp-action="Delete"
+                       asp-route-CarId="@i.CarId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
