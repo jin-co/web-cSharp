@@ -22,5 +22,15 @@ namespace Final_Prep
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        // in case, there is a problem with identity use this instead of the one above
+        //public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //Host.CreateDefaultBuilder(args)
+        //    .ConfigureWebHostDefaults(webBuilder =>
+        //    {
+        //        webBuilder.UseStartup<Startup>()
+        //        .UseDefaultServiceProvider(
+        //            options => options.ValidateScopes = false);
+        //    });
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Final_Prep.Models
 {
-    public class AutoContext : DbContext
+    public class AutoContext : IdentityDbContext<User>
     {
         public AutoContext(DbContextOptions options) : base(options)
         {
