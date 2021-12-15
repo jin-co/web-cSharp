@@ -3,8 +3,9 @@
     "",
     "\\Bookstore",
     "\\Bookstore\\Views",
+    "\\Bookstore\\Views\\Author",
     "\\Bookstore\\Views\\Shared"
   ],
-  "SelectedNode": "\\Bookstore\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\Bookstore\\Views\\Author\\List.cshtml",
   "PreviewInSolutionExplorer": false
 }
