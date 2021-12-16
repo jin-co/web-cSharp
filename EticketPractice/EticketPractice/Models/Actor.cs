@@ -12,5 +12,7 @@ namespace EticketPractice.Models
         public string FullName { get; set; }
         public string Bio { get; set; }
 
+        // Relationships
+        public List<ActorMovie> ActorMovies { get; set; }
     }
 }

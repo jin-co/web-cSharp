@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EticketPractice.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,5 +16,15 @@ namespace EticketPractice.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public MovieCategory MovieCategory { get; set; }
+
+        // Relationships
+        public List<ActorMovie> ActorMovies { get; set; }
+
+        public int CinemaId { get; set; }
+        public Cinema Cinema { get; set; }
+
+        public int ProducerId { get; set; }
+        public Producer Producer { get; set; }
+
     }
 }
