@@ -2,6 +2,7 @@
 using ETicket.Data.Services;
 using ETicket.Data.Static;
 using ETicket.Models;
+using EticketPractice.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,18 +17,18 @@ namespace ETicket.Controllers
     public class ActorsController : Controller
     {
         //* Directly accessing DB
-        //private readonly AppDbContext context;
+        private readonly AppDbContext context;
 
-        //public ActorsController(AppDbContext context)
-        //{
-        //    this.context = context;
-        //}
+        public ActorsController(AppDbContext context)
+        {
+            this.context = context;
+        }
 
-        //public IActionResult Index()
-        //{
-        //    var data = context.Actors.ToList();
-        //    return View(data);
-        //}
+        public IActionResult Index()
+        {
+            var data = context.Actors.ToList();
+            return View(data);
+        }
 
         //* Using Services to access DB
         private readonly IActorsService service;
