@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NPaUDoWBHCTVEOZhFd6WjdhL8NRh300hrv4WOnQAChSUY0ZYESa6Y5UYg+VVv5FIjdvpj6hv2D8g3FG57Sxypw==",
+  "dgSpecHash": "bAgXpYP3q795eV1dtNVizHpDy2X8WrO9kP3E0qnHQUUh0XrcVhikiDJXfHYHf5myZE+600dBXmWEssmP70zE1A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jin\\Desktop\\1.conestoga\\0_Semester_3\\2.MicrosoftWebTech(2230)\\lab\\L1_Bmi\\L1_Bmi.csproj",
+  "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\web-cSharp\\L1_Bmi\\L1_Bmi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jin\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\jin\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

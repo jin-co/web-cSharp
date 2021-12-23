@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\BMI\Data\" />
     <Folder Include="Areas\FutureValue\Data\" />
   </ItemGroup>
 
