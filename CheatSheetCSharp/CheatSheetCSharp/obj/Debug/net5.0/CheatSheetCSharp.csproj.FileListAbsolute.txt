@@ -130,3 +130,6 @@ C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\D
 C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\BMI\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\BMI\Views\_ViewImports.cshtml.g.cs
 C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\BMI\Views\_ViewStart.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Validation\Views\Home\Index.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Validation\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Validation\Views\_ViewImports.cshtml.g.cs

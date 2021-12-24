@@ -11,6 +11,7 @@
   <ItemGroup>
     <Folder Include="Areas\BMI\Data\" />
     <Folder Include="Areas\FutureValue\Data\" />
+    <Folder Include="Areas\Validation\Data\" />
   </ItemGroup>
 
 </Project>
