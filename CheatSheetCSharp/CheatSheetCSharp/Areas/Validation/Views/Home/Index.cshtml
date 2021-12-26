@@ -10,7 +10,9 @@
 
 <div asp-validation-summary="All" class="alert-danger"></div>
 
-<form asp-action="Index" asp-controller="Home" method="post">
+<form asp-area="Validation" 
+      asp-controller="Home"
+      asp-action="Index" method="post">
     <div class="container">
         <div class="form-group row">
             <label asp-for="FirstName" class="col-sm-2 col-form-label">First Name: </label>
@@ -48,5 +50,7 @@
     </div>
 
     <input type="submit" class="btn btn-primary" />
-    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Clear</a>
+    <a asp-area="Validation" 
+       asp-controller="Home"
+       asp-action="Index" class="btn btn-secondary">Clear</a>
 </form>
