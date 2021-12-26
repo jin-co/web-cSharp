@@ -3,8 +3,10 @@
     "",
     "\\EmployeesApplication_Week5",
     "\\EmployeesApplication_Week5\\EmployeesApplication_Week5",
-    "\\EmployeesApplication_Week5\\EmployeesApplication_Week5\\Controllers"
+    "\\EmployeesApplication_Week5\\EmployeesApplication_Week5\\Controllers",
+    "\\EmployeesApplication_Week5\\EmployeesApplication_Week5\\Views",
+    "\\EmployeesApplication_Week5\\EmployeesApplication_Week5\\Views\\Shared"
   ],
-  "SelectedNode": "\\EmployeesApplication_Week5\\EmployeesApplication_Week5\\Controllers\\EmployeesController.cs",
+  "SelectedNode": "\\EmployeesApplication_Week5\\EmployeesApplication_Week5\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
