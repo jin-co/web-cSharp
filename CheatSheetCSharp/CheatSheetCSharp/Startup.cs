@@ -1,6 +1,8 @@
+using CheatSheetCSharp.Session.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +25,10 @@ namespace CheatSheetCSharp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Configure application to use session services (e.g. Session variables and cookies)
+            services.AddMemoryCache();
+            services.AddSession();
+
             /* Methods for adding the MVC service */
             services.AddControllersWithViews();  // ASP.NET Core 2.2 and later
             //services.AddMvc();  // Versions prior to 2.2(includes unnecessary services)
@@ -32,6 +38,10 @@ namespace CheatSheetCSharp
                 options.LowercaseUrls = true;  // makes it lower case
                 options.AppendTrailingSlash = true;  // append trailing slash
             });
+
+            // configure application to use SQL server (using Database-First approach)
+            services.AddDbContext<EmployeeContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("EmployeeContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +64,8 @@ namespace CheatSheetCSharp
             app.UseRouting();  // select endpoint if found
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             /* Methods for enabling and configuring routing */
             app.UseEndpoints(endpoints =>  // executes the endpoint selected by the routing
