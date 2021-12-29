@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\BMI\Data\" />
+    <Folder Include="Areas\Filtering\Data\" />
     <Folder Include="Areas\FutureValue\Data\" />
     <Folder Include="Areas\Session\Data\" />
     <Folder Include="Areas\Validation\Data\" />

@@ -185,3 +185,8 @@ C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\bin\D
 C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Filtering\Views\Home\Add.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Filtering\Views\Home\Index.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Filtering\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Filtering\Views\_ViewImports.cshtml.g.cs
+C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\obj\Debug\net5.0\Razor\Areas\Filtering\Views\_ViewStart.cshtml.g.cs
