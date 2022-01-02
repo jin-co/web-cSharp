@@ -1,4 +1,5 @@
 using CheatSheetCSharp.Filtering.Models;
+using CheatSheetCSharp.Models.Data;
 using CheatSheetCSharp.Session.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,11 +42,8 @@ namespace CheatSheetCSharp
             });
 
             // configure application to use SQL server (using Database-First approach)
-            services.AddDbContext<EmployeeContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("EmployeeContext")));
-
-            services.AddDbContext<ToDoContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("ToDoContext")));
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("CheatSheetContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
