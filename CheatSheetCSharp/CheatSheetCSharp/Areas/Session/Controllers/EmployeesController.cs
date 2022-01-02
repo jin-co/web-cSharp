@@ -5,16 +5,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using CheatSheetCSharp.Session.Models;
+using CheatSheetCSharp.Models.Data;
 
 namespace CheatSheetCSharp.Session.Controllers
 {
     [Area("Session")]
     public class EmployeesController : Controller
     {
-        private readonly EmployeeContext _context;
+        private readonly AppDbContext _context;
 
         // Prepare controller for database context communication
-        public EmployeesController(EmployeeContext context)
+        public EmployeesController(AppDbContext context)
         {
             _context = context;
         }

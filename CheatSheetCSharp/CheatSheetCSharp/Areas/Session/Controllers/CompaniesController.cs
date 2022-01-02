@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CheatSheetCSharp.Models.Data;
 using CheatSheetCSharp.Session.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,10 +14,10 @@ namespace CheatSheetCSharp.Session.Controllers
     [Area("Session")]
     public class CompaniesController : Controller
     {
-        private readonly EmployeeContext _context;
+        private readonly AppDbContext _context;
 
         // Prepare controller for database context communication
-        public CompaniesController(EmployeeContext context)
+        public CompaniesController(AppDbContext context)
         {
             _context = context;
         }

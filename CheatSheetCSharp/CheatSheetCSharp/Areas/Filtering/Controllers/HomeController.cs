@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using CheatSheetCSharp.Filtering.Models;
+using CheatSheetCSharp.Models.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,8 +11,8 @@ namespace CheatSheetCSharp.Filtering.Controllers
     [Area("Filtering")]
     public class HomeController : Controller
     {
-        private ToDoContext context;
-        public HomeController(ToDoContext ctx) => context = ctx;
+        private AppDbContext context;
+        public HomeController(AppDbContext ctx) => context = ctx;
 
         public IActionResult Index(string id)
         {
