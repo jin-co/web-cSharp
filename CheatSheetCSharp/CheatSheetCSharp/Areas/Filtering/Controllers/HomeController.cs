@@ -73,7 +73,7 @@ namespace CheatSheetCSharp.Filtering.Controllers
         public IActionResult Filter(string[] filter)
         {
             string id = string.Join('-', filter);
-            return RedirectToAction("Index", new { ID = id });
+            return RedirectToRoute("/Filtering", new { ID = id });
         }
 
         [HttpPost]
