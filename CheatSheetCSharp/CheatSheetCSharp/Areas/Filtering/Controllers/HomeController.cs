@@ -73,7 +73,9 @@ namespace CheatSheetCSharp.Filtering.Controllers
         public IActionResult Filter(string[] filter)
         {
             string id = string.Join('-', filter);
-            return RedirectToRoute("/Filtering", new { ID = id });
+            
+            // when the main has [Route("/")] specified, this will go to the main
+            return RedirectToAction("Index", new { ID = id });
         }
 
         [HttpPost]

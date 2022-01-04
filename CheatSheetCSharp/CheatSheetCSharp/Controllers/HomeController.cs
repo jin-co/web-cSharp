@@ -18,7 +18,7 @@ namespace CheatSheetCSharp.Controllers
             _logger = logger;
         }
 
-        [Route("/")]
+        //[Route("/")]
         public IActionResult Index()
         {
             return View();
