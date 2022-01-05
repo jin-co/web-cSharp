@@ -1,0 +1,68 @@
+﻿using CheatSheetCSharp.Models;
+using CheatSheetCSharp.Models.Data;
+
+namespace CheatSheetCSharp.Credential.Models
+{
+    public class BookstoreUnitOfWork : IBookstoreUnitOfWork
+    {
+        private AppDbContext context { get; set; }
+        public BookstoreUnitOfWork(AppDbContext ctx) => context = ctx;
+
+        private Repository<Book> bookData;
+        public Repository<Book> Books {
+            get {
+                if (bookData == null)
+                    bookData = new Repository<Book>(context);
+                return bookData;
+            }
+        }
+
+        private Repository<Author> authorData;
+        public Repository<Author> Authors {
+            get {
+                if (authorData == null)
+                    authorData = new Repository<Author>(context);
+                return authorData;
+            }
+        }
+
+        private Repository<BookAuthor> bookauthorData;
+        public Repository<BookAuthor> BookAuthors {
+            get {
+                if (bookauthorData == null)
+                    bookauthorData = new Repository<BookAuthor>(context);
+                return bookauthorData;
+            }
+        }
+
+        private Repository<Genre> genreData;
+        public Repository<Genre> Genres
+        {
+            get {
+                if (genreData == null)
+                    genreData = new Repository<Genre>(context);
+                return genreData;
+            }
+        }
+
+        public void DeleteCurrentBookAuthors(Book book)
+        {
+            var currentAuthors = BookAuthors.List(new QueryOptions<BookAuthor> {
+                Where = ba => ba.BookId == book.BookId
+            });
+            foreach (BookAuthor ba in currentAuthors) {
+                BookAuthors.Delete(ba);
+            }
+        }
+
+        public void LoadNewBookAuthors(Book book, int[] authorids)
+        {
+            foreach (int id in authorids) {
+                BookAuthor ba = new BookAuthor { Book = book, AuthorId = id };
+                BookAuthors.Insert(ba);
+            }
+        }
+
+        public void Save() => context.SaveChanges();
+    }
+}

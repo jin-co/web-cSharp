@@ -12,7 +12,43 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
+using CheatSheetCSharp;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
+using CheatSheetCSharp.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
+using CheatSheetCSharp.Models.DomainModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
+using CheatSheetCSharp.Models.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
+using CheatSheetCSharp.Components;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"73ee4a2040a86a588b8fc89c13bc5f50806b123f", @"/Areas/Admin/Views/Home/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68067299349b56c3d9ac5a7e8a6438cea5c8672c", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
