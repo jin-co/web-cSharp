@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
+﻿using CheatSheetCSharp.Credential.Models;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace CheatSheetCSharp.Models
 {

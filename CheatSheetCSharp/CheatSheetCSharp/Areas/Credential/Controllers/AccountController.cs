@@ -2,12 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using CheatSheetCSharp.Models;
-using CheatSheetCSharp.Models.DomainModels;
 using Microsoft.AspNetCore.Mvc;
-using CheatSheetCSharp.Models.ViewModels;
+using CheatSheetCSharp.Credential.Models.DomainModels;
+using CheatSheetCSharp.Credential.Models.ViewModels;
 
 namespace CheatSheetCSharp.Credential.Controllers
 {
+    [Area("Credential")]
     public class AccountController : Controller
     {
         private UserManager<User> userManager;

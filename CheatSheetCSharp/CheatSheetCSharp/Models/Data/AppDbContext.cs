@@ -1,5 +1,6 @@
-﻿using CheatSheetCSharp.Filtering.Models;
-using CheatSheetCSharp.Models.DomainModels;
+﻿using CheatSheetCSharp.Credential.Models;
+using CheatSheetCSharp.Credential.Models.DomainModels;
+using CheatSheetCSharp.Filtering.Models;
 using CheatSheetCSharp.Session.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

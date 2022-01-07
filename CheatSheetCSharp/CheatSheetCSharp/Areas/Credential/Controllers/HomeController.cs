@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using CheatSheetCSharp.Models;
 using CheatSheetCSharp.Models.Data;
+using CheatSheetCSharp.Credential.Models;
 
 namespace CheatSheetCSharp.Credential.Controllers
 {

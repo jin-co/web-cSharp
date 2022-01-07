@@ -28,21 +28,21 @@ using CheatSheetCSharp.Models;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Credential\Views\_ViewImports.cshtml"
-using CheatSheetCSharp.Models.DomainModels;
+using CheatSheetCSharp.Credential.Models.DomainModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Credential\Views\_ViewImports.cshtml"
-using CheatSheetCSharp.Models.ViewModels;
+using CheatSheetCSharp.Credential.Models.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Credential\Views\_ViewImports.cshtml"
-using CheatSheetCSharp.Components;
+using CheatSheetCSharp.Credential.Components;
 
 #line default
 #line hidden
@@ -55,7 +55,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"58ed5a3f931346d1170105f5e38c3271b2c4591d", @"/Areas/Credential/Views/Book/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8705ac54a8d6c73faa139c7ea922201f6ef9ca07", @"/Areas/Credential/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99ce992a7cd63030f4e71a9771b35276f682947a", @"/Areas/Credential/Views/_ViewImports.cshtml")]
     public class Areas_Credential_Views_Book_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<GridViewModel<Book>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Filter", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -101,7 +101,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Book Catalog</h1>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58ed5a3f931346d1170105f5e38c3271b2c4591d6984", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58ed5a3f931346d1170105f5e38c3271b2c4591d7017", async() => {
                 WriteLiteral("\r\n    <label>Author: </label>\r\n    <vc:author-drop-down");
                 BeginWriteAttribute("selected-value", " selected-value=\"", 242, "\"", 291, 1);
 #nullable restore
@@ -152,7 +152,7 @@ WriteAttributeValue("", 525, Model.CurrentRoute.PriceFilter, 525, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58ed5a3f931346d1170105f5e38c3271b2c4591d10452", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58ed5a3f931346d1170105f5e38c3271b2c4591d10485", async() => {
                 WriteLiteral("\r\n    <table class=\"table table-bordered table-striped table-sm\">\r\n        <thead class=\"thead-dark\">\r\n            <tr>\r\n                <th>\r\n                    <my-sorting-link");
                 BeginWriteAttribute("sort-field", " sort-field=\"", 986, "\"", 1018, 1);
 #nullable restore
@@ -220,7 +220,7 @@ WriteAttributeValue("", 1475, Model.CurrentRoute, 1475, 19, false);
 #line hidden
 #nullable disable
                 WriteLiteral("                <tr>\r\n                    <td>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "58ed5a3f931346d1170105f5e38c3271b2c4591d14201", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "58ed5a3f931346d1170105f5e38c3271b2c4591d14234", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -252,7 +252,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper.Model = book;
 #line hidden
 #nullable disable
                 WriteLiteral("                            <p>\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "58ed5a3f931346d1170105f5e38c3271b2c4591d16312", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "58ed5a3f931346d1170105f5e38c3271b2c4591d16345", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

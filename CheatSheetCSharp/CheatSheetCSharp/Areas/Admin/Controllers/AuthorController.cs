@@ -1,4 +1,5 @@
-﻿using CheatSheetCSharp.Models;
+﻿using CheatSheetCSharp.Credential.Models;
+using CheatSheetCSharp.Models;
 using CheatSheetCSharp.Models.Data;
 using Microsoft.AspNetCore.Mvc;
 

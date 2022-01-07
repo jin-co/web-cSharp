@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using CheatSheetCSharp.Models;
+using CheatSheetCSharp.Credential.Models;
 
 namespace CheatSheetCSharp.Credential.TagHelpers
 {

@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CheatSheetCSharp.Models;
 using Microsoft.AspNetCore.Authorization;
+using CheatSheetCSharp.Credential.Models;
 
 namespace CheatSheetCSharp.Credential.Controllers
 {
     [Authorize(Roles = "Admin")]
+    [Area("Credential")]
     public class BookController : Controller
     {
         private IRepository<Book> data { get; set; }

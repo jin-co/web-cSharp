@@ -2,9 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\Bookstore",
+    "\\Bookstore\\Areas",
+    "\\Bookstore\\Areas\\Admin",
+    "\\Bookstore\\Areas\\Admin\\Views",
+    "\\Bookstore\\Areas\\Admin\\Views\\Shared",
     "\\Bookstore\\Views",
     "\\Bookstore\\Views\\Book"
   ],
-  "SelectedNode": "\\Bookstore\\Views\\Book\\List.cshtml",
+  "SelectedNode": "\\Bookstore\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
   "PreviewInSolutionExplorer": false
 }

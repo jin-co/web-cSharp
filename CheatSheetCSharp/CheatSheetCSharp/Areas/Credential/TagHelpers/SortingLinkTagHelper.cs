@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;    // [ViewContext] attribute
 using Microsoft.AspNetCore.Mvc.Rendering;       // ViewContext data type
 using Microsoft.AspNetCore.Routing;             // LinkGenerator
 using CheatSheetCSharp.Models;
+using CheatSheetCSharp.Credential.Models;
 
 namespace CheatSheetCSharp.Credential.TagHelpers
 {

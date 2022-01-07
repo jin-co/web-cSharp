@@ -1,4 +1,4 @@
-﻿using CheatSheetCSharp.Models.DomainModels;
+﻿using CheatSheetCSharp.Credential.Models.DomainModels;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,6 @@
-﻿namespace CheatSheetCSharp.Models
+﻿using CheatSheetCSharp.Credential.Models;
+
+namespace CheatSheetCSharp.Models
 {
     public static class Operation
     {

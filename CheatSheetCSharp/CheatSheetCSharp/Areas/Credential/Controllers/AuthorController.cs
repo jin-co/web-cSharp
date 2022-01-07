@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CheatSheetCSharp.Models;
+using CheatSheetCSharp.Credential.Models;
 
 namespace CheatSheetCSharp.Credential.Controllers
 {
+    [Area("Credential")]
     public class AuthorController : Controller
     {
         private IRepository<Author> data { get; set; }
