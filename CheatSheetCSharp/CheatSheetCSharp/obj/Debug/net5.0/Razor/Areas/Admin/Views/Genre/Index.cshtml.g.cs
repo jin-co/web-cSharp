@@ -21,7 +21,7 @@ using CheatSheetCSharp;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
-using CheatSheetCSharp.Models;
+using CheatSheetCSharp.Areas.Admin.Models;
 
 #line default
 #line hidden
@@ -48,7 +48,7 @@ using CheatSheetCSharp.Credential.Components;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5fca47b9e69f1ef0ef95853a3f37902479046907", @"/Areas/Admin/Views/Genre/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"adb4f12f9baa40f7546325a1c9456af88b702482", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"18d9d6127bd4ce35cc145255229972e838c487c1", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Genre_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Genre>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Add", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -90,7 +90,7 @@ using CheatSheetCSharp.Credential.Components;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1 class=\"mb-2\">Manage Genres</h1>\r\n\r\n<h5 class=\"mt-2\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f379024790469075824", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f379024790469075836", async() => {
                 WriteLiteral("Add a Genre");
             }
             );
@@ -133,7 +133,7 @@ using CheatSheetCSharp.Credential.Components;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f379024790469078282", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f379024790469078294", async() => {
                 WriteLiteral("View Books");
             }
             );
@@ -169,7 +169,7 @@ using CheatSheetCSharp.Credential.Components;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f3790247904690711031", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f3790247904690711043", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -205,7 +205,7 @@ using CheatSheetCSharp.Credential.Components;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f3790247904690713770", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fca47b9e69f1ef0ef95853a3f3790247904690713782", async() => {
                 WriteLiteral("Delete");
             }
             );

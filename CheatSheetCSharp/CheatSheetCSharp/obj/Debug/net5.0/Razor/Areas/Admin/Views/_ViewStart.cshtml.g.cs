@@ -21,7 +21,7 @@ using CheatSheetCSharp;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
-using CheatSheetCSharp.Models;
+using CheatSheetCSharp.Areas.Admin.Models;
 
 #line default
 #line hidden
@@ -48,7 +48,7 @@ using CheatSheetCSharp.Credential.Components;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2d47ab5c93609c2e85a602b37aa9393d9e3d1829", @"/Areas/Admin/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"adb4f12f9baa40f7546325a1c9456af88b702482", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"18d9d6127bd4ce35cc145255229972e838c487c1", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

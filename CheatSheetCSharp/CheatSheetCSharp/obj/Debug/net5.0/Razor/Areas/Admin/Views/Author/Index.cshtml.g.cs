@@ -21,7 +21,7 @@ using CheatSheetCSharp;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\jin\Documents\GitHub\web-cSharp\CheatSheetCSharp\CheatSheetCSharp\Areas\Admin\Views\_ViewImports.cshtml"
-using CheatSheetCSharp.Models;
+using CheatSheetCSharp.Areas.Admin.Models;
 
 #line default
 #line hidden
@@ -48,7 +48,7 @@ using CheatSheetCSharp.Credential.Components;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"889130e0df4d6d72a6f694093c215421b85a5993", @"/Areas/Admin/Views/Author/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"adb4f12f9baa40f7546325a1c9456af88b702482", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"18d9d6127bd4ce35cc145255229972e838c487c1", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Author_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Author>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Add", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -94,7 +94,7 @@ using CheatSheetCSharp.Credential.Components;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1 class=\"mb-2\">Manage Authors</h1>\r\n<ul class=\"list-group\">\r\n    <li class=\"list-group-item\">\r\n        <h5 class=\"mt-1\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889130e0df4d6d72a6f694093c215421b85a59936716", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889130e0df4d6d72a6f694093c215421b85a59936728", async() => {
                 WriteLiteral("Add an Author");
             }
             );
@@ -110,9 +110,9 @@ using CheatSheetCSharp.Credential.Components;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</h5>\r\n    </li>\r\n    <li class=\"list-group-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889130e0df4d6d72a6f694093c215421b85a59937942", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889130e0df4d6d72a6f694093c215421b85a59937954", async() => {
                 WriteLiteral("\r\n            <h5 class=\"mt-1 mr-5\">Select an Author</h5>\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889130e0df4d6d72a6f694093c215421b85a59938273", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889130e0df4d6d72a6f694093c215421b85a59938285", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
