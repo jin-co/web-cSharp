@@ -6,9 +6,11 @@
     "\\Bookstore\\Areas\\Admin",
     "\\Bookstore\\Areas\\Admin\\Views",
     "\\Bookstore\\Areas\\Admin\\Views\\Shared",
+    "\\Bookstore\\Models",
+    "\\Bookstore\\Models\\DataLayer",
     "\\Bookstore\\Views",
     "\\Bookstore\\Views\\Book"
   ],
-  "SelectedNode": "\\Bookstore\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+  "SelectedNode": "\\Bookstore\\Models\\DataLayer\\BookstoreContext.cs",
   "PreviewInSolutionExplorer": false
 }

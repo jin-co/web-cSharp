@@ -5,9 +5,12 @@
     "\\Ch07GuitarShop\\GuitarShop",
     "\\Ch07GuitarShop\\GuitarShop\\Areas",
     "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin",
+    "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Controllers",
     "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Views",
-    "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Views\\Home"
+    "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Views\\Category",
+    "\\Ch07GuitarShop\\GuitarShop\\Views",
+    "\\Ch07GuitarShop\\GuitarShop\\Views\\Cart"
   ],
-  "SelectedNode": "\\Ch07GuitarShop\\GuitarShop\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+  "SelectedNode": "\\Ch07GuitarShop\\GuitarShop\\Views\\Cart\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
