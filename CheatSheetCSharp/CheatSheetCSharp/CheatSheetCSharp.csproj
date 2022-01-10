@@ -22,8 +22,4 @@
     <Folder Include="Areas\Validation\Data\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Areas\Admin\Views\Home\Index.cshtml" />
-  </ItemGroup>
-
 </Project>
