@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="36" height="36" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Email" clip-path="url(#clip-path)">
+    <path id="path" d="M29,4H5A3,3,0,0,0,2.015,7L2,25a3.009,3.009,0,0,0,3,3H29a3.009,3.009,0,0,0,3-3V7A3.009,3.009,0,0,0,29,4Zm0,6L17,17.5,5,10V7l12,7.5L29,7Z" transform="translate(1 2)" fill="#fff"/>
+    <path id="path-2" data-name="path" d="M0,0H36V36H0Z" fill="none"/>
+  </g>
+</svg>
