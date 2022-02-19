@@ -10,49 +10,88 @@ namespace MidtermKB
     {        
         static void Main(string[] args)
         {
-
             ShowMenu();            
         }
 
         private static void ShowMenu()
         {
             bool flag = true;
+            int choice;
             while(flag)
             {
-                Console.WriteLine("=========== Menu ===========\n" +
+                Console.WriteLine("\n=========== Menu ===========\n" +
                 "1. Enter three numbers which represent day, " +
                 "month and year of a calendar date\n" +
-                "2. Exit");
-
-                if (ValidateValue() > 2)
+                "2. Exit\n");
+                choice = ValidateValue(1, 2);
+                switch (choice)
                 {
-                    Console.WriteLine("Out of range. Please enter 1 or 2");
-                }
-                else
-                {
-                    if (ValidateValue() == 2)
-                    {
+                    case 1:
+                        RunApplication();
+                        break;
+                    case 2:
                         Console.WriteLine("Goodbye... ");
                         flag = false;
-                    }
+                        break;
+                    default:
+                        break;
                 }
             }
         }
 
-        private static int ValidateValue()
+        private static void RunApplication()
+        {
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("\nEnter Month(1 ~ 12): ");
+                int month = ValidateValue(1, 12);
+                if (month != 0)
+                {
+                    flag = false;
+                }
+            }
+            while (!flag)
+            {
+                Console.WriteLine("Enter Day(1 ~ 31): ");
+                int day = ValidateValue(1, 31);
+                if (day != 0)
+                {
+                    flag = true;
+                }
+            }
+
+            while (flag)
+            {
+                Console.WriteLine("Enter Year(1812 ~ 2022): ");
+                int year = ValidateValue(1812, 2022);
+                if (year != 0)
+                {
+                    flag = false;
+                }
+            }
+        }
+
+        private static int ValidateValue(int min, int max)
         {
             int input = 0;
-            while (true)
+            if (!int.TryParse(Console.ReadLine(), out input))
             {
-                if (!int.TryParse(Console.ReadLine(), out input))
+                Console.WriteLine("\nInvalid Value");
+                return input;
+            }
+            else
+            {
+                if (input > max || input < min)
                 {
-                    Console.WriteLine("Invalid Value");
+                    Console.WriteLine("\nInput Value Out of Range");
+                    return 0;
                 }
                 else
                 {
                     return input;
                 }
-            }            
+            }
         }
     }
 }
