@@ -23,7 +23,7 @@ namespace MidtermKB
                 "1. Enter three numbers which represent day, " +
                 "month and year of a calendar date\n" +
                 "2. Exit\n");
-                choice = ValidateValue(1, 2);
+                choice = ValidateValue(1, 2, "Menu");
                 switch (choice)
                 {
                     case 1:
@@ -42,10 +42,11 @@ namespace MidtermKB
         private static void RunApplication()
         {
             bool flag = true;
+            int month = 0, day = 0, year = 0;
             while (flag)
             {
                 Console.WriteLine("\nEnter Month(1 ~ 12): ");
-                int month = ValidateValue(1, 12);
+                month = ValidateValue(1, 12, "Month");
                 if (month != 0)
                 {
                     flag = false;
@@ -54,7 +55,7 @@ namespace MidtermKB
             while (!flag)
             {
                 Console.WriteLine("Enter Day(1 ~ 31): ");
-                int day = ValidateValue(1, 31);
+                day = ValidateValue(1, 31, "Day");
                 if (day != 0)
                 {
                     flag = true;
@@ -64,27 +65,31 @@ namespace MidtermKB
             while (flag)
             {
                 Console.WriteLine("Enter Year(1812 ~ 2022): ");
-                int year = ValidateValue(1812, 2022);
+                year = ValidateValue(1812, 2022, "Year");
                 if (year != 0)
                 {
                     flag = false;
                 }
             }
+
+            // If the numbers do form a valid date, the program returns the string
+            Console.WriteLine("\nSystem date is updated");
+            Console.WriteLine(DateSolver.Analyze(month, day, year));
         }
 
-        private static int ValidateValue(int min, int max)
+        private static int ValidateValue(int min, int max, string target)
         {
             int input = 0;
             if (!int.TryParse(Console.ReadLine(), out input))
             {
-                Console.WriteLine("\nInvalid Value");
+                Console.WriteLine("\nInvalid Value\n");
                 return input;
             }
             else
             {
                 if (input > max || input < min)
                 {
-                    Console.WriteLine("\nInput Value Out of Range");
+                    Console.WriteLine("\n" + target + ": value out of range\n");
                     return 0;
                 }
                 else
