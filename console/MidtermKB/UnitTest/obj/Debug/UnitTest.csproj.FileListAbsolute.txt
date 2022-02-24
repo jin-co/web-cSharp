@@ -13,6 +13,6 @@ C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\bin\Debug\Mi
 C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\bin\Debug\nunit.framework.xml
 C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\obj\Debug\UnitTest.csproj.AssemblyReference.cache
 C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\obj\Debug\UnitTest.csproj.CoreCompileInputs.cache
-C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete
 C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\obj\Debug\UnitTest.pdb
+C:\Users\jin\Documents\GitHub\web-cSharp\console\MidtermKB\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete

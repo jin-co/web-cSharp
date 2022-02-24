@@ -25,13 +25,13 @@ namespace MidtermKB
                 result = "";
             }
             
-            if (day > DAY_MAX || month < DATE_MIN)
+            if (day > DAY_MAX || day < DATE_MIN)
             {
                 dayResult = "\nDay: value out of range";
                 result = "";
             }
 
-            if (year > YEAR_MAX || month < DATE_MIN)
+            if (year > YEAR_MAX || year < 1812)
             {
                 yearResult = "\nYear: value out of range";
                 result = "";
