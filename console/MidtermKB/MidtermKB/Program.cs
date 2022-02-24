@@ -41,39 +41,12 @@ namespace MidtermKB
 
         private static void RunApplication()
         {
-            bool flag = true;
             int month = 0, day = 0, year = 0;
-            while (flag)
-            {
-                Console.WriteLine("\nEnter Month(1 ~ 12): ");
-                month = ValidateValue(1, 12, "Month");
-                if (month != 0)
-                {
-                    flag = false;
-                }
-            }
-            while (!flag)
-            {
-                Console.WriteLine("Enter Day(1 ~ 31): ");
-                day = ValidateValue(1, 31, "Day");
-                if (day != 0)
-                {
-                    flag = true;
-                }
-            }
-
-            while (flag)
-            {
-                Console.WriteLine("Enter Year(1812 ~ 2022): ");
-                year = ValidateValue(1812, 2022, "Year");
-                if (year != 0)
-                {
-                    flag = false;
-                }
-            }
-
-            // If the numbers do form a valid date, the program returns the string
-            Console.WriteLine("\nSystem date is updated");
+                        
+            month = ValidateValue("\nEnter Month(1 ~ 12): ");                                        
+            day = ValidateValue("Enter Day(1 ~ 31): ");                                      
+            year = ValidateValue("Enter Year(1812 ~ 2022): ");                
+                       
             Console.WriteLine(DateSolver.Analyze(month, day, year));
         }
 
@@ -82,7 +55,7 @@ namespace MidtermKB
             int input = 0;
             if (!int.TryParse(Console.ReadLine(), out input))
             {
-                Console.WriteLine("\nInvalid Value\n");
+                Console.WriteLine("\nPlease enter number\n");
                 return input;
             }
             else
@@ -97,6 +70,18 @@ namespace MidtermKB
                     return input;
                 }
             }
+        }
+
+        private static int ValidateValue(string message)
+        {
+            int input;
+            Console.WriteLine(message);
+            while (!int.TryParse(Console.ReadLine(), out input))
+            {
+                Console.WriteLine("\nPlease enter number\n");
+                Console.WriteLine(message);
+            }
+            return input;
         }
     }
 }
