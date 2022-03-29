@@ -7,6 +7,7 @@ namespace Assignment_Test
         [SetUp]
         public void Setup()
         {
+            TestContext.Progress.WriteLine("Set up");
         }
 
         [Test]
