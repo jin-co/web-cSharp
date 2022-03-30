@@ -19,7 +19,7 @@ namespace Assignment_Test
         }
 
         [Test]
-        public void PageTitle_Assignment3_ReturnTrue()
+        public void PageTitle_EnterAssignment3_ReturnTrue()
         {
             driver.Url = "C:\\Users\\jin\\Documents\\GitHub\\practice_javascript\\QA_assignment3\\pages\\index.html";
             Assert.AreEqual("Assignment 3", driver.Title);
@@ -28,7 +28,9 @@ namespace Assignment_Test
         [Test]
         public void PageTitle_Assignment3_ReturnTre()
         {
+            //driver.Url = "";
             driver.Url = "C:\\Users\\jin\\Documents\\GitHub\\practice_javascript\\QA_assignment3\\pages\\index.html";
+
             driver.FindElement(By.ClassName("main-card")).Click();
         }
 
