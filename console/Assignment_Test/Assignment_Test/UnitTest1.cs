@@ -1,19 +1,41 @@
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace Assignment_Test
-{
+{    
+    [TestFixture]
     public class Tests
     {
+        IWebDriver driver;
         [SetUp]
         public void Setup()
         {
-            TestContext.Progress.WriteLine("Set up");
+            new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+            driver = new ChromeDriver();            
+
+            driver.Manage().Window.Maximize();
         }
 
         [Test]
-        public void Test1()
+        public void PageTitle_Assignment3_ReturnTrue()
         {
-            Assert.Pass();
+            driver.Url = "C:\\Users\\jin\\Documents\\GitHub\\practice_javascript\\QA_assignment3\\pages\\index.html";
+            Assert.AreEqual("Assignment 3", driver.Title);
+        }
+
+        [Test]
+        public void PageTitle_Assignment3_ReturnTre()
+        {
+            driver.Url = "C:\\Users\\jin\\Documents\\GitHub\\practice_javascript\\QA_assignment3\\pages\\index.html";
+            driver.FindElement(By.ClassName("main-card")).Click();
+        }
+
+        [TearDown]
+        public void Close()
+        {
+            //driver.Close();
         }
     }
 }
