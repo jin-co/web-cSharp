@@ -99,13 +99,12 @@ namespace Assignment_Test
             var error = driver.FindElement(By.ClassName("error-message"));            
             driver.FindElement(By.ClassName("btn-warning"));
             Thread.Sleep(500);
-
+           
             Assert.That(error.Displayed, Is.False);
         }
-
-        /**This one*/
+        
         [Test]
-        public void SalePage_WhenValuesAreValid_ErrorMessageNotDisplayed()
+        public void SalePage_WhenValuesAreValid_GoToSummary()
         {            
             //driver.Url = "C:\\Users\\jin\\Documents\\GitHub\\practice_javascript\\QA_assignment3\\pages\\sale.html";
             driver.Url = "http:/qa.assignment3.com/pages/sale.html";
@@ -127,7 +126,7 @@ namespace Assignment_Test
             address.SendKeys("Somewhere");
             city.SendKeys("Toronto");
             province.SendKeys("Ontario");
-            postal.SendKeys("2N2 R9A");
+            postal.SendKeys("0A0 A9A");
             phone.SendKeys("000-000-0000");
             email.SendKeys("lili@com.com");
             make.SendKeys("Toyota");
@@ -135,12 +134,14 @@ namespace Assignment_Test
             year.SendKeys("2000");
 
             Thread.Sleep(500);
-
-            driver.FindElement(By.ClassName("btn-warning")).Click();
+            driver.FindElement(By.ClassName("btn")).Click();
+            var summary = driver.FindElement(By.ClassName("summary-title"));
+            
+            Assert.That(summary.Displayed, Is.True);            
         }
         
         [Test]
-        public void SalePage_WhenPostalCodeIsNotValid_DoNotSubmit()
+        public void SalePage_WhenPostalCodeIsNotValid_ShowErrorMessage()
         {            
             //driver.Url = "C:\\Users\\jin\\Documents\\GitHub\\practice_javascript\\QA_assignment3\\pages\\sale.html";
             driver.Url = "http:/qa.assignment3.com/pages/sale.html";
@@ -167,11 +168,13 @@ namespace Assignment_Test
             email.SendKeys("lili@com.com");
             make.SendKeys("Toyota");
             model.SendKeys("Well");
-            year.SendKeys("2000");
+            year.SendKeys("2000");            
 
-            driver.FindElement(By.ClassName("btn-warning")).Submit();            
+            Thread.Sleep(500);
+            driver.FindElement(By.ClassName("btn")).Click();
+            var error = driver.FindElement(By.ClassName("error-message"));
 
-            Thread.Sleep(500);            
+            Assert.That(error.Displayed, Is.True);
         }
 
         [Test]
@@ -205,6 +208,48 @@ namespace Assignment_Test
             year.SendKeys("2000");
 
             Thread.Sleep(500);
+            driver.FindElement(By.ClassName("btn")).Click();
+            var error = driver.FindElement(By.ClassName("error-message"));
+
+            Assert.That(error.Displayed, Is.True);
+        }
+
+        [Test]
+        public void SummaryPage_WhenValuesAreValid_CreateLink()
+        {
+            //driver.Url = "C:\\Users\\jin\\Documents\\GitHub\\practice_javascript\\QA_assignment3\\pages\\sale.html";
+            driver.Url = "http:/qa.assignment3.com/pages/sale.html";
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var make = driver.FindElement(By.Id("make"));
+            var model = driver.FindElement(By.Id("model"));
+            var year = driver.FindElement(By.Id("year"));
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("0A0 A9A");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            make.SendKeys("Toyota");
+            model.SendKeys("Well");
+            year.SendKeys("2000");
+
+            Thread.Sleep(500);
+            driver.FindElement(By.ClassName("btn")).Click();
+            var displayedLink = driver.FindElement(By.XPath("/html/body/main/div/table/tbody/tr[2]/td/a"));
+            string link = "http://www.jdpower.com/cars/Toyota/Well/2000";
+            
+            Assert.AreEqual(link, displayedLink.Text);
         }
 
         [TearDown]
