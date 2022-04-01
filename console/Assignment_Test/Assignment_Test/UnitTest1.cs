@@ -103,6 +103,7 @@ namespace Assignment_Test
             Assert.That(error.Displayed, Is.False);
         }
 
+        /**This one*/
         [Test]
         public void SalePage_WhenValuesAreValid_ErrorMessageNotDisplayed()
         {            
@@ -135,9 +136,9 @@ namespace Assignment_Test
 
             Thread.Sleep(500);
 
-            driver.FindElement(By.ClassName("btn-warning")).Submit();
+            driver.FindElement(By.ClassName("btn-warning")).Click();
         }
-
+        
         [Test]
         public void SalePage_WhenPostalCodeIsNotValid_DoNotSubmit()
         {            
