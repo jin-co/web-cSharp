@@ -26,13 +26,6 @@ namespace TestFinal
             //driverFirefox.Manage().Window.Maximize();
         }
 
-        [Test]
-        public void Test1()
-        {
-            driver.Url = "http:/qa.final.com/pages/index.html";            
-            Assert.Pass();
-        }
-
         #region Form page test
         [Test]
         public void FormPage_CheckTitle_ReturnTrue()
@@ -72,7 +65,6 @@ namespace TestFinal
             Assert.That(days.Displayed, Is.True);
         }
         #endregion
-
 
         #region Summary page test
         [Test]
@@ -126,6 +118,47 @@ namespace TestFinal
 
             Assert.AreEqual("Event | Form", driver.Title);
         }
+
+        [Test]
+        public void Navigation_WhenGoBackClicked_GoBackToFormPage()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9A 0A0");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys("4");
+            day1.Click();
+            day2.Click();
+            Thread.Sleep(500);
+
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+            Thread.Sleep(500);
+
+            driver.FindElement(By.XPath("/html/body/main/div/p[4]/a")).Click();
+            Thread.Sleep(500);
+
+            Assert.AreEqual("Event | Form", driver.Title);
+        }
         #endregion
 
         #region Validation test
@@ -137,27 +170,293 @@ namespace TestFinal
 
             driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
 
-            var first = driver.FindElement(By.XPath("/html/body/main/form/div[1]/small"));
-            var last = driver.FindElement(By.XPath("/html/body/main/form/div[2]/small"));
-            var address = driver.FindElement(By.XPath("/html/body/main/form/div[3]/small"));
-            var city = driver.FindElement(By.XPath("/html/body/main/form/div[4]/small"));
-            var province = driver.FindElement(By.XPath("/html/body/main/form/div[5]/small"));
-            var postal = driver.FindElement(By.XPath("/html/body/main/form/div[6]/small"));
-            var phone = driver.FindElement(By.XPath("/html/body/main/form/div[7]/small"));
-            var email = driver.FindElement(By.XPath("/html/body/main/form/div[8]/small"));
-            var users = driver.FindElement(By.XPath("/html/body/main/form/div[9]/small"));
-            var days = driver.FindElement(By.XPath("/html/body/main/form/div[10]/small"));
+            var firstErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[1]/small"));
+            var lastErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[2]/small"));
+            var addressErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[3]/small"));
+            var cityErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[4]/small"));
+            var provinceErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[5]/small"));
+            var postalErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[6]/small"));
+            var phoneErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[7]/small"));
+            var emailErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[8]/small"));
+            var usersErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[9]/small"));
+            var daysErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[10]/small"));
+
+            Assert.AreEqual("first name required", firstErrorMessage.Text);
+            Assert.AreEqual("last name required", lastErrorMessage.Text);
+            Assert.AreEqual("address required", addressErrorMessage.Text);
+            Assert.AreEqual("city required", cityErrorMessage.Text);
+            Assert.AreEqual("province required", provinceErrorMessage.Text);
+            Assert.AreEqual("postal required", postalErrorMessage.Text);
+            Assert.AreEqual("phone required", phoneErrorMessage.Text);
+            Assert.AreEqual("email required", emailErrorMessage.Text);
+            Assert.AreEqual("#users required", usersErrorMessage.Text);
+            Assert.AreEqual("#days required", daysErrorMessage.Text);
+        }
+
+        [Test]
+        public void Validation_WhenPostalInWrongFormat_ShowErrorMessage()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9 0A0");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys("4");
+            day1.Click();
+            day2.Click();
+            Thread.Sleep(500);
+
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+            var postalErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[6]/small"));
+            Assert.AreEqual("postal wrong format", postalErrorMessage.Text);
+        }
+
+        [Test]
+        public void Validation_WhenPhoneInWrongFormat_ShowErrorMessage()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9A 0A0");
+            phone.SendKeys("000000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys("4");
+            day1.Click();
+            day2.Click();
+            Thread.Sleep(500);
+
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+            var phoneErrorMessage = driver.FindElement(By.XPath("/html/body/main/form/div[7]/small"));
+            Assert.AreEqual("phone wrong format", phoneErrorMessage.Text);
+        }       
+
+        [Test]
+        public void Validation_WhenValuesValid_ShowSummary()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);            
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9A 0A0");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys("4");
+            day1.Click();
+            day2.Click();
+            Thread.Sleep(500);
+
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+
+            Assert.AreEqual("Event | Summary", driver.Title);
+        }
+        #endregion
+
+        #region Price calculation
+        [Test]
+        public void PriceCaculation_WhenOnlyDayOneCheckedWithOneUser_ShowPrice375()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9A 0A0");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys("1");
+            day1.Click();            
+            Thread.Sleep(500);
             
-            Assert.AreEqual("first name required", first.Text);
-            Assert.AreEqual("last name required", last.Text);
-            Assert.AreEqual("address required", address.Text);
-            Assert.AreEqual("city required", city.Text);
-            Assert.AreEqual("province required", province.Text);
-            Assert.AreEqual("postal required", postal.Text);
-            Assert.AreEqual("phone required", phone.Text);
-            Assert.AreEqual("email required", email.Text);
-            Assert.AreEqual("#users required", users.Text);
-            Assert.AreEqual("#days required", days.Text);
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+            var price = driver.FindElement(By.XPath("/html/body/main/div/p[3]/span"));
+
+            Assert.AreEqual("$375", price.Text);
+        }
+
+        [Test]
+        public void PriceCaculation_WhenOnlyDayTwoCheckedWithOneUser_ShowPrice475()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9A 0A0");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys("1");
+            day2.Click();
+            Thread.Sleep(500);
+
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+            var price = driver.FindElement(By.XPath("/html/body/main/div/p[3]/span"));
+
+            Assert.AreEqual("$475", price.Text);
+        }
+
+        [Test]
+        public void PriceCaculation_WhenBothDaysCheckedWithOneUser_ShowPrice800()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9A 0A0");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys("1");
+            day1.Click();
+            day2.Click();
+            Thread.Sleep(500);
+
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+            var price = driver.FindElement(By.XPath("/html/body/main/div/p[3]/span"));
+
+            Assert.AreEqual("$800", price.Text);
+        }
+
+        [Test]
+        public void PriceCaculation_WhenBothDaysCheckedWithMoreThan5Users_ShowDiscountedPrice()
+        {
+            driver.Url = "http:/qa.final.com/pages/index.html";
+            Thread.Sleep(500);
+
+            var first = driver.FindElement(By.Id("first-name"));
+            var last = driver.FindElement(By.Id("last-name"));
+            var address = driver.FindElement(By.Id("address"));
+            var city = driver.FindElement(By.Id("city"));
+            var province = driver.FindElement(By.Id("province"));
+            var postal = driver.FindElement(By.Id("postal"));
+            var phone = driver.FindElement(By.Id("phone"));
+            var email = driver.FindElement(By.Id("email"));
+            var users = driver.FindElement(By.Id("users"));
+            var day1 = driver.FindElement(By.Id("day1"));
+            var day2 = driver.FindElement(By.Id("day2"));
+            Thread.Sleep(500);
+            int numberOfUsers = 6;
+            double total = 0;
+
+            first.SendKeys("Kwangjin");
+            last.SendKeys("Baek");
+            address.SendKeys("Somewhere");
+            city.SendKeys("Toronto");
+            province.SendKeys("Ontario");
+            postal.SendKeys("A9A 0A0");
+            phone.SendKeys("000-000-0000");
+            email.SendKeys("lili@com.com");
+            users.SendKeys(numberOfUsers.ToString());
+            day1.Click();
+            day2.Click();
+            Thread.Sleep(500);
+            total = (800 * numberOfUsers) * 0.95;
+
+            driver.FindElement(By.XPath("/html/body/main/form/button")).Click();
+            var price = driver.FindElement(By.XPath("/html/body/main/div/p[3]/span"));
+
+            Assert.AreEqual("$" + total, price.Text);
         }
         #endregion
 
