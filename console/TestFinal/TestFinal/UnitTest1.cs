@@ -148,16 +148,16 @@ namespace TestFinal
             var users = driver.FindElement(By.XPath("/html/body/main/form/div[9]/small"));
             var days = driver.FindElement(By.XPath("/html/body/main/form/div[10]/small"));
             
-            Assert.AreEqual("first Required", first);
-            Assert.AreEqual("last Required", last);
-            Assert.AreEqual("address Required", address);
-            Assert.AreEqual("city Required", city);
-            Assert.AreEqual("province Required", province);
-            Assert.AreEqual("postal Required", postal);
-            Assert.AreEqual("phone Required", phone);
-            Assert.AreEqual("email Required", email);
-            Assert.AreEqual("users Required", users);
-            Assert.AreEqual("days Required", days);
+            Assert.AreEqual("first name required", first.Text);
+            Assert.AreEqual("last name required", last.Text);
+            Assert.AreEqual("address required", address.Text);
+            Assert.AreEqual("city required", city.Text);
+            Assert.AreEqual("province required", province.Text);
+            Assert.AreEqual("postal required", postal.Text);
+            Assert.AreEqual("phone required", phone.Text);
+            Assert.AreEqual("email required", email.Text);
+            Assert.AreEqual("#users required", users.Text);
+            Assert.AreEqual("#days required", days.Text);
         }
         #endregion
 
