@@ -1,0 +1,39 @@
+D:\PROG1781\inClass\inClass4\bin\Debug\netcoreapp3.1\inClass4.exe
+D:\PROG1781\inClass\inClass4\bin\Debug\netcoreapp3.1\inClass4.deps.json
+D:\PROG1781\inClass\inClass4\bin\Debug\netcoreapp3.1\inClass4.runtimeconfig.json
+D:\PROG1781\inClass\inClass4\bin\Debug\netcoreapp3.1\inClass4.runtimeconfig.dev.json
+D:\PROG1781\inClass\inClass4\bin\Debug\netcoreapp3.1\inClass4.dll
+D:\PROG1781\inClass\inClass4\bin\Debug\netcoreapp3.1\inClass4.pdb
+D:\PROG1781\inClass\inClass4\obj\Debug\netcoreapp3.1\inClass4.csprojAssemblyReference.cache
+D:\PROG1781\inClass\inClass4\obj\Debug\netcoreapp3.1\inClass4.AssemblyInfoInputs.cache
+D:\PROG1781\inClass\inClass4\obj\Debug\netcoreapp3.1\inClass4.AssemblyInfo.cs
+D:\PROG1781\inClass\inClass4\obj\Debug\netcoreapp3.1\inClass4.csproj.CoreCompileInputs.cache
+D:\PROG1781\inClass\inClass4\obj\Debug\netcoreapp3.1\inClass4.dll
+D:\PROG1781\inClass\inClass4\obj\Debug\netcoreapp3.1\inClass4.pdb
+D:\PROG1781\inClass\inClass4\obj\Debug\netcoreapp3.1\inClass4.genruntimeconfig.cache
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\bin\Debug\netcoreapp3.1\inClass4.exe
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\bin\Debug\netcoreapp3.1\inClass4.deps.json
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\bin\Debug\netcoreapp3.1\inClass4.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\bin\Debug\netcoreapp3.1\inClass4.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\bin\Debug\netcoreapp3.1\inClass4.dll
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\bin\Debug\netcoreapp3.1\inClass4.pdb
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\obj\Debug\netcoreapp3.1\inClass4.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\obj\Debug\netcoreapp3.1\inClass4.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\obj\Debug\netcoreapp3.1\inClass4.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\obj\Debug\netcoreapp3.1\inClass4.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\obj\Debug\netcoreapp3.1\inClass4.dll
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\obj\Debug\netcoreapp3.1\inClass4.pdb
+C:\Users\jin\OneDrive\Desktop\inClass4\inClass4\obj\Debug\netcoreapp3.1\inClass4.genruntimeconfig.cache
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\bin\Debug\netcoreapp3.1\inClass4.exe
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\bin\Debug\netcoreapp3.1\inClass4.deps.json
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\bin\Debug\netcoreapp3.1\inClass4.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\bin\Debug\netcoreapp3.1\inClass4.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\bin\Debug\netcoreapp3.1\inClass4.dll
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\bin\Debug\netcoreapp3.1\inClass4.pdb
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\obj\Debug\netcoreapp3.1\inClass4.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\obj\Debug\netcoreapp3.1\inClass4.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\obj\Debug\netcoreapp3.1\inClass4.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\obj\Debug\netcoreapp3.1\inClass4.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\obj\Debug\netcoreapp3.1\inClass4.dll
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\obj\Debug\netcoreapp3.1\inClass4.pdb
+C:\Users\jin\OneDrive\Desktop\conestoga\1_Semester\4. Programming Concepts 1\work\Inclass\inclass4\inClass4(dmitry)\inClass4\obj\Debug\netcoreapp3.1\inClass4.genruntimeconfig.cache
