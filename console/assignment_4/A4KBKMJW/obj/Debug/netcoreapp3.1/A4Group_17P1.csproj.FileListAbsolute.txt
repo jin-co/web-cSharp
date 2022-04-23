@@ -1,0 +1,39 @@
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\bin\Debug\netcoreapp3.1\A4Group_17P1.exe
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\bin\Debug\netcoreapp3.1\A4Group_17P1.deps.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\bin\Debug\netcoreapp3.1\A4Group_17P1.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\bin\Debug\netcoreapp3.1\A4Group_17P1.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\bin\Debug\netcoreapp3.1\A4Group_17P1.dll
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\bin\Debug\netcoreapp3.1\A4Group_17P1.pdb
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\obj\Debug\netcoreapp3.1\A4Group_17P1.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\obj\Debug\netcoreapp3.1\A4Group_17P1.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\obj\Debug\netcoreapp3.1\A4Group_17P1.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\obj\Debug\netcoreapp3.1\A4Group_17P1.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\obj\Debug\netcoreapp3.1\A4Group_17P1.dll
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\obj\Debug\netcoreapp3.1\A4Group_17P1.pdb
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\A4Group_17P1\obj\Debug\netcoreapp3.1\A4Group_17P1.genruntimeconfig.cache
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.exe
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.deps.json
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.dll
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.pdb
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.dll
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.pdb
+C:\Users\jin\OneDrive\Desktop\A4KBKMJW\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.genruntimeconfig.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.exe
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.deps.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.dll
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\bin\Debug\netcoreapp3.1\A4Group_17P1.pdb
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.dll
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.pdb
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\done\assignment_4\A4KBKMJW\obj\Debug\netcoreapp3.1\A4Group_17P1.genruntimeconfig.cache
