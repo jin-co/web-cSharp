@@ -1,0 +1,14 @@
+C:\Users\User\source\repos\A5Group17P1\A5Group17P1\bin\Debug\A5Group17P1.exe.config
+C:\Users\User\source\repos\A5Group17P1\A5Group17P1\bin\Debug\A5Group17P1.exe
+C:\Users\User\source\repos\A5Group17P1\A5Group17P1\bin\Debug\A5Group17P1.pdb
+C:\Users\User\source\repos\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.csprojAssemblyReference.cache
+C:\Users\User\source\repos\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.exe
+C:\Users\User\source\repos\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.pdb
+C:\Users\jin\OneDrive\Desktop\A5Group17P1\A5Group17P1\A5Group17P1\bin\Debug\A5Group17P1.exe.config
+C:\Users\jin\OneDrive\Desktop\A5Group17P1\A5Group17P1\A5Group17P1\bin\Debug\A5Group17P1.exe
+C:\Users\jin\OneDrive\Desktop\A5Group17P1\A5Group17P1\A5Group17P1\bin\Debug\A5Group17P1.pdb
+C:\Users\jin\OneDrive\Desktop\A5Group17P1\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\A5Group17P1\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\A5Group17P1\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.exe
+C:\Users\jin\OneDrive\Desktop\A5Group17P1\A5Group17P1\A5Group17P1\obj\Debug\A5Group17P1.pdb

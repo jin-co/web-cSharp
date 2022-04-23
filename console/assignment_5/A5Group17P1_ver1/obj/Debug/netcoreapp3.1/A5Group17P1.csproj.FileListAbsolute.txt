@@ -1,0 +1,13 @@
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\bin\Debug\netcoreapp3.1\A5Group17P1.exe
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\bin\Debug\netcoreapp3.1\A5Group17P1.deps.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\bin\Debug\netcoreapp3.1\A5Group17P1.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\bin\Debug\netcoreapp3.1\A5Group17P1.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\bin\Debug\netcoreapp3.1\A5Group17P1.dll
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\bin\Debug\netcoreapp3.1\A5Group17P1.pdb
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\obj\Debug\netcoreapp3.1\A5Group17P1.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\obj\Debug\netcoreapp3.1\A5Group17P1.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\obj\Debug\netcoreapp3.1\A5Group17P1.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\obj\Debug\netcoreapp3.1\A5Group17P1.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\obj\Debug\netcoreapp3.1\A5Group17P1.dll
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\obj\Debug\netcoreapp3.1\A5Group17P1.pdb
+C:\Users\jin\OneDrive\Desktop\1. conestoga\1_Semester\4. Programming Concepts 1\work\Assignment\assignment5\A5Group17P1\obj\Debug\netcoreapp3.1\A5Group17P1.genruntimeconfig.cache
