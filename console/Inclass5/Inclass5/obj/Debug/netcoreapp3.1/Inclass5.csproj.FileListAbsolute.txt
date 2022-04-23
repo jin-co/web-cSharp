@@ -1,0 +1,13 @@
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\obj\Debug\netcoreapp3.1\Inclass5.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\obj\Debug\netcoreapp3.1\Inclass5.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\obj\Debug\netcoreapp3.1\Inclass5.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\obj\Debug\netcoreapp3.1\Inclass5.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\bin\Debug\netcoreapp3.1\Inclass5.exe
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\bin\Debug\netcoreapp3.1\Inclass5.deps.json
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\bin\Debug\netcoreapp3.1\Inclass5.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\bin\Debug\netcoreapp3.1\Inclass5.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\bin\Debug\netcoreapp3.1\Inclass5.dll
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\bin\Debug\netcoreapp3.1\Inclass5.pdb
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\obj\Debug\netcoreapp3.1\Inclass5.dll
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\obj\Debug\netcoreapp3.1\Inclass5.pdb
+C:\Users\jin\OneDrive\Desktop\Inclass5\Inclass5\obj\Debug\netcoreapp3.1\Inclass5.genruntimeconfig.cache
