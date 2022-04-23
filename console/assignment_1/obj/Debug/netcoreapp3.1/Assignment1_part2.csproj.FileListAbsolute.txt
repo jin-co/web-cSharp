@@ -1,0 +1,13 @@
+C:\Prog1781\Assignment\Assignment1_part2\bin\Debug\netcoreapp3.1\Assignment1_part2.exe
+C:\Prog1781\Assignment\Assignment1_part2\bin\Debug\netcoreapp3.1\Assignment1_part2.deps.json
+C:\Prog1781\Assignment\Assignment1_part2\bin\Debug\netcoreapp3.1\Assignment1_part2.runtimeconfig.json
+C:\Prog1781\Assignment\Assignment1_part2\bin\Debug\netcoreapp3.1\Assignment1_part2.runtimeconfig.dev.json
+C:\Prog1781\Assignment\Assignment1_part2\bin\Debug\netcoreapp3.1\Assignment1_part2.dll
+C:\Prog1781\Assignment\Assignment1_part2\bin\Debug\netcoreapp3.1\Assignment1_part2.pdb
+C:\Prog1781\Assignment\Assignment1_part2\obj\Debug\netcoreapp3.1\Assignment1_part2.AssemblyInfoInputs.cache
+C:\Prog1781\Assignment\Assignment1_part2\obj\Debug\netcoreapp3.1\Assignment1_part2.AssemblyInfo.cs
+C:\Prog1781\Assignment\Assignment1_part2\obj\Debug\netcoreapp3.1\Assignment1_part2.csproj.CoreCompileInputs.cache
+C:\Prog1781\Assignment\Assignment1_part2\obj\Debug\netcoreapp3.1\Assignment1_part2.dll
+C:\Prog1781\Assignment\Assignment1_part2\obj\Debug\netcoreapp3.1\Assignment1_part2.pdb
+C:\Prog1781\Assignment\Assignment1_part2\obj\Debug\netcoreapp3.1\Assignment1_part2.genruntimeconfig.cache
+C:\Prog1781\Assignment\Assignment1_part2\obj\Debug\netcoreapp3.1\Assignment1_part2.csprojAssemblyReference.cache
