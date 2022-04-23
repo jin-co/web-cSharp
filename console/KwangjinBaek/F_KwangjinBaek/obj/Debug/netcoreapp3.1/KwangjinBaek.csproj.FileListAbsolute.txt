@@ -1,0 +1,13 @@
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\obj\Debug\netcoreapp3.1\KwangjinBaek.csprojAssemblyReference.cache
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\obj\Debug\netcoreapp3.1\KwangjinBaek.AssemblyInfoInputs.cache
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\obj\Debug\netcoreapp3.1\KwangjinBaek.AssemblyInfo.cs
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\obj\Debug\netcoreapp3.1\KwangjinBaek.csproj.CoreCompileInputs.cache
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\bin\Debug\netcoreapp3.1\KwangjinBaek.exe
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\bin\Debug\netcoreapp3.1\KwangjinBaek.deps.json
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\bin\Debug\netcoreapp3.1\KwangjinBaek.runtimeconfig.json
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\bin\Debug\netcoreapp3.1\KwangjinBaek.runtimeconfig.dev.json
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\bin\Debug\netcoreapp3.1\KwangjinBaek.dll
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\bin\Debug\netcoreapp3.1\KwangjinBaek.pdb
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\obj\Debug\netcoreapp3.1\KwangjinBaek.dll
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\obj\Debug\netcoreapp3.1\KwangjinBaek.pdb
+C:\Users\jin\OneDrive\Desktop\KwangjinBaek\F_KwangjinBaek\obj\Debug\netcoreapp3.1\KwangjinBaek.genruntimeconfig.cache
