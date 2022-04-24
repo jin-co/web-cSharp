@@ -1,0 +1,128 @@
+[0-9]{5}[A-Z]{4
+
+
+1A1A1A1A1
+
+Regex pattern = new Regex(@"^\d{5}$");
+            if (String.IsNullOrEmpty(input))
+            {
+
+            }
+            if (pattern.IsMatch(input))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+aa1a2aa -pass
+aa1a 2aa -pass
+a4a2aa -pass
+AA1A2AA - pass
+AA1b2Aa - pass
+a13aa - pass
+Aa12aa - pass
+Aa1 2aa - pass
+
+
+if (IsRequiredInputEmpty(cellPhone) &&
+                IsRequiredInputEmpty(homePhone) &&
+                IsRequiredInputEmpty(workPhone))
+            {
+                errorMessage += errorMessages[2] + "\n";
+            }
+            else
+            {
+                IsPhoneNumberValid(cellPhone);
+                IsPhoneNumberValid(homePhone);
+                IsPhoneNumberValid(workPhone);
+            }
+
+2020-2-10
+
+!"#$%&'()*+,-./:;?@[\]^_`{|}~hahahaha 
+
+Regex period = new Regex(@"\.");
+                Regex doubleDoller = new Regex(@"$$");
+                job = period.Replace(txtMemberGoal.Text, "$$");
+                punctuation.Replace(job, "");
+                doubleDoller.Replace(job, ".");
+                txtMemberGoal.Text = job;
+                punctuation.Replace(txtMemberGoal.Text, "");
+
+if (IsDateInputRightFormat(inputDate))
+                {
+
+                    DateTime outputDate = Convert.ToDateTime(inputDate);
+                    if (DateTime.Now.Subtract(outputDate).Days <= 0)
+                    {
+                        errorMessage = errorMessages[10] + "\n" + errorMessage;
+                        txtDateJoined.Focus();
+                    }
+                    else
+                    {
+                        txtDateJoined.Text = outputDate.ToString("yyyy MMM d");
+                    }
+                }
+                else
+                {
+                    errorMessage = errorMessages[9] + "\n" + errorMessage;
+                    txtDateJoined.Focus();
+                }
+
+            int count = 0;
+            string word = textBox.Text.Trim();
+            foreach (var letter in word)
+            {
+                if (letter != ' ')
+                {
+                    count++;
+                }
+            }
+            if (count < 3)
+            {
+                errorMessage = errorMessages[fieldIndex] + "\n" + errorMessage;
+                textBox.Focus();
+            }
+
+            /// member code validation - required field
+            // check if the field is empty
+            errorMessage = AddErrorMessageIfRequiredFieldIsEmpty(
+                errorMessages, 4, txtMemberCode) + errorMessage;
+
+            if (txtMemberCode.Text != "")
+            {
+                // add error and set focus if member code is in wrong format
+                txtMemberCode.Text = txtMemberCode.Text.Trim();
+                if (!KBValidation.KBMemberCodeValidation(txtMemberCode.Text))
+                {
+                    errorMessage = errorMessages[11] + "\n" + errorMessage;
+                    txtMemberCode.Focus();
+                }
+            }
+
+           /// postal code validation
+            // check if the field is empty
+            // validate the input code
+            errorMessage = AddErrorMessageIfRequiredFieldIsEmpty(
+                errorMessages, 5, txtPostalCode) + errorMessage;
+
+            if (txtPostalCode.Text != "")
+            {
+                // check if it is a valid postal code
+                // return formatted postal code if it is valid
+                // add error and set focus if it is not valid
+                string postalCode = txtPostalCode.Text.Trim();
+                if (KBValidation.KBUKPostalValidation(ref postalCode))
+                {
+                    txtPostalCode.Text = postalCode;
+                }
+                else
+                {
+                    errorMessage = errorMessages[16] + "\n" + errorMessage;
+                    txtPostalCode.Focus();
+                }
+            }
