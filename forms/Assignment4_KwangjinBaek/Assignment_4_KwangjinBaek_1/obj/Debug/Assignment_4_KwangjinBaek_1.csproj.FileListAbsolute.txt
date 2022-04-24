@@ -1,0 +1,10 @@
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\bin\Debug\Assignment_4_KwangjinBaek_1.exe.config
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\bin\Debug\Assignment_4_KwangjinBaek_1.exe
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\bin\Debug\Assignment_4_KwangjinBaek_1.pdb
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\obj\Debug\Assignment_4_KwangjinBaek_1.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\obj\Debug\Assignment_4_KwangjinBaek_1.KBStockMaintenance.resources
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\obj\Debug\Assignment_4_KwangjinBaek_1.Properties.Resources.resources
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\obj\Debug\Assignment_4_KwangjinBaek_1.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\obj\Debug\Assignment_4_KwangjinBaek_1.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\obj\Debug\Assignment_4_KwangjinBaek_1.exe
+C:\Users\jin\Desktop\Assignment_4_KwangjinBaek_1\Assignment_4_KwangjinBaek_1\obj\Debug\Assignment_4_KwangjinBaek_1.pdb
