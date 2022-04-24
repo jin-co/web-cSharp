@@ -1,5 +1,0 @@
-1	FIN	Candy Kingdom	BUY	3/1/2021 12:54:32 PM	$5.00	25	$0.00	$125.00	$125.00	princess buble gum is sick
-2	FIN	Candy Kingdom	BUY	3/3/2021 12:54:32 PM	$19.00	25	$0.00	$475.00	$475.00	princess buble gum is sick
-4	FIN	Candy Kingdom	BUY	3/1/2021 12:54:32 PM	$22.00	25	$0.00	$550.00	$550.00	princess buble gum is sick
-5	JAKE	Wang	BUY	3/18/2021 1:03:41 AM	$4.00	7	$2.00	$28.00	$30.00	godgod
-3	FIN	Candy Kingdom	BUY	3/3/2021 12:54:32 PM	$19.00	25	$0.00	$475.00	$475.00	princess buble gum is sick
