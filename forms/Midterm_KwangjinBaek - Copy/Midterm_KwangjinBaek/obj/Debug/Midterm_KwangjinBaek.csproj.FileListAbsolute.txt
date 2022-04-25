@@ -1,0 +1,10 @@
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\obj\Debug\Midterm_KwangjinBaek.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\obj\Debug\Midterm_KwangjinBaek.Midterm.resources
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\obj\Debug\Midterm_KwangjinBaek.Properties.Resources.resources
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\obj\Debug\Midterm_KwangjinBaek.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\obj\Debug\Midterm_KwangjinBaek.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\bin\Debug\Midterm_KwangjinBaek.exe.config
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\bin\Debug\Midterm_KwangjinBaek.exe
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\bin\Debug\Midterm_KwangjinBaek.pdb
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\obj\Debug\Midterm_KwangjinBaek.exe
+C:\Users\jin\Desktop\Midterm_KwangjinBaek\Midterm_KwangjinBaek\obj\Debug\Midterm_KwangjinBaek.pdb
