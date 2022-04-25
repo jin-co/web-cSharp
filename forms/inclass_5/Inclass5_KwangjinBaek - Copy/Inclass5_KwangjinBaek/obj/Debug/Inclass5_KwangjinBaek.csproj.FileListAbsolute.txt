@@ -1,0 +1,10 @@
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\bin\Debug\Inclass5_KwangjinBaek.exe.config
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\bin\Debug\Inclass5_KwangjinBaek.exe
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\bin\Debug\Inclass5_KwangjinBaek.pdb
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\obj\Debug\Inclass5_KwangjinBaek.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\obj\Debug\Inclass5_KwangjinBaek.Properties.Resources.resources
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\obj\Debug\Inclass5_KwangjinBaek.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\obj\Debug\Inclass5_KwangjinBaek.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\obj\Debug\Inclass5_KwangjinBaek.exe
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\obj\Debug\Inclass5_KwangjinBaek.pdb
+C:\Users\jin\Desktop\Inclass5_KwangjinBaek\Inclass5_KwangjinBaek\obj\Debug\Inclass5_KwangjinBaek.Incalss5.resources
