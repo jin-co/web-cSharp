@@ -1,0 +1,39 @@
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\obj\Debug\InClass4.InClass4_FileFilter.resources
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\obj\Debug\InClass4.Properties.Resources.resources
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\obj\Debug\InClass4.csproj.GenerateResource.cache
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\obj\Debug\InClass4.csproj.CoreCompileInputs.cache
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\bin\Debug\InClass4.exe.config
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\bin\Debug\InClass4.exe
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\bin\Debug\InClass4.pdb
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\obj\Debug\InClass4.exe
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\InClass4\InClass4\obj\Debug\InClass4.pdb
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\bin\Debug\InClass4.exe.config
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\bin\Debug\InClass4.exe
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\bin\Debug\InClass4.pdb
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\obj\Debug\InClass4.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\obj\Debug\InClass4.InClass4_FileFilter.resources
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\obj\Debug\InClass4.Properties.Resources.resources
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\obj\Debug\InClass4.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\obj\Debug\InClass4.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\obj\Debug\InClass4.exe
+C:\Users\jin\Desktop\inclass_4\InClass4_InitialProject\InClass4\InClass4\obj\Debug\InClass4.pdb
+C:\Users\jin\Desktop\New England\InClass4\InClass4\bin\Debug\InClass4.exe.config
+C:\Users\jin\Desktop\New England\InClass4\InClass4\bin\Debug\InClass4.exe
+C:\Users\jin\Desktop\New England\InClass4\InClass4\bin\Debug\InClass4.pdb
+C:\Users\jin\Desktop\New England\InClass4\InClass4\obj\Debug\InClass4.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\New England\InClass4\InClass4\obj\Debug\InClass4.InClass4_FileFilter.resources
+C:\Users\jin\Desktop\New England\InClass4\InClass4\obj\Debug\InClass4.Properties.Resources.resources
+C:\Users\jin\Desktop\New England\InClass4\InClass4\obj\Debug\InClass4.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\New England\InClass4\InClass4\obj\Debug\InClass4.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\New England\InClass4\InClass4\obj\Debug\InClass4.exe
+C:\Users\jin\Desktop\New England\InClass4\InClass4\obj\Debug\InClass4.pdb
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\bin\Debug\InClass4.exe.config
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\bin\Debug\InClass4.exe
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\bin\Debug\InClass4.pdb
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\obj\Debug\InClass4.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\obj\Debug\InClass4.InClass4_FileFilter.resources
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\obj\Debug\InClass4.Properties.Resources.resources
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\obj\Debug\InClass4.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\obj\Debug\InClass4.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\obj\Debug\InClass4.exe
+C:\Users\jin\Desktop\inclass4\InClass4\InClass4\obj\Debug\InClass4.pdb
