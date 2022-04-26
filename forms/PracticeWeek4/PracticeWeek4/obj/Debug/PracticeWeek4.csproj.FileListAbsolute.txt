@@ -1,0 +1,10 @@
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\obj\Debug\PracticeWeek4.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\obj\Debug\PracticeWeek4.StringManipulation.resources
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\obj\Debug\PracticeWeek4.Properties.Resources.resources
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\obj\Debug\PracticeWeek4.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\obj\Debug\PracticeWeek4.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\bin\Debug\PracticeWeek4.exe.config
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\bin\Debug\PracticeWeek4.exe
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\bin\Debug\PracticeWeek4.pdb
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\obj\Debug\PracticeWeek4.exe
+C:\Users\jin\Desktop\PracticeWeek4\PracticeWeek4\obj\Debug\PracticeWeek4.pdb
