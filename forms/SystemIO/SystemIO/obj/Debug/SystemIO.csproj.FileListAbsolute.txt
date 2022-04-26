@@ -1,0 +1,10 @@
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\bin\Debug\SystemIO.exe.config
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\bin\Debug\SystemIO.exe
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\bin\Debug\SystemIO.pdb
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\obj\Debug\SystemIO.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\obj\Debug\SystemIO.Properties.Resources.resources
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\obj\Debug\SystemIO.SystemIO.resources
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\obj\Debug\SystemIO.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\obj\Debug\SystemIO.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\obj\Debug\SystemIO.exe
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\practice\SystemIO\SystemIO\obj\Debug\SystemIO.pdb
