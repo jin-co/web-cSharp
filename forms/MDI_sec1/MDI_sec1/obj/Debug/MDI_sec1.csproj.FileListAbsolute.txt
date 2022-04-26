@@ -1,0 +1,13 @@
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\bin\Debug\MDI_sec1.exe.config
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\bin\Debug\MDI_sec1.exe
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\bin\Debug\MDI_sec1.pdb
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.csprojAssemblyReference.cache
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.MainForm.resources
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.Properties.Resources.resources
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.csproj.GenerateResource.cache
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.csproj.CoreCompileInputs.cache
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.exe
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.pdb
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\HelloWorld.FutureValue.resources
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.ArrayWork.resources
+D:\Conestoga\ProgrammingConceptsII.PROG1815\InClassExercises\sec1\MDI_sec1\MDI_sec1\obj\Debug\MDI_sec1.StringManipulation.resources
