@@ -1,0 +1,12 @@
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\bin\Debug\Week3.exe.config
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\bin\Debug\Week3.exe
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\bin\Debug\Week3.pdb
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.csprojAssemblyReference.cache
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.main.resources
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.Properties.Resources.resources
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.csproj.GenerateResource.cache
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.csproj.CoreCompileInputs.cache
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.exe
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.pdb
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\HelloWorld.FutureValue.resources
+C:\Users\jin\Desktop\1. conestoga\0_2_Semester\4. Programming Concepts 2 (1815)\lectures\Week3\Week3\obj\Debug\Week3.ArrayWork.resources
