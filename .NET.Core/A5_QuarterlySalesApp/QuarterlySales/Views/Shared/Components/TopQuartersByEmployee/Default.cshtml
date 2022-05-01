@@ -1,0 +1,18 @@
+﻿@model List<Sales>
+
+<div class="img-thumbnail card shadow">
+    <h5 class="p-1 bg-warning rounded text-white text-center">Top Quarters by Employee</h5>
+    <div class="card-body bg-light text-center">        
+        @for (int i = 0, j = 1; i < Model.Count; i++, j++)
+        {
+            <p class="card-text">
+                @j. @Model[i].Year Q @Model[i].Quarter : @Model[i].Amount?.ToString("c") 
+                <br />
+                <small class="bg-secondary text-light py-1 px-2 rounded" 
+                       style="display: flex; flex-wrap: wrap; justify-content: center">
+                    @Model[i].Employee.Fullname
+                </small> 
+            </p>
+        }
+    </div>
+</div>
