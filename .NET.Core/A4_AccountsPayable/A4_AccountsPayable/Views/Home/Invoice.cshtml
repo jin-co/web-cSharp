@@ -1,0 +1,124 @@
+﻿@model InvoiceViewModel
+
+<div class="container">
+    <div class="row">
+        <h4 class="text-left col-8">Invoices for @Model.Vendor.VendorName</h4>
+
+        @if (true)
+        {
+            <a asp-action="Index" 
+               asp-route-vendorFilter="@ViewBag.Page"
+               class="text-right col-4">Return to @ViewBag.Page Vendors</a>
+        }
+        else
+        {
+            <a asp-action="PatientList" 
+               asp-route-nameGroupFilterId="0" 
+               class="text-right col-4">Return to Patient List</a>
+        }
+    </div>
+
+
+    <div class="row">
+        <span style="color:gray;" 
+              class="text-left col-7">Address: @Model.Vendor.VendorAddress1
+        </span>
+        <span style="color:gray;" 
+              class="text-right col-5">Terms: @Model.Vendor.DefaultTerms.TermsDueDays Days
+        </span>
+    </div>
+
+    @if (Model.Invoices.Count() > 0)
+    {
+        <div class="row pt-5">
+            <div class="col-6">
+                <h4 class="font-weight-bold">Invoices:</h4>
+                <ul class="nav nav-pills flex-column">
+                    @foreach (var i in @Model.Invoices)
+                    {
+                        <li class="nav-item">
+                            <a asp-action="Invoice"
+                               asp-route-vendorId="@Model.Vendor.VendorId"
+                               asp-route-invoiceId="@i.InvoiceId"
+                               class="nav-link (prescription.PrescriptionId)">
+                                Invoice #: @i.InvoiceId
+                            </a>
+                        </li>
+                    }
+                </ul>
+
+                <div class="mt-4 text-right">
+                    <a class="btn btn-outline-secondary" style="cursor: pointer;"
+                       asp-action="Invoice"
+                       asp-route-vendorId="@Model.Vendor.VendorId"
+                       >Back to all items</a>
+                </div>
+            </div>
+
+            <div class="col-6">
+                @if (true)
+                {
+                    <h4 class="font-weight-bold">Line Items for Invoice </h4>
+
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var i in Model.InvoiceLineItems)
+                            {
+                                <tr>
+                                    <td>@i.LineItemDescription</td>
+                                    <td>@i.LineItemAmount.ToString("C2")</td>
+                                </tr>
+                            }
+                            @if (Model.InvoiceLineItems.Count() > 0)
+                            {
+                                <tr>
+                                    <td>Total</td>
+                                    <td>@Model.SelectedInvoice.InvoiceTotal.ToString("C2")</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                    <form method="post"
+                          asp-action="AddNewInvoiceLineItem"
+                          asp-route-vendorId="@Model.Vendor.VendorId"
+                          asp-route-invoiceId="@Model.SelectedInvoice.InvoiceId"
+                          asp-route-accountNumber="@Model.Account.AccountNumber">
+
+                        <div class="row pb-2">
+                            <label class="col-3">Description:</label>
+                            <input type="text" name="description" class="col-9 form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+
+                        <div class="row pb-2">
+                            <label class="col-3">Amount:</label>
+                            <input type="number" name="amount" class="col-9 form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+
+                        <div>
+                            <input class="btn btn-outline-info"
+                                   type="submit" value="Add new line item" />
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="jumbotron pt-5 text-center bg-white mt-4">
+            <h2>No invoice line items</h2>
+        </div>
+    }
+</div>
+
+
