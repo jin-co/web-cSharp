@@ -1,0 +1,79 @@
+﻿
+@model IEnumerable<Audit>
+@{
+    ViewData["Title"] = "Audit Records";
+    
+    string controller =
+        ViewContext.RouteData.Values["controller"].ToString();
+    string action =
+        ViewContext.RouteData.Values["action"].ToString();
+}
+<h2 class="jumbotron">@ViewData["Title"]</h2>
+
+<!-- nav -->
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link
+           @(action == "Index" || action == "All" ? "active" : "")"
+           asp-action="All">
+            All
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link
+           @(action == "CashIn" ? "active" : "")"
+           asp-action="CashIn"
+           asp-route-cashIn="Cash In">
+            Cash In
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link
+           @(action == "CashOut" ? "active" : "")"
+           asp-action="CashOut"
+           asp-route-cashOut="Cash Out">
+            Cash Out
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link
+           @(action == "Lose" ? "active" : "")"
+           asp-action="Lose"
+           asp-route-lose="Lose">
+            Lose
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link
+           @(action == "Win" ? "active" : "")"
+           asp-action="Win"
+           asp-route-win="Win">
+            Win
+        </a>
+    </li>
+</ul><!-- /end nav -->
+
+<!-- table start -->
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(p => p.CreatedDate)</th>
+            <th>@Html.DisplayNameFor(p => p.PlayerName)</th>
+            <th>@Html.DisplayNameFor(p => p.AuditTypes)</th>
+            <th>@Html.DisplayNameFor(p => p.Amount)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- shows all the data in the audit database -->
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.CreatedDate</td>
+                <td>@i.PlayerName</td>
+                <td>@i.AuditTypes.Name</td>
+                <td>@i.Amount.ToString("N2")</td>
+                
+            </tr>
+        }
+    </tbody>
+</table><!-- /end table -->

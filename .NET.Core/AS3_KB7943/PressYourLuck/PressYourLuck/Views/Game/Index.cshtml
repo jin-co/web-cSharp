@@ -1,0 +1,67 @@
+﻿@model List<Tile>
+
+<div>
+    @{
+        if (TempData["Busted"] != null)
+        {
+            <p class="bg-danger text-light">@TempData["Busted"]</p>
+        }
+        if (TempData["Found"] != null)
+        {
+            <p class="bg-success text-light">@TempData["Found"]</p>
+        }
+    }
+</div>
+
+<div class="row justify-content-between mb-4">
+    <h3>Current Bet: $@ViewBag.CurrentBet</h3>
+    @if (double.Parse(ViewBag.CurrentBet) > 0)
+    {
+        // if bet is above 0 double.Parse(ViewBag.CurrentBet) > 0
+        <a class="btn btn-success"
+            asp-action="TakeCoins">
+            TAKE THE COINS
+        </a>
+    }
+    else
+    {
+        // if bet is 0
+        <a class="btn btn-danger"
+            asp-action="TryAgain">Try Again</a>
+    }
+</div>
+
+<div class="row card-deck">
+    @foreach (var tile in Model)
+    {
+        <div class="col-2">
+            <div class="">
+                @if (tile.Visible == false)
+                {
+                    <img src="~/images/unknown.png" class="card-img-top" alt="...">
+                }
+                else if (tile.Value == "0.00")
+                {
+                    <img src="~/images/bust.png" class="card-img-top" alt="...">
+                }
+                else
+                {
+                    <img src="~/images/money.png" class="card-img-top" alt="...">
+                }
+                <div class="card-body text-center">
+                    @if (tile.Visible)
+                    {
+                        <div>@tile.Value</div>
+                    }
+                    else
+                    {
+                        <a asp-action="Bet"
+                            asp-route-index="@Model.IndexOf(tile)"
+                            class="btn btn-primary btn-sm">CHOOSE</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
