@@ -1,0 +1,21 @@
+﻿body {
+}
+
+.logo {
+    height: 50px;
+}
+
+.active {
+    color: red !important;
+}
+
+.sort-toggle:hover {
+    text-decoration: none;
+}
+
+@media all and (max-width: 990px) {
+    .table {
+        display: block;
+        overflow-x: scroll;
+    }
+}
