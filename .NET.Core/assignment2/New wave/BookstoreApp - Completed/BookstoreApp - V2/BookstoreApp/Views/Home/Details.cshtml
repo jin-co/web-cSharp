@@ -1,0 +1,32 @@
+﻿@model BookViewModel
+@{ 
+    ViewData["Title"] = "Book Details";
+}
+
+<h2 class="text-center p-2">Book Details</h2>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <ul class="list-group text-center">
+            <li class="list-group-item">
+                <img src="~/images/@Model.Book.LogoImageSource" alt="" />
+                <h3>@Model.Book.Title</h3>
+            </li>
+            <li class="list-group-item">
+                <h4>Genre: @Model.Book.Genre.Name</h4>
+            </li>
+            <li class="list-group-item">
+                <h4>Author: @Model.Book.Author.FullName</h4>
+            </li>
+            <li class="list-group-item">
+                <h4>Publisher: @Model.Book.Publisher.Name</h4>
+            </li>
+            <li class="list-group-item">
+                <a asp-action="Index" 
+                   asp-route-activeGenre="@Model.ActiveGenre"
+                   asp-route-activeAuthor="@Model.ActiveAuthor"
+                   asp-route-activePublisher="@Model.ActivePublisher">Return to Home Page</a>
+            </li>
+        </ul>
+    </div>
+</div>
