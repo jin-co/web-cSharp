@@ -1,0 +1,20 @@
+﻿@model TransactionRecordKbaek7943
+@{
+    ViewData["Title"] = "Delete Transaction";
+}
+<h1 class="jumbotron">@ViewData["Title"]</h1>
+<h2>Confirm Deletion</h2>
+<h3>
+    @Model.Quantity
+    shares of
+    @Model.CompanyName (@Model.TicketSymbol) -
+    share price: $@Model.SharePrice
+</h3>
+
+<!-- form start -->
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="TransactionRecordKbaek7943Id" />
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form><!-- /end form -->
