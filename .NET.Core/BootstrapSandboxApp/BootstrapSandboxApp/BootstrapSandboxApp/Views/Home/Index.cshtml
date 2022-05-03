@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Demonstrating the difference between a container fixed (will not touch the side of the container/screen) and a container
+    fluid (which will touch both the left and right side of the container/screen). Each container is padded on both sides with
+    15 px, but will adjust according to the screen size rules: (see Grid Classes for references: https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp) -->
+
+<h3 class="jumbotron text-center">Example 1: Fixed vs Fluid Containers</h3>
+
+<div class="container" style="background-color: lightgreen;">
+    <h4>Bootstrap Fixed</h4>
+</div>
+
+<div class="container-fluid" style="background-color: lightgreen;margin-bottom: 5px;">
+    <h4>Bootstrap Fluid</h4>
+</div>
+
+<!-- Using a container fluid (so end-to-end margin) flow of content, there is a single row with two columns flowing side
+    by side with no size specification (bootstrap handles the resizing and whether the second column will overflow onto a
+    new row based on the screen size and content size. -->
+
+<h3 class="jumbotron text-center">Example 2: The Bootstrap Grid (2 columns)</h3>
+
+<div class="container-fluid" style="margin-bottom: 5px;">
+    <div class="row">
+        <div class="col" style="background-color: lightcoral;">
+            <h4>This is column 1</h4>
+        </div>
+        <div class="col" style="background-color: lightblue;">
+            <h4>This is column 2</h4>
+        </div>
+    </div>
+</div>
+
+
+<!-- Using a container fluid (so end-to-end margin) flow of content, there is simply one row in this grid container for which
+    contains two columns, where both columns will share 50% of the width (or 6 out of the 12 columns each) when dealing with a
+    large, medium, and small size screen, and then will flow the full 12 columns (so stack on top of one another) when dealing
+    with an extra small screen. -->
+
+<h3 class="jumbotron text-center">Example 3: The Bootstrap Grid (2 columns - with screen size conditions)</h3>
+
+<div class="container-fluid" style="margin-bottom: 5px;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6" style="background-color: lightcoral;">
+            <h4>This is column 1</h4>
+        </div>
+        <div class="col-xs-12 col-sm-6" style="background-color: lightblue;">
+            <h4>This is column 2</h4>
+        </div>
+    </div>
+</div>
+
+<!-- The following example is to demonstrate how blocks of content will flow on the screen (6 in total) based on the class attributes
+     set for each of the column blogs specified below. There will be 3 blog posts at most when dealing with a large or medium screen,
+     2 blog posts when dealing with a small screen, and then only one blog post when dealing with an extra small screen. -->
+
+<h3 class="jumbotron text-center">Example 4: Blog-style web page</h3>
+
+<div class="container" style="margin-bottom: 5px;">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3>Blog Post #1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia a ex vitae congue. In ut diam erat. Sed nec neque ornare, aliquam elit eu, tempor lorem. Fusce eget nisl et quam congue placerat eget eu urna. Sed condimentum vehicula turpis. In facilisis ex a odio sodales maximus sagittis quis magna. Fusce ut condimentum tortor. Nulla eget aliquet arcu, eget pulvinar urna. Etiam quis nulla id lectus vestibulum vestibulum vel in tellus. Integer porttitor blandit lacinia.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3>Blog Post #2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia a ex vitae congue. In ut diam erat. Sed nec neque ornare, aliquam elit eu, tempor lorem. Fusce eget nisl et quam congue placerat eget eu urna. Sed condimentum vehicula turpis. In facilisis ex a odio sodales maximus sagittis quis magna. Fusce ut condimentum tortor. Nulla eget aliquet arcu, eget pulvinar urna. Etiam quis nulla id lectus vestibulum vestibulum vel in tellus. Integer porttitor blandit lacinia.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3>Blog Post #3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia a ex vitae congue. In ut diam erat. Sed nec neque ornare, aliquam elit eu, tempor lorem. Fusce eget nisl et quam congue placerat eget eu urna. Sed condimentum vehicula turpis. In facilisis ex a odio sodales maximus sagittis quis magna. Fusce ut condimentum tortor. Nulla eget aliquet arcu, eget pulvinar urna. Etiam quis nulla id lectus vestibulum vestibulum vel in tellus. Integer porttitor blandit lacinia.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3>Blog Post #4</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia a ex vitae congue. In ut diam erat. Sed nec neque ornare, aliquam elit eu, tempor lorem. Fusce eget nisl et quam congue placerat eget eu urna. Sed condimentum vehicula turpis. In facilisis ex a odio sodales maximus sagittis quis magna. Fusce ut condimentum tortor. Nulla eget aliquet arcu, eget pulvinar urna. Etiam quis nulla id lectus vestibulum vestibulum vel in tellus. Integer porttitor blandit lacinia.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3>Blog Post #5</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia a ex vitae congue. In ut diam erat. Sed nec neque ornare, aliquam elit eu, tempor lorem. Fusce eget nisl et quam congue placerat eget eu urna. Sed condimentum vehicula turpis. In facilisis ex a odio sodales maximus sagittis quis magna. Fusce ut condimentum tortor. Nulla eget aliquet arcu, eget pulvinar urna. Etiam quis nulla id lectus vestibulum vestibulum vel in tellus. Integer porttitor blandit lacinia.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3>Blog Post #6</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia a ex vitae congue. In ut diam erat. Sed nec neque ornare, aliquam elit eu, tempor lorem. Fusce eget nisl et quam congue placerat eget eu urna. Sed condimentum vehicula turpis. In facilisis ex a odio sodales maximus sagittis quis magna. Fusce ut condimentum tortor. Nulla eget aliquet arcu, eget pulvinar urna. Etiam quis nulla id lectus vestibulum vestibulum vel in tellus. Integer porttitor blandit lacinia.</p>
+        </div>
+    </div>
+</div>
+
+<h3 class="jumbotron text-center">Example 5: Multiple Row + Column Grid</h3>
+
+<!-- The following example is to demonstrate how the container sizes and flows its rows and columns found within. That being said,
+    There are two primary columns (e.g. column 1 and column 2) of which each share 6 column span (so half and half will each have
+    50% of the maximum width of the container grid. Then the column 1 has two rows of its own, containing two columns each (e.g
+    columns 1.1, 1.2, 1.3, and 1.4). If you start the application, you can play around with the screen size to see how they respond. -->
+
+<div class="container-fluid border-light">
+    <div class="row">
+        <div class="col-md-6 col-xs-6" style="background-color: lightcoral;">
+            <h3>Column 1</h3>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: lightsalmon;">
+                    <h4>Column 1.1</h4>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: lightseagreen;">
+                    <h4>Column 1.2</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: lightsteelblue;">
+                    <h4>Column 1.3</h4>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: lightgoldenrodyellow;">
+                    <h4>Column 1.4</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-6" style="background-color: lightgreen;">
+            <h3>Column 2</h3>
+        </div>
+    </div>
+</div>
+
+<h3 class="jumbotron text-center">Example 6: Button Examples</h3>
+
+<!-- The following example is simply demonstrating the various button styling that you can apply
+    to said buttons. You can read more about them at this link: https://getbootstrap.com/docs/4.0/components/buttons/
+    In addition, there will only be 4 buttons at most on every row when the screen is large (e.g. "col-lg-3"), only 3 buttons
+    at most when the screen is considered medium (e.g. "col-md-4"), only 2 buttons when the screen is small, and only 1 button
+    when the screen is considered extra small. -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <input type="button" value="Danger! Don't Click!" class="btn btn-danger" />
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <input type="button" value="This is a primary button" class="btn btn-primary" />
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <input type="button" value="This is a secondary button" class="btn btn-secondary" />
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <input type="button" value="Success!" class="btn btn-success" />
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <input type="button" value="Want some information?" class="btn btn-info" />
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <input type="button" value="Warning!" class="btn btn-warning" />
+        </div>
+    </div>
+</div>
