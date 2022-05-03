@@ -1,0 +1,32 @@
+﻿@model List<BPMeasurement>
+@{
+    ViewData["Title"] = "BP Measurements for Bart Simpson (123456)";
+}
+
+<h2>All Measurements</h2>
+<a asp-controller="BPMeasurement" asp-action="Add">Add new BP measurement</a>
+<span class="linkSpacer">|</span>
+<a asp-controller="Home" asp-action="BPInfo">Information on BP measurements</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Reading</th>
+            <th>Date Taken</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var msmt in Model)
+        {
+            <tr>
+                <td>@msmt.Systolic.ToString()/@msmt.Diastolic.ToString()</td>
+                <td>@msmt.MeasurementDate.ToString("d")</td>
+                <td>
+                    <a asp-controller="BPMeasurement" asp-action="Edit" asp-route-id="@msmt.BPMeasurementId">Edit</a>
+                    <span class="linkSpacer">|</span>
+                    <a asp-controller="BPMeasurement" asp-action="Delete" asp-route-id="@msmt.BPMeasurementId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
