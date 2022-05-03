@@ -1,0 +1,46 @@
+﻿@model BmiModel
+<!-- A simple explanation: The ViewData["Title"] below is a dynamic type variable and can hold just
+    about any type of data (i.e. integer, double, string, list of stuff, etc.). In order to retrieve
+    the value stored inside these types of variable, you must simply use the "at" symbol like below.-->
+@{
+    ViewData["Title"] = "Bmi Calculator";
+}
+
+<div class="container">
+    <h2 class="jumbotron bg-info text-light">@ViewData["Title"]
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+            <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+            <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z" />
+        </svg>
+    </h2>
+
+    <!-- The HTML form below will submit a POST request back to the BmiController whick will be actioned back
+        to the Index method found within the BmiController. The POST form will send a completed BMI model object
+        containing the "Weight" and "Height" as specified by the user below back to the controller, and will then
+        calculate the BMI as expected. This will then prompt a callback to the view and will return the calculated
+        BMI value in the ViewBag.Bmi variable below. The ""asp-" tags below are razor tags used to target certain
+        variables or enhance the user experience. We will go in more details in the coming weeks about it. -->
+    <form asp-controller="Bmi" asp-action="Index" method="post">
+        <div asp-validation-summary="All" class="alert-danger"></div>
+        <div class="form-group row">
+            <label asp-for="Weight" class="col-sm-2">Weight (in kg):</label>
+            <div class="col-sm-10">
+                <input asp-for="Weight" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Height" class="col-sm-2">Height (in m):</label>
+            <div class="col-sm-10">
+                <input asp-for="Height" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2">Bmi:</label>
+            <div class="col-sm-10">
+                <input value="@ViewBag.Bmi.ToString("0.00")" readonly="readonly" class="form-control @ViewBag.BmiColour">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Calculate BMI</button>
+        <a asp-controller="Bmi" asp-action="Index" class="btn btn-secondary">Clear</a>
+</form>
+</div>
