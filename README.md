@@ -1,1 +1,3 @@
-# web-cSharp
+# Web practice with C#
+---
+> .NET Core | MVC
