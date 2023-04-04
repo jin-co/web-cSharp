@@ -51,8 +51,8 @@ namespace InClass4
             }
         }
 
-        // list all subfolders in the source folder
-        // - strip off the source path so the subfolder name can be used later
+        // list all sub folders in the source folder
+        // - strip off the source path so the sub folder name can be used later
         private void btnListDirectories_Click(object sender, EventArgs e)
         {
             SearchOption option = SearchOption.TopDirectoryOnly;
@@ -70,10 +70,10 @@ namespace InClass4
             }
         }
         
-        // for each subfolder found in the source folder (listed in subFolderNames):
+        // for each sub folder found in the source folder (listed in subFolderNames):
         // - list all the file names (with paths) that fit the filter criteria
         // - for each file name found:
-        //   - strip the filename off its path & append the subfolder name (student's name) to it
+        //   - strip the filename off its path & append the sub folder name (student's name) to it
         //   - copy the file to the target folder, saving it under this modified name
         private void btnListFiles_Click(object sender, EventArgs e)
         {
