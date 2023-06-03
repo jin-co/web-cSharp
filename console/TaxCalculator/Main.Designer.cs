@@ -39,12 +39,13 @@ namespace TaxCalculator
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.gbHeavyTax = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txtRchResult = new System.Windows.Forms.RichTextBox();
             this.gbHeavyTax.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(22, 235);
+            this.btnCalculate.Location = new System.Drawing.Point(319, 314);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(144, 58);
             this.btnCalculate.TabIndex = 0;
@@ -128,7 +129,7 @@ namespace TaxCalculator
             this.gbHeavyTax.Controls.Add(this.radioButton3);
             this.gbHeavyTax.Controls.Add(this.radioButton4);
             this.gbHeavyTax.Controls.Add(this.radioButton2);
-            this.gbHeavyTax.Location = new System.Drawing.Point(543, 235);
+            this.gbHeavyTax.Location = new System.Drawing.Point(22, 244);
             this.gbHeavyTax.Name = "gbHeavyTax";
             this.gbHeavyTax.Size = new System.Drawing.Size(204, 175);
             this.gbHeavyTax.TabIndex = 8;
@@ -144,16 +145,25 @@ namespace TaxCalculator
             "2주택",
             "3주택",
             "4주택 이상 / 법인"});
-            this.listBox1.Location = new System.Drawing.Point(338, 71);
+            this.listBox1.Location = new System.Drawing.Point(22, 138);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(147, 100);
             this.listBox1.TabIndex = 9;
+            // 
+            // txtRchResult
+            // 
+            this.txtRchResult.Location = new System.Drawing.Point(350, 70);
+            this.txtRchResult.Name = "txtRchResult";
+            this.txtRchResult.Size = new System.Drawing.Size(393, 77);
+            this.txtRchResult.TabIndex = 10;
+            this.txtRchResult.Text = "";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtRchResult);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.gbHeavyTax);
             this.Controls.Add(this.label2);
@@ -181,6 +191,7 @@ namespace TaxCalculator
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.GroupBox gbHeavyTax;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.RichTextBox txtRchResult;
     }
 }
 
